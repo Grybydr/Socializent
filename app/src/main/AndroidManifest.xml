@@ -8,7 +8,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".main" />
+        <activity android:name=".main" >
+            <intent-filter>
+                <action android:name="android.intent.action.main" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
     </application>
 
