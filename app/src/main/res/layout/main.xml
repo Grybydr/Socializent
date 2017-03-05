@@ -15,16 +15,19 @@
 
     <EditText
         android:id="@+id/userNameText"
-        android:layout_width="790px"
-        android:layout_height="184px"
-        android:background="@drawable/username"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="100dp"
+        android:layout_above="@+id/passwordText"
+        android:layout_alignParentBottom="false"
 
+        android:background="@drawable/username"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/user_name"
+        android:includeFontPadding="false"
         android:inputType="textPersonName"
-        android:textSize="24sp"
-        android:layout_above="@+id/passwordText"
-        android:layout_centerHorizontal="true" />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/passwordText"
