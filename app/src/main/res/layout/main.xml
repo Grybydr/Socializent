@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/logo"
     android:weightSum="1">
     <Button
         android:layout_width="wrap_content"
@@ -14,15 +15,16 @@
 
     <EditText
         android:id="@+id/userNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/passwordText"
-        android:layout_marginTop="118dp"
+        android:layout_width="790px"
+        android:layout_height="184px"
+        android:background="@drawable/username"
+
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_above="@+id/passwordText"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/passwordText"
@@ -33,9 +35,8 @@
         android:layout_marginBottom="67dp"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        android:text="@string/password"
-        android:textSize="24sp"
+        android:inputType="text"
+        android:textSize="30sp"
         android:visibility="visible" />
 
 </RelativeLayout>
