@@ -25,6 +25,7 @@ public class main extends Activity {
         EditText userNameText = (EditText)findViewById(R.id.userNameText);
         EditText passwordText = (EditText)findViewById(R.id.passwordText);
         Button fbButton = (Button)findViewById(R.id.fbButton);
-
+        Button forgetPasswordButton = (Button)findViewById(R.id.forgetPasswordButton);
+        Button signUpButton = (Button)findViewById(R.id.signUpButton);
     }
 }
