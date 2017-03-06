@@ -1,45 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logo"
     android:weightSum="1">
+
+    <!-- android:text="@string/loginButton". -->
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/loginButton"
         android:id="@+id/loginButton"
-        android:layout_marginBottom="156dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login"
+        android:drawablePadding="10dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="31dp" />
 
     <EditText
         android:id="@+id/userNameText"
-        android:layout_width="160dp"
-        android:layout_height="70dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="100dp"
-        android:layout_above="@+id/passwordText"
-        android:layout_alignParentBottom="false"
-
         android:background="@drawable/username"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/user_name"
         android:includeFontPadding="false"
         android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/passwordText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/loginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="67dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/password"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="text"
-        android:textSize="30sp"
-        android:visibility="visible" />
+        android:textSize="24sp"
+        android:visibility="visible"
+        android:layout_below="@+id/userNameText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:id="@+id/logoView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/socializent_image"
+        android:visibility="visible"
+        android:layout_above="@+id/userNameText"
+        android:layout_alignStart="@+id/passwordText"
+        android:layout_marginBottom="26dp" />
+
+    <Button
+        android:id="@+id/fbButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/facebook_logo"
+        android:drawablePadding="10dp"
+        android:layout_alignBottom="@+id/forgetPasswordButton"
+        android:layout_alignStart="@+id/passwordText"
+        android:layout_marginBottom="14dp" />
+
+    <Button
+        android:id="@+id/forgetPasswordButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/forget_password"
+        android:drawablePadding="10dp"
+        android:layout_marginEnd="17dp"
+        android:layout_below="@+id/passwordText"
+        android:layout_alignEnd="@+id/loginButton"
+        android:layout_marginTop="36dp" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/signup"
+        android:drawablePadding="10dp"
+        android:layout_marginEnd="32dp"
+        android:layout_below="@+id/forgetPasswordButton"
+        android:layout_toStartOf="@+id/forgetPasswordButton" />
 
 </RelativeLayout>
