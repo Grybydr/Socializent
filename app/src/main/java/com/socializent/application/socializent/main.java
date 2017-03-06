@@ -24,6 +24,7 @@ public class main extends Activity {
         Button loginButton = (Button)findViewById(R.id.loginButton);
         EditText userNameText = (EditText)findViewById(R.id.userNameText);
         EditText passwordText = (EditText)findViewById(R.id.passwordText);
+        Button fbButton = (Button)findViewById(R.id.fbButton);
 
     }
 }
