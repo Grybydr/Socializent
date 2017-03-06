@@ -2,5 +2,5 @@
     <string name="app_name">Socializent</string>
     <string name="loginButton">logın</string>
     <string name="user_name">\t User Name</string>
-    <string name="password">Password</string>
+    <string name="password">\t Password</string>
 </resources>
