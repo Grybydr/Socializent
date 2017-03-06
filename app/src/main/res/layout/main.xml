@@ -11,7 +11,7 @@
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="78dp"
+        android:layout_marginBottom="87dp"
         android:text="@string/loginButton"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/passwordText" />
@@ -61,10 +61,20 @@
         android:id="@+id/fbButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:background="@drawable/facebook_logo"
+        android:drawablePadding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginBottom="34dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_marginStart="15dp"
+        android:layout_alignBottom="@+id/loginButton"
         android:layout_alignStart="@+id/passwordText"
-        android:layout_below="@+id/passwordText"
-        android:layout_marginStart="30dp"
-        android:background="@drawable/facebookLogo"
-        android:drawablePadding="10dp" />
+        android:layout_marginBottom="16dp" />
 
 </RelativeLayout>
