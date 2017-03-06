@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent=" ">
+    <style name="AppTheme">
     <!-- Customize your theme here. -->
     <item name="android:background">@drawable/ustmenubutonsuz</item>
     <item name="android:actionBarSize">70dp</item>
