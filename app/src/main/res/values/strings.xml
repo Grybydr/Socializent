@@ -3,4 +3,7 @@
     <string name="loginButton">logın</string>
     <string name="user_name">\t User Name</string>
     <string name="password">\t Password</string>
+    <string name="facebook_login">Facebook Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="ohh_forgot_your_password">ohh...forgot your password?</string>
 </resources>

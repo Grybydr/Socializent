@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Zulal Bingol on 5.03.2017.
@@ -27,5 +28,8 @@ public class main extends Activity {
         Button fbButton = (Button)findViewById(R.id.fbButton);
         Button forgetPasswordButton = (Button)findViewById(R.id.forgetPasswordButton);
         Button signUpButton = (Button)findViewById(R.id.signUpButton);
+        TextView forgotPasswordText = (TextView) findViewById(R.id.forgotPasswordText);
+        TextView fbLoginText = (TextView) findViewById(R.id.fbLoginText);
+        TextView singupText = (TextView) findViewById(R.id.singupText);
     }
 }
