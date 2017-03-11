@@ -14,10 +14,8 @@
         android:layout_height="50dp"
         android:background="@drawable/login"
         android:drawablePadding="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="31dp" />
+        android:layout_alignTop="@+id/fbButton"
+        android:layout_alignEnd="@+id/forgetPasswordButton" />
 
     <EditText
         android:id="@+id/userNameText"
@@ -31,7 +29,9 @@
         android:includeFontPadding="false"
         android:inputType="textPersonName"
         android:textSize="24sp"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="19dp"
+        tools:ignore="RtlHardcoded"
+        android:layout_below="@+id/logoView"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -42,12 +42,12 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="text"
+        android:inputType=""
         android:textSize="24sp"
         android:visibility="visible"
+        android:layout_marginTop="36dp"
         android:layout_below="@+id/userNameText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_alignStart="@+id/userNameText" />
 
     <ImageView
         android:id="@+id/logoView"
@@ -55,20 +55,20 @@
         android:layout_height="200dp"
         android:src="@mipmap/socializent_image"
         android:visibility="visible"
-        android:layout_above="@+id/userNameText"
-        android:layout_alignStart="@+id/passwordText"
-        android:layout_marginBottom="26dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/userNameText"
+        android:layout_marginTop="15dp" />
 
     <Button
         android:id="@+id/fbButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="10dp"
         android:background="@drawable/facebook_logo"
         android:drawablePadding="10dp"
-        android:layout_alignBottom="@+id/forgetPasswordButton"
-        android:layout_alignStart="@+id/passwordText"
-        android:layout_marginBottom="14dp" />
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/forgetPasswordButton"
+        android:layout_toStartOf="@+id/forgotPasswordText"
+        android:layout_marginEnd="9dp" />
 
     <Button
         android:id="@+id/forgetPasswordButton"
@@ -76,10 +76,8 @@
         android:layout_height="45dp"
         android:background="@drawable/forget_password"
         android:drawablePadding="10dp"
-        android:layout_marginEnd="17dp"
         android:layout_below="@+id/passwordText"
-        android:layout_alignEnd="@+id/loginButton"
-        android:layout_marginTop="36dp" />
+        android:layout_toEndOf="@+id/passwordText" />
 
     <Button
         android:id="@+id/signUpButton"
@@ -87,8 +85,34 @@
         android:layout_height="50dp"
         android:background="@drawable/signup"
         android:drawablePadding="10dp"
-        android:layout_marginEnd="32dp"
-        android:layout_below="@+id/forgetPasswordButton"
+        android:layout_marginTop="46dp"
+        android:layout_alignTop="@+id/fbButton"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/forgotPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ohh_forgot_your_password"
+        android:layout_alignBaseline="@+id/forgetPasswordButton"
+        android:layout_alignBottom="@+id/forgetPasswordButton"
         android:layout_toStartOf="@+id/forgetPasswordButton" />
+
+    <TextView
+        android:id="@+id/fbLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/facebook_login"
+        android:layout_alignTop="@+id/signUpButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="23dp" />
+
+    <TextView
+        android:id="@+id/singupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/signUpButton"
+        android:text="@string/sign_up"
+        android:layout_below="@+id/loginButton" />
 
 </RelativeLayout>
