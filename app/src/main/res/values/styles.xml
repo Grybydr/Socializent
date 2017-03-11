@@ -1,11 +1,14 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme">
-    <!-- Customize your theme here. -->
-    <item name="android:background">@drawable/ustmenubutonsuz</item>
-    <item name="android:actionBarSize">70dp</item>
-</style>
+
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBarTheme</item>
+    </style>
+
+    <style name="MyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/logo</item>
+    </style>
 
 
 </resources>
