@@ -1,9 +1,11 @@
 package com.socializent.application.socializent;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,5 +33,14 @@ public class main extends Activity {
         TextView forgotPasswordText = (TextView) findViewById(R.id.forgotPasswordText);
         TextView fbLoginText = (TextView) findViewById(R.id.fbLoginText);
         TextView singupText = (TextView) findViewById(R.id.singupText);
+
+
+    }
+
+    public void goToStartScreen(View view) {
+
+        Intent intent = new Intent(this, HomePage.class);
+
+        startActivity(intent);
     }
 }

@@ -15,7 +15,8 @@
         android:background="@drawable/login"
         android:drawablePadding="10dp"
         android:layout_alignTop="@+id/fbButton"
-        android:layout_alignEnd="@+id/forgetPasswordButton" />
+        android:layout_alignEnd="@+id/forgetPasswordButton"
+        android:onClick="goToStartScreen"/>
 
     <EditText
         android:id="@+id/userNameText"
@@ -47,7 +48,8 @@
         android:visibility="visible"
         android:layout_marginTop="36dp"
         android:layout_below="@+id/userNameText"
-        android:layout_alignStart="@+id/userNameText" />
+        android:layout_alignStart="@+id/userNameText"
+        />
 
     <ImageView
         android:id="@+id/logoView"
