@@ -5,5 +5,6 @@
     <string name="password">\t Password</string>
     <string name="facebook_login">Facebook Login</string>
     <string name="sign_up">Sign Up</string>
-    <string name="ohh_forgot_your_password">ohh...forgot your password?</string>
+    <string name="forgot_password_text">ohh...forgot your password?</string>
+    <string name="loginText">Login</string>
 </resources>

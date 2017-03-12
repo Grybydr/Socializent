@@ -13,7 +13,7 @@ public class HomePage extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme);
+        //setTheme(R.style.AppTheme);
 
 
 
