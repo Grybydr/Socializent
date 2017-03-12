@@ -41,6 +41,10 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
+
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.ustmenubutonsuz));
+
         mOptionMenu = new String[] { getString(R.string.first_fragment),
                 getString(R.string.second_fragment),
                 getString(R.string.third_fragment) };
