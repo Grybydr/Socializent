@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -39,7 +38,7 @@ public class main extends Activity {
 
     public void goToStartScreen(View view) {
 
-        Intent intentNavigationBar = new Intent(this, HomePage.class);
+        Intent intentNavigationBar = new Intent(this, Template.class);
         startActivity(intentNavigationBar);
 
     }
