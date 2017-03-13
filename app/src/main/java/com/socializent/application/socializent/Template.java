@@ -24,6 +24,7 @@ import com.socializent.application.socializent.fragments.FirstFragment;
 import com.socializent.application.socializent.fragments.BottomBarMap;
 import com.socializent.application.socializent.fragments.BottomBarChat;
 import com.socializent.application.socializent.fragments.BottomBarRecommend;
+import com.socializent.application.socializent.fragments.BottomBarNotifications;
 import com.socializent.application.socializent.fragments.SecondFragment;
 import com.socializent.application.socializent.fragments.ThirdFragment;
 
@@ -43,7 +44,7 @@ public class Template extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.template);
 
         mOptionMenu = new String[] { getString(R.string.first_fragment),
                 getString(R.string.second_fragment),
@@ -128,6 +129,7 @@ public class Template extends AppCompatActivity {
                             case R.id.action_item3:
                                 selectedFragment = BottomBarChat.newInstance();
                                 break;
+
                         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.content_frame, selectedFragment);
