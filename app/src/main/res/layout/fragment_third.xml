@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:src="@drawable/theworldisyours"
-        android:text="@string/first_fragment" />
+        android:text="@string/third_fragment" />
 
 </RelativeLayout>

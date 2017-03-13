@@ -14,4 +14,7 @@
     <string name="third_fragment">Third Fragment</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="item_3">item_3</string>
+    <string name="item_2">item_2</string>
+    <string name="item_1">item_1</string>
 </resources>

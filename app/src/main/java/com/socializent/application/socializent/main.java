@@ -39,8 +39,8 @@ public class main extends Activity {
 
     public void goToStartScreen(View view) {
 
-        Intent intent = new Intent(this, HomePage.class);
+        Intent intentNavigationBar = new Intent(this, HomePage.class);
+        startActivity(intentNavigationBar);
 
-        startActivity(intent);
     }
 }
