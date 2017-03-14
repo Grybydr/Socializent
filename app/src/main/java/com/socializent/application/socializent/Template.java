@@ -20,13 +20,13 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.socializent.application.socializent.fragments.FirstFragment;
+import com.socializent.application.socializent.fragments.NavigationDrawerFirst;
 import com.socializent.application.socializent.fragments.BottomBarMap;
 import com.socializent.application.socializent.fragments.BottomBarChat;
 import com.socializent.application.socializent.fragments.BottomBarRecommend;
 import com.socializent.application.socializent.fragments.BottomBarNotifications;
-import com.socializent.application.socializent.fragments.SecondFragment;
-import com.socializent.application.socializent.fragments.ThirdFragment;
+import com.socializent.application.socializent.fragments.NavigationDrawerSecond;
+import com.socializent.application.socializent.fragments.NavigationDrawerThird;
 
 /**
  * Created by Toshıba on 3/11/2017.
@@ -65,13 +65,13 @@ public class Template extends AppCompatActivity {
 
                 switch (position) {
                     case 0:
-                        mFragment = new FirstFragment();
+                        mFragment = new NavigationDrawerFirst();
                         break;
                     case 1:
-                        mFragment = new SecondFragment();
+                        mFragment = new NavigationDrawerSecond();
                         break;
                     case 2:
-                        mFragment = new ThirdFragment();
+                        mFragment = new NavigationDrawerThird();
                         break;
                 }
 
@@ -128,6 +128,9 @@ public class Template extends AppCompatActivity {
                                 break;
                             case R.id.action_item3:
                                 selectedFragment = BottomBarChat.newInstance();
+                                break;
+                            case R.id.action_item4:
+                                selectedFragment = BottomBarNotifications.newInstance();
                                 break;
 
                         }
@@ -191,7 +194,7 @@ public class Template extends AppCompatActivity {
 
         mTitleSection =getString(R.string.first_fragment);
         getSupportActionBar().setTitle(mTitleSection);
-        mFragment = new FirstFragment();
+        mFragment = new NavigationDrawerFirst();
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         fragmentManager.beginTransaction()

@@ -2,14 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_item1"
-        android:icon="@drawable/ic_account_box_black_24dp"
-        android:title="@string/item_1"/>
+        android:icon="@drawable/map_icon_bottom_bar"
+        android:title=""/>
     <item
         android:id="@+id/action_item2"
-        android:icon="@drawable/ic_account_circle_black_24dp"
-        android:title="@string/item_2"/>
+        android:icon="@drawable/recommend_icon_bottom_bar"
+        android:title= ""/>
     <item
         android:id="@+id/action_item3"
-        android:icon="@drawable/ic_assignment_ind_black_24dp"
-        android:title="@string/item_3"/>
+        android:icon="@drawable/chat_icon_bottom_bar"
+        android:title=""/>
+    <item
+        android:id="@+id/action_item4"
+        android:icon="@drawable/notification_icon_bottom_bar"
+        android:title=""/>
+
 </menu>
