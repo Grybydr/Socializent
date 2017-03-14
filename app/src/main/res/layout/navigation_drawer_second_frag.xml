@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:src="@drawable/theworldisyours"
-        android:text="@string/second_fragment" />
+        android:text="Upcoming Events" />
 
 </RelativeLayout>

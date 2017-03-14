@@ -9,9 +9,10 @@
     <string name="loginText">Login</string>
 
     <string name="action_settings">Settings</string>
-    <string name="first_fragment">Map</string>
-    <string name="second_fragment">Profile</string>
-    <string name="third_fragment">Notifications</string>
+    <string name="first_fragment">My Profile</string>
+    <string name="second_fragment">My Upcoming Events</string>
+    <string name="third_fragment">My Past Events</string>
+    <string name="fourth_fragment">My Friends</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 

@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:src="@drawable/theworldisyours"
-        android:text="..." />
+        android:text="Past Events" />
 
 </RelativeLayout>

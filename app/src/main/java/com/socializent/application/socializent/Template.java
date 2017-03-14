@@ -27,6 +27,7 @@ import com.socializent.application.socializent.fragments.BottomBarRecommend;
 import com.socializent.application.socializent.fragments.BottomBarNotifications;
 import com.socializent.application.socializent.fragments.NavigationDrawerSecond;
 import com.socializent.application.socializent.fragments.NavigationDrawerThird;
+import com.socializent.application.socializent.fragments.NavigationDrawerFourth;
 
 /**
  * Created by Toshıba on 3/11/2017.
@@ -48,7 +49,8 @@ public class Template extends AppCompatActivity {
 
         mOptionMenu = new String[] { getString(R.string.first_fragment),
                 getString(R.string.second_fragment),
-                getString(R.string.third_fragment) };
+                getString(R.string.third_fragment),
+                getString(R.string.fourth_fragment)};
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerRelativeLayout = (RelativeLayout) findViewById(R.id.left_drawer);
         mDrawerList = (ListView) findViewById(R.id.list_view_drawer);
@@ -72,6 +74,9 @@ public class Template extends AppCompatActivity {
                         break;
                     case 2:
                         mFragment = new NavigationDrawerThird();
+                        break;
+                    case 3:
+                        mFragment = new NavigationDrawerFourth();
                         break;
                 }
 
@@ -164,7 +169,6 @@ public class Template extends AppCompatActivity {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         switch (item.getItemId()) {
             case R.id.action_settings:
                 Toast.makeText(this, R.string.action_settings, Toast.LENGTH_SHORT)
