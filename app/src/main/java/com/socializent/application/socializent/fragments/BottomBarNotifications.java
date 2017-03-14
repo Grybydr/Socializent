@@ -13,8 +13,8 @@ import com.socializent.application.socializent.R;
  */
 
 public class BottomBarNotifications  extends Fragment {
-    public static BottomBarMap newInstance() {
-        BottomBarMap fragment = new BottomBarMap();
+    public static BottomBarNotifications newInstance() {
+        BottomBarNotifications fragment = new BottomBarNotifications();
         return fragment;
     }
 

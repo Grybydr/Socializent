@@ -39,7 +39,7 @@ public class Template extends AppCompatActivity {
     private RelativeLayout mDrawerRelativeLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-
+    private Fragment openFragment = null;
     private CharSequence mTitleSection;
     private Fragment mFragment = null;
     @Override
@@ -196,13 +196,14 @@ public class Template extends AppCompatActivity {
 
     public void initContentWithFirstFragment(){
 
-        mTitleSection =getString(R.string.first_fragment);
-        getSupportActionBar().setTitle(mTitleSection);
-        mFragment = new NavigationDrawerFirst();
+        //mTitleSection =getString(R.string.first_fragment);
+        getSupportActionBar().setTitle("Socializent");
+        //mFragment = new NavigationDrawerFirst();
+        openFragment = new BottomBarMap();
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, mFragment).commit();
+                .replace(R.id.content_frame, openFragment).commit(); //eskiden mFragment vardı
     }
 
 
