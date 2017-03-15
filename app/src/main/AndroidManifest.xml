@@ -1,12 +1,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.socializent.application.socializent">
 
+    <!--Required permissions for map -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="25" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="25" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <permission
+        android:name="com.deneme.deneme.MapPage.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" >
+    </permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        >
+        android:supportsRtl="true">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCp5IbrY8ViuH0_hzwMDpWp6aLljAr_oWQ"/>
 
         <activity android:name=".main" >
             <intent-filter>
