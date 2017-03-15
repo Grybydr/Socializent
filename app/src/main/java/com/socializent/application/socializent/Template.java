@@ -4,6 +4,8 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,15 +13,20 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.socializent.application.socializent.fragments.NavigationDrawerFirst;
 import com.socializent.application.socializent.fragments.BottomBarMap;
 import com.socializent.application.socializent.fragments.BottomBarChat;
@@ -28,6 +35,7 @@ import com.socializent.application.socializent.fragments.BottomBarNotifications;
 import com.socializent.application.socializent.fragments.NavigationDrawerSecond;
 import com.socializent.application.socializent.fragments.NavigationDrawerThird;
 import com.socializent.application.socializent.fragments.NavigationDrawerFourth;
+import com.socializent.application.socializent.other.CircleTransform;
 
 /**
  * Created by Toshıba on 3/11/2017.
@@ -42,6 +50,20 @@ public class Template extends AppCompatActivity {
     private Fragment openFragment = null;
     private CharSequence mTitleSection;
     private Fragment mFragment = null;
+
+    //profil fotosu için
+    private NavigationView navigationView;
+    private View navHeader;
+    public ImageView imgNavHeaderBg, imgProfile;
+    public TextView txtName, txtWebsite;
+
+
+    // urls to load navigation header background image
+    // and profile image
+    private static final String urlNavHeaderBg = "http://api.androidhive.info/images/nav-menu-header-bg.jpg";
+    private static final String urlProfileImg = "https://lh3.googleusercontent.com/eCtE_G34M9ygdkmOpYvCag1vBARCmZwnVS6rS5t4JLzJ6QgQSBquM0nuTsCpLhYbKljoyS-txg";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +76,15 @@ public class Template extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerRelativeLayout = (RelativeLayout) findViewById(R.id.left_drawer);
         mDrawerList = (ListView) findViewById(R.id.list_view_drawer);
+
+        //profil fotoğrafı için
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navHeader = navigationView.getHeaderView(0);
+        txtName = (TextView) navHeader.findViewById(R.id.name);
+        txtWebsite = (TextView) navHeader.findViewById(R.id.website);
+        imgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
+        imgProfile = (ImageView) navHeader.findViewById(R.id.img_profile);
+        loadNavHeader();
 
         mDrawerList.setAdapter(new ArrayAdapter<>(getSupportActionBar()
                 .getThemedContext(), android.R.layout.simple_list_item_1,
@@ -125,17 +156,23 @@ public class Template extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
+                            //zülal: map buttonuna e basınca frame burda oluşturuluyor
+                            //fragmentsin içindeki BottomBarMap senini için :D
                             case R.id.action_item1:
                                 selectedFragment = BottomBarMap.newInstance();
+                                getSupportActionBar().setTitle("Event Map");
                                 break;
                             case R.id.action_item2:
                                 selectedFragment = BottomBarRecommend.newInstance();
+                                getSupportActionBar().setTitle("Recommended For You");
                                 break;
                             case R.id.action_item3:
                                 selectedFragment = BottomBarChat.newInstance();
+                                getSupportActionBar().setTitle("Chat");
                                 break;
                             case R.id.action_item4:
                                 selectedFragment = BottomBarNotifications.newInstance();
+                                getSupportActionBar().setTitle("Notifications");
                                 break;
 
                         }
@@ -207,4 +244,26 @@ public class Template extends AppCompatActivity {
     }
 
 
+    private void loadNavHeader() {
+        // name, website
+        txtName.setText("Irem Herguner");
+        txtWebsite.setText("Ankara");
+
+        // loading header background image
+        Glide.with(this).load(urlNavHeaderBg)
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imgNavHeaderBg);
+
+        // Loading profile image
+        Glide.with(this).load(urlProfileImg)
+                .crossFade()
+                .thumbnail(0.5f)
+                .bitmapTransform(new CircleTransform(this))
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imgProfile);
+
+        // showing dot next to notifications label
+
+    }
 }
