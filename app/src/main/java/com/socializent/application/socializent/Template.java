@@ -84,7 +84,7 @@ public class Template extends AppCompatActivity {
         txtWebsite = (TextView) navHeader.findViewById(R.id.website);
         imgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
         imgProfile = (ImageView) navHeader.findViewById(R.id.img_profile);
-        loadNavHeader();
+        //loadNavHeader();
 
         mDrawerList.setAdapter(new ArrayAdapter<>(getSupportActionBar()
                 .getThemedContext(), android.R.layout.simple_list_item_1,
