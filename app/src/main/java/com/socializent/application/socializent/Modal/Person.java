@@ -21,14 +21,14 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String surname, String username, String birthdate, String password, String mailAddress, BadgeTypes badgeStatus, ArrayList<Person> friends, ArrayList<String> interestAreas) {
+    public Person(String name, String surname, String username, String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas) {
         this.name = name;
         this.surname = surname;
         this.username = username;
         this.birthdate = birthdate;
         this.password = password;
         this.mailAddress = mailAddress;
-        this.badgeStatus = badgeStatus;
+        this.badgeStatus = BadgeTypes.BRONZE; //default olarak bronze üyelikten başlıyor
         this.friends = friends;
         this.interestAreas = interestAreas;
     }
@@ -104,4 +104,14 @@ public class Person {
     public void setInterestAreas(ArrayList<String> interestAreas) {
         this.interestAreas = interestAreas;
     }
+    public void editProfile(String name, String surname, String username, String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas) {
+        this.name = name;
+        this.surname = surname;
+        this.username = username;
+        this.birthdate = birthdate;
+        this.password = password;
+        this.mailAddress = mailAddress;
+        this.interestAreas = interestAreas;
+    }
+
 }

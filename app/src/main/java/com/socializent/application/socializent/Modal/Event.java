@@ -15,7 +15,6 @@ public class Event {
    /* TODO: bu listleri ekranda göstermek için ArrayAdapter kullanılcak
      http://stackoverflow.com/questions/5070830/populating-a-listview-using-an-arraylist
      sitesinden alınacak*/
-    private ArrayList<Person> participants;
     private ArrayList<String> interestArea; //buna gerek yok galiba?
     private ArrayList<Attendant> attendants;
     private EventOrganizer eventOrganizer;
@@ -56,14 +55,6 @@ public class Event {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public ArrayList<Person> getParticipants() {
-        return participants;
-    }
-
-    public void setParticipants(ArrayList<Person> participants) {
-        this.participants = participants;
     }
 
     public ArrayList<String> getInterestArea() {
