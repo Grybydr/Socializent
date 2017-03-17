@@ -1,4 +1,4 @@
-package com.socializent.application.socializent.fragments;
+package com.socializent.application.socializent.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 
 import com.socializent.application.socializent.R;
 
-public class NavigationDrawerFirst extends Fragment {
+/**
+ * Created by Irem on 13.3.2017.
+ */
 
-    public NavigationDrawerFirst() {
-        // Required empty public constructor
-    }
-
-    public static NavigationDrawerFirst newInstance() {
-        return new NavigationDrawerFirst();
+public class BottomBarNotifications  extends Fragment {
+    public static BottomBarNotifications newInstance() {
+        BottomBarNotifications fragment = new BottomBarNotifications();
+        return fragment;
     }
 
     @Override
@@ -26,8 +26,6 @@ public class NavigationDrawerFirst extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.navigation_drawer_first_frag, container, false);
+        return inflater.inflate(R.layout.bottom_bar_notification_fragment, container, false);
     }
-
 }

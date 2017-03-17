@@ -4,7 +4,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,15 +25,14 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.socializent.application.socializent.fragments.NavigationDrawerFirst;
-import com.socializent.application.socializent.fragments.BottomBarMap;
-import com.socializent.application.socializent.fragments.BottomBarChat;
-import com.socializent.application.socializent.fragments.BottomBarRecommend;
-import com.socializent.application.socializent.fragments.BottomBarNotifications;
-import com.socializent.application.socializent.fragments.NavigationDrawerSecond;
-import com.socializent.application.socializent.fragments.NavigationDrawerThird;
-import com.socializent.application.socializent.fragments.NavigationDrawerFourth;
-import com.socializent.application.socializent.other.CircleTransform;
+import com.socializent.application.socializent.Fragments.NavigationDrawerFirst;
+import com.socializent.application.socializent.Fragments.BottomBarMap;
+import com.socializent.application.socializent.Fragments.BottomBarChat;
+import com.socializent.application.socializent.Fragments.BottomBarRecommend;
+import com.socializent.application.socializent.Fragments.BottomBarNotifications;
+import com.socializent.application.socializent.Fragments.NavigationDrawerSecond;
+import com.socializent.application.socializent.Fragments.NavigationDrawerThird;
+import com.socializent.application.socializent.Fragments.NavigationDrawerFourth;
 
 /**
  * Created by Toshıba on 3/11/2017.
@@ -84,7 +81,7 @@ public class Template extends AppCompatActivity {
         txtWebsite = (TextView) navHeader.findViewById(R.id.website);
         imgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
         imgProfile = (ImageView) navHeader.findViewById(R.id.img_profile);
-        //loadNavHeader();
+
 
         mDrawerList.setAdapter(new ArrayAdapter<>(getSupportActionBar()
                 .getThemedContext(), android.R.layout.simple_list_item_1,
@@ -244,26 +241,5 @@ public class Template extends AppCompatActivity {
     }
 
 
-    private void loadNavHeader() {
-        // name, website
-        txtName.setText("Irem Herguner");
-        txtWebsite.setText("Ankara");
 
-        // loading header background image
-        Glide.with(this).load(urlNavHeaderBg)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgNavHeaderBg);
-
-        // Loading profile image
-        Glide.with(this).load(urlProfileImg)
-                .crossFade()
-                .thumbnail(0.5f)
-                .bitmapTransform(new CircleTransform(this))
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgProfile);
-
-        // showing dot next to notifications label
-
-    }
 }

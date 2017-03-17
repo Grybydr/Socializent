@@ -1,4 +1,4 @@
-package com.socializent.application.socializent.fragments;
+package com.socializent.application.socializent.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 
 import com.socializent.application.socializent.R;
 
-public class NavigationDrawerSecond extends Fragment {
+public class NavigationDrawerThird extends Fragment {
 
-    public NavigationDrawerSecond() {
+    public NavigationDrawerThird() {
         // Required empty public constructor
     }
 
-    public static NavigationDrawerSecond newInstance() {
-        return new NavigationDrawerSecond();
+    public static NavigationDrawerThird newInstance() {
+        return new NavigationDrawerThird();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class NavigationDrawerSecond extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.navigation_drawer_second_frag, container, false);
+        return inflater.inflate(R.layout.navigation_drawer_third_fragm, container, false);
     }
 
 }

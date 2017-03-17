@@ -1,4 +1,4 @@
-package com.socializent.application.socializent.fragments;
+package com.socializent.application.socializent.Fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

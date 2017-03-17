@@ -1,8 +1,4 @@
-package com.socializent.application.socializent.fragments;
-
-/**
- * Created by Irem on 13.3.2017.
- */
+package com.socializent.application.socializent.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,10 +8,14 @@ import android.view.ViewGroup;
 
 import com.socializent.application.socializent.R;
 
-public class BottomBarChat extends Fragment {
-    public static BottomBarChat newInstance() {
-        BottomBarChat fragment = new BottomBarChat();
-        return fragment;
+public class NavigationDrawerFourth extends Fragment {
+
+    public NavigationDrawerFourth() {
+        // Required empty public constructor
+    }
+
+    public static NavigationDrawerFourth newInstance() {
+        return new NavigationDrawerFourth();
     }
 
     @Override
@@ -26,6 +26,8 @@ public class BottomBarChat extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.bottom_bar_chat_fragment, container, false);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.navigation_drawer_fourth_frag, container, false);
     }
+
 }
