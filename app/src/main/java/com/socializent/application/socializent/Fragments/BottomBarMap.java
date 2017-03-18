@@ -5,7 +5,10 @@ package com.socializent.application.socializent.Fragments;
  */
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -19,11 +22,17 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.socializent.application.socializent.R;
+
+import java.util.List;
+import java.util.Locale;
+
+import static junit.framework.Assert.assertEquals;
 
 public class BottomBarMap extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
@@ -32,6 +41,8 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Google
     private UiSettings myUiSettings;
     FloatingActionButton myFabButton;
     private LatLng eventPoint;
+    private Geocoder geocoder;
+    List<Address> addresses;
 
     public static BottomBarMap newInstance() {
         BottomBarMap fragment = new BottomBarMap();
@@ -91,6 +102,23 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Google
 
     private void addEvent(LatLng point) {
         myGoogleMap.addMarker(new MarkerOptions().position(point).title("Event"));
+
+        try {
+            geocoder = new Geocoder(getContext(), Locale.getDefault());
+            List<Address> addresses = geocoder.getFromLocation(point.latitude, point.longitude, 1);
+            if (addresses.isEmpty()) {
+                Log.v("ADDRESS", "Waiting for Location");
+            }
+            else {
+                if (addresses.size() > 0) {
+                    Log.v("ADDRESS", addresses.get(0).getFeatureName() + ", " + addresses.get(0).getLocality() +", " + addresses.get(0).getPremises() + ", " + addresses.get(0).getCountryName());
+                    Toast.makeText(getContext(), "Address:- " + addresses.get(0).getFeatureName() + addresses.get(0).getPremises() + addresses.get(0).getLocality(), Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace(); // getFromLocation() may sometimes fail
+        }
     }
 
     private boolean checkMapReady() {
