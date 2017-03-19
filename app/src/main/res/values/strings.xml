@@ -19,5 +19,6 @@
     <string name="permission_required_toast">Permission Required</string>
     <string name="map_not_ready">Map is not ready yet</string>
     <string name="map_gps_warning">If you cannot see your location, please check your device\'s GPS settings.</string>
+    <string name="choose_location">Please choose event location</string>
 
 </resources>
