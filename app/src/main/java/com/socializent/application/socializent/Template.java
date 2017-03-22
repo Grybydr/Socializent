@@ -81,7 +81,7 @@ public class Template extends AppCompatActivity {
         txtWebsite = (TextView) navHeader.findViewById(R.id.website);
         imgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
         imgProfile = (ImageView) navHeader.findViewById(R.id.img_profile);
-
+        //loadNavHeader();
 
         mDrawerList.setAdapter(new ArrayAdapter<>(getSupportActionBar()
                 .getThemedContext(), android.R.layout.simple_list_item_1,
@@ -241,5 +241,26 @@ public class Template extends AppCompatActivity {
     }
 
 
-
+//    private void loadNavHeader() {
+//        // name, website
+//        txtName.setText("Irem Herguner");
+//        txtWebsite.setText("Ankara");
+//
+//        // loading header background image
+//        Glide.with(this).load(urlNavHeaderBg)
+//                .crossFade()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .into(imgNavHeaderBg);
+//
+//        // Loading profile image
+//        Glide.with(this).load(urlProfileImg)
+//                .crossFade()
+//                .thumbnail(0.5f)
+//                .bitmapTransform(new CircleTransform(this))
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .into(imgProfile);
+//
+//        // showing dot next to notifications label
+//
+//    }
 }

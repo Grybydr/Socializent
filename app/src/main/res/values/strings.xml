@@ -15,14 +15,17 @@
     <string name="fourth_fragment">My Friends</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
     <string name="permission_rationale_location">Access to location services is required.</string>
     <string name="permission_required_toast">Permission Required</string>
     <string name="map_not_ready">Map is not ready yet</string>
     <string name="map_gps_warning">If you cannot see your location, please check your device\'s GPS settings.</string>
     <string name="choose_location">Please choose event location</string>
-    <string name="android_free_tutorials_and_example">Android free tutorials and example</string>
-    <string name="viral_android">Viral Android</string>
+
+    <string name="user_short_info">User Short Info</string>
     <string name="android_profile_ui_design">Android Profile UI Design</string>
     <string name="android_profile_xml_ui_design">Android Profile XMl UI Design</string>
+
+    <string name="user_profile_name">User Name</string>
 
 </resources>
