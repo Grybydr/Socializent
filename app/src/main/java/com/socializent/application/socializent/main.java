@@ -11,16 +11,24 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.socializent.application.socializent.Controller.UserController;
+import com.socializent.application.socializent.Modal.Person;
+
 /**
  * Created by Zulal Bingol on 5.03.2017.
  */
 
 public class main extends Activity {
-    @Override
+    //@Override
+    UserController userController;
+    Person activeUser;
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
+
+        userController = new UserController();
 
         ImageView socializentLogo = (ImageView)findViewById(R.id.logoView);
         Button loginButton = (Button)findViewById(R.id.loginButton);
@@ -34,12 +42,16 @@ public class main extends Activity {
         TextView singupText = (TextView) findViewById(R.id.singupText);
 
 
+        activeUser = userController.getUserFromServer(userNameText.toString(), passwordText.toString());
+
     }
 
     public void goToStartScreen(View view) {
 
         Intent intentNavigationBar = new Intent(this, Template.class);
         startActivity(intentNavigationBar);
+
+
 
     }
 }
