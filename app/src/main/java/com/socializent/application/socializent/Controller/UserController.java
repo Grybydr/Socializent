@@ -3,6 +3,8 @@ package com.socializent.application.socializent.Controller;
 import com.socializent.application.socializent.Modal.Event;
 import com.socializent.application.socializent.Modal.Person;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -12,7 +14,7 @@ import java.util.ArrayList;
 public class UserController {
     //appi açan user
     Person activeUserOnSystem;
-
+    JSONObject userServerObject;
 
 
     public UserController() {
