@@ -24,7 +24,7 @@ public class Event {
 
     public Event(String name, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, boolean payable, EventTypes eventType, int eventRate) {
         this.name = name;
-        this.date = date;
+        this.date = date; //berk milisecond olarak yolluyormuş bunu dönüştürmek lazım
         this.address = address;
         this.interestArea = interestArea;
         this.eventOrganizer = eventOrganizer;

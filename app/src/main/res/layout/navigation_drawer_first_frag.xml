@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:src="@drawable/theworldisyours"
-        android:text="My Profile" />
+        android:text="Profile" />
 
 </RelativeLayout>

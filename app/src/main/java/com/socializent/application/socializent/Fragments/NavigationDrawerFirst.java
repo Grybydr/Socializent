@@ -17,7 +17,7 @@ import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.other.CircleDrawable;
 
 public class NavigationDrawerFirst extends Fragment {
-    CircleDrawable circle;
+    //CircleDrawable circle;
     View profileView;
     public NavigationDrawerFirst() {
         // Required empty public constructor
