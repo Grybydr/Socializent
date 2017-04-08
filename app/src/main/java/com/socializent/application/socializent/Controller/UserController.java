@@ -14,8 +14,14 @@ import org.gradle.wrapper.Download;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -39,7 +45,7 @@ public class UserController extends Application{
     Person activeUserOnSystem;
     JSONObject userServerObject;
     //String accessToken;
-    private Context mContext;
+    //private Context mContext;
     String result;
     public static final MediaType JSON
             = MediaType.parse("application/json; charset=utf-8");
@@ -47,78 +53,44 @@ public class UserController extends Application{
     public UserController() {
 
     }
-    private class DownloadFilesTask extends AsyncTask<URL, Integer, Long> {
-        protected Long doInBackground(URL... urls) {
-
-            OkHttpClient client = new OkHttpClient();
-
-            String url = "http://54.69.152.154:3000/signin";
-            //String json = "{username: "+ username + ",password: " + password + "}";
-
-            RequestBody body =  new FormBody.Builder()
-                    .add("username", username)
-                    .add("password", password)
-                    .build();
-
-            Request request = new Request.Builder()
-                    .url(url)
-                    .post(body)
-                    .build();
-            Response response = client.newCall(request).execute();
-
-            result = response.body().string();
-            Log.d("Response is : ", result);
-            Log.d("Message : ", response.message());
-
-        }
-
-
-        protected void onProgressUpdate(Integer... progress) {
-            //setProgressPercent(progress[0]);
-        }
-
-        protected void onPostExecute(Long result) {
-            //showDialog("Downloaded " + result + " bytes");
-        }
-    }
 
 
     public String login(final String username, final String password, Context context) throws IOException, InterruptedException {
 
-        Thread thread = new Thread(new Runnable() {
+       try {
+           URL url = new URL("http://54.69.152.154:3000/signin");
+           HttpURLConnection client = (HttpURLConnection) url.openConnection();
 
-            @Override
-            public void run() {
-                try  {
+           client.setRequestMethod("POST");
+           //client.setRequestProperty("username",username);
+           //client.setRequestProperty("password",password);
+           client.setDoOutput(true);
 
-                    OkHttpClient client = new OkHttpClient();
+           OutputStream outputPost = new BufferedOutputStream(client.getOutputStream());
 
-                    String url = "http://54.69.152.154:3000/signin";
-                    //String json = "{username: "+ username + ",password: " + password + "}";
 
-                    RequestBody body =  new FormBody.Builder()
-                            .add("username", username)
-                            .add("password", password)
-                            .build();
 
-                    Request request = new Request.Builder()
-                            .url(url)
-                            .post(body)
-                            .build();
-                    Response response = client.newCall(request).execute();
+           JSONObject root = new JSONObject();
+           root.put("username", username) ;
+           root.put("password", password);
 
-                    result = response.body().string();
-                    Log.d("Response is : ", result);
-                    Log.d("Message : ", response.message());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+           String str = root.toString();
+           byte[] outputBytes = str.getBytes("UTF-8");
+           outputPost.write(outputBytes);
+           outputPost.flush();
+           outputPost.close();
 
-            }
-        });
-        Log.d("Response2 is : ", result);
-        thread.start();
+           int responseCode = client.getResponseCode();
+           Log.d( "13 - responseCode : " , ""+responseCode);
+           String line;
+           BufferedReader br = new BufferedReader(new InputStreamReader(
+                   client.getInputStream()));
+           while ((line = br.readLine()) != null) {
+               result += line;
+           }
+       }catch (Exception e){
 
+       }
 
         return result;
       /*  RequestQueue mRequestQueue;
