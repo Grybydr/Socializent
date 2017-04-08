@@ -22,12 +22,16 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import okhttp3.FormBody;
 import okhttp3.MediaType;
@@ -56,42 +60,47 @@ public class UserController extends Application{
 
 
     public String login(final String username, final String password, Context context) throws IOException, InterruptedException {
+        System.setProperty("http.proxyHost", "proxy.example.com");
+        System.setProperty("http.proxyPort", "8080");
 
        try {
            URL url = new URL("http://54.69.152.154:3000/signin");
-           HttpURLConnection client = (HttpURLConnection) url.openConnection();
+           HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+           //conn.connect();
+           conn.setReadTimeout(15000);
+           conn.setConnectTimeout(15000);
+           conn.setRequestMethod("POST");
+           conn.setDoInput(true);
+           conn.setDoOutput(true);
+           HashMap<String, String> postDataParams = new HashMap<String, String>();
+           postDataParams.put("username", username);
+           postDataParams.put("password", password);
+           Log.d("1", "1");
+           OutputStream os = conn.getOutputStream();
 
-           client.setRequestMethod("POST");
-           //client.setRequestProperty("username",username);
-           //client.setRequestProperty("password",password);
-           client.setDoOutput(true);
+           BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+           writer.write(getPostDataString(postDataParams));
+           writer.flush();
+           writer.close();
+           os.close();
 
-           OutputStream outputPost = new BufferedOutputStream(client.getOutputStream());
-
-
-
-           JSONObject root = new JSONObject();
-           root.put("username", username) ;
-           root.put("password", password);
-
-           String str = root.toString();
-           byte[] outputBytes = str.getBytes("UTF-8");
-           outputPost.write(outputBytes);
-           outputPost.flush();
-           outputPost.close();
-
-           int responseCode = client.getResponseCode();
-           Log.d( "13 - responseCode : " , ""+responseCode);
-           String line;
-           BufferedReader br = new BufferedReader(new InputStreamReader(
-                   client.getInputStream()));
-           while ((line = br.readLine()) != null) {
-               result += line;
+           int responseCode=conn.getResponseCode();
+           Log.d("2", "2");
+           if (responseCode == HttpsURLConnection.HTTP_OK) {
+               String line;
+               BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+               while ((line=br.readLine()) != null) {
+                   result+=line;
+               }
+               Log.d("Result: ", result);
            }
-       }catch (Exception e){
+           else {
+               result="";
 
+           }
+       } catch (Exception e) {
+           e.printStackTrace();
        }
-
         return result;
       /*  RequestQueue mRequestQueue;
 
@@ -158,6 +167,22 @@ public class UserController extends Application{
         }
         */
 
+    }
+    private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+        for(Map.Entry<String, String> entry : params.entrySet()){
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+        }
+
+        return result.toString();
     }
     public Person getUserFromServer(String username){
 
