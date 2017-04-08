@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -33,7 +34,7 @@ public class main extends Activity {
     Person activeUser;
     EditText userNameText;
     EditText passwordText;
-    int loginToken;
+    String loginToken;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,14 +59,16 @@ public class main extends Activity {
 
     }
 
-    public void goToStartScreen(View view) throws IOException {
+    public void goToStartScreen(View view) throws IOException, InterruptedException {
 
 
 
 
-        loginToken = userController.login(userNameText.getText().toString(),passwordText.getText().toString());
-        if (loginToken == 0)
-            Toast.makeText(this,"Wrong Credentials", Toast.LENGTH_LONG);
+        loginToken = userController.login(userNameText.getText().toString(),passwordText.getText().toString(),this);
+        //String logM = loginToken + "";
+        Log.d("Login: ", loginToken);
+        if (loginToken.equals("0"))
+            Toast.makeText(this,"Wrong Credentials", Toast.LENGTH_LONG).show();
         else{
             Intent intentNavigationBar = new Intent(this, Template.class);
             startActivity(intentNavigationBar);

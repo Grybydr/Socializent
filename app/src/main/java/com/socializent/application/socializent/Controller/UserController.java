@@ -3,23 +3,14 @@ package com.socializent.application.socializent.Controller;
 import android.app.Application;
 import android.app.DownloadManager;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
-import com.android.volley.Cache;
-import com.android.volley.Network;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.BasicNetwork;
-import com.android.volley.toolbox.DiskBasedCache;
-import com.android.volley.toolbox.HurlStack;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.socializent.application.socializent.Modal.Event;
 import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.Template;
 
+import org.gradle.wrapper.Download;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -29,6 +20,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * Created by Irem on 7.4.2017.
@@ -38,18 +38,93 @@ public class UserController extends Application{
     //appi açan user
     Person activeUserOnSystem;
     JSONObject userServerObject;
-    private int accessToken;
-    private Context mContext = getApplicationContext();
+    //String accessToken;
+    private Context mContext;
+    String result;
+    public static final MediaType JSON
+            = MediaType.parse("application/json; charset=utf-8");
 
     public UserController() {
 
     }
-    public int login(String username,String password) throws IOException {
+    private class DownloadFilesTask extends AsyncTask<URL, Integer, Long> {
+        protected Long doInBackground(URL... urls) {
 
-        RequestQueue mRequestQueue;
+            OkHttpClient client = new OkHttpClient();
+
+            String url = "http://54.69.152.154:3000/signin";
+            //String json = "{username: "+ username + ",password: " + password + "}";
+
+            RequestBody body =  new FormBody.Builder()
+                    .add("username", username)
+                    .add("password", password)
+                    .build();
+
+            Request request = new Request.Builder()
+                    .url(url)
+                    .post(body)
+                    .build();
+            Response response = client.newCall(request).execute();
+
+            result = response.body().string();
+            Log.d("Response is : ", result);
+            Log.d("Message : ", response.message());
+
+        }
+
+
+        protected void onProgressUpdate(Integer... progress) {
+            //setProgressPercent(progress[0]);
+        }
+
+        protected void onPostExecute(Long result) {
+            //showDialog("Downloaded " + result + " bytes");
+        }
+    }
+
+
+    public String login(final String username, final String password, Context context) throws IOException, InterruptedException {
+
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try  {
+
+                    OkHttpClient client = new OkHttpClient();
+
+                    String url = "http://54.69.152.154:3000/signin";
+                    //String json = "{username: "+ username + ",password: " + password + "}";
+
+                    RequestBody body =  new FormBody.Builder()
+                            .add("username", username)
+                            .add("password", password)
+                            .build();
+
+                    Request request = new Request.Builder()
+                            .url(url)
+                            .post(body)
+                            .build();
+                    Response response = client.newCall(request).execute();
+
+                    result = response.body().string();
+                    Log.d("Response is : ", result);
+                    Log.d("Message : ", response.message());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+        Log.d("Response2 is : ", result);
+        thread.start();
+
+
+        return result;
+      /*  RequestQueue mRequestQueue;
 
         // Instantiate the cache
-            Cache cache = new DiskBasedCache(mContext.getCacheDir(), 1024 * 1024); // 1MB cap
+            Cache cache = new DiskBasedCache(context.getCacheDir(), 1024 * 1024); // 1MB cap
 
         // Set up the network to use HttpURLConnection as the HTTP client.
                 Network network = new BasicNetwork(new HurlStack());
@@ -66,19 +141,33 @@ public class UserController extends Application{
         String url ="http://54.69.152.154:3000/signin";
 
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
+
                     @Override
                     public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        Log.d("Response is: ", response.substring(0,500));
+                        Log.d("Response is: ", response);
+
+                        accessToken = Integer.valueOf(response);
+
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("Error: ", error.getMessage());
             }
-        });
+        }
+        ){
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("username", username);
+                params.put("password", password);
+
+                return params;
+            }
+        };
         // Add the request to the RequestQueue.
         mRequestQueue.add(stringRequest);
 
@@ -96,7 +185,7 @@ public class UserController extends Application{
             urlConnection.disconnect();
         }
         */
-        return accessToken;
+
     }
     public Person getUserFromServer(String username){
 
