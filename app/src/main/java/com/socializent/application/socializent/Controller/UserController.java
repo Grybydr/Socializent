@@ -72,13 +72,17 @@ public class UserController extends Application{
            conn.setRequestMethod("POST");
            conn.setDoInput(true);
            conn.setDoOutput(true);
+           conn.connect();
+
            HashMap<String, String> postDataParams = new HashMap<String, String>();
            postDataParams.put("username", username);
            postDataParams.put("password", password);
            Log.d("1", "1");
+
            OutputStream os = conn.getOutputStream();
 
            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+
            writer.write(getPostDataString(postDataParams));
            writer.flush();
            writer.close();

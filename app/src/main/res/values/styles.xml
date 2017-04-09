@@ -9,9 +9,14 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
-
     <style name="MyActionBarTheme" parent="Widget.AppCompat.Light.ActionBar">
+    </style>
+    <style name="TextTheme" >
+        <item name="android:textColor">@color/colorPrimary</item>
 
+    </style>
+    <style name="EditTheme" >
+        <item name="android:textColor">@color/colorEditText</item>
     </style>
 
 

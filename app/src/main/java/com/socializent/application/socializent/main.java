@@ -75,7 +75,10 @@ public class main extends Activity {
         //intentNavigationBar.putExtra("Username", userNameText.getText().toString());
         //intentNavigationBar.putExtra("Password", passwordText.getText().toString());
 
-
+    }
+    public void signUp(View view)throws RuntimeException{
+        Intent intentNavigationBar = new Intent(this, SignUp.class);
+        startActivity(intentNavigationBar);
 
     }
 

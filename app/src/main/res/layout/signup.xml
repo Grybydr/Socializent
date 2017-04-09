@@ -5,9 +5,10 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@drawable/common_google_signin_btn_icon_dark_normal_background">
+        android:layout_width="360dp"
+        android:layout_height="604dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/Name"
@@ -17,8 +18,8 @@
             android:layout_alignParentTop="true"
             android:text="Name:"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorPrimary" />
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
 
         <EditText
             android:id="@+id/editName"
@@ -27,9 +28,10 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/Name"
             android:inputType="textPersonName"
+            android:textAppearance="@style/EditTheme"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorEditText" />
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
 
         <TextView
             android:id="@+id/Surname"
@@ -39,8 +41,8 @@
             android:layout_below="@+id/editName"
             android:text="Surname:"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorPrimary" />
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
 
         <EditText
             android:id="@+id/editSurname"
@@ -50,8 +52,8 @@
             android:layout_below="@+id/Surname"
             android:inputType="textPersonName"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorEditText" />
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
 
         <TextView
             android:id="@+id/usernameSignUp"
@@ -61,8 +63,8 @@
             android:layout_below="@+id/editSurname"
             android:text="Username:"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorPrimary" />
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
 
         <EditText
             android:id="@+id/editUsername"
@@ -72,8 +74,8 @@
             android:layout_below="@+id/usernameSignUp"
             android:inputType="textPersonName"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorEditText" />
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
 
         <TextView
             android:id="@+id/passwordSignUp"
@@ -83,8 +85,8 @@
             android:layout_below="@+id/editUsername"
             android:text="Password:"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorPrimary" />
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
 
         <EditText
             android:id="@+id/signUppass"
@@ -94,8 +96,8 @@
             android:layout_below="@+id/passwordSignUp"
             android:inputType="textPassword"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorEditText" />
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
 
         <TextView
             android:id="@+id/emailSignUp"
@@ -105,8 +107,8 @@
             android:layout_below="@+id/signUppass"
             android:text="Email:"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorPrimary" />
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
 
         <EditText
             android:id="@+id/signUpemail"
@@ -116,8 +118,8 @@
             android:layout_below="@+id/emailSignUp"
             android:inputType="textEmailAddress"
             android:textSize="25sp"
-            tools:layout_height="50dp"
-            tools:textColor="@color/colorEditText" />
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
 
         <Button
             android:id="@+id/SignUpButton"
@@ -125,8 +127,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="24dp"
-            android:background="@android:color/holo_blue_dark"
+            android:layout_marginBottom="55dp"
+            android:background="@android:color/holo_blue_light"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
             android:text="Sign Up!"
             android:textColorLink="@android:color/holo_red_dark" />
     </RelativeLayout>
