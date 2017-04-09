@@ -54,9 +54,6 @@ public class main extends Activity {
         TextView fbLoginText = (TextView) findViewById(R.id.fbLoginText);
         TextView singupText = (TextView) findViewById(R.id.singupText);
 
-
-
-
     }
 
     public void goToStartScreen(View view) throws IOException, InterruptedException {
