@@ -22,7 +22,7 @@
             tools:layout_height="50dp" />
 
         <EditText
-            android:id="@+id/editName"
+            android:id="@+id/signUpEditName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -38,14 +38,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editName"
+            android:layout_below="@+id/signUpEditName"
             android:text="Surname:"
             android:textSize="25sp"
             android:theme="@style/TextTheme"
             tools:layout_height="50dp" />
 
         <EditText
-            android:id="@+id/editSurname"
+            android:id="@+id/signUpEditSurname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -60,14 +60,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editSurname"
+            android:layout_below="@+id/signUpEditSurname"
             android:text="Username:"
             android:textSize="25sp"
             android:theme="@style/TextTheme"
             tools:layout_height="50dp" />
 
         <EditText
-            android:id="@+id/editUsername"
+            android:id="@+id/signUpEditUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -82,14 +82,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editUsername"
+            android:layout_below="@+id/signUpEditUsername"
             android:text="Password:"
             android:textSize="25sp"
             android:theme="@style/TextTheme"
             tools:layout_height="50dp" />
 
         <EditText
-            android:id="@+id/signUppass"
+            android:id="@+id/signUpPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/signUppass"
+            android:layout_below="@+id/signUpPass"
             android:text="Email:"
             android:textSize="25sp"
             android:theme="@style/TextTheme"
@@ -134,6 +134,7 @@
             android:paddingRight="20dp"
             android:paddingTop="10dp"
             android:text="Sign Up!"
-            android:textColorLink="@android:color/holo_red_dark" />
+            android:onClick="signUpToServer"
+            android:textColor = "@android:color/white" />
     </RelativeLayout>
 </LinearLayout>
