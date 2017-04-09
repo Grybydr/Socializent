@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Controller.UserController;
 import com.socializent.application.socializent.Modal.Person;
 
@@ -61,15 +62,12 @@ public class main extends Activity {
 
     public void goToStartScreen(View view) throws IOException, InterruptedException {
 
-        loginToken = userController.login(userNameText.getText().toString(),passwordText.getText().toString(),this);
+        //loginToken = userController.login(userNameText.getText().toString(),passwordText.getText().toString(),this);
         //String logM = loginToken + "";
-        Log.d("Login: ", loginToken);
-        if (loginToken.equals("0"))
-            Toast.makeText(this,"Wrong Credentials", Toast.LENGTH_LONG).show();
-        else{
-            Intent intentNavigationBar = new Intent(this, Template.class);
-            startActivity(intentNavigationBar);
-        }
+        //Log.d("Login: ", loginToken);
+        PersonBackgroundTask loginTask = new PersonBackgroundTask(this);
+        loginTask.execute(userNameText.getText().toString(),passwordText.getText().toString());
+
 
         //activeUser = userController.getUserFromServer(userNameText.getText().toString(), passwordText.getText().toString());
         //intentNavigationBar.putExtra("Username", userNameText.getText().toString());

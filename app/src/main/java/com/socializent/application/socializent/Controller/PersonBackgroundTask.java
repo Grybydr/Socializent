@@ -110,8 +110,15 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
+
+        if (result.contains("0")){
+            Toast.makeText(context,"Wrong Credentials",Toast.LENGTH_LONG).show();
+            return;
+        }
+
         Toast.makeText(context,result,Toast.LENGTH_LONG).show();
         Intent intentNavigationBar = new Intent(context, Template.class);
         context.startActivity(intentNavigationBar);
+
     }
 }
