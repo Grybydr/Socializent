@@ -60,7 +60,7 @@ public class UserController extends Application{
 
 
     public String login(final String username, final String password, Context context) throws IOException, InterruptedException {
-        System.setProperty("http.proxyHost", "proxy.example.com");
+        /*System.setProperty("http.proxyHost", "proxy.example.com");
         System.setProperty("http.proxyPort", "8080");
 
        try {
@@ -101,7 +101,7 @@ public class UserController extends Application{
        } catch (Exception e) {
            e.printStackTrace();
        }
-        return result;
+        return result;*/
       /*  RequestQueue mRequestQueue;
 
         // Instantiate the cache
@@ -166,7 +166,7 @@ public class UserController extends Application{
             urlConnection.disconnect();
         }
         */
-
+        return "";
     }
     private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();
