@@ -42,6 +42,10 @@
             android:name=".Template"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".SignUp"
+            android:theme="@style/AppTheme">
+        </activity>
 
     </application>
 

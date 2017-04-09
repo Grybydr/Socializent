@@ -241,27 +241,4 @@ public class Template extends AppCompatActivity {
                 .replace(R.id.content_frame, openFragment).commit(); //eskiden mFragment vardı
     }
 
-
-//    private void loadNavHeader() {
-//        // name, website
-//        txtName.setText("Irem Herguner");
-//        txtWebsite.setText("Ankara");
-//
-//        // loading header background image
-//        Glide.with(this).load(urlNavHeaderBg)
-//                .crossFade()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .into(imgNavHeaderBg);
-//
-//        // Loading profile image
-//        Glide.with(this).load(urlProfileImg)
-//                .crossFade()
-//                .thumbnail(0.5f)
-//                .bitmapTransform(new CircleTransform(this))
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .into(imgProfile);
-//
-//        // showing dot next to notifications label
-//
-//    }
 }

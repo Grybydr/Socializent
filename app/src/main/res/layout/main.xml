@@ -123,7 +123,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="101dp"
             android:background="@drawable/signup"
-            android:drawablePadding="10dp" />
+            android:drawablePadding="10dp"
+            android:onClick="signUp"/>
 
         <TextView
             android:id="@+id/fbLoginText"
