@@ -61,9 +61,6 @@ public class main extends Activity {
 
     public void goToStartScreen(View view) throws IOException, InterruptedException {
 
-
-
-
         loginToken = userController.login(userNameText.getText().toString(),passwordText.getText().toString(),this);
         //String logM = loginToken + "";
         Log.d("Login: ", loginToken);
@@ -81,4 +78,5 @@ public class main extends Activity {
 
 
     }
+
 }
