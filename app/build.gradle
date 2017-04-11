@@ -37,4 +37,6 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.volley:volley:1.0.0'
     compile files('libs/CircleImageView-master/gradle/wrapper/gradle-wrapper.jar')
+    //for FusedLocationProviderApi
+    compile 'com.google.android.gms:play-services-location:10.2.0'
 }

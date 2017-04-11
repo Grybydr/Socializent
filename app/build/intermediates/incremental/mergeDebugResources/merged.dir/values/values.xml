@@ -684,6 +684,7 @@
     <string name="loginButton">logın</string>
     <string name="loginText">Login</string>
     <string name="map_gps_warning">If you cannot see your location, please check your device\'s GPS settings.</string>
+    <string name="map_loc_warning">Invisible Current Location, directing to default location...</string>
     <string name="map_not_ready">Map is not ready yet</string>
     <string name="password">\t Password</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
@@ -699,6 +700,14 @@
     <string name="second_fragment">My Upcoming Events</string>
     <string name="sign_up">Sign Up</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="string_event_date">Date</string>
+    <string name="string_event_description">Description</string>
+    <string name="string_event_fee">Fee</string>
+    <string name="string_event_participant_c">Participant Count</string>
+    <string name="string_event_place">Event Place </string>
+    <string name="string_event_tags">Tags</string>
+    <string name="string_event_time">Time</string>
+    <string name="string_event_title">Title </string>
     <string name="third_fragment">My Past Events</string>
     <string name="user_name">\t User Name</string>
     <string name="user_profile_name">User Name</string>

@@ -27,5 +27,14 @@
     <string name="android_profile_xml_ui_design">Android Profile XMl UI Design</string>
 
     <string name="user_profile_name">User Name</string>
+    <string name="map_loc_warning">Invisible Current Location, directing to default location...</string>
+    <string name="string_event_place">Event Place </string>
+    <string name="string_event_title">Title </string>
+    <string name="string_event_time">Time</string>
+    <string name="string_event_fee">Fee</string>
+    <string name="string_event_participant_c">Participant Count</string>
+    <string name="string_event_tags">Tags</string>
+    <string name="string_event_date">Date</string>
+    <string name="string_event_description">Description</string>
 
 </resources>
