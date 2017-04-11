@@ -36,6 +36,8 @@ public class main extends Activity {
     EditText userNameText;
     EditText passwordText;
     String loginToken;
+    final static String SIGN_UP_OPTION = "1";
+    final static String SIGN_IN_OPTION = "2";
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +60,12 @@ public class main extends Activity {
     }
 
     public void goToStartScreen(View view) throws IOException, InterruptedException {
-//adadad
+        //adadad
         //loginToken = userController.login(userNameText.getText().toString(),passwordText.getText().toString(),this);
         //String logM = loginToken + "";
         //Log.d("Login: ", loginToken);
         PersonBackgroundTask loginTask = new PersonBackgroundTask(this);
-        loginTask.execute(userNameText.getText().toString(),passwordText.getText().toString());
+        loginTask.execute(SIGN_IN_OPTION,userNameText.getText().toString(),passwordText.getText().toString());
 
 
         //activeUser = userController.getUserFromServer(userNameText.getText().toString(), passwordText.getText().toString());

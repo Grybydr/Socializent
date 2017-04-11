@@ -43,60 +43,133 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     @Override
     protected String doInBackground(String... params) {
         String result = "";
-        try {
-            String username = params[0];
-            String password = params[1];
+        String type = params[0];
+        Log.d("Type(0Signup1Signin): ", type);
 
-            URL url = new URL("http://54.69.152.154:3000/signin");
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            //conn.connect();
-            conn.setReadTimeout(15000);
-            conn.setConnectTimeout(15000);
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "application/json");
-            conn.setDoInput(true);
-            conn.setDoOutput(true);
-            //HashMap<String, String> postDataParams = new HashMap<String, String>();
-            //postDataParams.put("username", username);
-           // postDataParams.put("password", password);
-            Log.d("username", username);
-            Log.d("password", password);
-            JSONObject requestBody = new JSONObject();
-            requestBody.put("username", username);
-            requestBody.put("password", password);
-            OutputStream os = conn.getOutputStream();
+        if(type.equals("1")){
+            try
+            {
+                String name = params[1];
+                String surname = params[2];
+                String username = params[3];
+                String password = params[4];
+                String email = params[5];
 
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-            String str = requestBody.toString();
-            Log.d("Result1: ", str);
-            writer.write(str);
-            //writer.write(postDataParams.toString());
-            writer.flush();
-            writer.close();
-            os.close();
+                URL url = new URL("http://54.69.152.154:3000/signup");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                //conn.connect();
+                conn.setReadTimeout(15000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                //HashMap<String, String> postDataParams = new HashMap<String, String>();
+                //postDataParams.put("username", username);
+                // postDataParams.put("password", password);
+                Log.d("username", username);
+                Log.d("password", password);
+                Log.d("firstname", name);
+                Log.d("lastname", surname);
+                Log.d("email", email);
+
+                JSONObject requestBody = new JSONObject();
+
+                requestBody.put("username", username);
+                requestBody.put("firstname", name);
+                requestBody.put("lastname", surname);
+                requestBody.put("password", password);
+                requestBody.put("email", email);
+
+                OutputStream os = conn.getOutputStream();
+
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+                String str = requestBody.toString();
+                Log.d("RequestBody: ", str);
+                writer.write(str);
+                //writer.write(postDataParams.toString());
+                writer.flush();
+                writer.close();
+                os.close();
 
 
-            int responseCode = conn.getResponseCode();
-            Log.d("Response Code: ", responseCode + "");
-            //if (responseCode == HttpsURLConnection.HTTP_OK) {
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                //if (responseCode == HttpsURLConnection.HTTP_OK) {
                 String line;
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("Result1: ", result);
-            //}
-            return result;
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
+                Log.d("Response: ", result);
+                //}
+                return result;
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(type.equals("2")){
+            try {
+
+                String username = params[1];
+                String password = params[2];
+
+                URL url = new URL("http://54.69.152.154:3000/signin");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                //conn.connect();
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                //HashMap<String, String> postDataParams = new HashMap<String, String>();
+                //postDataParams.put("username", username);
+                // postDataParams.put("password", password);
+                Log.d("username", username);
+                Log.d("password", password);
+                JSONObject requestBody = new JSONObject();
+                requestBody.put("username", username);
+                requestBody.put("password", password);
+                OutputStream os = conn.getOutputStream();
+
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+                String str = requestBody.toString();
+                Log.d("requestbody: ", str);
+                writer.write(str);
+                //writer.write(postDataParams.toString());
+                writer.flush();
+                writer.close();
+                os.close();
+
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                //if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.d("Response: ", result);
+                //}
+                return result;
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
         }
 
         return result;
@@ -111,8 +184,8 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
 
-        if (result.contains("0")){
-            Toast.makeText(context,"Wrong Credentials",Toast.LENGTH_LONG).show();
+        if (result == null || result.equals("0") ){
+            Toast.makeText(context,"Wrong Credentials or you are not connected to internet",Toast.LENGTH_LONG).show();
             return;
         }
 
