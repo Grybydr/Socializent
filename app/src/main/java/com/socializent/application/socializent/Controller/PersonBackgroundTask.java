@@ -157,6 +157,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 }
                 Log.d("Response: ", result);
                 //}
+
                 return result;
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -169,7 +170,6 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }
 
         return result;
@@ -186,6 +186,12 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
         if (result == null || result.equals("0") ){
             Toast.makeText(context,"Wrong Credentials or you are not connected to internet",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (result.equals("1")){
+            Intent forMain = new Intent(context, main.class);
+            context.startActivity(forMain);
             return;
         }
 

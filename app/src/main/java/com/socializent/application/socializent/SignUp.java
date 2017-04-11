@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.socializent.application.socializent.Controller.PersonBackgroundTask;
+
 /**
  * Created by Irem on 9.4.2017.
  */
@@ -50,10 +52,11 @@ public class SignUp extends Activity {
                 //buralara diğer variablar da eklenebilir
                 if(!name.getText().toString().isEmpty() && !surname.getText().toString().isEmpty()){
                     Toast.makeText(SignUp.this, "You are signing up!", Toast.LENGTH_SHORT).show();
+
                     //TODO: burada server a eklenmesi lazım
-                    //TODO: ana sayfaya dönecek
-                    Intent intentNavigationBar = new Intent(SignUp.this, main.class);
-                    startActivity(intentNavigationBar);
+                    PersonBackgroundTask signUpTask = new PersonBackgroundTask(SignUp.this);
+                    signUpTask.execute("1",name.getText().toString(),surname.getText().toString(),username.getText().toString(),password.getText().toString(),email.getText().toString());
+
 
                 }
                 else{
