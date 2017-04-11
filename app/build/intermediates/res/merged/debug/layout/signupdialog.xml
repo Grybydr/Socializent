@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <Button
+        android:id="@+id/signUpOK"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorEditText"
+        android:text="OK!"
+        android:textColor="@android:color/white"
+        android:layout_alignBaseline="@+id/signUpCancel"
+        android:layout_alignBottom="@+id/signUpCancel"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/signUpCancel"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorEditText"
+        android:text="Cancel"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/signUpDialogMessage"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/signUpDialogMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="After signing up, you can change this informations from profile page! "
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="7dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

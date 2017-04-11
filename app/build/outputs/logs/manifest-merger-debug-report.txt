@@ -1,0 +1,182 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:1:1-52:12
+	package
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:2:5-54
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:1:11-69
+	android:versionCode
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:7:5-98
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:7:22-95
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:9:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:10:5-12:38
+	android:maxSdkVersion
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:12:9-35
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:11:9-65
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:13:5-15:38
+	android:maxSdkVersion
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:15:9-35
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:14:9-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:16:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:16:22-76
+permission#com.deneme.deneme.MapPage.permission.MAPS_RECEIVE
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:17:5-20:18
+	android:protectionLevel
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:19:9-44
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:18:9-73
+application
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:22:5-50:19
+MERGED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Toshýba\.android\build-cache\a240af1f19f3b5e35366efdd5c5561db4f4c72d0\output\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-places:10.2.0] C:\Users\Toshýba\.android\build-cache\c6eadcebf6e0f215c1416bcc8653f598df324110\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Toshýba\.android\build-cache\1d35fc91eb177601b75ebe52952be1c696cf4495\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Toshýba\.android\build-cache\97737b8ea2005b554a694e11e8e28b2e181da903\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Toshýba\.android\build-cache\4d50d03cf73497509421420f5e4a15a0700b27f3\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Toshýba\.android\build-cache\8bf7407654e861f943fb04b9a293a948b952536d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\d2d8a0c98590d11c7baf0b913b428228fabc767a\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Toshýba\.android\build-cache\1db66d8c3990368b245ea1bde76ef7d940593efe\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Toshýba\.android\build-cache\a3042f976dd678f335c1b3017c7e36820e78d79c\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\222ce8881ebb0e0e0113b9a5512ba2bf9147a52b\output\AndroidManifest.xml:29:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Toshýba\.android\build-cache\ab75abd937f17342993f63a41230e55335f929d5\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Toshýba\.android\build-cache\abff8e703ab7bffc32958cc756736ff459f1ae74\output\AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:25:9-41
+	android:supportsRtl
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:26:9-35
+	android:allowBackup
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:23:9-35
+	android:icon
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:24:9-43
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:28:9-30:70
+	android:value
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:30:13-68
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:29:13-58
+meta-data#com.google.android.gms.version
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:32:9-33:69
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Toshýba\.android\build-cache\97737b8ea2005b554a694e11e8e28b2e181da903\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:33:13-66
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:32:20-65
+activity#com.socializent.application.socializent.main
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:35:9-40:20
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:35:19-39
+intent-filter#android.intent.action.main+android.intent.category.LAUNCHER
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:36:13-39:29
+action#android.intent.action.main
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:38:17-76
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:38:27-74
+activity#com.socializent.application.socializent.Template
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:41:9-44:20
+	android:theme
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:43:13-44
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:42:13-37
+activity#com.socializent.application.socializent.SignUp
+ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:45:9-48:20
+	android:theme
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:47:13-44
+	android:name
+		ADDED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml:46:13-35
+uses-sdk
+INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\5fcf673e53520aee743e25517aa92a394f649d97\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Toshýba\.android\build-cache\a240af1f19f3b5e35366efdd5c5561db4f4c72d0\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places:10.2.0] C:\Users\Toshýba\.android\build-cache\c6eadcebf6e0f215c1416bcc8653f598df324110\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Toshýba\.android\build-cache\1d35fc91eb177601b75ebe52952be1c696cf4495\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Toshýba\.android\build-cache\97737b8ea2005b554a694e11e8e28b2e181da903\output\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Toshýba\.android\build-cache\4d50d03cf73497509421420f5e4a15a0700b27f3\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Toshýba\.android\build-cache\8bf7407654e861f943fb04b9a293a948b952536d\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\d2d8a0c98590d11c7baf0b913b428228fabc767a\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Toshýba\.android\build-cache\1db66d8c3990368b245ea1bde76ef7d940593efe\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Toshýba\.android\build-cache\a3042f976dd678f335c1b3017c7e36820e78d79c\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\222ce8881ebb0e0e0113b9a5512ba2bf9147a52b\output\AndroidManifest.xml:21:5-23:58
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Toshýba\.android\build-cache\ab75abd937f17342993f63a41230e55335f929d5\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Toshýba\.android\build-cache\abff8e703ab7bffc32958cc756736ff459f1ae74\output\AndroidManifest.xml:7:5-43
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Guray\Senior\Socializent\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\5fcf673e53520aee743e25517aa92a394f649d97\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Toshýba\.android\build-cache\a240af1f19f3b5e35366efdd5c5561db4f4c72d0\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Toshýba\.android\build-cache\4d50d03cf73497509421420f5e4a15a0700b27f3\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Toshýba\.android\build-cache\8bf7407654e861f943fb04b9a293a948b952536d\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\d2d8a0c98590d11c7baf0b913b428228fabc767a\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Toshýba\.android\build-cache\1db66d8c3990368b245ea1bde76ef7d940593efe\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Toshýba\.android\build-cache\a3042f976dd678f335c1b3017c7e36820e78d79c\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\222ce8881ebb0e0e0113b9a5512ba2bf9147a52b\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:26:9-47
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:19:19-85

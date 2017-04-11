@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\4d50d03cf73497509421420f5e4a15a0700b27f3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8b02d76d4d38e14264d376c36ec231c456853124\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Guray\Senior\Socializent\app\libs\CircleImageView-master\gradle\wrapper\gradle-wrapper.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d229475a85469cc6aab6348e8714bd1c1f833fb4">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\2\gradle-wrapper_443b3527b3d4f97eb60092c8aa90999d73e26fff\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.6.0_e1b5c4ba46aa3bb40d9d8689f749599e7f034195\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_baf14a011626ce2848392a22054acc11dd53a369\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5f0b6181e87b44320e0ff74148856ae91b45ac04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\5fcf673e53520aee743e25517aa92a394f649d97\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_92d7b83755b712679f44033486bb1ef051af0fba\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3fea1b40f6909bdab9432d4e8dad65c2916ca369\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Guray\Senior\Socializent\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="314506db522f8f5cb7fb2a2f08f8a3bf84feeb7f">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7b72d4153b162d5d0c73d12d39e30516f9f48d58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.11.0\840897fcd7223a8143f1d9b6f69714e7be34fd50\okio-1.11.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.11.0_035e9f38807c53fdfb0e15f025a17487b678d55b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Guray\extras\android\m2repository\com\android\support\support-annotations\25.3.0\support-annotations-25.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.0_a2004e3eb1d6855debbcfd6c4b9867f8a0d5980c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Guray\Senior\Socializent\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d042160dd630058a7407689e5233939a26c86451\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\222ce8881ebb0e0e0113b9a5512ba2bf9147a52b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8f10f27701159c1d59412e07e42bc83b8c8e49dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\a3042f976dd678f335c1b3017c7e36820e78d79c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_028733ae8a717f2af0981c7c73d35da85b2a31b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_11915798e87af53ecac2c03c5f9b812dcd6d21fb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\8bf7407654e861f943fb04b9a293a948b952536d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_19326298a0ae9e75fd2bd25242daf407e0616901\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\d2d8a0c98590d11c7baf0b913b428228fabc767a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_20b27dca892a6922414f9d6551ae25ae28713594\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\1db66d8c3990368b245ea1bde76ef7d940593efe\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4cb5e3ef9aca574030661d294bb9600725dff9b3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\a240af1f19f3b5e35366efdd5c5561db4f4c72d0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7c5d2f330ea8256e1a4302db2e8e0ea8ac76d779\classes.dex" />
+    </item>
+
+</items>

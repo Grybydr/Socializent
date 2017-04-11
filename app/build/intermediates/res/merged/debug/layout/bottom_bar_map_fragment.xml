@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.socializent.application.socializent.Fragments.BottomBarMap">
+
+    <!--<ImageView
+        android:id="@+id/truiton_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/heart"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/truiton_image"
+        android:layout_centerHorizontal="true"
+        android:text="Zülal'in Mapi :) "
+        android:textSize="30sp"/>
+        -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        tools:ignore="UselessParent">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.SupportMapFragment"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addEventFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="top|left"
+            android:layout_marginBottom="6dp"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_anchorGravity="bottom|right"
+            app:srcCompat="@android:drawable/ic_input_add"
+            tools:ignore="RtlHardcoded" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_item1"
+        android:top="8dp" android:bottom="8dp"
+        android:right="8dp" android:left="8dp"
+        android:icon="@drawable/map_icon_bottom_bar"
+        android:title="Map"/>
+    <item
+        android:id="@+id/action_item2"
+        android:icon="@drawable/recommend_icon_bottom_bar"
+        android:title= "Recommended"/>
+    <item
+        android:id="@+id/action_item3"
+        android:icon="@drawable/chat_icon_bottom_bar"
+        android:title="Chat"/>
+    <item
+        android:id="@+id/action_item4"
+        android:icon="@drawable/notification_icon_bottom_bar"
+        android:title="Notifications"/>
+
+</menu>

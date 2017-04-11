@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="604dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Name:"
+            android:textSize="25sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/signUpEditName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Name"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/EditTheme"
+            android:textSize="25sp"
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/Surname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/signUpEditName"
+            android:text="Surname:"
+            android:textSize="25sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/signUpEditSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Surname"
+            android:inputType="textPersonName"
+            android:textSize="25sp"
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/usernameSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/signUpEditSurname"
+            android:text="Username:"
+            android:textSize="25sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/signUpEditUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/usernameSignUp"
+            android:inputType="textPersonName"
+            android:textSize="25sp"
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/passwordSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/signUpEditUsername"
+            android:text="Password:"
+            android:textSize="25sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/signUpPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/passwordSignUp"
+            android:inputType="textPassword"
+            android:textSize="25sp"
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/emailSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/signUpPass"
+            android:text="Email:"
+            android:textSize="25sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/signUpemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/emailSignUp"
+            android:inputType="textEmailAddress"
+            android:textSize="25sp"
+            android:theme="@style/EditTheme"
+            tools:layout_height="50dp" />
+
+        <Button
+            android:id="@+id/SignUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="55dp"
+            android:background="@android:color/holo_blue_light"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="Sign Up!"
+            android:onClick="signUpToServer"
+            android:textColor = "@android:color/white" />
+    </RelativeLayout>
+</LinearLayout>
