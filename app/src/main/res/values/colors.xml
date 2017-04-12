@@ -3,7 +3,7 @@
     <color name="colorPrimary">#2091ec</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#000</color>
-    <color name="white">#000</color>
+    <color name="white">#ffff</color>
     <color name="white_trans">#000</color>
     <color name="colorEditText">#ebca0707</color>
 </resources>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="604dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/editProfileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Name:"
+                android:textSize="25sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/editProfileEditName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileName"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/EditTheme"
+                android:textSize="25sp"
+                android:theme="@style/EditTheme"
+                tools:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/editProfileSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileEditName"
+                android:text="Surname:"
+                android:textSize="25sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/editProfileEditSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileSurname"
+                android:inputType="textPersonName"
+                android:textSize="25sp"
+                android:theme="@style/EditTheme"
+                tools:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/editProfileusername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileEditSurname"
+                android:text="Username:"
+                android:textSize="25sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/editProfileEditUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileusername"
+                android:inputType="textPersonName"
+                android:textSize="25sp"
+                android:theme="@style/EditTheme"
+                tools:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/editProfilePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileEditUsername"
+                android:text="Password:"
+                android:textSize="25sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/editProfileEditPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfilePassword"
+                android:inputType="textPassword"
+                android:textSize="25sp"
+                android:theme="@style/EditTheme"
+                tools:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/editProfileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileEditPassword"
+                android:text="Email:"
+                android:textSize="25sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/editProfileEditEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileEmail"
+                android:inputType="textEmailAddress"
+                android:textSize="25sp"
+                android:theme="@style/EditTheme"
+                tools:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/editProfileInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editProfileEditEmail"
+                android:text="Interest Areas"
+                android:textSize="25sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="50dp" />
+
+            <CheckBox
+                android:id="@+id/celebration"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/editProfileInterest"
+                android:text=" Celebration"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                android:onClick="onCheckBoxClicked"/>
+
+            <CheckBox
+                android:id="@+id/concert"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/editProfileInterest"
+                android:layout_toEndOf="@+id/celebration"
+                android:onClick="onCheckBoxClicked"
+                android:text=" Concert"
+                android:textColor="@color/colorEditText"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/conferance"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/celebration"
+                android:text=" Conferance"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                android:onClick="onCheckBoxClicked"/>
+
+            <CheckBox
+                android:id="@+id/lecture"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:onClick="onCheckBoxClicked"
+                android:layout_below="@+id/concert"
+                android:layout_toEndOf="@+id/conferance"
+                android:text=" Lecture"
+                android:textColor="@color/colorEditText"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/movieScreen"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/conferance"
+                android:text=" Movie Screen"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                android:onClick="onCheckBoxClicked"
+              />
+
+            <CheckBox
+                android:id="@+id/party"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/lecture"
+                android:layout_toEndOf="@+id/movieScreen"
+                android:text=" Party"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                android:onClick="onCheckBoxClicked"
+                />
+
+            <CheckBox
+                android:id="@+id/study"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/movieScreen"
+                android:text=" Study"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                android:onClick="onCheckBoxClicked"
+                />
+
+            <CheckBox
+                android:id="@+id/travel"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/party"
+                android:layout_toEndOf="@+id/study"
+                android:text=" Travel"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                android:onClick="onCheckBoxClicked"
+                />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</LinearLayout>
