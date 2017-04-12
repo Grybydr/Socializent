@@ -33,7 +33,7 @@ public class SignUp extends Activity {
         username = (EditText) findViewById(R.id.signUpEditUsername);
         password = (EditText) findViewById(R.id.signUpPass);
         email = (EditText) findViewById(R.id.signUpemail);
-        showSignUpButton = (Button) findViewById(R.id.signUpButton);
+
 
 
     }

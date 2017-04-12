@@ -36,7 +36,7 @@ public class NavigationDrawerFirst extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         //ImageView image = (ImageView) profileView.findViewById(R.id.user_profile_photo);
         //Bitmap bm = BitmapFactory.decodeResource(getResources(), R.id.user_profile_photo);

@@ -52,7 +52,7 @@ public class main extends Activity {
         passwordText = (EditText)findViewById(R.id.passwordText);
         Button fbButton = (Button)findViewById(R.id.fbButton);
         Button forgetPasswordButton = (Button)findViewById(R.id.forgetPasswordButton);
-        Button signUpButton = (Button)findViewById(R.id.signUpButton);
+
         TextView forgotPasswordText = (TextView) findViewById(R.id.forgotPasswordText);
         TextView fbLoginText = (TextView) findViewById(R.id.fbLoginText);
         TextView singupText = (TextView) findViewById(R.id.singupText);
