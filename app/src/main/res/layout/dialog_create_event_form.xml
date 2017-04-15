@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout3">
 
         <TextView
             android:id="@+id/eventDetailForm"
@@ -33,35 +34,29 @@
             android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:text="Place: "
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/addressView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:textSize="10dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="600dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="90dp"
+        android:layout_alignTop="@+id/linearLayout3"
+        android:layout_alignParentStart="true">
 
         <EditText
             android:id="@+id/titleView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="50dp"
             android:hint="@string/string_event_title" />
-
-        <EditText
-            android:id="@+id/feeView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/dateView"
-            android:hint="@string/string_event_fee" />
 
         <EditText
             android:id="@+id/timeView"
@@ -69,16 +64,15 @@
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/titleView"
-            android:hint="@string/string_event_time"
-            android:inputType="time" />
+            android:inputType="text"
+            android:hint="@string/string_event_time"/>
 
         <EditText
-            android:id="@+id/dateView"
+            android:id="@+id/feeView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@+id/timeView"
-            android:hint="@string/string_event_date"
-            android:inputType="date" />
+            android:hint="@string/string_event_fee" />
 
         <EditText
             android:id="@+id/participantCountView"
@@ -86,8 +80,8 @@
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/feeView"
-            android:hint="@string/string_event_participant_c"
-            android:inputType="number" />
+            android:hint="@string/string_event_participant_c"/>
+            <!--android:inputType="number"-->
 
         <EditText
             android:id="@+id/tagsView"

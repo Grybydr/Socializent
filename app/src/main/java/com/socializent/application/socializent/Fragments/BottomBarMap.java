@@ -41,6 +41,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.socializent.application.socializent.R;
 
+import java.util.Date;
+
 public class BottomBarMap extends Fragment implements OnMapReadyCallback, LocationListener,  DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
 
     //CONSTANTS
@@ -60,7 +62,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private UiSettings myUiSettings;
     FloatingActionButton myFabButton;
     private LocationManager locationManager;
-    private boolean showDialog = false;
 
     public static BottomBarMap newInstance() {
         BottomBarMap fragment = new BottomBarMap();
@@ -162,9 +163,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 //Create Event Dialog Initialization
                 showDialog(place, requestCode);
 
-                //addEvent(place);
-                Log.d("PLACEPICKER", "Place selected: " + placeId + " (" + place_name.toString() + ")");
-
             } else {
                 Log.d("PLACEPICKER", "Error in PlacePicker ResultCode: " + resultCode);
             }
@@ -173,6 +171,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         }
     }
 
+    /*
+    * Opens a dialog for Event Details -> EventDialogFragment
+    */
     private void showDialog(Place place, int requestCode) {
 
         FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -183,14 +184,25 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         ft.addToBackStack(null);
 
         // Create the fragment and show it as a dialog.
-        DialogFragment newDialog = EventCreateFragment.newInstance(place);
+        DialogFragment newDialog = EventCreateDialog.newInstance(place);
         newDialog.setTargetFragment(this, requestCode);
         newDialog.show(ft, "dialog");
     }
 
-    public void addEvent(Place place) {
+    /*
+    /* TODO: GÜRAY buradan server'a event için data alabilirsin
+    */
+    public void addEvent(Place myPlace, String title, Date myDate, String fee, int participantCount, String tags, String description) {
 
-        myGoogleMap.addMarker(new MarkerOptions().position(place.getLatLng())
+        Log.d("PLACEPICKER", "Place: " + myPlace.toString());
+        Log.d("PLACEPICKER", "title: " + title);
+        Log.d("PLACEPICKER", "myDate: " + myDate);
+        Log.d("PLACEPICKER", "fee: " + fee);
+        Log.d("PLACEPICKER", "participantCount: " + participantCount);
+        Log.d("PLACEPICKER", "tags: " + tags);
+        Log.d("PLACEPICKER", "description: " + description);
+
+        myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
                 .title("Event"));
 
     }
