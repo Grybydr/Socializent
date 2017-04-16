@@ -12,7 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.socializent.application.socializent.Controller.PersonBackgroundTask;
+import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.other.CircleDrawable;
 
@@ -31,23 +34,18 @@ public class NavigationDrawerFirst extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.material_design_profile_screen_xml_ui_design);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        //TextView usernameView = (TextView) getView().findViewById(R.id.user_profile_name);
+        //usernameView.setText("Güray BAYDUR");
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
-        //ImageView image = (ImageView) profileView.findViewById(R.id.user_profile_photo);
-        //Bitmap bm = BitmapFactory.decodeResource(getResources(), R.id.user_profile_photo);
-        //image.setImageBitmap(bm);
-        //circle = new CircleDrawable(bm,true);
-        //image.setBackground(circle);
-        //Bitmap icon = BitmapFactory.decodeResource(getResources(),
-                //R.drawable.lala);
-       //RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(getResources(),icon);
-       // dr.setCornerRadius(new Float(100));
-       // image.setImageDrawable(dr);
+
+
 
         return profileView;
 

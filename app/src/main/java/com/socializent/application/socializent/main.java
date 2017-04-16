@@ -24,6 +24,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Date;
 
 /**
  * Created by Zulal Bingol on 5.03.2017.
@@ -45,7 +46,7 @@ public class main extends Activity {
         setContentView(R.layout.main);
 
         userController = new UserController();
-
+        //Toast.makeText(this,new Date()+"",Toast.LENGTH_LONG).show();
         ImageView socializentLogo = (ImageView)findViewById(R.id.logoView);
         Button loginButton = (Button)findViewById(R.id.loginButton);
         userNameText = (EditText)findViewById(R.id.userNameText);

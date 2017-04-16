@@ -20,11 +20,17 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -35,7 +41,13 @@ import javax.net.ssl.HttpsURLConnection;
 public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
     private Context context;
+    final static String COOKIES_HEADER = "Set-Cookie";
+    final static String SIGN_IN_OPTION = "2";
+    final static String GET_PERSON_OPTION = "3";
+    final static String SIGN_UP_OPTION = "1";
+    private static int signedInBefore = 0;
 
+    public static java.net.CookieManager msCookieManager = new java.net.CookieManager();
     public PersonBackgroundTask(Context context){
         this.context=context;
     }
@@ -46,7 +58,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
         String type = params[0];
         Log.d("Type(0Signup1Signin): ", type);
 
-        if(type.equals("1")){
+        if(type.equals(SIGN_UP_OPTION)){
             try
             {
                 String name = params[1];
@@ -103,6 +115,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 }
                 Log.d("Response: ", result);
                 //}
+                conn.disconnect();
                 return result;
             } catch (ProtocolException e) {
                 e.printStackTrace();
@@ -112,7 +125,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 e.printStackTrace();
             }
         }
-        else if(type.equals("2")){
+        else if(type.equals(SIGN_IN_OPTION)){
             try {
 
                 String username = params[1];
@@ -127,9 +140,13 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 conn.setRequestProperty("Content-Type", "application/json");
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
+
+
+
                 //HashMap<String, String> postDataParams = new HashMap<String, String>();
                 //postDataParams.put("username", username);
                 // postDataParams.put("password", password);
+
                 Log.d("username", username);
                 Log.d("password", password);
                 JSONObject requestBody = new JSONObject();
@@ -149,15 +166,23 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
                 int responseCode = conn.getResponseCode();
                 Log.d("Response Code: ", responseCode + "");
-                //if (responseCode == HttpsURLConnection.HTTP_OK) {
-                String line;
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                while ((line = br.readLine()) != null) {
-                    result += line;
-                }
-                Log.d("Response: ", result);
-                //}
+                if (responseCode == HttpsURLConnection.HTTP_OK) {
 
+                    String line;
+                    BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                    while ((line = br.readLine()) != null) {
+                        result += line;
+                    }
+                    Log.d("Response: ", result);
+                }else
+                {
+                    Log.d("ErrorWithResponseCode: ", responseCode +"");
+                    return null;
+                }
+                //}
+                //msCookieManager.getCookieStore().add(null,HttpCookie.parse(result).get(0));
+                //Log.d("Cookie: " ,HttpCookie.parse(result).get(0).toString() );
+                conn.disconnect();
                 return result;
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -170,15 +195,56 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+        }else if(type.equals(GET_PERSON_OPTION)){
+            try {
+
+                String accessToken = msCookieManager.getCookieStore().getCookies().get(msCookieManager.getCookieStore().getCookies().size()-1).getValue();
+                //Log.d("Access Token in Event: " ,accessToken);
+
+                //accessToken = accessToken.substring(1,accessToken.length()-1);
+                Log.d("AccessTokeninGetPerson:" ,accessToken);
+
+
+                URL url = new URL("http://54.69.152.154:3000/getuser");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                //conn.connect();
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                //if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.d("Response: ", result);
+                //}
+                conn.disconnect();
+                return result;
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
 
         return result;
     }
 
-    @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
+
 
     @Override
     protected void onPostExecute(String result) {
@@ -195,9 +261,26 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             return;
         }
 
-        Toast.makeText(context,result,Toast.LENGTH_LONG).show();
-        Intent intentNavigationBar = new Intent(context, Template.class);
-        context.startActivity(intentNavigationBar);
+        if(signedInBefore == 0){
+            Log.d("Access token: ",result);
 
+            result = result.substring(1,result.length()-1);
+            HttpCookie accessTokenCookie = new HttpCookie("x-access-token",result);
+
+            msCookieManager.getCookieStore().add(null, accessTokenCookie);
+
+            Log.d("Cookie: " ,accessTokenCookie.getValue());
+            //Toast.makeText(context,result,Toast.LENGTH_LONG).show();
+            signedInBefore++;
+
+            PersonBackgroundTask getCurrentUserTask = new PersonBackgroundTask(context);
+            getCurrentUserTask.execute(GET_PERSON_OPTION);
+            //context.get
+            Intent intentNavigationBar = new Intent(context, Template.class);
+            context.startActivity(intentNavigationBar);
+
+        }
+        else
+            Log.d("Reached end and user:",result);
     }
 }

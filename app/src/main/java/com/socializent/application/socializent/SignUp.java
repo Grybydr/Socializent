@@ -13,11 +13,14 @@ import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 
+
+
 /**
  * Created by Irem on 9.4.2017.
  */
 
 public class SignUp extends Activity {
+
     EditText name;
     EditText surname;
     EditText username;
@@ -28,6 +31,7 @@ public class SignUp extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
+
         name = (EditText) findViewById(R.id.signUpEditName);
         surname = (EditText) findViewById(R.id.signUpEditSurname);
         username = (EditText) findViewById(R.id.signUpEditUsername);

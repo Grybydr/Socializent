@@ -39,8 +39,11 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.socializent.application.socializent.Controller.EventBackgroundTask;
 import com.socializent.application.socializent.R;
+import com.socializent.application.socializent.Template;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BottomBarMap extends Fragment implements OnMapReadyCallback, LocationListener,  DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
@@ -72,6 +75,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         locationManager = (LocationManager) getActivity().getSystemService(getContext().LOCATION_SERVICE);
+
     }
 
     @Override
@@ -201,6 +205,17 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         Log.d("PLACEPICKER", "participantCount: " + participantCount);
         Log.d("PLACEPICKER", "tags: " + tags);
         Log.d("PLACEPICKER", "description: " + description);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+
+        String date = formatter.format(myDate);
+
+        EventBackgroundTask createEventTask = new EventBackgroundTask();
+        String longtitude = Float.toString(25.0f);
+        String latitude = Float.toString(25.0f);
+        createEventTask.execute("1",title,date,myPlace.getName().toString(),longtitude, latitude,participantCount+"",tags,description,fee);
+
+
 
         myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
                 .title("Event"));
