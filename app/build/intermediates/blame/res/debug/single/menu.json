@@ -1,18 +1,10 @@
 [
     {
-        "merged": "C:\\Guray\\Senior\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\bottom_navigation_items.xml",
-        "source": "C:\\Guray\\Senior\\Socializent\\app\\src\\main\\res\\menu\\bottom_navigation_items.xml"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "C:\\Guray\\Senior\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
-        "source": "C:\\Guray\\Senior\\Socializent\\app\\src\\main\\res\\menu\\main.xml"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
-        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\menu\\main.xml"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\bottom_navigation_items.xml",
-        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\menu\\bottom_navigation_items.xml"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\bottom_navigation_items.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\menu\\bottom_navigation_items.xml"
     }
 ]

@@ -126,7 +126,6 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 requestBody.put("place.city", placeName);
                 requestBody.put("place.longtitude", longtitude);
                 requestBody.put("place.latitude", latitude);
-                //requestBody.put("participant", participantCount);
                 requestBody.put("tags", tags);
                 requestBody.put("description", description);
                 requestBody.put("fee", fee);

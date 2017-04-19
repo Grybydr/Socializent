@@ -205,8 +205,19 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
         }else if(type.equals(GET_PERSON_OPTION)){
             try {
 
-                String accessToken = msCookieManager.getCookieStore().getCookies().get(msCookieManager.getCookieStore().getCookies().size()-1).getValue();
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")){
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+                //String accessToken = msCookieManager.getCookieStore().getCookies().get(msCookieManager.getCookieStore().getCookies().size()-1).getValue();
                 //Log.d("Access Token in Event: " ,accessToken);
+
 
                 //accessToken = accessToken.substring(1,accessToken.length()-1);
                 Log.d("AccessTokeninGetPerson:" ,accessToken);
@@ -236,8 +247,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 //}
 
                 JSONObject userObject = new JSONObject(result);
-//String name, String surname, String username,
-//String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas
+
                 ArrayList<Person> friends = new ArrayList<Person>();
                 Object obj = userObject.get("friends");
                 JSONArray jsonArray = (JSONArray)obj;
@@ -255,9 +265,13 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                     interestAreas.add(jsonArray2.getString(i));
                 }
 
+
+                Object object = userObject.get("upcomingEvents");
+                JSONArray upcomingEventsArray = (JSONArray) object;
+                Log.d("upcomingEVENTS: ", upcomingEventsArray.toString());
                 /*user = new Person(userObject.getString("firstName"),userObject.getString("lastName"),
                         userObject.getString("fullName"),userObject.getString("birthDate"),userObject.getString("password"),
-                        userObject.getString("email"),friends,interestAreas);*/
+                        userObject.getString("email"),friends,interestAreas);22*/
 
                 JSONObject jsonObject= new JSONObject();
 
@@ -272,6 +286,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 //Hawk.put("user",user);
 
                 msCookieManager.getCookieStore().add(null,new HttpCookie("user",jsonObject.toString()));
+                msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",upcomingEventsArray.toString()));
 
 
                 conn.disconnect();
