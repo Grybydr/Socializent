@@ -247,8 +247,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 //}
 
                 JSONObject userObject = new JSONObject(result);
-//String name, String surname, String username,
-//String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas
+
                 ArrayList<Person> friends = new ArrayList<Person>();
                 Object obj = userObject.get("friends");
                 JSONArray jsonArray = (JSONArray)obj;
