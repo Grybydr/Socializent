@@ -180,7 +180,7 @@ public class EditProfile extends Fragment {
         });
 
         JSONObject jsonObject= new JSONObject();
-    //*
+    //***
         try {
             jsonObject.put("firstName", name.getText().toString());
             jsonObject.put("lastName", surname.getText().toString());
