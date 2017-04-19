@@ -188,7 +188,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("Response: ", result);
+                Log.d("AllEVents: ", result);
                 HttpCookie accessTokenCookie = new HttpCookie("allEvents",result);
 
                 msCookieManager.getCookieStore().add(null, accessTokenCookie);

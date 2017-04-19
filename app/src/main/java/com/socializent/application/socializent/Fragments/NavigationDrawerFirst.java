@@ -21,6 +21,7 @@ import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.other.CircleDrawable;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,11 +53,13 @@ public class NavigationDrawerFirst extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         JSONObject userObject= null;
+        JSONArray eventsArray= null;
         //TextView usernameView = (TextView) getView().findViewById(R.id.user_profile_name);
         //Log.d("getView: ", getView().toString());
         //usernameView.setText("Güray BAYDUR");
         //Person p = Hawk.get("user");
         String user = "";
+        String events = "";
 
         List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
 
@@ -67,8 +70,18 @@ public class NavigationDrawerFirst extends Fragment {
             }
         }
 
+        List<HttpCookie> cookieList2 = msCookieManager.getCookieStore().getCookies();
+
+        for (int i = 0; i < cookieList2.size(); i++) {
+            if (cookieList2.get(i).getName().equals("userEvents")){
+                events = cookieList2.get(i).getValue();
+                break;
+            }
+        }
+
         try {
             userObject = new JSONObject(user);
+            eventsArray = new JSONArray(events);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -80,9 +93,24 @@ public class NavigationDrawerFirst extends Fragment {
         TextView userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
         TextView bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
 
+        TextView eventText1 = (TextView) profileView.findViewById(R.id.event1);
+        TextView eventText2 = (TextView) profileView.findViewById(R.id.event2);
+        TextView eventText3 = (TextView) profileView.findViewById(R.id.event2);
+        TextView eventText = (TextView) profileView.findViewById(R.id.event2);
+
+        try {
+            JSONObject obj1 = new JSONObject(eventsArray.getString(0));
+            eventText1.setText(obj1.get("name").toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
         bioText.setText("Part-Time Developer at Etgi Group");
         try {
             userNameText.setText(userObject.getString("fullName"));
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
