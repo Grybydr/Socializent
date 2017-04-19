@@ -1,0 +1,6 @@
+Ankara : Latitude:39.925533
+	Longitude:32.866287
+
+Bilkent: Latitude:39,868010
+	Longitude:32,748823
+
