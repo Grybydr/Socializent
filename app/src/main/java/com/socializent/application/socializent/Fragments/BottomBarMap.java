@@ -6,7 +6,6 @@ package com.socializent.application.socializent.Fragments;
  */
 
 import android.Manifest;
-import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,6 +15,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -41,10 +41,17 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.socializent.application.socializent.Controller.EventBackgroundTask;
 import com.socializent.application.socializent.R;
-import com.socializent.application.socializent.Template;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.HttpCookie;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
+import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
 public class BottomBarMap extends Fragment implements OnMapReadyCallback, LocationListener,  DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
 
@@ -75,7 +82,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         locationManager = (LocationManager) getActivity().getSystemService(getContext().LOCATION_SERVICE);
-
     }
 
     @Override
@@ -93,7 +99,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
 
             Toast.makeText(getContext(), R.string.map_loc_warning, Toast.LENGTH_LONG).show();
             myGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
+
         }
+
         //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
         mapFragment.getMapAsync(this);
 
@@ -194,7 +202,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     }
 
     /*
-    /* TODO: GÜRAY buradan server'a event için data alabilirsin
+    /*
     */
     public void addEvent(Place myPlace, String title, Date myDate, String fee, int participantCount, String tags, String description) {
 
@@ -211,11 +219,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         String date = formatter.format(myDate);
 
         EventBackgroundTask createEventTask = new EventBackgroundTask();
-        String longtitude = Float.toString(25.0f);
+        String longitude = Float.toString(25.0f);
         String latitude = Float.toString(25.0f);
-        createEventTask.execute("1",title,date,myPlace.getName().toString(),longtitude, latitude,participantCount+"",tags,description,fee);
-
-
+        createEventTask.execute("1",title,date,myPlace.getName().toString(),longitude, latitude,participantCount+"",tags,description,fee);
 
         myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
                 .title("Event"));
@@ -239,7 +245,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             return;
         }
         if (ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            Log.v("LOCATION", "Permissions GIVEN for My Location");
+            Log.v("LOCATION_L", "Permissions GIVEN for My Location");
             myGoogleMap.setMyLocationEnabled(true);
             myGoogleMap.setBuildingsEnabled(true);
 
@@ -248,12 +254,66 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
             zoomInLocation(location);
 
+            List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+            String events = "";
+            for (int i = 0; i < cookieList.size(); i++) {
+                if (cookieList.get(i).getName().equals("allEvents")){
+                    events = cookieList.get(i).getValue();
+                    Log.v("LOCATION_L", "ALLEVENTS: " + events);
+                    break;
+                }
+            }
+            try {
+
+                String tempLat, tempLong;
+                JSONArray eventsArray = new JSONArray(events);
+
+                for (int i = 0; i < eventsArray.length(); i++) {
+
+                    Log.v("LOCATION_L", "for");
+                    JSONObject row = eventsArray.getJSONObject(i);
+
+                    /*String eventTitle = row.getString("title");
+                    if (eventTitle == null || eventTitle.isEmpty())
+                        eventTitle = "Event";*/
+
+                    JSONObject pl = row.getJSONObject("place");
+
+                    tempLat = pl.getString("latitude");
+                    tempLong = pl.getString("longitude");
+
+                    Log.v("LOCATION_L", "tempLat" + tempLat);
+                    Log.v("LOCATION_L", "tempLong" + tempLong);
+
+                    if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
+
+                        Log.v("LOCATION_L", "Parsing.....");
+
+                        final double lat = Double.parseDouble(tempLat);
+                        final double longi = Double.parseDouble(tempLong);
+
+                        Log.v("LOCATION_L", "Mapping.....");
+
+                        myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, longi))
+                                .title("Event"));
+                    }
+                    else {
+                        Log.v("LOCATION_L", "Location NULL");
+                    }
+
+                }
+            } catch (JSONException e) {
+                Log.v("LOCATION_L", "Events cannot be retrieved from cookie: JSON error");
+                e.printStackTrace();
+            }
+
             return;
 
         } else {
             PermissionUtils.requestPermission((AppCompatActivity) getActivity(), LOCATION_PERMISSION_REQUEST_CODE,
                     Manifest.permission.ACCESS_FINE_LOCATION, false);
-            Log.v("LOCATION", "Permission conditions not satisfied for My Location");
+            Log.v("LOCATION_L", "Permission conditions not satisfied for My Location");
+            myGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
         }
     }
 
