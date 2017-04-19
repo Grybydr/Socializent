@@ -87,9 +87,7 @@ public class NavigationDrawerFirst extends Fragment {
         }
         Log.d("User Info: " ,user);
 
-/**/
 
-        profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         TextView userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
         TextView bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
 
