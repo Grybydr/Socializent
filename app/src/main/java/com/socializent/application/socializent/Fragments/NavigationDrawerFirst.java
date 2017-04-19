@@ -24,6 +24,10 @@ import com.socializent.application.socializent.other.CircleDrawable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.HttpCookie;
+import java.util.List;
+
+import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 import static com.socializent.application.socializent.Template.user;
 
 public class NavigationDrawerFirst extends Fragment {
@@ -52,10 +56,17 @@ public class NavigationDrawerFirst extends Fragment {
         //Log.d("getView: ", getView().toString());
         //usernameView.setText("Güray BAYDUR");
         //Person p = Hawk.get("user");
+        String user = "";
 
-        String user = com.socializent.application.socializent.Controller.PersonBackgroundTask
-                .msCookieManager.getCookieStore().getCookies().get(com.socializent.application.socializent.Controller.PersonBackgroundTask
-                .msCookieManager.getCookieStore().getCookies().size()-1).getValue();
+        List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+        for (int i = 0; i < cookieList.size(); i++) {
+            if (cookieList.get(i).getName().equals("user")){
+                user = cookieList.get(i).getValue();
+                break;
+            }
+        }
+
         try {
             userObject = new JSONObject(user);
         } catch (JSONException e) {

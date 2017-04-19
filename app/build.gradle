@@ -39,4 +39,5 @@ dependencies {
     compile files('libs/CircleImageView-master/gradle/wrapper/gradle-wrapper.jar')
     //for FusedLocationProviderApi
     compile 'com.google.android.gms:play-services-location:10.2.0'
+    compile 'com.thoughtbot:expandablerecyclerview:1.3'
 }

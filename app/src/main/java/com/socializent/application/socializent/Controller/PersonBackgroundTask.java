@@ -205,8 +205,19 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
         }else if(type.equals(GET_PERSON_OPTION)){
             try {
 
-                String accessToken = msCookieManager.getCookieStore().getCookies().get(msCookieManager.getCookieStore().getCookies().size()-1).getValue();
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")){
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+                //String accessToken = msCookieManager.getCookieStore().getCookies().get(msCookieManager.getCookieStore().getCookies().size()-1).getValue();
                 //Log.d("Access Token in Event: " ,accessToken);
+
 
                 //accessToken = accessToken.substring(1,accessToken.length()-1);
                 Log.d("AccessTokeninGetPerson:" ,accessToken);
