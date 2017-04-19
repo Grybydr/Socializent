@@ -1,6 +1,5 @@
 package com.socializent.application.socializent.Fragments;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,6 +28,12 @@ import com.socializent.application.socializent.other.CircleDrawable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.HttpCookie;
+import java.util.List;
+
+import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
+import static com.socializent.application.socializent.Template.user;
+
 public class NavigationDrawerFirst extends Fragment {
     //CircleDrawable circle;
     View profileView;
@@ -44,15 +49,19 @@ public class NavigationDrawerFirst extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setContentView(R.layout.material_design_profile_screen_xml_ui_design);
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        JSONObject userObject= null;
         //TextView usernameView = (TextView) getView().findViewById(R.id.user_profile_name);
+        //Log.d("getView: ", getView().toString());
         //usernameView.setText("Güray BAYDUR");
+        //Person p = Hawk.get("user");
+        String user = "";
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         imagePen = (ImageView) profileView.findViewById(R.id.edit_pen);
         imagePen.setOnClickListener(new View.OnClickListener() {
@@ -62,10 +71,15 @@ public class NavigationDrawerFirst extends Fragment {
             }
         });
 
-        JSONObject userObject= null;
-        String user = com.socializent.application.socializent.Controller.PersonBackgroundTask
-                .msCookieManager.getCookieStore().getCookies().get(com.socializent.application.socializent.Controller.PersonBackgroundTask
-                        .msCookieManager.getCookieStore().getCookies().size()-1).getValue();
+        List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+        for (int i = 0; i < cookieList.size(); i++) {
+            if (cookieList.get(i).getName().equals("user")){
+                user = cookieList.get(i).getValue();
+                break;
+            }
+        }
+
         try {
             userObject = new JSONObject(user);
         } catch (JSONException e) {
@@ -73,15 +87,19 @@ public class NavigationDrawerFirst extends Fragment {
         }
         Log.d("User Info: " ,user);
 
+/**/
+
+        profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         TextView userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
         TextView bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
 
         bioText.setText("Part-Time Developer at Etgi Group");
-//        try {
-//            userNameText.setText(userObject.getString("fullName"));
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            userNameText.setText(userObject.getString("fullName"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         return profileView;
 
     }

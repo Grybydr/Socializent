@@ -10,5 +10,14 @@
         sha1="d229475a85469cc6aab6348e8714bd1c1f833fb4">
         <dex dex="C:\Users\Irem\Desktop\SENIOR_PROJECT\Socializent\app\build\intermediates\pre-dexed\debug\gradle-wrapper_c62e89fd9532a7b9b54c7b97828f45ab2a4c2166.jar" />
     </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Toshıba\.android\build-cache\021c603b4cd17965edf956100394b1b758910fa2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4f97957ca13c4eda0e0ec407224f3d0d8d33ce09">
+        <dex dex="C:\Guray\Senior\Socializent\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0e82af330a3569373a94f5346617f5a24142b5df\classes.dex" />
+    </item>
 
 </items>
