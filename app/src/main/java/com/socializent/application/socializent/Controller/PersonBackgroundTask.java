@@ -267,7 +267,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
                 /*user = new Person(userObject.getString("firstName"),userObject.getString("lastName"),
                         userObject.getString("fullName"),userObject.getString("birthDate"),userObject.getString("password"),
-                        userObject.getString("email"),friends,interestAreas);*/
+                        userObject.getString("email"),friends,interestAreas);22*/
 
                 JSONObject jsonObject= new JSONObject();
 
