@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,6 +37,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
 
     //private Context context;
     final static String EVENT_CREATE_OPTION = "1";
+    final static String GET_ALL_EVENTS_OPTION = "2";
 
     public EventBackgroundTask(){
 
@@ -166,6 +168,54 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+        }
+        else if (type.equals(GET_ALL_EVENTS_OPTION)){
+            try{
+                URL url = new URL("http://54.69.152.154:3000/events");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                //if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.d("Response: ", result);
+                HttpCookie accessTokenCookie = new HttpCookie("allEvents",result);
+
+                msCookieManager.getCookieStore().add(null, accessTokenCookie);
+
+               /* List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+                String events = "";
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("allEvents")){
+                        events = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+                JSONArray eventsArray = new JSONArray(events);*/
+
+                //}
+
+                conn.disconnect();
+                return result;
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
 
         return result;

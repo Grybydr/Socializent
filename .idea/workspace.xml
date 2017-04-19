@@ -12,6 +12,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="res" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
@@ -23,24 +24,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Controller/PersonBackgroundTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Controller/PersonBackgroundTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Modal/Person.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Modal/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/main.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/file-input-save-data.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Template.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Template.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/main.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/main.java" />
     </list>
     <ignored path="Socializent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,23 +61,13 @@
       <file leaf-file-name="PersonBackgroundTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="773">
-              <caret line="272" column="104" selection-start-line="272" selection-start-column="104" selection-end-line="272" selection-end-column="104" />
+            <state relative-caret-position="1828">
+              <caret line="324" column="26" selection-start-line="324" selection-start-column="26" selection-end-line="324" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9407#9415#0" expanded="true" />
-                <element signature="e#9734#9742#0" expanded="true" />
+                <element signature="e#9515#9523#0" expanded="true" />
+                <element signature="e#9842#9850#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -109,8 +85,8 @@
       <file leaf-file-name="BottomBarMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/BottomBarMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state relative-caret-position="-1770">
+              <caret line="60" column="92" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,38 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Template.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Template.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1813">
-              <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#onCreateOptionsMenu#0;class#Template#0" expanded="false" />
-                <element signature="method#onOptionsItemSelected#0;class#Template#0" expanded="false" />
-                <element signature="method#onPostCreate#0;class#Template#0" expanded="false" />
-                <element signature="method#onConfigurationChanged#0;class#Template#0" expanded="false" />
-                <element signature="method#initContentWithFirstFragment#0;class#Template#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventBackgroundTask.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventBackgroundTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-169">
-              <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+            <state relative-caret-position="635">
+              <caret line="217" column="12" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,7 +109,7 @@
       <file leaf-file-name="SignUp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/SignUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="910">
               <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -169,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="85" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="85" />
+            <state relative-caret-position="-647">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -182,11 +131,31 @@
       <file leaf-file-name="NavigationDrawerFirst.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
+            <state relative-caret-position="499">
               <caret line="70" column="52" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventCreateDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventCreateDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-346">
+              <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NavigationDrawerFourth.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFourth.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2136,13 +2105,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/DatabaseController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/BottomBarMap.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/main.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Template.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/SignUp.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" />
       </list>
     </option>
   </component>
@@ -2419,6 +2388,7 @@
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
     <property name="android.project.structure.last.selected" value="Notifications" />
     <property name="android.project.structure.proportion" value="0.15" />
+    <property name="SearchEverywhereHistoryKey" value="cookie&#9;PSI&#9;JAVA://java.net.InMemoryCookieStore#cookieJar&#10;cookieList&#9;PSI&#9;JAVA://com.sun.xml.internal.ws.transport.http.client.HttpTransportPipe#cookieListToMap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -3009,7 +2979,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492353899409</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="msCookieManager">
+      <created>1492629069852</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1492629069852</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3031,7 +3008,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43120804" sideWeight="0.24054463" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11744966" sideWeight="0.7594554" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27181208" sideWeight="0.7594554" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30181542" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649574" sideWeight="0.86170214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.295302" sideWeight="0.48487142" order="11" side_tool="false" content_ui="tabs" />
@@ -3115,7 +3092,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loginPage_v4 : loginPage logos added&#10;tags missing&#10;socializent_image : resolution / shadow issues" />
     <MESSAGE value="home page added" />
     <MESSAGE value="navigation bar added" />
     <MESSAGE value="navigation style changed" />
@@ -3140,7 +3116,8 @@
     <MESSAGE value="signup func added but not tried" />
     <MESSAGE value="eventCreateDialog, placepicker added" />
     <MESSAGE value="createEvent, getPerson added" />
-    <option name="LAST_COMMIT_MESSAGE" value="createEvent, getPerson added" />
+    <MESSAGE value="msCookieManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="msCookieManager" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3156,8 +3133,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/libs/CircleImageView-master/sample/src/main/java/de/hdodenhof/circleimageview/sample/MainActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/libs/CircleImageView-master/sample/src/main/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/app/libs/CircleImageView-master/circleimageview/build.gradle" />
     <entry file="file://$PROJECT_DIR$/app/libs/CircleImageView-master/circleimageview/src/main/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/app/app.iml">
@@ -3182,13 +3157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFourth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -3351,6 +3319,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3397,16 +3366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventCreateDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/template.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
@@ -3445,16 +3404,6 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/BottomBarMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
@@ -3496,41 +3445,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="70" column="52" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-647">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="272" column="104" selection-start-line="272" selection-start-column="104" selection-end-line="272" selection-end-column="104" />
+        <state relative-caret-position="1828">
+          <caret line="324" column="26" selection-start-line="324" selection-start-column="26" selection-end-line="324" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9407#9415#0" expanded="true" />
-            <element signature="e#9734#9742#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-169">
-          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#9515#9523#0" expanded="true" />
+            <element signature="e#9842#9850#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/SignUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="910">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3538,11 +3475,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFourth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="85" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="85" />
+        <state relative-caret-position="323">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="70" column="52" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/com/sun/xml/internal/ws/transport/http/client/HttpTransportPipe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/net/InMemoryCookieStore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/BottomBarMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1770">
+          <caret line="60" column="92" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventCreateDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-346">
+          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="217" column="12" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

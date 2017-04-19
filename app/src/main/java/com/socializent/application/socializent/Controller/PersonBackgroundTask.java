@@ -38,6 +38,7 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import static com.socializent.application.socializent.Controller.EventBackgroundTask.GET_ALL_EVENTS_OPTION;
 import static com.socializent.application.socializent.Template.user;
 
 /**
@@ -323,7 +324,10 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
             PersonBackgroundTask getCurrentUserTask = new PersonBackgroundTask(context);
             getCurrentUserTask.execute(GET_PERSON_OPTION);
-            //context.get
+
+            EventBackgroundTask getAllAvailableEvents = new EventBackgroundTask();
+            getAllAvailableEvents.execute(GET_ALL_EVENTS_OPTION);
+
             Intent intentNavigationBar = new Intent(context, Template.class);
             context.startActivity(intentNavigationBar);
 
