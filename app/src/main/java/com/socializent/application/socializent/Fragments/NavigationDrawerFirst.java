@@ -57,10 +57,6 @@ public class NavigationDrawerFirst extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         JSONObject userObject= null;
-        //TextView usernameView = (TextView) getView().findViewById(R.id.user_profile_name);
-        //Log.d("getView: ", getView().toString());
-        //usernameView.setText("Güray BAYDUR");
-        //Person p = Hawk.get("user");
         String user = "";
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         imagePen = (ImageView) profileView.findViewById(R.id.edit_pen);
@@ -87,9 +83,6 @@ public class NavigationDrawerFirst extends Fragment {
         }
         Log.d("User Info: " ,user);
 
-/**/
-
-        profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         TextView userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
         TextView bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
 
