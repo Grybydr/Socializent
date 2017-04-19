@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Controller.UserController;
 import com.socializent.application.socializent.Modal.Person;
@@ -44,6 +45,8 @@ public class main extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
+
+
 
         userController = new UserController();
         //Toast.makeText(this,new Date()+"",Toast.LENGTH_LONG).show();

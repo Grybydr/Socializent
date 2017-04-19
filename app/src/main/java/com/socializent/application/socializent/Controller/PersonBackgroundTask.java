@@ -7,9 +7,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+
+import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.Template;
 import com.socializent.application.socializent.main;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -27,12 +30,15 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import static com.socializent.application.socializent.Template.user;
 
 /**
  * Created by Toshıba on 04/09/2017.
@@ -227,6 +233,46 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 }
                 Log.d("Response: ", result);
                 //}
+
+                JSONObject userObject = new JSONObject(result);
+//String name, String surname, String username,
+//String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas
+                ArrayList<Person> friends = new ArrayList<Person>();
+                Object obj = userObject.get("friends");
+                JSONArray jsonArray = (JSONArray)obj;
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    friends.add((Person)jsonArray.get(i));
+                }
+
+                ArrayList<String> interestAreas = new ArrayList<String>();
+                Object obj2 = userObject.get("interests");
+                JSONArray jsonArray2 = (JSONArray)obj2;
+
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    interestAreas.add(jsonArray2.getString(i));
+                }
+
+                /*user = new Person(userObject.getString("firstName"),userObject.getString("lastName"),
+                        userObject.getString("fullName"),userObject.getString("birthDate"),userObject.getString("password"),
+                        userObject.getString("email"),friends,interestAreas);*/
+
+                JSONObject jsonObject= new JSONObject();
+
+                jsonObject.put("firstName", userObject.getString("firstName"));
+                jsonObject.put("lastName", userObject.getString("lastName"));
+                jsonObject.put("fullName", userObject.getString("fullName"));
+                jsonObject.put("birthDate", userObject.getString("birthDate"));
+                jsonObject.put("password", userObject.getString("password"));
+                jsonObject.put("email", userObject.getString("email"));
+                jsonObject.put("friends", userObject.get("friends"));
+                jsonObject.put("interests", userObject.get("interests"));
+                //Hawk.put("user",user);
+
+                msCookieManager.getCookieStore().add(null,new HttpCookie("user",jsonObject.toString()));
+
+
                 conn.disconnect();
                 return result;
             } catch (UnsupportedEncodingException e) {
@@ -236,6 +282,8 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }

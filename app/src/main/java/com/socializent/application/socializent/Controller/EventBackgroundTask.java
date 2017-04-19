@@ -15,13 +15,16 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
@@ -60,7 +63,17 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
 
                 SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
-                String accessToken = msCookieManager.getCookieStore().getCookies().get(msCookieManager.getCookieStore().getCookies().size()-1).getValue();
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")){
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+                //msCookieManager.getCookieStore().getCookies().get(0).getValue();
                 //Log.d("Access Token in Event: " ,accessToken);
 
                 //accessToken = accessToken.substring(1,accessToken.length()-1);

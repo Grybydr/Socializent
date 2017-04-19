@@ -5,9 +5,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,11 @@ import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.other.CircleDrawable;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static com.socializent.application.socializent.Template.user;
 
 public class NavigationDrawerFirst extends Fragment {
     //CircleDrawable circle;
@@ -40,15 +47,41 @@ public class NavigationDrawerFirst extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        JSONObject userObject= null;
         //TextView usernameView = (TextView) getView().findViewById(R.id.user_profile_name);
+        //Log.d("getView: ", getView().toString());
         //usernameView.setText("Güray BAYDUR");
+        //Person p = Hawk.get("user");
+
+        String user = com.socializent.application.socializent.Controller.PersonBackgroundTask
+                .msCookieManager.getCookieStore().getCookies().get(com.socializent.application.socializent.Controller.PersonBackgroundTask
+                .msCookieManager.getCookieStore().getCookies().size()-1).getValue();
+        try {
+            userObject = new JSONObject(user);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d("User Info: " ,user);
+
+
+
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
-
-
+        TextView userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
+        TextView bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
+        bioText.setText("Part-Time Developer at Etgi Group");
+        try {
+            userNameText.setText(userObject.getString("fullName"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         return profileView;
 
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
 }

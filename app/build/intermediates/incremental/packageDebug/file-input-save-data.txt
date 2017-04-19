@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Apr 15 15:04:05 EEST 2017
+#Tue Apr 18 22:04:39 EEST 2017
 210.set=ANDROID_RESOURCE
 282.file=C\:\\Guray\\Senior\\Socializent\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml
 14.set=ANDROID_RESOURCE

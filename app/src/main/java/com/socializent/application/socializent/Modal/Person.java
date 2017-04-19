@@ -21,6 +21,7 @@ public class Person {
     public Person() {
     }
 
+
     public Person(String name, String surname, String username, String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas) {
         this.name = name;
         this.surname = surname;

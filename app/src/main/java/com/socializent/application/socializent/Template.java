@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import com.socializent.application.socializent.Fragments.NavigationDrawerFirst;
 import com.socializent.application.socializent.Fragments.BottomBarMap;
 import com.socializent.application.socializent.Fragments.BottomBarChat;
@@ -34,6 +35,7 @@ import com.socializent.application.socializent.Fragments.BottomBarNotifications;
 import com.socializent.application.socializent.Fragments.NavigationDrawerSecond;
 import com.socializent.application.socializent.Fragments.NavigationDrawerThird;
 import com.socializent.application.socializent.Fragments.NavigationDrawerFourth;
+import com.socializent.application.socializent.Modal.Person;
 
 /**
  * Created by Toshıba on 3/11/2017.
@@ -48,7 +50,7 @@ public class Template extends AppCompatActivity {
     private Fragment openFragment = null;
     private CharSequence mTitleSection;
     private Fragment mFragment = null;
-
+    public static Person user;
     //profil fotosu için
     private NavigationView navigationView;
     private View navHeader;
@@ -66,7 +68,7 @@ public class Template extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.template);
-
+        //Hawk.init(this).build();
         mOptionMenu = new String[] { getString(R.string.first_fragment),
                 getString(R.string.second_fragment),
                 getString(R.string.third_fragment),
