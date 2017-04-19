@@ -87,7 +87,7 @@ public class NavigationDrawerFirst extends Fragment {
         }
         Log.d("User Info: " ,user);
 
-/**/
+
         TextView userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
         TextView bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
 
