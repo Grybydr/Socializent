@@ -1,10 +1,18 @@
 [
     {
-        "merged": "C:\\Guray\\Senior\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\Guray\\Senior\\Socializent\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Guray\\Senior\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\socializent_image.png",
-        "source": "C:\\Guray\\Senior\\Socializent\\app\\src\\main\\res\\mipmap-xhdpi\\socializent_image.png"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\socializent_image.png",
+        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-xhdpi\\socializent_image.png"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\socializent_image.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-xhdpi\\socializent_image.png"
     }
 ]

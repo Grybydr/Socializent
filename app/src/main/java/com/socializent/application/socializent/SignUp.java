@@ -27,6 +27,7 @@ public class SignUp extends Activity {
     EditText password;
     EditText email;
     Button showSignUpButton;
+    Activity signinPage;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +38,6 @@ public class SignUp extends Activity {
         username = (EditText) findViewById(R.id.signUpEditUsername);
         password = (EditText) findViewById(R.id.signUpPass);
         email = (EditText) findViewById(R.id.signUpemail);
-
-
 
     }
     public void signUpToServer(View view){
@@ -55,11 +54,11 @@ public class SignUp extends Activity {
             public void onClick(View view) {
                 //buralara diğer variablar da eklenebilir
                 if(!name.getText().toString().isEmpty() && !surname.getText().toString().isEmpty()){
-                    Toast.makeText(SignUp.this, "You are signing up!", Toast.LENGTH_SHORT).show();
 
-                    //TODO: burada server a eklenmesi lazım
                     PersonBackgroundTask signUpTask = new PersonBackgroundTask(SignUp.this);
                     signUpTask.execute("1",name.getText().toString(),surname.getText().toString(),username.getText().toString(),password.getText().toString(),email.getText().toString());
+                    Toast.makeText(SignUp.this, "You are signing up. Please sign in again!", Toast.LENGTH_LONG).show();
+                    //TODO: eklendikten sonra ana sayfaya dönmesi lazım
 
 
                 }
@@ -73,8 +72,6 @@ public class SignUp extends Activity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-
-
             }
         });
 
