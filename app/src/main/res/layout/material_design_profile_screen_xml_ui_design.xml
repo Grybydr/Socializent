@@ -97,6 +97,7 @@
             >
 
             <TextView
+                android:id="@+id/event1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -107,6 +108,7 @@
                 android:text="@string/android_profile_ui_design" />
 
             <TextView
+                android:id="@+id/event2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -119,6 +121,7 @@
                 android:text="@string/android_profile_xml_ui_design" />
 
             <TextView
+                android:id="@+id/event3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -129,6 +132,7 @@
                 android:text="@string/android_profile_xml_ui_design" />
 
             <TextView
+                android:id="@+id/event4"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -141,6 +145,7 @@
                 android:text="@string/android_profile_xml_ui_design" />
 
             <TextView
+                android:id="@+id/event5"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
