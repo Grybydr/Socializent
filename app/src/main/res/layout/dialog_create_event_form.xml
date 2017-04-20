@@ -62,6 +62,7 @@
             android:id="@+id/timeView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:focusableInTouchMode="false"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/titleView"
             android:inputType="text"
@@ -102,10 +103,21 @@
             android:id="@+id/createEventButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="66dp"
-            android:text="Create" />
+            android:text="Create"
+            android:layout_marginEnd="42dp"
+            android:layout_alignBaseline="@+id/cancelButton"
+            android:layout_alignBottom="@+id/cancelButton"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="55dp"
+            android:layout_below="@+id/descriptionView"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 

@@ -95,6 +95,15 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             }
         });
 
+        Button cancelButton = (Button)view.findViewById(R.id.cancelButton);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EventCreateDialog.this.dismiss();
+            }
+        });
+
+
         // Build dialog
         Dialog builder = new Dialog(getActivity());
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE);

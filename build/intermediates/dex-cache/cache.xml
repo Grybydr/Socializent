@@ -10,14 +10,5 @@
         sha1="d229475a85469cc6aab6348e8714bd1c1f833fb4">
         <dex dex="D:\SENIOR_PROJECT\Socializent\app\build\intermediates\pre-dexed\debug\gradle-wrapper_405270b0dee3393933a693f9798b0725d1eb1bb5.jar" />
     </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Zülal Bingöl\.android\build-cache\a21c15ab0bc0dd4fff883e4f511deb0d9f7ecb50\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4f97957ca13c4eda0e0ec407224f3d0d8d33ce09">
-        <dex dex="D:\SENIOR_PROJECT\Socializent\app\build\intermediates\pre-dexed\debug\classes_d80a7ffa73de78b519d42d36a41164a6d8c60445.jar" />
-    </item>
 
 </items>

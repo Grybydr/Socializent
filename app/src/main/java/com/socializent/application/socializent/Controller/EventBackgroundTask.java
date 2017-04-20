@@ -35,16 +35,12 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
     final static String EVENT_CREATE_OPTION = "1";
     final static String GET_ALL_EVENTS_OPTION = "2";
 
-    public EventBackgroundTask(){
-
-    }
+    public EventBackgroundTask(){}
 
     @Override
     protected String doInBackground(String... params) {
         String result = "";
         String type = params[0];
-
-
 
         if (type.equals(EVENT_CREATE_OPTION)){
             try {
@@ -57,9 +53,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 String participantCount = params[6];
                 String tags = params[7];
                 String description = params[8];
-                String fee = params[9];
-
-                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                String feeToConvert = params[9];
 
                 String accessToken = "";
 
@@ -77,10 +71,6 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 //accessToken = accessToken.substring(1,accessToken.length()-1);
                 Log.d("Access Token in Event: " ,accessToken);
 
-
-                Date oldDate = sdf.parse(dateToConvertMiliseconds);
-                long dateInMiliseconds = oldDate.getTime();
-
                 URL url = new URL("http://54.69.152.154:3000/createEvent");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 //conn.connect();
@@ -92,39 +82,42 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
 
-
-
-
                 conn.connect();
                 //HashMap<String, String> postDataParams = new HashMap<String, String>();
                 //postDataParams.put("username", username);
                 // postDataParams.put("password", password);
 
+                /*Log.d("EventBackgroundTask", title);
+                Log.d("EventBackgroundTask", dateInMiliseconds +"");
+                Log.d("EventBackgroundTask", placeName);
+                Log.d("EventBackgroundTask", "LONGIII:" + longitudeToConvertFloat);
+                Log.d("EventBackgroundTask", tags);
+                Log.d("EventBackgroundTask", description);
+                Log.d("EventBackgroundTask", fee);*/
 
-                Log.d("title: ", title);
-                Log.d("dateMiliseconds: ", dateInMiliseconds +"");
-                Log.d("placeName(City):  ", placeName);
-                //Log.d("latitudeToConvert", latitudeToConvertFloat);
+                //Conversions
+                double latitude = Double.parseDouble(latitudeToConvertFloat);
+                double longitude = Double.parseDouble(longitudeToConvertFloat);
+                int parCount = Integer.parseInt(participantCount);
+                double fee = Double.parseDouble(feeToConvert);
 
-                Log.d("tags: ", tags);
-                Log.d("description: ", description);
-                Log.d("fee: ", fee);
+                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                Date oldDate = sdf.parse(dateToConvertMiliseconds);
+                long dateInMiliseconds = oldDate.getTime();
 
-                float latitude = Float.parseFloat(latitudeToConvertFloat);
-                float longtitude = Float.parseFloat(longitudeToConvertFloat);
-
-                Log.d("longtitude: ", longtitude+"");
-                Log.d("latitude: ", latitude+"");
+                //Log.d("EventBackgroundTask", longitude + "");
+                //Log.d("EventBackgroundTask", latitude + "");
 
                 JSONObject requestBody = new JSONObject();
-                requestBody.put("title", title);
+                requestBody.put("name", title);
                 requestBody.put("date", dateInMiliseconds);
                 requestBody.put("place.city", placeName);
-                requestBody.put("place.longtitude", longtitude);
+                requestBody.put("place.longitude", longitude);
                 requestBody.put("place.latitude", latitude);
                 requestBody.put("tags", tags);
                 requestBody.put("description", description);
                 requestBody.put("fee", fee);
+                requestBody.put("attendantLimit", parCount); //participantCount = attendantLimit in database!
 
                 OutputStream os = conn.getOutputStream();
 
@@ -136,7 +129,6 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 writer.flush();
                 writer.close();
                 os.close();
-
 
                 int responseCode = conn.getResponseCode();
                 Log.d("Response Code: ", responseCode + "");
@@ -210,9 +202,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
-
         return result;
     }
 
