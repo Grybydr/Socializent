@@ -95,8 +95,8 @@ public class NavigationDrawerFirst extends Fragment {
 
         TextView eventText1 = (TextView) profileView.findViewById(R.id.event1);
         TextView eventText2 = (TextView) profileView.findViewById(R.id.event2);
-        TextView eventText3 = (TextView) profileView.findViewById(R.id.event2);
-        TextView eventText = (TextView) profileView.findViewById(R.id.event2);
+        TextView eventText3 = (TextView) profileView.findViewById(R.id.event3);
+        TextView eventText4 = (TextView) profileView.findViewById(R.id.event4);
 
         try {
             JSONObject obj1 = new JSONObject(eventsArray.getString(0));
