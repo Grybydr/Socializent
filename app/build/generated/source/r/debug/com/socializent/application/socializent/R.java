@@ -3088,7 +3088,7 @@ containing a value of this type.
         public static final int custom=0x7f0d005f;
         public static final int customPanel=0x7f0d005e;
         public static final int dark=0x7f0d0047;
-        public static final int datePicker=0x7f0d00b5;
+        public static final int datePicker=0x7f0d00b4;
         public static final int date_time_spinner=0x7f0d00b3;
         public static final int decor_content_parent=0x7f0d006c;
         public static final int default_activity_button=0x7f0d0051;
@@ -3270,7 +3270,7 @@ containing a value of this type.
         public static final int textinput_counter=0x7f0d0009;
         public static final int textinput_error=0x7f0d000a;
         public static final int time=0x7f0d00df;
-        public static final int timePicker=0x7f0d00b4;
+        public static final int timePicker=0x7f0d00b5;
         public static final int timeView=0x7f0d0091;
         public static final int title=0x7f0d0054;
         public static final int titleDividerNoCustom=0x7f0d0063;
@@ -3885,6 +3885,7 @@ containing a value of this type.
         public static final int Widget_Design_Snackbar=0x7f09017c;
         public static final int Widget_Design_TabLayout=0x7f090001;
         public static final int Widget_Design_TextInputLayout=0x7f09017d;
+        public static final int datepicker=0x7f09017e;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

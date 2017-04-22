@@ -9,14 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <DatePicker style="@style/datepicker"
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
 </LinearLayout>
