@@ -120,7 +120,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("Response: ", result);
+                Log.d("Response5: ", result);
                 //}
                 conn.disconnect();
                 return result;
@@ -180,7 +180,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                     while ((line = br.readLine()) != null) {
                         result += line;
                     }
-                    Log.d("Response: ", result);
+                    Log.d("Response4: ", result);
                 }else
                 {
                     Log.d("ErrorWithResponseCode: ", responseCode +"");
@@ -243,7 +243,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("Response: ", result);
+                Log.d("Response3: ", result);
                 //}
 
                 JSONObject userObject = new JSONObject(result);
