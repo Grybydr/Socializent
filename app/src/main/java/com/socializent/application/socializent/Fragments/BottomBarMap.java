@@ -95,7 +95,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             PermissionUtils.requestPermission((AppCompatActivity) getActivity(), LOCATION_PERMISSION_REQUEST_CODE,
                     Manifest.permission.ACCESS_FINE_LOCATION, false);
-            Log.v("LOCATION", "Permission conditions not satisfied for My Location");
+            Log.v("LOCATION_V", "Permission conditions not satisfied for My Location");
 
             Toast.makeText(getContext(), R.string.map_loc_warning, Toast.LENGTH_LONG).show();
             myGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
@@ -202,35 +202,41 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     }
 
     /*
-    /*
+    /* Sends the event record to database
     */
     public void addEvent(Place myPlace, String title, Date myDate, String fee, int participantCount, String tags, String description) {
 
-        Log.d("PLACEPICKER", "Place: " + myPlace.toString());
+        /*Log.d("PLACEPICKER", "Place: " + myPlace.toString());
         Log.d("PLACEPICKER", "title: " + title);
         Log.d("PLACEPICKER", "myDate: " + myDate);
         Log.d("PLACEPICKER", "fee: " + fee);
         Log.d("PLACEPICKER", "participantCount: " + participantCount);
         Log.d("PLACEPICKER", "tags: " + tags);
-        Log.d("PLACEPICKER", "description: " + description);
+        Log.d("PLACEPICKER", "description: " + description);*/
 
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-
         String date = formatter.format(myDate);
 
         EventBackgroundTask createEventTask = new EventBackgroundTask();
-        String longitude = Float.toString(25.0f);
-        String latitude = Float.toString(25.0f);
-        createEventTask.execute("1",title,date,myPlace.getName().toString(),longitude, latitude,participantCount+"",tags,description,fee);
+
+        LatLng latLng = myPlace.getLatLng();
+        String longitude = String.valueOf(String.format("%.6f", latLng.longitude));
+        String latitude = String.valueOf(String.format("%.6f", latLng.latitude));
+        String pCount = String.valueOf(participantCount);
+
+        //Log.d("PLACEPICKER", "longitude: " + longitude);
+        //Log.d("PLACEPICKER", "latitude: " + latitude);
+
+        createEventTask.execute("1", title, date, myPlace.getName().toString(), longitude, latitude, pCount, tags, description, fee);
 
         myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
-                .title("Event"));
+                .title(title));
 
     }
 
     private boolean checkMapReady() {
         if (myGoogleMap == null) {
-            Toast.makeText(getContext(), R.string.map_not_ready, Toast.LENGTH_SHORT).show(); //------CHECK
+            Toast.makeText(getContext(), R.string.map_not_ready, Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -245,7 +251,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             return;
         }
         if (ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            Log.v("LOCATION_L", "Permissions GIVEN for My Location");
+            Log.v("LOCATION_V", "Permissions GIVEN for My Location");
             myGoogleMap.setMyLocationEnabled(true);
             myGoogleMap.setBuildingsEnabled(true);
 
@@ -259,7 +265,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             for (int i = 0; i < cookieList.size(); i++) {
                 if (cookieList.get(i).getName().equals("allEvents")){
                     events = cookieList.get(i).getValue();
-                    Log.v("LOCATION_L", "ALLEVENTS: " + events);
+                    //Log.v("LOCATION_V", "ALLEVENTS: " + events);
                     break;
                 }
             }
@@ -270,40 +276,35 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
 
                 for (int i = 0; i < eventsArray.length(); i++) {
 
-                    Log.v("LOCATION_L", "for");
                     JSONObject row = eventsArray.getJSONObject(i);
 
-                    /*String eventTitle = row.getString("title");
-                    if (eventTitle == null || eventTitle.isEmpty())
-                        eventTitle = "Event";*/
+                    //Retrieving event details
+
+                    String eventTitle = row.getString("name"); //TODO: check database for this
+                    if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
+                        eventTitle = "Event";
 
                     JSONObject pl = row.getJSONObject("place");
-
                     tempLat = pl.getString("latitude");
                     tempLong = pl.getString("longitude");
 
-                    Log.v("LOCATION_L", "tempLat" + tempLat);
-                    Log.v("LOCATION_L", "tempLong" + tempLong);
+                    //Log.v("LOCATION_V", "tempLat" + tempLat);
+                    //Log.v("LOCATION_V", "tempLong" + tempLong);
 
                     if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
 
-                        Log.v("LOCATION_L", "Parsing.....");
-
                         final double lat = Double.parseDouble(tempLat);
                         final double longi = Double.parseDouble(tempLong);
-
-                        Log.v("LOCATION_L", "Mapping.....");
-
                         myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, longi))
-                                .title("Event"));
+                                .title(eventTitle));
                     }
                     else {
-                        Log.v("LOCATION_L", "Location NULL");
+                        Log.v("LOCATION", "Latitude or Longitude is NULL");
                     }
 
                 }
             } catch (JSONException e) {
-                Log.v("LOCATION_L", "Events cannot be retrieved from cookie: JSON error");
+                Log.v("LOCATION_V", "Events cannot be retrieved from cookie: JSON error");
                 e.printStackTrace();
             }
 
@@ -312,7 +313,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         } else {
             PermissionUtils.requestPermission((AppCompatActivity) getActivity(), LOCATION_PERMISSION_REQUEST_CODE,
                     Manifest.permission.ACCESS_FINE_LOCATION, false);
-            Log.v("LOCATION_L", "Permission conditions not satisfied for My Location");
+            Log.v("LOCATION_V", "Permission conditions not satisfied for My Location");
             myGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
         }
     }
@@ -334,7 +335,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             myGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
         else{
-            Log.v("LOCATION", "Location is null");
+            Log.v("LOCATION_V", "Location is null");
         }
     }
 
