@@ -266,9 +266,9 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 }
 
 
-                Object object = userObject.get("upcomingEvents");
-                JSONArray upcomingEventsArray = (JSONArray) object;
-                Log.d("upcomingEVENTS: ", upcomingEventsArray.toString());
+                Object object = userObject.get("events");
+                JSONArray eventsArray = (JSONArray) object;
+                Log.d("upcomingEVENTS: ", eventsArray.toString());
                 /*user = new Person(userObject.getString("firstName"),userObject.getString("lastName"),
                         userObject.getString("fullName"),userObject.getString("birthDate"),userObject.getString("password"),
                         userObject.getString("email"),friends,interestAreas);22*/
@@ -286,7 +286,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 //Hawk.put("user",user);
 
                 msCookieManager.getCookieStore().add(null,new HttpCookie("user",jsonObject.toString()));
-                msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",upcomingEventsArray.toString()));
+                msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",eventsArray.toString()));
 
 
                 conn.disconnect();

@@ -1,7 +1,15 @@
 [
     {
+        "merged": "C:\\Guray\\SeniorDesignProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Guray\\SeniorDesignProject\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\socializent_image.png",
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-mdpi\\socializent_image.png"
+    },
+    {
+        "merged": "C:\\Guray\\SeniorDesignProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\socializent_image.png",
+        "source": "C:\\Guray\\SeniorDesignProject\\app\\src\\main\\res\\mipmap-mdpi\\socializent_image.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",

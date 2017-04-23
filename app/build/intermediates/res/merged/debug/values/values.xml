@@ -295,6 +295,7 @@
         </attr></declare-styleable>
     <declare-styleable name="DesignTheme"><attr format="reference" name="bottomSheetDialogTheme"/><attr format="reference" name="bottomSheetStyle"/><attr format="color" name="textColorError"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
+    <declare-styleable name="ExpandableLayout"><attr format="integer" name="el_duration"/><attr format="boolean" name="el_expanded"/><attr format="float" name="el_parallax"/><attr format="boolean" name="el_translate_children"/><attr format="boolean" name="layout_expandable"/><attr name="android:orientation"/></declare-styleable>
     <declare-styleable name="FloatingActionButton"><attr name="backgroundTint"/><attr name="backgroundTintMode"/><attr format="color" name="rippleColor"/><attr name="fabSize">
             
             <enum name="auto" value="-1"/>
@@ -673,6 +674,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="dateTimeChoice">Date or Time?</string>
+    <string name="description_name">Description</string>
     <string name="drawer_close">Close</string>
     <string name="drawer_open">Open</string>
     <string name="facebook_login">Facebook Login</string>

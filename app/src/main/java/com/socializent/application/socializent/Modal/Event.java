@@ -21,8 +21,9 @@ public class Event {
     private boolean payable;
     private EventTypes eventType;
     private int eventRate;
+    private String description;
 
-    public Event(String name, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, boolean payable, EventTypes eventType, int eventRate) {
+    public Event(String name,String description, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, boolean payable, EventTypes eventType, int eventRate) {
         this.name = name;
         this.date = date; //berk milisecond olarak yolluyormuş bunu dönüştürmek lazım
         this.address = address;
@@ -31,6 +32,19 @@ public class Event {
         this.payable = payable;
         this.eventType = eventType;
         this.eventRate = eventRate;
+        this.description = description;
+    }
+
+    public Event() {
+        this.name = "Default Event";
+        this.date = new Date();
+        this.address = "Default Address";
+        this.interestArea = new ArrayList<String>();
+        this.eventOrganizer = new EventOrganizer();
+        this.payable = false;
+        this.eventType = EventTypes.BIRTHDAY;
+        this.eventRate = 0;
+        this.description = "Default Description";
     }
 
     public String getName() {
@@ -103,5 +117,13 @@ public class Event {
 
     public void setAttendants(ArrayList<Attendant> attendants) {
         this.attendants = attendants;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 }
