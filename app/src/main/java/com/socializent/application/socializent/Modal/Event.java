@@ -21,22 +21,6 @@ public class Event {
     private ArrayList<String> interestArea; //buna gerek yok galiba?
     private ArrayList<Attendant> attendants;
 
-    public int getParticipantCount() {
-        return participantCount;
-    }
-
-    public void setParticipantCount(int participantCount) {
-        this.participantCount = participantCount;
-    }
-    private int fee;
-
-    public int getFee() {
-        return fee;
-    }
-
-    public void setFee(int fee) {
-        this.fee = fee;
-    }
 
     private int participantCount;
     private EventOrganizer eventOrganizer;
@@ -80,6 +64,22 @@ public class Event {
         this.description = "Default Description";
     }
 
+    public int getParticipantCount() {
+        return participantCount;
+    }
+
+    public void setParticipantCount(int participantCount) {
+        this.participantCount = participantCount;
+    }
+    private int fee;
+
+    public int getFee() {
+        return fee;
+    }
+
+    public void setFee(int fee) {
+        this.fee = fee;
+    }
     public String getName() {
         return name;
     }
@@ -119,9 +119,6 @@ public class Event {
     public void setEventOrganizer(EventOrganizer eventOrganizer) {
         this.eventOrganizer = eventOrganizer;
     }
-
-
-
 
 
     public EventTypes getEventType() {
