@@ -117,7 +117,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 requestBody.put("tags", tags);
                 requestBody.put("description", description);
                 requestBody.put("fee", fee);
-                requestBody.put("attendantLimit", parCount); //participantCount = attendantLimit in database!
+                requestBody.put("participantCount", parCount); //participantCount = attendantLimit in database!
 
                 OutputStream os = conn.getOutputStream();
 

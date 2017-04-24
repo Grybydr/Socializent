@@ -103,7 +103,6 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             }
         });
 
-
         // Build dialog
         Dialog builder = new Dialog(getActivity());
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE);

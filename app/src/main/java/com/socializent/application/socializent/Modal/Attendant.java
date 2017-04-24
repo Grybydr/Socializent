@@ -10,14 +10,14 @@ public class Attendant extends Person {
     private ArrayList<Event> upcomingEvents;
     private ArrayList<Event> pastEvents;
 
-    public Attendant(String name, String surname, String username, String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas) {
-        super(name, surname, username, birthdate, password, mailAddress, friends, interestAreas);
-        upcomingEvents = null;
-        pastEvents = null;
-
+    public Attendant(String firstName, String lastName, String username, float birthDate, String password, String email, ArrayList<Person> friends, ArrayList<String> interests, ArrayList<Event> events, ArrayList<Event> upcomingEvents, ArrayList<Event> pastEvents, double rate, ArrayList<Event> upcomingEvents1, ArrayList<Event> pastEvents1) {
+        super(firstName, lastName, username, birthDate, password, email, friends, interests, events, upcomingEvents, pastEvents, rate);
+        this.upcomingEvents = upcomingEvents1;
+        this.pastEvents = pastEvents1;
     }
 
-   public ArrayList<Event> getUpcomingEvents(){
+
+    public ArrayList<Event> getUpcomingEvents(){
         return upcomingEvents;
     }
     public ArrayList<Event> getPastEvents(){
@@ -33,8 +33,8 @@ public class Attendant extends Person {
         upcomingEvents.remove(e);
     }
     //event rate changed when user rate the event
-    public void rateEvent(Event e, int rate){
-        int newRate = e.getEventRate()+ rate;
+    public void rateEvent(Event e, double rate){
+        double newRate = e.getEventRate()+ rate;
         newRate = newRate/ (e.getAttendants()).size();
         e.setEventRate(newRate);
     }

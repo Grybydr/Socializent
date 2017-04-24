@@ -1,7 +1,4 @@
-#Sun Apr 23 14:40:25 EEST 2017
-base.0=C\:\\Guray\\SeniorDesignProject\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_cc783b75ef38164668d2881b5805925edea711c2
-renamed.1=classes2.dex
+#Mon Apr 24 17:21:34 EEST 2017
+base.0=D\:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.1=C\:\\Guray\\SeniorDesignProject\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_ecc34fc13a053a069b59c75124cf9ee4fd2d30e6\\classes.dex
-base.1=C\:\\Guray\\SeniorDesignProject\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_ecc34fc13a053a069b59c75124cf9ee4fd2d30e6
-file.0=C\:\\Guray\\SeniorDesignProject\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_cc783b75ef38164668d2881b5805925edea711c2\\classes.dex
+file.0=D\:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

@@ -1,17 +1,9 @@
 package com.socializent.application.socializent.Fragments;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -22,13 +14,9 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Modal.Event;
-import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
-import com.socializent.application.socializent.other.CircleDrawable;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 

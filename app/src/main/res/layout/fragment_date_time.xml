@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TimePicker
+    <TimePicker style="@style/timepicker"
         android:id="@+id/timePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

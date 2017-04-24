@@ -20,24 +20,27 @@
         <item name="android:textColor">@color/colorEditText</item>
     </style>
 
-    <style name="datepicker" parent="@android:style/Widget.DeviceDefault.DatePicker">
+    <style name="datepicker" parent="android:Widget.Material.Light.DatePicker">
         <item name="android:headerBackground">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/white</item>
         <item name="android:calendarTextColor">@color/colorPrimary</item>
         <item name="android:dayOfWeekBackground">@color/colorPrimary</item>
+        <item name="android:numbersBackgroundColor">@color/white</item>
         <item name="android:datePickerMode">calendar</item>
+    </style>
+
+    <style name="timepicker" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:timePickerMode">clock</item>
+        <item name="android:headerBackground">@color/colorPrimary</item>
+        <item name="android:numbersTextColor">@color/colorPrimary</item>
+        <item name="android:numbersBackgroundColor">@color/white</item>
+        <item name="android:amPmTextColor">@color/colorAccent</item>
     </style>
 
     <!--&lt;!&ndash;BU KISMI ŞİMDİLİK SİLMEYİN LÜTFEN, ZÜLAL :)>-->
 
     <!--<style name="DialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:topDark">@drawable/dialog_header_bg</item>
-    </style>-->
-    <!--<style name="MyDatePickerStyle" parent="@android:style/Widget.Holo.DatePicker">
-        <item name="android:headerBackground">@color/ColorPrimary</item>
-        <item name="android:calendarTextColor">@color/ColorPrimaryDark</item>
-        <item name="android:dayOfWeekBackground">@color/ColorPrimaryDark</item>
-        <item name="android:yearListSelectorColor">@color/accent_color</item>
-        <item name="android:datePickerMode">calendar</item>
     </style>-->
 
 

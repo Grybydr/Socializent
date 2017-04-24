@@ -2,40 +2,13 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Guray\SeniorDesignProject\app\libs\CircleImageView-master\gradle\wrapper\gradle-wrapper.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="D:\SENIOR_PROJECT\Socializent\app\libs\CircleImageView-master\gradle\wrapper\gradle-wrapper.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="d229475a85469cc6aab6348e8714bd1c1f833fb4">
-        <dex dex="C:\Guray\SeniorDesignProject\app\build\intermediates\transforms\dex\debug\folders\1000\2\gradle-wrapper_cfaf5f23865e74c4684313eaffcd3aaebd61275d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Guray\SeniorDesignProject\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="C:\Guray\SeniorDesignProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_cc783b75ef38164668d2881b5805925edea711c2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Toshıba\.android\build-cache\d20273dc08737585f75bfa01fedfd2755919d3f5\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9d2f2ae068777ce3d02708f705b67c50dba2f412">
-        <dex dex="C:\Guray\SeniorDesignProject\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_00769d56e5afbef7857398276ac53cb6db3a554a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Guray\SeniorDesignProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a0a530d755a616db6ca94742725e2ce553712df5">
-        <dex dex="C:\Guray\SeniorDesignProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ecc34fc13a053a069b59c75124cf9ee4fd2d30e6\classes.dex" />
+        <dex dex="D:\SENIOR_PROJECT\Socializent\app\build\intermediates\pre-dexed\debug\gradle-wrapper_405270b0dee3393933a693f9798b0725d1eb1bb5.jar" />
     </item>
 
 </items>

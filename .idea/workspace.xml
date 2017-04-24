@@ -18,39 +18,18 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f16c4baa-7cd2-416f-8541-c66ca6c6cbdf" name="Default" comment="database loc hatası çözüldü">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README2.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_fragment.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Socializent.iml" afterPath="" />
+    <list default="true" id="f16c4baa-7cd2-416f-8541-c66ca6c6cbdf" name="Default" comment="name convention">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/BadgeTypes.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$attr.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Controller/PersonBackgroundTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Controller/PersonBackgroundTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/BottomBarMap$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/BottomBarMap$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/BottomBarMap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/BottomBarMap.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/PermissionUtils$RationaleDialog.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Fragments/PermissionUtils$RationaleDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Modal/Event.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Modal/Event.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$bool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$dimen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/R$layout.class" />
@@ -63,6 +42,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/Template.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/main.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/socializent/application/socializent/main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
@@ -73,13 +53,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/socializent/application/socializent/test/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/socializent/application/socializent/test/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/socializent/application/socializent/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/socializent/application/socializent/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/socializent/application/socializent/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/socializent/application/socializent/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/androidTest/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/androidTest/debug/multi/values.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-af.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-af.json" />
@@ -246,7 +220,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxhdpi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxhdpi.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
@@ -254,334 +227,21 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/androidTest/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/androidTest/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/design_error.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/design_error.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_focused.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_focused.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_normal.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_normal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_disabled.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_disabled.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_focused.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_focused.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_normal.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_normal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/place_autocomplete_fragment.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-v21/place_autocomplete_fragment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/material_design_profile_screen_xml_ui_design.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/material_design_profile_screen_xml_ui_design.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-af/values-af.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-af/values-af.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-am/values-am.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-am/values-am.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ar/values-ar.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ar/values-ar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-az-rAZ/values-az-rAZ.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-az-rAZ/values-az-rAZ.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-az/values-az.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-az/values-az.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-b+sr+Latn/values-b+sr+Latn.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-b+sr+Latn/values-b+sr+Latn.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-be-rBY/values-be-rBY.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-be-rBY/values-be-rBY.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-be/values-be.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-be/values-be.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bg/values-bg.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bg/values-bg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bn-rBD/values-bn-rBD.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bn-rBD/values-bn-rBD.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bn/values-bn.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bn/values-bn.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bs-rBA/values-bs-rBA.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bs-rBA/values-bs-rBA.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bs/values-bs.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-bs/values-bs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ca/values-ca.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ca/values-ca.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-cs/values-cs.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-cs/values-cs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-da/values-da.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-da/values-da.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-de/values-de.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-de/values-de.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-el/values-el.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-el/values-el.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-en-rAU/values-en-rAU.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-en-rAU/values-en-rAU.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-en-rGB/values-en-rGB.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-en-rGB/values-en-rGB.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-en-rIN/values-en-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-en-rIN/values-en-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-es-rUS/values-es-rUS.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-es-rUS/values-es-rUS.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-es/values-es.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-es/values-es.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-et-rEE/values-et-rEE.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-et-rEE/values-et-rEE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-et/values-et.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-et/values-et.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-eu-rES/values-eu-rES.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-eu-rES/values-eu-rES.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-eu/values-eu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-eu/values-eu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fa/values-fa.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fa/values-fa.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fi/values-fi.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fi/values-fi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fr-rCA/values-fr-rCA.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fr-rCA/values-fr-rCA.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fr/values-fr.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-fr/values-fr.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gl-rES/values-gl-rES.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gl-rES/values-gl-rES.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gl/values-gl.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gl/values-gl.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gu-rIN/values-gu-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gu-rIN/values-gu-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gu/values-gu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-gu/values-gu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-h720dp-v13/values-h720dp-v13.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-h720dp-v13/values-h720dp-v13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hdpi-v4/values-hdpi-v4.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hdpi-v4/values-hdpi-v4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hi/values-hi.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hi/values-hi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hr/values-hr.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hr/values-hr.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hu/values-hu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hu/values-hu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hy-rAM/values-hy-rAM.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hy-rAM/values-hy-rAM.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hy/values-hy.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-hy/values-hy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-in/values-in.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-in/values-in.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-is-rIS/values-is-rIS.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-is-rIS/values-is-rIS.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-is/values-is.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-is/values-is.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-it/values-it.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-it/values-it.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-iw/values-iw.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-iw/values-iw.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ja/values-ja.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ja/values-ja.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ka-rGE/values-ka-rGE.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ka-rGE/values-ka-rGE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ka/values-ka.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ka/values-ka.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kk-rKZ/values-kk-rKZ.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kk-rKZ/values-kk-rKZ.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kk/values-kk.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kk/values-kk.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-km-rKH/values-km-rKH.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-km-rKH/values-km-rKH.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-km/values-km.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-km/values-km.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kn-rIN/values-kn-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kn-rIN/values-kn-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kn/values-kn.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-kn/values-kn.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ko/values-ko.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ko/values-ko.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ky-rKG/values-ky-rKG.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ky-rKG/values-ky-rKG.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ky/values-ky.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ky/values-ky.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-land/values-land.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-land/values-land.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-large-v4/values-large-v4.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-large-v4/values-large-v4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ldltr-v21/values-ldltr-v21.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ldltr-v21/values-ldltr-v21.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lo-rLA/values-lo-rLA.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lo-rLA/values-lo-rLA.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lo/values-lo.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lo/values-lo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lt/values-lt.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lt/values-lt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lv/values-lv.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-lv/values-lv.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mk-rMK/values-mk-rMK.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mk-rMK/values-mk-rMK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mk/values-mk.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mk/values-mk.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ml-rIN/values-ml-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ml-rIN/values-ml-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ml/values-ml.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ml/values-ml.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mn-rMN/values-mn-rMN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mn-rMN/values-mn-rMN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mn/values-mn.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mn/values-mn.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mr-rIN/values-mr-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mr-rIN/values-mr-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mr/values-mr.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-mr/values-mr.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ms-rMY/values-ms-rMY.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ms-rMY/values-ms-rMY.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ms/values-ms.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ms/values-ms.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-my-rMM/values-my-rMM.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-my-rMM/values-my-rMM.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-my/values-my.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-my/values-my.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-nb/values-nb.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-nb/values-nb.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ne-rNP/values-ne-rNP.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ne-rNP/values-ne-rNP.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ne/values-ne.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ne/values-ne.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-night-v8/values-night-v8.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-night-v8/values-night-v8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-nl/values-nl.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-nl/values-nl.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pa-rIN/values-pa-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pa-rIN/values-pa-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pa/values-pa.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pa/values-pa.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pl/values-pl.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pl/values-pl.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-port/values-port.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-port/values-port.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pt-rPT/values-pt-rPT.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pt-rPT/values-pt-rPT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pt/values-pt.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-pt/values-pt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ro/values-ro.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ro/values-ro.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ru/values-ru.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ru/values-ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-si-rLK/values-si-rLK.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-si-rLK/values-si-rLK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-si/values-si.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-si/values-si.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sk/values-sk.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sk/values-sk.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sl/values-sl.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sl/values-sl.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sq-rAL/values-sq-rAL.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sq-rAL/values-sq-rAL.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sq/values-sq.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sq/values-sq.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sr/values-sr.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sr/values-sr.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sv/values-sv.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sv/values-sv.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sw/values-sw.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sw/values-sw.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sw600dp-v13/values-sw600dp-v13.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-sw600dp-v13/values-sw600dp-v13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ta-rIN/values-ta-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ta-rIN/values-ta-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ta/values-ta.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ta/values-ta.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-te-rIN/values-te-rIN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-te-rIN/values-te-rIN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-te/values-te.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-te/values-te.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-th/values-th.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-th/values-th.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-tl/values-tl.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-tl/values-tl.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-tr/values-tr.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-tr/values-tr.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-uk/values-uk.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-uk/values-uk.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ur-rPK/values-ur-rPK.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ur-rPK/values-ur-rPK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ur/values-ur.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-ur/values-ur.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-uz-rUZ/values-uz-rUZ.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-uz-rUZ/values-uz-rUZ.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-uz/values-uz.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-uz/values-uz.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v11/values-v11.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v11/values-v11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v12/values-v12.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v12/values-v12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v13/values-v13.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v13/values-v13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v14/values-v14.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v14/values-v14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v16/values-v16.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v16/values-v16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v17/values-v17.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v17/values-v17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v18/values-v18.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v18/values-v18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v21/values-v21.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v21/values-v21.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v22/values-v22.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v22/values-v22.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v23/values-v23.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v23/values-v23.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v24/values-v24.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v24/values-v24.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v25/values-v25.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v25/values-v25.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-vi/values-vi.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-vi/values-vi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-xlarge-v4/values-xlarge-v4.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-xlarge-v4/values-xlarge-v4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zh-rCN/values-zh-rCN.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zh-rCN/values-zh-rCN.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zh-rHK/values-zh-rHK.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zh-rHK/values-zh-rHK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zh-rTW/values-zh-rTW.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zh-rTW/values-zh-rTW.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zu/values-zu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-zu/values-zu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/bottom_bar_map_fragment.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/bottom_bar_map_fragment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/BottomBarMap.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/BottomBarMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventCreateDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventCreateDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Attendant.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Attendant.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/material_design_profile_screen_xml_ui_design.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/material_design_profile_screen_xml_ui_design.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/bottom_bar_map_fragment.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/bottom_bar_map_fragment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_date_time.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_date_time.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
@@ -615,120 +275,156 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="material_design_profile_screen_xml_ui_design.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/material_design_profile_screen_xml_ui_design.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+      <file leaf-file-name="EventBackgroundTask.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1544">
+              <caret line="119" column="49" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
               <folding />
             </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recycler_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml">
+      <file leaf-file-name="Event.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
-              <folding />
+            <state relative-caret-position="273">
+              <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+              <folding>
+                <element signature="e#694#695#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+                <element signature="e#898#899#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#959#960#0" expanded="true" />
+                <element signature="e#989#990#0" expanded="true" />
+                <element signature="e#3690#3691#0" expanded="true" />
+                <element signature="e#3732#3733#0" expanded="true" />
+                <element signature="e#4138#4139#0" expanded="true" />
+                <element signature="e#4169#4170#0" expanded="true" />
+                <element signature="e#4217#4218#0" expanded="true" />
+                <element signature="e#4257#4258#0" expanded="true" />
+                <element signature="e#4292#4293#0" expanded="true" />
+                <element signature="e#4323#4324#0" expanded="true" />
+                <element signature="e#4371#4372#0" expanded="true" />
+                <element signature="e#4411#4412#0" expanded="true" />
+                <element signature="e#4457#4458#0" expanded="true" />
+                <element signature="e#4488#4489#0" expanded="true" />
+                <element signature="e#4547#4548#0" expanded="true" />
+                <element signature="e#4587#4588#0" expanded="true" />
+              </folding>
             </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recycler_view_fragment.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_fragment.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="NavigationDrawerFirst.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="229" column="31" selection-start-line="229" selection-start-column="31" selection-end-line="229" selection-end-column="31" />
+            <state relative-caret-position="200">
+              <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2167">
+              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6431#6432#0" expanded="true" />
-                <element signature="e#6486#6487#0" expanded="true" />
+                <element signature="e#2040#2041#0" expanded="true" />
+                <element signature="e#2072#2073#0" expanded="true" />
+                <element signature="e#2122#2123#0" expanded="true" />
+                <element signature="e#2164#2165#0" expanded="true" />
+                <element signature="e#2199#2200#0" expanded="true" />
+                <element signature="e#2230#2231#0" expanded="true" />
+                <element signature="e#2278#2279#0" expanded="true" />
+                <element signature="e#2318#2319#0" expanded="true" />
+                <element signature="e#2353#2354#0" expanded="true" />
+                <element signature="e#2385#2386#0" expanded="true" />
+                <element signature="e#2434#2435#0" expanded="true" />
+                <element signature="e#2476#2477#0" expanded="true" />
+                <element signature="e#2508#2509#0" expanded="true" />
+                <element signature="e#2536#2537#0" expanded="true" />
+                <element signature="e#2578#2579#0" expanded="true" />
+                <element signature="e#2612#2613#0" expanded="true" />
+                <element signature="e#2659#2660#0" expanded="true" />
+                <element signature="e#2691#2692#0" expanded="true" />
+                <element signature="e#2752#2753#0" expanded="true" />
+                <element signature="e#2794#2795#0" expanded="true" />
+                <element signature="e#2827#2828#0" expanded="true" />
+                <element signature="e#2859#2860#0" expanded="true" />
+                <element signature="e#2904#2905#0" expanded="true" />
+                <element signature="e#2946#2947#0" expanded="true" />
+                <element signature="e#2981#2982#0" expanded="true" />
+                <element signature="e#3012#3013#0" expanded="true" />
+                <element signature="e#3060#3061#0" expanded="true" />
+                <element signature="e#3100#3101#0" expanded="true" />
+                <element signature="e#3135#3136#0" expanded="true" />
+                <element signature="e#3166#3167#0" expanded="true" />
+                <element signature="e#3214#3215#0" expanded="true" />
+                <element signature="e#3254#3255#0" expanded="true" />
+                <element signature="e#3289#3290#0" expanded="true" />
+                <element signature="e#3321#3322#0" expanded="true" />
+                <element signature="e#3370#3371#0" expanded="true" />
+                <element signature="e#3412#3413#0" expanded="true" />
+                <element signature="e#3447#3448#0" expanded="true" />
+                <element signature="e#3478#3479#0" expanded="true" />
+                <element signature="e#3526#3527#0" expanded="true" />
+                <element signature="e#3566#3567#0" expanded="true" />
+                <element signature="e#3598#3599#0" expanded="true" />
+                <element signature="e#3626#3627#0" expanded="true" />
+                <element signature="e#3668#3669#0" expanded="true" />
+                <element signature="e#3702#3703#0" expanded="true" />
+                <element signature="e#3752#3753#0" expanded="true" />
+                <element signature="e#3782#3783#0" expanded="true" />
+                <element signature="e#3839#3840#0" expanded="true" />
+                <element signature="e#3877#3878#0" expanded="true" />
+                <element signature="e#3924#3925#0" expanded="true" />
+                <element signature="e#3956#3957#0" expanded="true" />
+                <element signature="e#4017#4018#0" expanded="true" />
+                <element signature="e#4059#4060#0" expanded="true" />
+                <element signature="e#4514#4515#0" expanded="true" />
+                <element signature="e#4545#4546#0" expanded="true" />
+                <element signature="e#4593#4594#0" expanded="true" />
+                <element signature="e#4633#4634#0" expanded="true" />
+                <element signature="e#4685#4686#0" expanded="true" />
+                <element signature="e#4722#4723#0" expanded="true" />
+                <element signature="e#4888#4889#0" expanded="true" />
+                <element signature="e#4917#4918#0" expanded="true" />
+                <element signature="e#4971#4972#0" expanded="true" />
+                <element signature="e#5007#5008#0" expanded="true" />
+                <element signature="e#5054#5055#0" expanded="true" />
+                <element signature="e#5087#5088#0" expanded="true" />
+                <element signature="e#5149#5150#0" expanded="true" />
+                <element signature="e#5193#5194#0" expanded="true" />
+                <element signature="e#5244#5245#0" expanded="true" />
+                <element signature="e#5281#5282#0" expanded="true" />
+                <element signature="e#5455#5456#0" expanded="true" />
+                <element signature="e#5493#5494#0" expanded="true" />
+                <element signature="e#5650#5651#0" expanded="true" />
+                <element signature="e#5678#5679#0" expanded="true" />
+                <element signature="e#5719#5720#0" expanded="true" />
+                <element signature="e#5753#5754#0" expanded="true" />
+                <element signature="e#5784#5785#0" expanded="true" />
+                <element signature="e#5811#5812#0" expanded="true" />
+                <element signature="e#5851#5852#0" expanded="true" />
+                <element signature="e#5883#5884#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java">
+      <file leaf-file-name="Attendant.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Attendant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="128" column="1" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
+            <state relative-caret-position="182">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding>
-                <element signature="e#3249#3250#0" expanded="true" />
-                <element signature="e#3295#3296#0" expanded="true" />
-                <element signature="e#3333#3334#0" expanded="true" />
-                <element signature="e#3372#3373#0" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+                <element signature="e#911#912#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventBackgroundTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1037">
-              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonBackgroundTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1375">
-              <caret line="215" column="21" selection-start-line="212" selection-start-column="19" selection-end-line="215" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -752,7 +448,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\Toshıba\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\Zülal Bingöl\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -765,14 +461,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="SeniorDesignProject" />
+              <option name="name" value="Socializent" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="SeniorDesignProject" />
+                <option name="name" value="Socializent" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -790,7 +486,7 @@
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'SeniorDesignProject'." />
+                <option name="description" value="Displays the sub-projects of root project 'Socializent'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -834,7 +530,7 @@
                 <option name="name" value="assembleDebugUnitTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'SeniorDesignProject'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'Socializent'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
@@ -849,7 +545,7 @@
                 <option name="name" value="prepareComAndroidSupportAppcompatV72530Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'SeniorDesignProject' (some of the displayed tasks may belong to subprojects)." />
+                <option name="description" value="Displays the tasks runnable from root project 'Socializent' (some of the displayed tasks may belong to subprojects)." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -872,7 +568,7 @@
                 <option name="name" value="deviceCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'SeniorDesignProject'." />
+                <option name="description" value="Displays all dependencies declared in root project 'Socializent'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -947,7 +643,7 @@
                 <option name="name" value="compileDebugAndroidTestJavaWithJavac" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'SeniorDesignProject'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'Socializent'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -1100,7 +796,7 @@
                 <option name="name" value="uninstallDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'SeniorDesignProject'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'Socializent'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -1416,12 +1112,12 @@
                 <option name="name" value="prepareComAndroidSupportSupportV42530Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'SeniorDesignProject'. [incubating]" />
+                <option name="description" value="Displays the dependent components of components in root project 'Socializent'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'SeniorDesignProject'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'Socializent'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
@@ -1558,7 +1254,7 @@
                 <option name="name" value="generateReleaseResValues" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'SeniorDesignProject'." />
+                <option name="description" value="Displays the properties of root project 'Socializent'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -2342,7 +2038,7 @@
         <entry key="C:\Guray\SeniorDesignProject" value="4478822541217" />
         <entry key="C:\Guray\Senior\Socializent" value="4473021397256" />
         <entry key="C:\Users\Irem\Desktop\SENIOR_PROJECT\Socializent" value="4472704457668" />
-        <entry key="D:\SENIOR_PROJECT\Socializent" value="4473016376260" />
+        <entry key="D:\SENIOR_PROJECT\Socializent" value="4473323832227" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2492,7 +2188,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="SeniorDesignProject" />
+              <option name="name" value="Socializent" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/announce" />
@@ -2661,7 +2357,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/bottom_bar_map_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/CircleDrawable.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/other/CircleDrawable.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Attendant.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/profile_circular_border_imageview.xml" />
@@ -2680,9 +2375,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/DatabaseController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/main.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Template.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/SignUp.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/DateTimeDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/BottomBarMap.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventCreateDialog.java" />
@@ -2693,17 +2386,21 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/material_design_profile_screen_xml_ui_design.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Attendant.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="745" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2749,37 +2446,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2789,29 +2481,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2822,18 +2496,14 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2848,78 +2518,14 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="color" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2945,11 +2551,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2979,11 +2585,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
+              <option name="myItemId" value="Socializent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -3011,41 +2617,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SeniorDesignProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socializent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -3054,7 +2631,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="My_Android" />
+    <property name="device.picker.selection" value="Nexus_6_API_23" />
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
     <property name="android.project.structure.last.selected" value="Notifications" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -3725,24 +3302,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="745" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53754264" sideWeight="0.48784193" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16865417" sideWeight="0.39969605" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27303755" sideWeight="0.39712557" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43120804" sideWeight="0.24054463" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.7594554" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30181542" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69283277" sideWeight="0.86170214" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29471892" sideWeight="0.48487142" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27303755" sideWeight="0.60287446" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.7594554" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22525597" sideWeight="0.70877457" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28668943" sideWeight="0.6490166" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32593855" sideWeight="0.5220365" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5470086" sideWeight="0.2256839" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20561457" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5470086" sideWeight="0.2256839" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2708018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9095563" sideWeight="0.48108926" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3755,7 +3332,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13993174" sideWeight="0.48404256" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30181542" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3818,7 +3395,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bottom bar ikonları eklendi" />
     <MESSAGE value="bottom bar icons added" />
     <MESSAGE value="navigation bar changed" />
     <MESSAGE value="bottom bar yenilendi" />
@@ -3843,7 +3419,8 @@
     <MESSAGE value="navdrawerf" />
     <MESSAGE value="navdrawerf8" />
     <MESSAGE value="database loc hatası çözüldü" />
-    <option name="LAST_COMMIT_MESSAGE" value="database loc hatası çözüldü" />
+    <MESSAGE value="name convention" />
+    <option name="LAST_COMMIT_MESSAGE" value="name convention" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3859,13 +3436,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/profile_circular_border_imageview.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/theworldisyours.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3969,7 +3539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4009,13 +3578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/SignUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="910">
@@ -4048,7 +3610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4085,9 +3646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="100" column="44" selection-start-line="100" selection-start-column="44" selection-end-line="100" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4096,8 +3654,6 @@
         <state relative-caret-position="2550">
           <caret line="198" column="72" selection-start-line="198" selection-start-column="72" selection-end-line="198" selection-end-column="72" />
           <folding>
-            <element signature="e#4827#4828#0" expanded="false" />
-            <element signature="e#4882#4883#0" expanded="false" />
             <element signature="method#onLocationChanged#0;class#BottomBarMap#0" expanded="false" />
             <element signature="method#onCancel#0;class#BottomBarMap#0" expanded="false" />
             <element signature="method#onDismiss#0;class#BottomBarMap#0" expanded="false" />
@@ -4109,7 +3665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4117,7 +3672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4128,7 +3682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4139,7 +3692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4150,7 +3702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4161,7 +3712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
           <caret line="112" column="40" selection-start-line="112" selection-start-column="40" selection-end-line="112" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4172,7 +3722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4184,7 +3733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4192,13 +3740,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
+        <state relative-caret-position="697">
           <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
           <folding />
         </state>
@@ -4208,67 +3755,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/PersonBackgroundTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
+        <state relative-caret-position="2958">
           <caret line="215" column="21" selection-start-line="212" selection-start-column="19" selection-end-line="215" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1037">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="128" column="1" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
-          <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3295#3296#0" expanded="true" />
-            <element signature="e#3333#3334#0" expanded="true" />
-            <element signature="e#3372#3373#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="229" column="31" selection-start-line="229" selection-start-column="31" selection-end-line="229" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6431#6432#0" expanded="true" />
-            <element signature="e#6486#6487#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_fragment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="1122">
+          <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4276,14 +3787,157 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/material_design_profile_screen_xml_ui_design.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="368">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
           <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventBackgroundTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1544">
+          <caret line="119" column="49" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2167">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2040#2041#0" expanded="true" />
+            <element signature="e#2072#2073#0" expanded="true" />
+            <element signature="e#2122#2123#0" expanded="true" />
+            <element signature="e#2164#2165#0" expanded="true" />
+            <element signature="e#2199#2200#0" expanded="true" />
+            <element signature="e#2230#2231#0" expanded="true" />
+            <element signature="e#2278#2279#0" expanded="true" />
+            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="e#2353#2354#0" expanded="true" />
+            <element signature="e#2385#2386#0" expanded="true" />
+            <element signature="e#2434#2435#0" expanded="true" />
+            <element signature="e#2476#2477#0" expanded="true" />
+            <element signature="e#2508#2509#0" expanded="true" />
+            <element signature="e#2536#2537#0" expanded="true" />
+            <element signature="e#2578#2579#0" expanded="true" />
+            <element signature="e#2612#2613#0" expanded="true" />
+            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2691#2692#0" expanded="true" />
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2794#2795#0" expanded="true" />
+            <element signature="e#2827#2828#0" expanded="true" />
+            <element signature="e#2859#2860#0" expanded="true" />
+            <element signature="e#2904#2905#0" expanded="true" />
+            <element signature="e#2946#2947#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
+            <element signature="e#3012#3013#0" expanded="true" />
+            <element signature="e#3060#3061#0" expanded="true" />
+            <element signature="e#3100#3101#0" expanded="true" />
+            <element signature="e#3135#3136#0" expanded="true" />
+            <element signature="e#3166#3167#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3254#3255#0" expanded="true" />
+            <element signature="e#3289#3290#0" expanded="true" />
+            <element signature="e#3321#3322#0" expanded="true" />
+            <element signature="e#3370#3371#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3447#3448#0" expanded="true" />
+            <element signature="e#3478#3479#0" expanded="true" />
+            <element signature="e#3526#3527#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="e#3598#3599#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="e#3668#3669#0" expanded="true" />
+            <element signature="e#3702#3703#0" expanded="true" />
+            <element signature="e#3752#3753#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#3839#3840#0" expanded="true" />
+            <element signature="e#3877#3878#0" expanded="true" />
+            <element signature="e#3924#3925#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="e#4017#4018#0" expanded="true" />
+            <element signature="e#4059#4060#0" expanded="true" />
+            <element signature="e#4514#4515#0" expanded="true" />
+            <element signature="e#4545#4546#0" expanded="true" />
+            <element signature="e#4593#4594#0" expanded="true" />
+            <element signature="e#4633#4634#0" expanded="true" />
+            <element signature="e#4685#4686#0" expanded="true" />
+            <element signature="e#4722#4723#0" expanded="true" />
+            <element signature="e#4888#4889#0" expanded="true" />
+            <element signature="e#4917#4918#0" expanded="true" />
+            <element signature="e#4971#4972#0" expanded="true" />
+            <element signature="e#5007#5008#0" expanded="true" />
+            <element signature="e#5054#5055#0" expanded="true" />
+            <element signature="e#5087#5088#0" expanded="true" />
+            <element signature="e#5149#5150#0" expanded="true" />
+            <element signature="e#5193#5194#0" expanded="true" />
+            <element signature="e#5244#5245#0" expanded="true" />
+            <element signature="e#5281#5282#0" expanded="true" />
+            <element signature="e#5455#5456#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#5650#5651#0" expanded="true" />
+            <element signature="e#5678#5679#0" expanded="true" />
+            <element signature="e#5719#5720#0" expanded="true" />
+            <element signature="e#5753#5754#0" expanded="true" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5811#5812#0" expanded="true" />
+            <element signature="e#5851#5852#0" expanded="true" />
+            <element signature="e#5883#5884#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Attendant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/NavigationDrawerFirst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Modal/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+          <folding>
+            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+            <element signature="e#989#990#0" expanded="true" />
+            <element signature="e#3690#3691#0" expanded="true" />
+            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#4138#4139#0" expanded="true" />
+            <element signature="e#4169#4170#0" expanded="true" />
+            <element signature="e#4217#4218#0" expanded="true" />
+            <element signature="e#4257#4258#0" expanded="true" />
+            <element signature="e#4292#4293#0" expanded="true" />
+            <element signature="e#4323#4324#0" expanded="true" />
+            <element signature="e#4371#4372#0" expanded="true" />
+            <element signature="e#4411#4412#0" expanded="true" />
+            <element signature="e#4457#4458#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4547#4548#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

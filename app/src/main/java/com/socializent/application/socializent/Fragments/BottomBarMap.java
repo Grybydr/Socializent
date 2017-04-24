@@ -38,6 +38,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.socializent.application.socializent.Controller.EventBackgroundTask;
 import com.socializent.application.socializent.R;
@@ -70,8 +71,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     //VARIABLES
     private GoogleMap myGoogleMap;
     private UiSettings myUiSettings;
-    FloatingActionButton myFabButton;
+    private FloatingActionButton addEventButton;
     private LocationManager locationManager;
+    private View mapView;
 
     public static BottomBarMap newInstance() {
         BottomBarMap fragment = new BottomBarMap();
@@ -87,7 +89,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View mapView = inflater.inflate(R.layout.bottom_bar_map_fragment, container, false);
+        mapView = inflater.inflate(R.layout.bottom_bar_map_fragment, container, false);
 
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapView);
@@ -101,12 +103,11 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             myGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
 
         }
-
         //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
         mapFragment.getMapAsync(this);
 
-        myFabButton = (FloatingActionButton) mapView.findViewById(R.id.addEventFab);
-        myFabButton.setOnClickListener(new View.OnClickListener() {
+        addEventButton = (FloatingActionButton) mapView.findViewById(R.id.addEventFab);
+        addEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 initializePlacePicker();
@@ -129,6 +130,20 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         myUiSettings.setZoomGesturesEnabled(true);
         myUiSettings.setScrollGesturesEnabled(true);
 
+        myGoogleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                marker.showInfoWindow();
+                return true;
+            }
+        });
+        myGoogleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+
+            }
+        });
+
         updateMyLocation();
     }
 
@@ -142,7 +157,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             Intent intent = intentBuilder.build(getActivity());
             // Start the Intent by requesting a result, identified by a request code.
             startActivityForResult(intent, REQUEST_PLACE_PICKER);
-
         } catch (GooglePlayServicesRepairableException e) {
             GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
             apiAvailability.getErrorDialog(getActivity(), e.getConnectionStatusCode(), PLAY_SERVICES_RESOLUTION_REQUEST).show();
@@ -368,4 +382,5 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     public void onDismiss(DialogInterface dialog) {
 
     }
+
 }

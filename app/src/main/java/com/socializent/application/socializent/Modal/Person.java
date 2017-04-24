@@ -1,5 +1,7 @@
 package com.socializent.application.socializent.Modal;
 
+import com.google.android.gms.location.places.Place;
+
 import java.util.ArrayList;
 
 /**
@@ -7,47 +9,114 @@ import java.util.ArrayList;
  */
 
 public class Person {
-    private String name;
-    private String surname;
+    private String firstName;
+    private String lastName;
     private String username;
-    private String birthdate; //TODO: date type mı olsa?
+    private float birthDate; //TODO: date type mı olsa?
     private String password;
-    private String mailAddress;
-    private BadgeTypes badgeStatus;
+    private String email;
+    private String photoUrl;
+    
     private ArrayList<Person> friends;
-    private ArrayList<String> interestAreas;
+    private ArrayList<String> interests;
+    private ArrayList<Person> friendRequests;
+    private ArrayList<Event> events;
+    private ArrayList<Event> pastEvents;
+    private ArrayList<Event> upcomingEvents;
+
+    private ArrayList<Event> organizedEvents;
+    private Place place;
+    private double rate;
 
     //EventOrganizer için default constructor
     public Person() {
+        this.firstName = "";
+        this.lastName = "";
+        this.username = "";
+        this.birthDate = 0;
+        this.password = "";
+        this.email = "";
+        this.rate = 0.0;
+        this.friends = new ArrayList<Person>();
+        this.interests = new ArrayList<String>();
+        this.events = new ArrayList<Event>();
+        this.upcomingEvents = new ArrayList<Event>();
+        this.pastEvents = new ArrayList<Event>();
     }
 
 
-    public Person(String name, String surname, String username, String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas) {
-        this.name = name;
-        this.surname = surname;
+    public Person(String firstName, String lastName, String username, float birthDate, String password, String email, ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
-        this.birthdate = birthdate;
-        this.password = password;
-        this.mailAddress = mailAddress;
-        this.badgeStatus = BadgeTypes.BRONZE; //default olarak bronze üyelikten başlıyor
-        this.friends = friends;
-        this.interestAreas = interestAreas;
+        this.birthDate = birthDate;
+        this.password  = password;
+        this.email     = email;
+        this.rate      = rate;
+        this.friends    = friends;
+        this.interests   = interests;
+        this.events     = events;
+        this.upcomingEvents = upcomingEvents;
+        this.pastEvents = pastEvents;
     }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public float getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(float birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public ArrayList<String> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(ArrayList<String> interests) {
+        this.interests = interests;
+    }
+
+
 
     public String getName() {
-        return name;
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getlastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getUsername() {
@@ -58,12 +127,12 @@ public class Person {
         this.username = username;
     }
 
-    public String getBirthdate() {
-        return birthdate;
+    public float getbirthDate() {
+        return birthDate;
     }
 
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
+    public void setbirthDate(float birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getPassword() {
@@ -74,21 +143,14 @@ public class Person {
         this.password = password;
     }
 
-    public String getMailAddress() {
-        return mailAddress;
+    public String getemail() {
+        return email;
     }
 
-    public void setMailAddress(String mailAddress) {
-        this.mailAddress = mailAddress;
+    public void setemail(String email) {
+        this.email = email;
     }
-
-    public BadgeTypes getBadgeStatus() {
-        return badgeStatus;
-    }
-
-    public void setBadgeStatus(BadgeTypes badgeStatus) {
-        this.badgeStatus = badgeStatus;
-    }
+    
 
     public ArrayList<Person> getFriends() {
         return friends;
@@ -98,21 +160,84 @@ public class Person {
         this.friends = friends;
     }
 
-    public ArrayList<String> getInterestAreas() {
-        return interestAreas;
+    public ArrayList<String> getinterests() {
+        return interests;
     }
 
-    public void setInterestAreas(ArrayList<String> interestAreas) {
-        this.interestAreas = interestAreas;
+    public void setinterests(ArrayList<String> interests) {
+        this.interests = interests;
     }
-    public void editProfile(String name, String surname, String username, String birthdate, String password, String mailAddress, ArrayList<Person> friends, ArrayList<String> interestAreas) {
-        this.name = name;
-        this.surname = surname;
+    public void editProfile(String name, String lastName, String username, float birthDate, String password, String email, ArrayList<Person> friends, ArrayList<String> interests) {
+        this.firstName = name;
+        this.lastName = lastName;
         this.username = username;
-        this.birthdate = birthdate;
+        this.birthDate = birthDate;
         this.password = password;
-        this.mailAddress = mailAddress;
-        this.interestAreas = interestAreas;
+        this.email = email;
+        this.interests = interests;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public ArrayList<Person> getFriendRequests() {
+        return friendRequests;
+    }
+
+    public void setFriendRequests(ArrayList<Person> friendRequests) {
+        this.friendRequests = friendRequests;
+    }
+
+    public ArrayList<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(ArrayList<Event> events) {
+        this.events = events;
+    }
+
+    public ArrayList<Event> getPastEvents() {
+        return pastEvents;
+    }
+
+    public void setPastEvents(ArrayList<Event> pastEvents) {
+        this.pastEvents = pastEvents;
+    }
+
+    public ArrayList<Event> getUpcomingEvents() {
+        return upcomingEvents;
+    }
+
+    public void setUpcomingEvents(ArrayList<Event> upcomingEvents) {
+        this.upcomingEvents = upcomingEvents;
+    }
+
+    public ArrayList<Event> getOrganizedEvents() {
+        return organizedEvents;
+    }
+
+    public void setOrganizedEvents(ArrayList<Event> organizedEvents) {
+        this.organizedEvents = organizedEvents;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
 }
