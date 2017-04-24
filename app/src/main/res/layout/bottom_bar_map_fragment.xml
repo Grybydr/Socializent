@@ -5,22 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.socializent.application.socializent.Fragments.BottomBarMap">
 
-    <!--<ImageView
-        android:id="@+id/truiton_image"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_centerInParent="true"
-        android:src="@mipmap/heart"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/truiton_image"
-        android:layout_centerHorizontal="true"
-        android:text="Zülal'in Mapi :) "
-        android:textSize="30sp"/>
-        -->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="550dp"

@@ -1,31 +1,21 @@
 package com.socializent.application.socializent;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.socializent.application.socializent.Controller.PersonBackgroundTask;
-import com.socializent.application.socializent.Controller.UserController;
 import com.socializent.application.socializent.Modal.Person;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Date;
 
 /**
  * Created by Zulal Bingol on 5.03.2017.
@@ -33,7 +23,6 @@ import java.util.Date;
 
 public class main extends Activity {
     //@Override
-    UserController userController;
     Person activeUser;
     EditText userNameText;
     EditText passwordText;
@@ -46,9 +35,6 @@ public class main extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
-
-
-        userController = new UserController();
         //Toast.makeText(this,new Date()+"",Toast.LENGTH_LONG).show();
         ImageView socializentLogo = (ImageView)findViewById(R.id.logoView);
         Button loginButton = (Button)findViewById(R.id.loginButton);
