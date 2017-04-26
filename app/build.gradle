@@ -40,4 +40,5 @@ dependencies {
     //for FusedLocationProviderApi
     compile 'com.google.android.gms:play-services-location:10.2.0'
     compile 'net.cachapa.expandablelayout:expandablelayout:2.8'
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
 }

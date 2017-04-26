@@ -52,6 +52,10 @@
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_smart_device_dialog_fragment.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\com_facebook_smart_device_dialog_fragment.xml"
+    },
+    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\\output\\res\\layout\\design_navigation_item_subheader.xml"
     },
@@ -96,6 +100,10 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_login_fragment.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\com_facebook_login_fragment.xml"
+    },
+    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\\output\\res\\layout\\design_navigation_item_header.xml"
     },
@@ -132,6 +140,10 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\layout\\abc_search_view.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_device_auth_dialog_fragment.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\com_facebook_device_auth_dialog_fragment.xml"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\navigation_drawer_second_frag.xml",
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\layout\\navigation_drawer_second_frag.xml"
     },
@@ -160,6 +172,18 @@
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_round.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\messenger_button_send_white_round.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_tooltip_bubble.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\com_facebook_tooltip_bubble.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_large.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\messenger_button_send_white_large.xml"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_create_event_form.xml",
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\layout\\dialog_create_event_form.xml"
     },
@@ -178,6 +202,10 @@
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_large.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\messenger_button_send_blue_large.xml"
     },
     {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
@@ -360,6 +388,10 @@
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_activity_layout.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\com_facebook_activity_layout.xml"
+    },
+    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
@@ -398,6 +430,10 @@
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\navigation_drawer_first_frag.xml",
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\layout\\navigation_drawer_first_frag.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_small.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\messenger_button_send_white_small.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
@@ -484,6 +520,10 @@
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\notification_template_media_custom.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_round.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\messenger_button_send_blue_round.xml"
+    },
+    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
@@ -566,6 +606,10 @@
     {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bottom_bar_recommend_fragment.xml",
         "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\layout\\bottom_bar_recommend_fragment.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_small.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\messenger_button_send_blue_small.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\edit_profile.xml",

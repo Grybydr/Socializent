@@ -37,5 +37,6 @@
     <string name="string_event_date">Date</string>
     <string name="string_event_description">Description</string>
     <string name="dateTimeChoice">Please choose the time and date</string>
+    <string name="facebook_app_id">780443785454824</string>
 
 </resources>

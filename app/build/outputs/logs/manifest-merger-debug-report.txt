@@ -56,9 +56,6 @@ ADDED from C:\Guray\Socializent\app\src\main\AndroidManifest.xml:17:5-20:18
 application
 ADDED from C:\Guray\Socializent\app\src\main\AndroidManifest.xml:22:5-50:19
 MERGED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:transition:25.3.0] C:\Users\Toshýba\.android\build-cache\a240af1f19f3b5e35366efdd5c5561db4f4c72d0\output\AndroidManifest.xml:26:5-20
 MERGED from [com.google.android.gms:play-services-places:10.2.0] C:\Users\Toshýba\.android\build-cache\c6eadcebf6e0f215c1416bcc8653f598df324110\output\AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-maps:10.2.0] C:\Users\Toshýba\.android\build-cache\968decf46d0f4a1f276a76e1761513340740c8cf\output\AndroidManifest.xml:24:5-19
@@ -68,11 +65,17 @@ MERGED from [com.google.android.gms:play-services-location:10.2.0] C:\Users\Tosh
 MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Toshýba\.android\build-cache\1d35fc91eb177601b75ebe52952be1c696cf4495\output\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Toshýba\.android\build-cache\97737b8ea2005b554a694e11e8e28b2e181da903\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:28:5-48:19
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Toshýba\.android\build-cache\4d50d03cf73497509421420f5e4a15a0700b27f3\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Toshýba\.android\build-cache\8bf7407654e861f943fb04b9a293a948b952536d\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\d2d8a0c98590d11c7baf0b913b428228fabc767a\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Toshýba\.android\build-cache\1db66d8c3990368b245ea1bde76ef7d940593efe\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Toshýba\.android\build-cache\a3042f976dd678f335c1b3017c7e36820e78d79c\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:cardview-v7:25.0.0] C:\Users\Toshýba\.android\build-cache\d1c0f5d0c7d09e9778d013284f363e730180e35a\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:customtabs:25.0.0] C:\Users\Toshýba\.android\build-cache\86cbf16fc1725c08c7fa2596438723c0ff33ca4d\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\222ce8881ebb0e0e0113b9a5512ba2bf9147a52b\output\AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from C:\Guray\Socializent\app\src\main\AndroidManifest.xml:25:9-41
@@ -124,9 +127,6 @@ ADDED from C:\Guray\Socializent\app\src\main\AndroidManifest.xml:45:9-48:20
 uses-sdk
 INJECTED from C:\Guray\Socializent\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\5fcf673e53520aee743e25517aa92a394f649d97\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.3.0] C:\Users\Toshýba\.android\build-cache\a240af1f19f3b5e35366efdd5c5561db4f4c72d0\output\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-places:10.2.0] C:\Users\Toshýba\.android\build-cache\c6eadcebf6e0f215c1416bcc8653f598df324110\output\AndroidManifest.xml:17:5-43
@@ -137,13 +137,19 @@ MERGED from [com.google.android.gms:play-services-location:10.2.0] C:\Users\Tosh
 MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Toshýba\.android\build-cache\1d35fc91eb177601b75ebe52952be1c696cf4495\output\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Toshýba\.android\build-cache\97737b8ea2005b554a694e11e8e28b2e181da903\output\AndroidManifest.xml:17:5-43
+MERGED from [net.cachapa.expandablelayout:expandablelayout:2.8] C:\Users\Toshýba\.android\build-cache\d20273dc08737585f75bfa01fedfd2755919d3f5\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Toshýba\.android\build-cache\4d50d03cf73497509421420f5e4a15a0700b27f3\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Toshýba\.android\build-cache\8bf7407654e861f943fb04b9a293a948b952536d\output\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\d2d8a0c98590d11c7baf0b913b428228fabc767a\output\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Toshýba\.android\build-cache\1db66d8c3990368b245ea1bde76ef7d940593efe\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Toshýba\.android\build-cache\a3042f976dd678f335c1b3017c7e36820e78d79c\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.0.0] C:\Users\Toshýba\.android\build-cache\d1c0f5d0c7d09e9778d013284f363e730180e35a\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:customtabs:25.0.0] C:\Users\Toshýba\.android\build-cache\86cbf16fc1725c08c7fa2596438723c0ff33ca4d\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\222ce8881ebb0e0e0113b9a5512ba2bf9147a52b\output\AndroidManifest.xml:21:5-23:58
-MERGED from [net.cachapa.expandablelayout:expandablelayout:2.8] C:\Users\Toshýba\.android\build-cache\d20273dc08737585f75bfa01fedfd2755919d3f5\output\AndroidManifest.xml:8:5-10:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -154,16 +160,16 @@ MERGED from [net.cachapa.expandablelayout:expandablelayout:2.8] C:\Users\Toshýba
 		INJECTED from C:\Guray\Socializent\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\5fcf673e53520aee743e25517aa92a394f649d97\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:transition:25.3.0] C:\Users\Toshýba\.android\build-cache\a240af1f19f3b5e35366efdd5c5561db4f4c72d0\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Toshýba\.android\build-cache\bada527c2c7b13c147451d73894051028ca73d01\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Toshýba\.android\build-cache\4d50d03cf73497509421420f5e4a15a0700b27f3\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Toshýba\.android\build-cache\8bf7407654e861f943fb04b9a293a948b952536d\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\d2d8a0c98590d11c7baf0b913b428228fabc767a\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Toshýba\.android\build-cache\1db66d8c3990368b245ea1bde76ef7d940593efe\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Toshýba\.android\build-cache\a3042f976dd678f335c1b3017c7e36820e78d79c\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\fb17af4f8fc18fee313f987ffcfb8ef001d20066\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Toshýba\.android\build-cache\9a3bbf72a664eeb170d74c3d529e2c394a454ed9\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Toshýba\.android\build-cache\222ce8881ebb0e0e0113b9a5512ba2bf9147a52b\output\AndroidManifest.xml:25:5-27:34
 	android:value
 		ADDED from [com.android.support:design:25.3.0] C:\Users\Toshýba\.android\build-cache\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\output\AndroidManifest.xml:27:9-31
@@ -183,3 +189,23 @@ ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.
 		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:19:86-145
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Toshýba\.android\build-cache\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\output\AndroidManifest.xml:19:19-85
+activity#com.facebook.FacebookActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:29:9-32:66
+	android:configChanges
+		ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:31:13-96
+	android:theme
+		ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:32:13-63
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:30:13-57
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:33:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:33:19-68
+provider#com.facebook.internal.FacebookInitProvider
+ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:44:9-47:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:46:13-72
+	android:exported
+		ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.22.0] C:\Users\Toshýba\.android\build-cache\4ec0595e0a5059790339cec64fe1fdf2029accbd\output\AndroidManifest.xml:45:13-70
