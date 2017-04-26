@@ -10,31 +10,43 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.places.Place;
 import com.socializent.application.socializent.R;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Created by Zülal Bingöl on 9.04.2017.
+ * Created by ZÃ¼lal BingÃ¶l on 9.04.2017.
  */
 
 public class EventCreateDialog extends DialogFragment implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener{
 
-    private EditText timeView, titleView, feeView, tagsView, participantCountView, descriptionView;
-    private BottomBarMap callerActivity;
+    public int DEFAULT_CHECKED = 0;
 
+    private EditText timeView, titleView, feeView, participantCountView, descriptionView;
+    private BottomBarMap callerActivity;
     private String dateStr = "";
     private String myTitle, myFee, myTags, myDescription;
+    private String myCategory = "";
     private int myParticipantCount;
     private static Date myDate;
     private static Place myPlace;
+    private RadioGroup radioCategoryGroup;
+    private RadioButton radioCategoryButton;
+    private int selectedButtonId;
+    private TextView categoryText;
 
     static EventCreateDialog newInstance(Place place) {
         myPlace = place;
@@ -58,7 +70,6 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_create_event_form, new RelativeLayout(getActivity()), false);
 
         TextView eventsDetailTitle = (TextView)view.findViewById(R.id.eventDetailForm);
-
         TextView placeTag = (TextView)view.findViewById(R.id.placeTag);
         TextView addressView = (TextView)view.findViewById(R.id.addressView);
         addressView.setText(myPlace.getName());
@@ -66,7 +77,19 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         titleView = (EditText)view.findViewById(R.id.titleView);
         feeView = (EditText)view.findViewById(R.id.feeView);
         participantCountView = (EditText)view.findViewById(R.id.participantCountView);
-        tagsView = (EditText)view.findViewById(R.id.tagsView);
+
+        categoryText = (TextView)view.findViewById(R.id.categoryView);
+        radioCategoryGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+        radioCategoryGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                setMyCategory(checkedId);
+                selectedButtonId = checkedId;
+            }
+        });
+
         descriptionView = (EditText)view.findViewById(R.id.descriptionView);
 
         timeView = (EditText) view.findViewById(R.id.timeView);
@@ -74,7 +97,6 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             @Override
             public void onClick(View view) {
                 getFields();
-                Log.d("EVENT_CREATE_DIALOG", "timeView clicked");
                 showDialog(getTargetRequestCode());
             }
         });
@@ -84,14 +106,15 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         createEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myTitle = titleView.getText().toString();
-                myFee = feeView.getText().toString();
-                myParticipantCount = Integer.parseInt(participantCountView.getText().toString());
-                myTags = tagsView.getText().toString();
-                myDescription = descriptionView.getText().toString();
-
-                callerActivity.addEvent(myPlace, myTitle, myDate, myFee, myParticipantCount, myTags, myDescription);
-                EventCreateDialog.this.dismiss();
+                if (getFieldsWithCheck()) {
+                    callerActivity.addEvent(myPlace, myTitle, myDate, myFee, myParticipantCount, myTags, myDescription);
+                    EventCreateDialog.this.dismiss();
+                }
+                else {
+                    Toast.makeText(getActivity(), "Please fill in the required areas.",
+                            Toast.LENGTH_LONG)
+                            .show();
+                }
             }
         });
 
@@ -111,8 +134,6 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     }
 
     private void showDialog(int requestCode) {
-        Log.d("EVENT_CREATE_DIALOG", "Date/Time Pickers shown");
-
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         Fragment prev = getFragmentManager().findFragmentByTag("dialog");
         if (prev != null) {
@@ -132,7 +153,6 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     public void setDate(Date date){
         myDate = date;
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        //String dateStr = df.format(myDate);
         dateStr = df.format(myDate);
     }
 
@@ -141,11 +161,11 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     */
     private void updateFields(){
         titleView.setText(myTitle);
+        timeView.setText(dateStr);
         feeView.setText(myFee);
         participantCountView.setText(String.valueOf(myParticipantCount));
-        tagsView.setText(myTags);
+        radioCategoryGroup.check(selectedButtonId);
         descriptionView.setText(myDescription);
-        timeView.setText(dateStr);
     }
 
     /*
@@ -155,11 +175,96 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         myTitle = titleView.getText().toString();
         myFee = feeView.getText().toString();
         try {
-            myParticipantCount = Integer.parseInt(participantCountView.getText().toString());
+            if (!participantCountView.getText().toString().trim().equals("")) {
+                myParticipantCount = Integer.parseInt(participantCountView.getText().toString());
+            }
+            else
+                myParticipantCount = 0;
         } catch(NumberFormatException nfe) {
             Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
         }
-        myTags = tagsView.getText().toString();
+        setMyCategory(selectedButtonId);
         myDescription = descriptionView.getText().toString();
+    }
+
+    /*
+    * Retrieves the last values of fields before create button is hit
+    */
+    private boolean getFieldsWithCheck(){
+        if(titleView.getText().toString().trim().equals("")){
+            titleView.setError( "Title is required!" );
+            return false;
+        }else{
+            myTitle = titleView.getText().toString();
+        }
+        if( timeView.getText().toString().trim().equals("")){
+            timeView.setError( "Time/Date is required!" );
+            return false;
+        }else{
+            dateStr = timeView.getText().toString();
+        }
+        try {
+            if( participantCountView.getText().toString().trim().equals("") || participantCountView.getText().toString().trim() == "0"){
+                participantCountView.setError( "Participant Count is required!" );
+                return false;
+            }else{
+                myParticipantCount = Integer.parseInt(participantCountView.getText().toString());
+            }
+        } catch(NumberFormatException nfe) {
+            Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
+            Toast.makeText(getActivity(), "Please enter participant count again.",
+                    Toast.LENGTH_LONG)
+                    .show();
+            return false;
+        }
+        myFee = feeView.getText().toString();
+
+        if (radioCategoryGroup.getCheckedRadioButtonId() != 0) {
+            Log.d("EVENT_CREATE_DIALOG", "BUTTON FOUND" + radioCategoryGroup.getCheckedRadioButtonId());
+            setMyCategory(selectedButtonId);
+        }
+        else {
+            selectedButtonId = radioCategoryGroup.getCheckedRadioButtonId();
+            setMyCategory(selectedButtonId);
+        }
+
+        myDescription = descriptionView.getText().toString();
+        return true;
+    }
+
+    private void setMyCategory(int checkedId){
+        switch (checkedId){
+            case R.id.r_celebration:
+                myCategory = "celebration";
+                break;
+            case R.id.r_conference:
+                myCategory = "conference";
+                break;
+            case R.id.r_lecture:
+                myCategory = "lecture";
+                break;
+            case R.id.r_movieScreen:
+                myCategory = "movieScreen";
+                break;
+            case R.id.r_concert:
+                myCategory = "concert";
+                break;
+            case R.id.r_travel:
+                myCategory = "travel";
+                break;
+            case R.id.r_party:
+                myCategory = "party";
+                break;
+            case R.id.r_study:
+                myCategory = "study";
+                break;
+            case R.id.r_sports:
+                myCategory = "sports";
+                break;
+            case R.id.r_other:
+                myCategory = "other";
+                break;
+            default: myCategory = "";
+        }
     }
 }
