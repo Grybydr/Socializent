@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\bottom_navigation_items.xml",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\menu\\bottom_navigation_items.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\menu\\main.xml"
     },

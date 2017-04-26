@@ -1,11 +1,23 @@
 [
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\powered_by_google_light.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\c6eadcebf6e0f215c1416bcc8653f598df324110\\output\\res\\drawable-hdpi-v4\\powered_by_google_light.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
@@ -16,24 +28,28 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_focused_holo.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\powered_by_google_light.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\6a896ac9e95c1acb22a9777762395bfa4389c005\\output\\res\\drawable-hdpi-v4\\powered_by_google_light.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
@@ -44,100 +60,96 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\powered_by_google_dark.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\6a896ac9e95c1acb22a9777762395bfa4389c005\\output\\res\\drawable-hdpi-v4\\powered_by_google_dark.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\places_ic_search.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\6a896ac9e95c1acb22a9777762395bfa4389c005\\output\\res\\drawable-hdpi-v4\\places_ic_search.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_blue_bottomnub.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_bottomnub.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_black_xout.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_xout.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_blue_xout.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_xout.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\places_ic_clear.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\6a896ac9e95c1acb22a9777762395bfa4389c005\\output\\res\\drawable-hdpi-v4\\places_ic_clear.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
-    },
-    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_button_send_round_shadow.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\messenger_button_send_round_shadow.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_button_send_icon_white.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_button_send_icon_white.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\googleg_disabled_color_18.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_close.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_close.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_black_background.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_background.9.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility_off.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\\output\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_normal.9.png",
@@ -148,12 +160,24 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_blue_topnub.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_topnub.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_full_open_on_phone.png",
@@ -164,20 +188,48 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_button_icon_white.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_button_icon_white.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\googleg_disabled_color_18.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\googleg_standard_color_18.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_button_like_icon_selected.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_button_like_icon_selected.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\googleg_standard_color_18.png",
@@ -192,8 +244,8 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
@@ -204,16 +256,24 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png",
@@ -224,8 +284,280 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility_off.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\89262e6c043987577c063ba8870cc5b25286c0c3\\output\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_black_bottomnub.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_bottomnub.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\places_ic_search.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\c6eadcebf6e0f215c1416bcc8653f598df324110\\output\\res\\drawable-hdpi-v4\\places_ic_search.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\powered_by_google_light.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\6a896ac9e95c1acb22a9777762395bfa4389c005\\output\\res\\drawable-hdpi-v4\\powered_by_google_light.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\powered_by_google_dark.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\6a896ac9e95c1acb22a9777762395bfa4389c005\\output\\res\\drawable-hdpi-v4\\powered_by_google_dark.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\places_ic_search.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\6a896ac9e95c1acb22a9777762395bfa4389c005\\output\\res\\drawable-hdpi-v4\\places_ic_search.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_blue_background.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_blue_background.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\\output\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_button_send_icon_blue.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_button_send_icon_blue.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_bubble_large_white.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\messenger_bubble_large_white.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_tooltip_black_topnub.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\powered_by_google_dark.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\c6eadcebf6e0f215c1416bcc8653f598df324110\\output\\res\\drawable-hdpi-v4\\powered_by_google_dark.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\com_facebook_button_icon_blue.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\com_facebook_button_icon_blue.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_bubble_small_blue.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\messenger_bubble_small_blue.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\googleg_disabled_color_18.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_bubble_large_blue.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\messenger_bubble_large_blue.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_bubble_small_white.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\drawable-hdpi-v4\\messenger_bubble_small_white.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\places_ic_clear.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\c6eadcebf6e0f215c1416bcc8653f598df324110\\output\\res\\drawable-hdpi-v4\\places_ic_clear.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_full_open_on_phone.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png",
@@ -236,8 +568,8 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility.png",
@@ -248,15 +580,19 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility_off.png",
-        "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\89262e6c043987577c063ba8870cc5b25286c0c3\\output\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
-    },
-    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     }
 ]
