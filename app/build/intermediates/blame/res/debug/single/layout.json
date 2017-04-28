@@ -132,6 +132,10 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\event_details_page.xml",
+        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\layout\\event_details_page.xml"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\layout\\abc_action_menu_layout.xml"
     },

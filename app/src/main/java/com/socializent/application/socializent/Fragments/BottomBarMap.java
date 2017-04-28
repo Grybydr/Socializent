@@ -107,6 +107,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             myGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
 
         }
+
         //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
         mapFragment.getMapAsync(this);
 
@@ -118,8 +119,63 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             }
         });
         Toast.makeText(getContext(), R.string.map_gps_warning, Toast.LENGTH_LONG).show();
+
         return mapView;
     }
+
+    private void retrieveEvents(){
+
+        List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+        String events = "";
+        for (int i = 0; i < cookieList.size(); i++) {
+            if (cookieList.get(i).getName().equals("allEvents")){
+                events = cookieList.get(i).getValue();
+                //Log.v("LOCATION_V", "ALLEVENTS: " + events);
+                break;
+            }
+        }
+        try {
+
+            String tempLat, tempLong;
+            JSONArray eventsArray = new JSONArray(events);
+
+            for (int i = 0; i < eventsArray.length(); i++) {
+
+                JSONObject row = eventsArray.getJSONObject(i);
+
+                //Retrieving event details
+
+                String eventTitle = row.getString("name"); //TODO: check database for this
+                if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
+                    eventTitle = "Event";
+
+                JSONObject pl = row.getJSONObject("place");
+                tempLat = pl.getString("latitude");
+                tempLong = pl.getString("longitude");
+
+                //Log.v("LOCATION_V", "tempLat" + tempLat);
+                //Log.v("LOCATION_V", "tempLong" + tempLong);
+
+                if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
+
+                    final double lat = Double.parseDouble(tempLat);
+                    final double longi = Double.parseDouble(tempLong);
+                    myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, longi))
+                            .title(eventTitle));
+                }
+                else {
+                    Log.v("LOCATION", "Latitude or Longitude is NULL");
+                }
+
+            }
+        } catch (JSONException e) {
+            Log.v("LOCATION_V", "Events cannot be retrieved from cookie: JSON error");
+            e.printStackTrace();
+        }
+
+        return;
+    }
+
 
     /*
     *   Adds some features on the map once the map becomes ready
@@ -128,6 +184,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     public void onMapReady(GoogleMap googleMap) {
 
         myGoogleMap = googleMap;
+        updateMyLocation();
         myUiSettings = myGoogleMap.getUiSettings();
         myUiSettings.setZoomControlsEnabled(true);
         myUiSettings.setCompassEnabled(true);
@@ -148,7 +205,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             }
         });
 
-        updateMyLocation();
     }
 
     /*
@@ -291,55 +347,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
             zoomInLocation(location);
 
-            List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
-            String events = "";
-            for (int i = 0; i < cookieList.size(); i++) {
-                if (cookieList.get(i).getName().equals("allEvents")){
-                    events = cookieList.get(i).getValue();
-                    //Log.v("LOCATION_V", "ALLEVENTS: " + events);
-                    break;
-                }
-            }
-            try {
-
-                String tempLat, tempLong;
-                JSONArray eventsArray = new JSONArray(events);
-
-                for (int i = 0; i < eventsArray.length(); i++) {
-
-                    JSONObject row = eventsArray.getJSONObject(i);
-
-                    //Retrieving event details
-
-                    String eventTitle = row.getString("name"); //TODO: check database for this
-                    if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
-                        eventTitle = "Event";
-
-                    JSONObject pl = row.getJSONObject("place");
-                    tempLat = pl.getString("latitude");
-                    tempLong = pl.getString("longitude");
-
-                    //Log.v("LOCATION_V", "tempLat" + tempLat);
-                    //Log.v("LOCATION_V", "tempLong" + tempLong);
-
-                    if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
-
-                        final double lat = Double.parseDouble(tempLat);
-                        final double longi = Double.parseDouble(tempLong);
-                        myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, longi))
-                                .title(eventTitle));
-                    }
-                    else {
-                        Log.v("LOCATION", "Latitude or Longitude is NULL");
-                    }
-
-                }
-            } catch (JSONException e) {
-                Log.v("LOCATION_V", "Events cannot be retrieved from cookie: JSON error");
-                e.printStackTrace();
-            }
-
-            return;
+            retrieveEvents();
 
         } else {
             PermissionUtils.requestPermission((AppCompatActivity) getActivity(), LOCATION_PERMISSION_REQUEST_CODE,

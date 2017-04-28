@@ -70,6 +70,9 @@ public class DateTimeDialog extends DialogFragment implements DialogInterface.On
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
+        myYear = year;
+        myDay = day;
+        myMonth = month;
 
         @SuppressLint("InflateParams")
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_date_time, null);
@@ -114,7 +117,7 @@ public class DateTimeDialog extends DialogFragment implements DialogInterface.On
                                     myTimePicker.getCurrentHour(),
                                     myTimePicker.getCurrentMinute());
                             Intent intent = new Intent();
-                            intent.putExtra("DateTimeDialog", myDate); //TODO: CHECK THIS: RESULT_DATE_TIME
+                            intent.putExtra("DateTimeDialog", myDate);
                                         getTargetFragment().onActivityResult(
                                         getTargetRequestCode(),
                                         Activity.RESULT_OK,
