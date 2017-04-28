@@ -48,11 +48,11 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
 
                 String title = params[1];
                 String dateToConvertMiliseconds = params[2];
-                String placeName = params[3];
+                String placeCity = params[3];
                 String longitudeToConvertFloat = params[4];
                 String latitudeToConvertFloat = params[5];
                 String participantCount = params[6];
-                String tags = params[7];
+                String category = params[7];
                 String description = params[8];
                 String feeToConvert = params[9];
 
@@ -88,37 +88,34 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 //postDataParams.put("username", username);
                 // postDataParams.put("password", password);
 
-                /*Log.d("EventBackgroundTask", title);
-                Log.d("EventBackgroundTask", dateInMiliseconds +"");
-                Log.d("EventBackgroundTask", placeName);
-                Log.d("EventBackgroundTask", "LONGIII:" + longitudeToConvertFloat);
-                Log.d("EventBackgroundTask", tags);
-                Log.d("EventBackgroundTask", description);
-                Log.d("EventBackgroundTask", fee);*/
-
                 //Conversions
                 double latitude = Double.parseDouble(latitudeToConvertFloat);
                 double longitude = Double.parseDouble(longitudeToConvertFloat);
                 int parCount = Integer.parseInt(participantCount);
                 double fee = Double.parseDouble(feeToConvert);
 
-                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
                 Date oldDate = sdf.parse(dateToConvertMiliseconds);
                 long dateInMiliseconds = oldDate.getTime();
 
-                //Log.d("EventBackgroundTask", longitude + "");
-                //Log.d("EventBackgroundTask", latitude + "");
+                /*Log.d("EventBackgroundTask", title);
+                Log.d("EventBackgroundTask", dateInMiliseconds + "");
+                Log.d("EventBackgroundTask", placeCity);
+                Log.d("EventBackgroundTask", "LONGIII:" + longitudeToConvertFloat);
+                Log.d("EventBackgroundTask", category);
+                Log.d("EventBackgroundTask", description);
+                Log.d("EventBackgroundTask", fee + "");*/
 
                 JSONObject requestBody = new JSONObject();
                 requestBody.put("name", title);
                 requestBody.put("date", dateInMiliseconds);
-                requestBody.put("place.city", placeName);
+                requestBody.put("place.city", placeCity);
                 requestBody.put("place.longitude", longitude);
                 requestBody.put("place.latitude", latitude);
-                requestBody.put("tags", tags);
+                requestBody.put("category", category);
                 requestBody.put("description", description);
                 requestBody.put("fee", fee);
-                requestBody.put("participantCount", parCount); //participantCount = attendantLimit in database!
+                requestBody.put("participantCount", parCount);
 
                 OutputStream os = conn.getOutputStream();
 
@@ -182,18 +179,6 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 HttpCookie accessTokenCookie = new HttpCookie("allEvents",result);
 
                 msCookieManager.getCookieStore().add(null, accessTokenCookie);
-
-               /* List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
-                String events = "";
-                for (int i = 0; i < cookieList.size(); i++) {
-                    if (cookieList.get(i).getName().equals("allEvents")){
-                        events = cookieList.get(i).getValue();
-                        break;
-                    }
-                }
-                JSONArray eventsArray = new JSONArray(events);*/
-
-                //}
 
                 conn.disconnect();
                 return result;

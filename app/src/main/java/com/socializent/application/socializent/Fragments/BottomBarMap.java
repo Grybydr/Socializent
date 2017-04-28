@@ -9,7 +9,9 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -47,10 +49,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.HttpCookie;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
@@ -63,8 +67,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private static final int DEFAULT_ZOOM = 17;
     private static final int DEFAULT_BEARING = 90;
     private static final int DEFAULT_TILT = 0;
-    private static final long MIN_TIME = 400;
-    private static final float MIN_DISTANCE = 1000;
 
     private final LatLng defaultLocation = new LatLng(39.868010, 32.748823); //Bilkent's Coordinates
 
@@ -74,6 +76,8 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private FloatingActionButton addEventButton;
     private LocationManager locationManager;
     private View mapView;
+
+    String city;
 
     public static BottomBarMap newInstance() {
         BottomBarMap fragment = new BottomBarMap();
@@ -182,9 +186,32 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 and phone number. Extract the name, address, phone number, place ID and place types.
                  */
                 final CharSequence place_name = place.getName();
-                final CharSequence address = place.getAddress();
                 final CharSequence phone = place.getPhoneNumber();
                 final String placeId = place.getId();
+
+                //Retriving City
+                Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+                List<Address> addresses = null;
+                try {
+                    addresses = geocoder.getFromLocation(place.getLatLng().latitude, place.getLatLng().longitude, 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (addresses.get(0).getLocality() != null)
+                    city = addresses.get(0).getLocality().toString();
+                else if (addresses.get(0).getSubAdminArea() != null)
+                    city = addresses.get(0).getSubAdminArea().toString();
+                else
+                    city = "unknown";
+
+                //Log.d("PLACEPICKER_", "CITY: " + city);
+                Address address = addresses.get(0);
+               // Log.v("PLACEPICKER_", addresses.get(0).getFeatureName() + ", " + addresses.get(0).getSubAdminArea() + ", " + addresses.get(0).getPremises() + ", " + addresses.get(0).getCountryName());
+                /*for(int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
+                    Log.d("PLACEPICKER_", address.getAddressLine(i));
+                }
+                String temp = address.getAddressLine(address.getMaxAddressLineIndex()-1).toString();
+                Log.d("PLACEPICKER_", "TEMP : " + temp);*/
 
                 //Create Event Dialog Initialization
                 showDialog(place, requestCode);
@@ -218,17 +245,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     /*
     /* Sends the event record to database
     */
-    public void addEvent(Place myPlace, String title, Date myDate, String fee, int participantCount, String tags, String description) {
+    public void addEvent(Place myPlace, String title, Date myDate, double fee, int participantCount, String category, String description) {
 
-        /*Log.d("PLACEPICKER", "Place: " + myPlace.toString());
-        Log.d("PLACEPICKER", "title: " + title);
-        Log.d("PLACEPICKER", "myDate: " + myDate);
-        Log.d("PLACEPICKER", "fee: " + fee);
-        Log.d("PLACEPICKER", "participantCount: " + participantCount);
-        Log.d("PLACEPICKER", "tags: " + tags);
-        Log.d("PLACEPICKER", "description: " + description);*/
-
-        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         String date = formatter.format(myDate);
 
         EventBackgroundTask createEventTask = new EventBackgroundTask();
@@ -237,11 +256,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         String longitude = String.valueOf(String.format("%.6f", latLng.longitude));
         String latitude = String.valueOf(String.format("%.6f", latLng.latitude));
         String pCount = String.valueOf(participantCount);
+        String feeConverted = String.valueOf(fee);
 
-        //Log.d("PLACEPICKER", "longitude: " + longitude);
-        //Log.d("PLACEPICKER", "latitude: " + latitude);
-
-        createEventTask.execute("1", title, date, myPlace.getName().toString(), longitude, latitude, pCount, tags, description, fee);
+        createEventTask.execute("1", title, date, city, longitude, latitude, pCount, category, description, feeConverted);
 
         myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
                 .title(title));

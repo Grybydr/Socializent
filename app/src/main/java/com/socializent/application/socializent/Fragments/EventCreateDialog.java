@@ -2,6 +2,7 @@ package com.socializent.application.socializent.Fragments;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -16,6 +19,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +30,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by ZÃ¼lal BingÃ¶l on 9.04.2017.
@@ -33,20 +39,20 @@ import java.util.Date;
 
 public class EventCreateDialog extends DialogFragment implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener{
 
-    public int DEFAULT_CHECKED = 0;
+    final double NO_FEE_TAG = 0.0;
+    final String NO_DESC_TAG = "-";
 
     private EditText timeView, titleView, feeView, participantCountView, descriptionView;
     private BottomBarMap callerActivity;
     private String dateStr = "";
-    private String myTitle, myFee, myTags, myDescription;
+    private String myTitle, myDescription;
+    private double myFee;
     private String myCategory = "";
     private int myParticipantCount;
     private static Date myDate;
     private static Place myPlace;
-    private RadioGroup radioCategoryGroup;
-    private RadioButton radioCategoryButton;
-    private int selectedButtonId;
-    private TextView categoryText;
+    private Spinner categoryChooser;
+    ArrayList<String> choices;
 
     static EventCreateDialog newInstance(Place place) {
         myPlace = place;
@@ -74,24 +80,19 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         TextView addressView = (TextView)view.findViewById(R.id.addressView);
         addressView.setText(myPlace.getName());
 
+        TextView titleTag = (TextView)view.findViewById(R.id.titleTag);
         titleView = (EditText)view.findViewById(R.id.titleView);
+        TextView feeTag = (TextView)view.findViewById(R.id.feeTag);
         feeView = (EditText)view.findViewById(R.id.feeView);
+        TextView pCountTag = (TextView)view.findViewById(R.id.pCountTag);
         participantCountView = (EditText)view.findViewById(R.id.participantCountView);
 
-        categoryText = (TextView)view.findViewById(R.id.categoryView);
-        radioCategoryGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
-        radioCategoryGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // checkedId is the RadioButton selected
-                setMyCategory(checkedId);
-                selectedButtonId = checkedId;
-            }
-        });
+        categoryChooser = (Spinner) view.findViewById(R.id.category_spinner);
+        arrangeSpinner();
 
         descriptionView = (EditText)view.findViewById(R.id.descriptionView);
 
+        TextView timeDateTag = (TextView)view.findViewById(R.id.timeDateTag);
         timeView = (EditText) view.findViewById(R.id.timeView);
         timeView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +108,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             @Override
             public void onClick(View view) {
                 if (getFieldsWithCheck()) {
-                    callerActivity.addEvent(myPlace, myTitle, myDate, myFee, myParticipantCount, myTags, myDescription);
+                    callerActivity.addEvent(myPlace, myTitle, myDate, myFee, myParticipantCount, myCategory, myDescription);
                     EventCreateDialog.this.dismiss();
                 }
                 else {
@@ -152,7 +153,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     */
     public void setDate(Date date){
         myDate = date;
-        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         dateStr = df.format(myDate);
     }
 
@@ -162,9 +163,9 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     private void updateFields(){
         titleView.setText(myTitle);
         timeView.setText(dateStr);
-        feeView.setText(myFee);
+        feeView.setText(String.valueOf(myFee));
         participantCountView.setText(String.valueOf(myParticipantCount));
-        radioCategoryGroup.check(selectedButtonId);
+        categoryChooser.setSelection(choices.indexOf(myCategory));
         descriptionView.setText(myDescription);
     }
 
@@ -173,7 +174,15 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     */
     private void getFields(){
         myTitle = titleView.getText().toString();
-        myFee = feeView.getText().toString();
+        try {
+            if (!feeView.getText().toString().trim().equals("")) {
+                myFee = Double.parseDouble(feeView.getText().toString());
+            }
+            else
+                myFee = NO_FEE_TAG;
+        } catch(NumberFormatException nfe) {
+            Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
+        }
         try {
             if (!participantCountView.getText().toString().trim().equals("")) {
                 myParticipantCount = Integer.parseInt(participantCountView.getText().toString());
@@ -183,7 +192,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         } catch(NumberFormatException nfe) {
             Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
         }
-        setMyCategory(selectedButtonId);
+        myCategory = categoryChooser.getSelectedItem().toString();
         myDescription = descriptionView.getText().toString();
     }
 
@@ -191,6 +200,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     * Retrieves the last values of fields before create button is hit
     */
     private boolean getFieldsWithCheck(){
+
         if(titleView.getText().toString().trim().equals("")){
             titleView.setError( "Title is required!" );
             return false;
@@ -217,54 +227,66 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
                     .show();
             return false;
         }
-        myFee = feeView.getText().toString();
-
-        if (radioCategoryGroup.getCheckedRadioButtonId() != 0) {
-            Log.d("EVENT_CREATE_DIALOG", "BUTTON FOUND" + radioCategoryGroup.getCheckedRadioButtonId());
-            setMyCategory(selectedButtonId);
+        try {
+            if (!feeView.getText().toString().trim().equals("")) {
+                myFee = Double.parseDouble(feeView.getText().toString());
+            }
+            else
+                myFee = NO_FEE_TAG;
+        } catch(NumberFormatException nfe) {
+            Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
+        }
+        if(!myCategory.equals("Category")){
+            myCategory = categoryChooser.getSelectedItem().toString();
         }
         else {
-            selectedButtonId = radioCategoryGroup.getCheckedRadioButtonId();
-            setMyCategory(selectedButtonId);
+            TextView errorText = (TextView)categoryChooser.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Category is required!");
+            return false;
         }
 
-        myDescription = descriptionView.getText().toString();
+        if(descriptionView.getText().toString().trim().equals("")){
+            myDescription = NO_DESC_TAG;
+        }else{
+            myDescription = descriptionView.getText().toString();
+        }
         return true;
     }
 
-    private void setMyCategory(int checkedId){
-        switch (checkedId){
-            case R.id.r_celebration:
-                myCategory = "celebration";
-                break;
-            case R.id.r_conference:
-                myCategory = "conference";
-                break;
-            case R.id.r_lecture:
-                myCategory = "lecture";
-                break;
-            case R.id.r_movieScreen:
-                myCategory = "movieScreen";
-                break;
-            case R.id.r_concert:
-                myCategory = "concert";
-                break;
-            case R.id.r_travel:
-                myCategory = "travel";
-                break;
-            case R.id.r_party:
-                myCategory = "party";
-                break;
-            case R.id.r_study:
-                myCategory = "study";
-                break;
-            case R.id.r_sports:
-                myCategory = "sports";
-                break;
-            case R.id.r_other:
-                myCategory = "other";
-                break;
-            default: myCategory = "";
+    private void arrangeSpinner(){
+
+        choices = new ArrayList<String>();
+        choices.add("Category");
+        choices.add("Celebration");
+        choices.add("Conference");
+        choices.add("Lecture");
+        choices.add("Movie Screening");
+        choices.add("Concert");
+        choices.add("Travel");
+        choices.add("Party");
+        choices.add("Study");
+        choices.add("Sports");
+
+        categoryChooser.setAdapter(
+                new ArrayAdapter<>(
+                        getActivity(),
+                        android.R.layout.simple_spinner_dropdown_item,
+                        choices));
+        categoryChooser.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                myCategory = (String) categoryChooser.getAdapter().getItem(position);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+        // Select initial choice if neither preferred.
+        if (myCategory == null) {
+            categoryChooser.setSelection(choices.indexOf("Category"));
+        } else {
+            categoryChooser.setSelection(choices.indexOf(myCategory));
         }
     }
 }

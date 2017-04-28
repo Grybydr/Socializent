@@ -709,7 +709,7 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="cancel">Cancel</string>
-    <string name="category">Category</string>
+    <string name="category">Category:</string>
     <string name="celebration">Celebration</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="choose_location">Please choose event location</string>
@@ -757,6 +757,7 @@
     <string name="conference">Conference</string>
     <string name="create">Create</string>
     <string name="dateTimeChoice">Please choose the time and date</string>
+    <string name="date_time_tag">Date/Time:</string>
     <string name="drawer_close">Close</string>
     <string name="drawer_open">Open</string>
     <string name="facebook_app_id">780443785454824</string>
@@ -775,7 +776,6 @@
     <string name="map_not_ready">Map is not ready yet</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="movie_screen">Movie Screening</string>
-    <string name="otherRadio">Other...</string>
     <string name="party">Party</string>
     <string name="password">\t Password</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
