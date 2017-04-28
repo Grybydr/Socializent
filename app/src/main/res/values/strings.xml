@@ -38,5 +38,19 @@
     <string name="string_event_description">Description</string>
     <string name="dateTimeChoice">Please choose the time and date</string>
     <string name="facebook_app_id">780443785454824</string>
+    <string name="celebration">Celebration</string>
+    <string name="concert">Concert</string>
+    <string name="conference">Conference</string>
+    <string name="lecture">Lecture</string>
+    <string name="party">Party</string>
+    <string name="study">Study</string>
+    <string name="travel">Travel</string>
+    <string name="movie_screen">Movie Screening</string>
+    <string name="sports">Sports</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="place">Place:</string>
+    <string name="category">Category:</string>
+    <string name="date_time_tag">Date/Time:</string>
 
 </resources>

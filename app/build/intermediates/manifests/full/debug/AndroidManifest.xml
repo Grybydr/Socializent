@@ -40,6 +40,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true" >
         <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBpTz5xq-gL5F-FQy35vwkgr3ss5NgkSRQ" />
         <meta-data
@@ -61,6 +64,12 @@
             android:name="com.socializent.application.socializent.SignUp"
             android:theme="@style/AppTheme" >
         </activity>
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1234"
+            android:exported="true" />
+
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

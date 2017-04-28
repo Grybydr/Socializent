@@ -708,6 +708,9 @@
     <string name="app_name">Socializent</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="cancel">Cancel</string>
+    <string name="category">Category:</string>
+    <string name="celebration">Celebration</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="choose_location">Please choose event location</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
@@ -750,9 +753,14 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="concert">Concert</string>
+    <string name="conference">Conference</string>
+    <string name="create">Create</string>
     <string name="dateTimeChoice">Please choose the time and date</string>
+    <string name="date_time_tag">Date/Time:</string>
     <string name="drawer_close">Close</string>
     <string name="drawer_open">Open</string>
+    <string name="facebook_app_id">780443785454824</string>
     <string name="facebook_login">Facebook Login</string>
     <string name="first_fragment">My Profile</string>
     <string name="forgot_password_text">ohh...forgot your password?</string>
@@ -760,12 +768,15 @@
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
             AIzaSyCp5IbrY8ViuH0_hzwMDpWp6aLljAr_oWQ
     </string>
+    <string name="lecture">Lecture</string>
     <string name="loginButton">logın</string>
     <string name="loginText">Login</string>
     <string name="map_gps_warning">If you cannot see your location, please check your device\'s GPS settings.</string>
     <string name="map_loc_warning">Invisible Current Location, directing to default location...</string>
     <string name="map_not_ready">Map is not ready yet</string>
     <string name="messenger_send_button_text">Send</string>
+    <string name="movie_screen">Movie Screening</string>
+    <string name="party">Party</string>
     <string name="password">\t Password</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
@@ -774,11 +785,13 @@
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="permission_rationale_location">Access to location services is required.</string>
     <string name="permission_required_toast">Permission Required</string>
+    <string name="place">Place:</string>
     <string name="place_autocomplete_clear_button">Clear search</string>
     <string name="place_autocomplete_search_hint">Search</string>
     <string name="search_menu_title">Search</string>
     <string name="second_fragment">My Upcoming Events</string>
     <string name="sign_up">Sign Up</string>
+    <string name="sports">Sports</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="string_event_date">Date</string>
     <string name="string_event_description">Description</string>
@@ -788,7 +801,9 @@
     <string name="string_event_tags">Tags</string>
     <string name="string_event_time">Time/Date</string>
     <string name="string_event_title">Title </string>
+    <string name="study">Study</string>
     <string name="third_fragment">My Past Events</string>
+    <string name="travel">Travel</string>
     <string name="user_name">\t User Name</string>
     <string name="user_profile_name">User Name</string>
     <string name="user_short_info">User Short Info</string>
