@@ -16,6 +16,7 @@ public class Person {
     private String password;
     private String email;
     private String photoUrl;
+    private String bio;
     
     private ArrayList<Person> friends;
     private ArrayList<String> interests;
@@ -36,6 +37,7 @@ public class Person {
         this.birthDate = 0;
         this.password = "";
         this.email = "";
+        this.bio = "";
         this.rate = 0.0;
         this.friends = new ArrayList<Person>();
         this.interests = new ArrayList<String>();
@@ -45,13 +47,14 @@ public class Person {
     }
 
 
-    public Person(String firstName, String lastName, String username, float birthDate, String password, String email, ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
+    public Person(String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.birthDate = birthDate;
         this.password  = password;
         this.email     = email;
+        this.bio    = bio;
         this.rate      = rate;
         this.friends    = friends;
         this.interests   = interests;
@@ -101,38 +104,12 @@ public class Person {
         this.interests = interests;
     }
 
-
-
-    public String getName() {
-        return firstName;
-    }
-
-    public void setName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getlastName() {
-        return lastName;
-    }
-
-    public void setlastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public float getbirthDate() {
-        return birthDate;
-    }
-
-    public void setbirthDate(float birthDate) {
-        this.birthDate = birthDate;
     }
 
     public String getPassword() {
@@ -143,15 +120,6 @@ public class Person {
         this.password = password;
     }
 
-    public String getemail() {
-        return email;
-    }
-
-    public void setemail(String email) {
-        this.email = email;
-    }
-    
-
     public ArrayList<Person> getFriends() {
         return friends;
     }
@@ -160,14 +128,10 @@ public class Person {
         this.friends = friends;
     }
 
-    public ArrayList<String> getinterests() {
-        return interests;
-    }
-
     public void setinterests(ArrayList<String> interests) {
         this.interests = interests;
     }
-    public void editProfile(String name, String lastName, String username, float birthDate, String password, String email, ArrayList<Person> friends, ArrayList<String> interests) {
+    public void editProfile(String name, String lastName, String username, float birthDate, String password, String email, ArrayList<Person> friends, ArrayList<String> interests,String bio) {
         this.firstName = name;
         this.lastName = lastName;
         this.username = username;
@@ -175,6 +139,17 @@ public class Person {
         this.password = password;
         this.email = email;
         this.interests = interests;
+        this.bio = bio;
+    }
+
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getBio() {
+        return bio;
+
     }
 
     public String getPhotoUrl() {

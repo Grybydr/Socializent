@@ -25,7 +25,17 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/userListImageView" />
-
+    <TextView
+        android:id="@+id/userListSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Surname"
+        android:textSize="18sp"
+        android:theme="@style/TextTheme"
+        tools:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/userListName" />
 
     <TextView
         android:id="@+id/userShortBio"

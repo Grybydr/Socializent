@@ -69,10 +69,12 @@
                 android:layout_height="fill_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="this is tab2. you can add whatever controls you want inside this Linear layout." />
+                <ListView
+                    android:id="@+id/listuser"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:choiceMode="singleChoice" />
+
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>

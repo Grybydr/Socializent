@@ -31,18 +31,14 @@ public class UserAdapterToList extends ArrayAdapter<Person> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_user, parent, false);
         }
         TextView userName = (TextView) convertView.findViewById(R.id.userListName);
+        TextView userSurname = (TextView) convertView.findViewById(R.id.userListSurname);
         TextView userBio = (TextView) convertView.findViewById(R.id.userShortBio);
 
         // Populate the data into the template view using the data object
-        userName.setText(person.getName());
-       // userBio.setText(person.getBio());
+        userName.setText(person.getFirstName());
+        userSurname.setText(person.getLastName());
+        userBio.setText(person.getBio());
 
- /*       int imageResource = mContext.getResources().getIdentifier(type, "drawable", mContext.getPackageName());
-
-        ImageView imageview= (ImageView)convertView.findViewById(R.id.eventImageView);
-        Drawable res = mContext.getResources().getDrawable(imageResource, null);
-        imageview.setImageDrawable(res);
-*/
         // Return the completed view to render on screen
         return convertView;
 

@@ -38,6 +38,7 @@ import java.util.List;
 
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
+
 public class BottomBarSearch extends ListFragment  {
 
     View searchview;
@@ -81,8 +82,10 @@ public class BottomBarSearch extends ListFragment  {
         searchedString = (EditText) searchview.findViewById(R.id.searchText);
         searchButton = (ImageButton) searchview.findViewById(R.id.searchImageButton);
         eventList = getListView();
-        searchedEvents = new ArrayList<Event>();
+        userList = (ListView) searchview.findViewById(R.id.listuser);
 
+        searchedEvents = new ArrayList<Event>();
+        searchedUsers = new ArrayList<Person>();
         host = (TabHost)searchview.findViewById(R.id.tabhost);
         host.setup();
 
@@ -91,6 +94,7 @@ public class BottomBarSearch extends ListFragment  {
         spec.setContent(R.id.layoutTab1);
         spec.setIndicator("Event");
         host.addTab(spec);
+
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +105,6 @@ public class BottomBarSearch extends ListFragment  {
                         searchEvent(searchedString.getText().toString());
                         adapter = new EventAdapterToList(getActivity().getApplicationContext(), searchedEvents);
                         eventList.setAdapter(adapter);
-
                         searchedEvents.size();
                     }
                     else if(tab == 1){
@@ -116,8 +119,6 @@ public class BottomBarSearch extends ListFragment  {
                 }
             }
         });
-
-
         eventList.setOnItemClickListener(new OnItemClickListener() {
 
             public void onItemClick(AdapterView arg0, View arg, int position, long a) {
@@ -129,20 +130,29 @@ public class BottomBarSearch extends ListFragment  {
                 transaction.replace(R.id.tabhost, mFragment);
                 transaction.commit();
 
-                //Intent intent = new Intent(MainActivity.this,CountryActivity.class);
-
-               // intent.putExtra("countryId", countries.getId());
 
             }
         });
+        userList.setOnItemClickListener(new OnItemClickListener() {
 
+            public void onItemClick(AdapterView arg0, View arg, int position, long a) {
+
+                Person selectedPerson = (Person)userAdapter.getItem(position);
+
+                Fragment mFragment = NavigationDrawerFirst.newInstance();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.tabhost, mFragment);
+                transaction.commit();
+
+
+            }
+        });
 
         //Tab 2
         spec = host.newTabSpec("User");
         spec.setContent(R.id.layoutTab2);
         spec.setIndicator("User");
         host.addTab(spec);
-
 
     }
 
@@ -167,7 +177,7 @@ public class BottomBarSearch extends ListFragment  {
                 eventTitle = "Event";
             String description = row.getString("description");
             EventTypes type= EventTypes.STUDY; //= row.getString() //TODO: serverdan gelmesi lazm
-            Event e = new Event(eventTitle, description, 0, null, "", null, null, type, 0,0, "", null, null);
+            Event e = new Event(eventTitle, description, 0, null, "", null, null, type, 0,0, "", null, null); //TODO:
             searchedEvents.add(e);
 
         }
@@ -180,8 +190,8 @@ public class BottomBarSearch extends ListFragment  {
         personTask.execute("4",searchedWord);
         cookieList = msCookieManager.getCookieStore().getCookies();
         String users = "";
-        for (int i = 0; i < cookieList.size(); i++) {
-            if (cookieList.get(i).getName().equals("allSearchedEvents")){
+        for (int i = cookieList.size()-1; i >=0; i--) {
+            if (cookieList.get(i).getName().equals("searchedUsers")){
                 users = cookieList.get(i).getValue();
                 break;
             }
@@ -189,13 +199,32 @@ public class BottomBarSearch extends ListFragment  {
         JSONArray usersArray = new JSONArray(users);
         for (int i = 0; i < usersArray.length(); i++) {
             JSONObject row = usersArray.getJSONObject(i);
+            String fullname = row.getString("fullName");
+            String firstName = row.getString("firstName");
+            String lastname = row.getString("lastName");
+            String email = row.getString("email");
+            String shortBio = row.getString("shortBio");
+            String username = row.getString("username");
+            String password = row.getString("password");
+            String bio = row.getString("shortBio");
 
-            String firstname = row.getString("firstName");
 
-           /* String description = row.getString("description");
-            EventTypes type= EventTypes.STUDY; //= row.getString() //TODO: serverdan gelmesi lazm
-            Event e = new Event(eventTitle, description, 0, null, "", null, null, type, 0,0, "", null, null);
-            searchedEvents.add(e);*/
+            String interestJSONArray = row.getString("interests");
+            JSONArray interestA = new JSONArray(interestJSONArray);
+            ArrayList<String> interestArray = new ArrayList<String>();
+            for (int k = 0; k < interestA.length(); k++) {
+                JSONObject interest = interestA.getJSONObject(k);
+                interestArray.add(interest.toString());
+            }
+           // String orgEventJSON = row.getString("organizedEvents");
+            //friends arrayı ekllenecek
+            //events ekleencek//
+            //Person(String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
+
+
+             Person p = new Person(firstName,lastname,username, 0,password, email,bio, null, interestArray,null,null,null,0);
+            searchedUsers.add(p);
+
 
         }
 
@@ -204,20 +233,4 @@ public class BottomBarSearch extends ListFragment  {
     }
 
 
-
-//    public void updatedData(ArrayList<Event> events) {
-//
-//        adapter.clear();
-//
-//        if (events != null){
-//
-//            for (Event object : events) {
-//
-//                adapter.insert(object, adapter.getCount());
-//            }
-//        }
-//
-//        adapter.notifyDataSetChanged();
-//
-//    }
 }

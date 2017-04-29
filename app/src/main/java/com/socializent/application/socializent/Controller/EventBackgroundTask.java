@@ -175,7 +175,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("AllEVents: ", result);
+                Log.d("AllEvents: ", result);
                 HttpCookie accessTokenCookie = new HttpCookie("allEvents",result);
 
                 msCookieManager.getCookieStore().add(null, accessTokenCookie);
@@ -216,19 +216,6 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 HttpCookie accessTokenCookie = new HttpCookie("allSearchedEvents",result);
 
                 msCookieManager.getCookieStore().add(null, accessTokenCookie);
-
-               /*Irem bunu ekle senin class a
-                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
-                String events = "";
-                for (int i = 0; i < cookieList.size(); i++) {
-                    if (cookieList.get(i).getName().equals("allSearchedEvents")){
-                        events = cookieList.get(i).getValue();
-                        break;
-                    }
-                }
-                JSONArray eventsArray = new JSONArray(events);*/
-
-                //}
 
                 conn.disconnect();
                 return result;
