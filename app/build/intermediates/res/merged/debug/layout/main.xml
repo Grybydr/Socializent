@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_frame3"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:weightSum="1">
-    <!--android:background="@drawable/logo"-->
+
+
 
 
     <RelativeLayout
+        android:id="@+id/content_frame2"
         android:layout_width="403dp"
         android:layout_height="371dp">
 
@@ -73,7 +75,8 @@
             android:layout_marginLeft="-180dp"
             android:layout_marginStart="26dp"
             android:background="@drawable/facebook_logo"
-            android:drawablePadding="10dp" />
+            android:drawablePadding="10dp"
+            android:onClick="moveToFacebookLoginPage"/>
 
         <Button
             android:id="@+id/loginButton"
@@ -117,16 +120,7 @@
             android:textStyle="bold|italic"
             android:theme="@style/EditTheme" />
 
-        <!--<Button
-            android:id="@+id/signUpButton"
-            android:layout_width="50dp"
-            android:layout_height="52dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/loginButton"
-            android:layout_marginStart="81dp"
-            android:background="@drawable/signup"
-            android:drawablePadding="10dp"
-            android:onClick="signUp" />-->
+
 
         <TextView
             android:id="@+id/fbLoginText"
@@ -152,6 +146,7 @@
             android:textStyle="bold|italic" />
 
     </RelativeLayout>
+
 
 
 </LinearLayout>

@@ -7,7 +7,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="forgot_password_text">ohh...forgot your password?</string>
     <string name="loginText">Login</string>
-
+    <string name="fb_login_protocol_scheme">fb780443785454824</string>
     <string name="action_settings">Logout</string>
     <string name="first_fragment">My Profile</string>
     <string name="second_fragment">My Upcoming Events</string>

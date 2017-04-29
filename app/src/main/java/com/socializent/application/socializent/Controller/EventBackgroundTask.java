@@ -218,7 +218,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 msCookieManager.getCookieStore().add(null, accessTokenCookie);
 
                /*Irem bunu ekle senin class a
-               List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
                 String events = "";
                 for (int i = 0; i < cookieList.size(); i++) {
                     if (cookieList.get(i).getName().equals("allSearchedEvents")){

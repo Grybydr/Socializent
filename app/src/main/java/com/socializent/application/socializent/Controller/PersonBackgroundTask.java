@@ -8,7 +8,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+import com.socializent.application.socializent.FacebookFragment;
 import com.socializent.application.socializent.Modal.Person;
+import com.socializent.application.socializent.SignUp;
 import com.socializent.application.socializent.Template;
 import com.socializent.application.socializent.main;
 
@@ -39,6 +41,7 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 import static com.socializent.application.socializent.Controller.EventBackgroundTask.GET_ALL_EVENTS_OPTION;
+import static com.socializent.application.socializent.Controller.EventBackgroundTask.GET_SEARCHED_EVENTS_OPTION;
 import static com.socializent.application.socializent.Template.user;
 
 /**
@@ -47,12 +50,13 @@ import static com.socializent.application.socializent.Template.user;
 
 public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
+    static final String GET_SEARCHED_USER_OPTION = "4";
+    static final String FACEBOOK_SIGN_UP_OPTION = "5";
     private Context context;
     final static String COOKIES_HEADER = "Set-Cookie";
     final static String SIGN_IN_OPTION = "2";
     final static String GET_PERSON_OPTION = "3";
     final static String SIGN_UP_OPTION = "1";
-    final static String GET_SEARCHED_USER_OPTION = "4";
     private static int signedInBefore = 0;
 
     public static java.net.CookieManager msCookieManager = new java.net.CookieManager();
@@ -121,7 +125,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("Response5: ", result);
+                Log.d("Response: ", result);
                 //}
                 conn.disconnect();
                 return result;
@@ -181,7 +185,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                     while ((line = br.readLine()) != null) {
                         result += line;
                     }
-                    Log.d("Response4: ", result);
+                    Log.d("Response: ", result);
                 }else
                 {
                     Log.d("ErrorWithResponseCode: ", responseCode +"");
@@ -244,7 +248,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("Response3: ", result);
+                Log.d("Response: ", result);
                 //}
 
                 JSONObject userObject = new JSONObject(result);
@@ -303,19 +307,84 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }else if(type.equals(GET_SEARCHED_USER_OPTION)) {
-            try {
-                String searchedUserName = params[1];
-                URL url = new URL("http://54.69.152.154:3000/searchUser?q=" + searchedUserName);
+        }
+        else if(type.equals(GET_SEARCHED_USER_OPTION)){
+           try{
+               String searchedUserName = params[1];
+               URL url = new URL("http://54.69.152.154:3000/searchUser?q=" + searchedUserName );
+               HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+               //conn.connect();
+               conn.setReadTimeout(30000);
+               conn.setConnectTimeout(30000);
+               conn.setRequestMethod("GET");
+               conn.setRequestProperty("Content-Type", "application/json");
+               //conn.setRequestProperty("x-access-token", accessToken.toString());
+               conn.setDoInput(true);
+               conn.connect();
+
+               int responseCode = conn.getResponseCode();
+               Log.d("Response Code: ", responseCode + "");
+               //if (responseCode == HttpsURLConnection.HTTP_OK) {
+               String line;
+               BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+               while ((line = br.readLine()) != null) {
+                   result += line;
+               }
+               Log.d("Response: ", result);
+
+
+           } catch (ProtocolException e) {
+               e.printStackTrace();
+           } catch (MalformedURLException e) {
+               e.printStackTrace();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+
+        }
+        else if(type.equals(FACEBOOK_SIGN_UP_OPTION)){
+            try
+            {
+                String name = params[1];
+                String surname = params[2];
+                String username = params[3];
+                String email = params[4];
+
+                URL url = new URL("http://54.69.152.154:3000/signup");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 //conn.connect();
-                conn.setReadTimeout(30000);
-                conn.setConnectTimeout(30000);
-                conn.setRequestMethod("GET");
+                conn.setReadTimeout(15000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json");
-                //conn.setRequestProperty("x-access-token", accessToken.toString());
                 conn.setDoInput(true);
-                conn.connect();
+                conn.setDoOutput(true);
+                //HashMap<String, String> postDataParams = new HashMap<String, String>();
+                //postDataParams.put("username", username);
+                // postDataParams.put("password", password);
+                Log.d("username", username);
+                Log.d("firstname", name);
+                Log.d("lastname", surname);
+                Log.d("email", email);
+
+                JSONObject requestBody = new JSONObject();
+
+                requestBody.put("username", username);
+                requestBody.put("firstname", name);
+                requestBody.put("lastname", surname);
+                requestBody.put("email", email);
+
+                OutputStream os = conn.getOutputStream();
+
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+                String str = requestBody.toString();
+                Log.d("RequestBody: ", str);
+                writer.write(str);
+                //writer.write(postDataParams.toString());
+                writer.flush();
+                writer.close();
+                os.close();
+
 
                 int responseCode = conn.getResponseCode();
                 Log.d("Response Code: ", responseCode + "");
@@ -326,16 +395,18 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                     result += line;
                 }
                 Log.d("Response: ", result);
-
-
+                //}
+                conn.disconnect();
+                return result;
             } catch (ProtocolException e) {
-                e.printStackTrace();
-            } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
+
 
         return result;
     }
@@ -352,12 +423,24 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
         }
 
         if (result.equals("1")){
-            Intent forMain = new Intent(context, main.class);
-            context.startActivity(forMain);
+            if (context.getClass() == SignUp.class){
+                Intent forMain = new Intent(context, main.class);
+                context.startActivity(forMain);
+            }
+            else{
+                PersonBackgroundTask getCurrentUserTask = new PersonBackgroundTask(context);
+                getCurrentUserTask.execute(GET_PERSON_OPTION);
+
+                EventBackgroundTask getAllAvailableEvents = new EventBackgroundTask();
+                getAllAvailableEvents.execute(GET_ALL_EVENTS_OPTION);
+
+                Intent intentNavigationBar = new Intent(context, Template.class);
+                context.startActivity(intentNavigationBar);
+            }
             return;
         }
 
-        if(signedInBefore == 0){
+        if(result.charAt(0) == '"'){
             Log.d("Access token: ",result);
 
             result = result.substring(1,result.length()-1);

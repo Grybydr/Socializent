@@ -1,5 +1,6 @@
 package com.socializent.application.socializent;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -203,15 +204,20 @@ public class Template extends AppCompatActivity {
         }
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Toast.makeText(this, R.string.action_settings, Toast.LENGTH_SHORT)
-                        .show();
-                ;
+                goBackToMainScreen();
+                Toast.makeText(this,"You are logging out",Toast.LENGTH_LONG).show();
                 break;
             default:
                 return super.onOptionsItemSelected(item);
         }
 
         return true;
+    }
+
+    private void goBackToMainScreen()
+    {
+        Intent logoutIntent = new Intent(this, main.class);
+        startActivity(logoutIntent);
     }
 
     @Override

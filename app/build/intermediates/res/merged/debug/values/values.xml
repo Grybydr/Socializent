@@ -762,6 +762,7 @@
     <string name="drawer_open">Open</string>
     <string name="facebook_app_id">780443785454824</string>
     <string name="facebook_login">Facebook Login</string>
+    <string name="fb_login_protocol_scheme">fb780443785454824</string>
     <string name="first_fragment">My Profile</string>
     <string name="forgot_password_text">ohh...forgot your password?</string>
     <string name="fourth_fragment">My Friends</string>

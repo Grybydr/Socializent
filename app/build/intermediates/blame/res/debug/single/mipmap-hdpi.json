@@ -16,6 +16,10 @@
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\heart.png",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\heart.png"
+    },
+    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
@@ -24,11 +28,23 @@
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\heart.png"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\truiton.png",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\truiton.png"
+    },
+    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\heart.png",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\heart.png"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\socializent_image.png",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\socializent_image.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\socializent_image.png",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\mipmap-hdpi\\socializent_image.png"
     }
 ]
