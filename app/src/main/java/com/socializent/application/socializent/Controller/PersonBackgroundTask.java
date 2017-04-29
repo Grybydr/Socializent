@@ -52,6 +52,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     final static String SIGN_IN_OPTION = "2";
     final static String GET_PERSON_OPTION = "3";
     final static String SIGN_UP_OPTION = "1";
+    final static String GET_SEARCHED_USER_OPTION = "4";
     private static int signedInBefore = 0;
 
     public static java.net.CookieManager msCookieManager = new java.net.CookieManager();
@@ -302,8 +303,39 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
+        }else if(type.equals(GET_SEARCHED_USER_OPTION)) {
+            try {
+                String searchedUserName = params[1];
+                URL url = new URL("http://54.69.152.154:3000/searchUser?q=" + searchedUserName);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                //conn.connect();
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                //conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
 
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                //if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.d("Response: ", result);
+
+
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         return result;
     }

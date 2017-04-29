@@ -94,9 +94,6 @@ public class NavigationDrawerFirst extends Fragment {
             e.printStackTrace();
         }
 
-
-
-
         return profileView;
 
     }

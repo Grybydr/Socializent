@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ImageView
+        android:id="@+id/eventImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/concert"
+        android:layout_marginTop="15dp"
+        />
+    <TextView
+        android:id="@+id/eventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="18sp"
+        android:theme="@style/TextTheme"
+        tools:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/eventImageView" />
+
+
+    <TextView
+        android:id="@+id/eventtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/eventImageView"
+        android:layout_below="@+id/eventName"
+        android:textSize="12sp"
+        android:theme="@style/EditTheme"
+        android:layout_marginStart="10dp"
+        android:text="Time" />
+
+    <TextView
+        android:id="@+id/eventDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_below="@+id/eventtime"
+        android:layout_toEndOf="@+id/eventImageView"
+        android:layout_marginStart="10dp"
+        android:textSize="12dp"
+        tools:layout_height="40dp"
+    />
+
+
+</RelativeLayout>

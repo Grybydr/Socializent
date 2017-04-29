@@ -2,6 +2,9 @@ package com.socializent.application.socializent.Modal;
 
 import com.google.android.gms.location.places.Place;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
@@ -176,4 +179,6 @@ public class Event {
     public void setComments(ArrayList<String> comments) {
         this.comments = comments;
     }
+
+
 }

@@ -89,12 +89,12 @@ public final class R {
         public static final int common_google_signin_btn_text_light_focused = 0x7f020083;
         public static final int common_google_signin_btn_text_light_normal = 0x7f020084;
         public static final int common_google_signin_btn_text_light_normal_background = 0x7f020085;
-        public static final int googleg_disabled_color_18 = 0x7f020090;
-        public static final int googleg_standard_color_18 = 0x7f020091;
-        public static final int places_ic_clear = 0x7f0200ae;
-        public static final int places_ic_search = 0x7f0200af;
-        public static final int powered_by_google_dark = 0x7f0200b0;
-        public static final int powered_by_google_light = 0x7f0200b1;
+        public static final int googleg_disabled_color_18 = 0x7f020092;
+        public static final int googleg_standard_color_18 = 0x7f020093;
+        public static final int places_ic_clear = 0x7f0200b3;
+        public static final int places_ic_search = 0x7f0200b4;
+        public static final int powered_by_google_dark = 0x7f0200b5;
+        public static final int powered_by_google_light = 0x7f0200b6;
     }
     public static final class id {
         public static final int adjust_height = 0x7f0d003a;
@@ -108,20 +108,20 @@ public final class R {
         public static final int light = 0x7f0d0048;
         public static final int none = 0x7f0d0014;
         public static final int normal = 0x7f0d0010;
-        public static final int place_autocomplete_clear_button = 0x7f0d0106;
-        public static final int place_autocomplete_powered_by_google = 0x7f0d0108;
-        public static final int place_autocomplete_prediction_primary_text = 0x7f0d010a;
-        public static final int place_autocomplete_prediction_secondary_text = 0x7f0d010b;
-        public static final int place_autocomplete_progress = 0x7f0d0109;
-        public static final int place_autocomplete_search_button = 0x7f0d0104;
-        public static final int place_autocomplete_search_input = 0x7f0d0105;
-        public static final int place_autocomplete_separator = 0x7f0d0107;
+        public static final int place_autocomplete_clear_button = 0x7f0d0110;
+        public static final int place_autocomplete_powered_by_google = 0x7f0d0112;
+        public static final int place_autocomplete_prediction_primary_text = 0x7f0d0114;
+        public static final int place_autocomplete_prediction_secondary_text = 0x7f0d0115;
+        public static final int place_autocomplete_progress = 0x7f0d0113;
+        public static final int place_autocomplete_search_button = 0x7f0d010e;
+        public static final int place_autocomplete_search_input = 0x7f0d010f;
+        public static final int place_autocomplete_separator = 0x7f0d0111;
         public static final int radio = 0x7f0d0072;
         public static final int satellite = 0x7f0d003d;
         public static final int standard = 0x7f0d0045;
         public static final int terrain = 0x7f0d003e;
-        public static final int text = 0x7f0d0102;
-        public static final int text2 = 0x7f0d0100;
+        public static final int text = 0x7f0d010c;
+        public static final int text2 = 0x7f0d010a;
         public static final int wide = 0x7f0d0046;
         public static final int wrap_content = 0x7f0d0024;
     }
@@ -129,10 +129,10 @@ public final class R {
         public static final int google_play_services_version = 0x7f0b0006;
     }
     public static final class layout {
-        public static final int place_autocomplete_fragment = 0x7f040052;
-        public static final int place_autocomplete_item_powered_by_google = 0x7f040053;
-        public static final int place_autocomplete_item_prediction = 0x7f040054;
-        public static final int place_autocomplete_progress = 0x7f040055;
+        public static final int place_autocomplete_fragment = 0x7f040054;
+        public static final int place_autocomplete_item_powered_by_google = 0x7f040055;
+        public static final int place_autocomplete_item_prediction = 0x7f040056;
+        public static final int place_autocomplete_progress = 0x7f040057;
     }
     public static final class string {
         public static final int common_google_play_services_enable_button = 0x7f070029;

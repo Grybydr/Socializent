@@ -12,8 +12,8 @@
         android:title= "Recommended"/>
     <item
         android:id="@+id/action_item3"
-        android:icon="@drawable/chat_icon_bottom_bar"
-        android:title="Chat"/>
+        android:icon="@drawable/search_icon_bottom_bar"
+        android:title="Search"/>
     <item
         android:id="@+id/action_item4"
         android:icon="@drawable/notification_icon_bottom_bar"

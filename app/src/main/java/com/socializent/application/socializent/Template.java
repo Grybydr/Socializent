@@ -1,6 +1,5 @@
 package com.socializent.application.socializent;
 
-import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,12 +23,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-
 import com.socializent.application.socializent.Fragments.NavigationDrawerFirst;
 import com.socializent.application.socializent.Fragments.BottomBarMap;
-import com.socializent.application.socializent.Fragments.BottomBarChat;
+import com.socializent.application.socializent.Fragments.BottomBarSearch;
 import com.socializent.application.socializent.Fragments.BottomBarRecommend;
 import com.socializent.application.socializent.Fragments.BottomBarNotifications;
 import com.socializent.application.socializent.Fragments.NavigationDrawerSecond;
@@ -84,7 +80,6 @@ public class Template extends AppCompatActivity {
         txtWebsite = (TextView) navHeader.findViewById(R.id.website);
         imgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
         imgProfile = (ImageView) navHeader.findViewById(R.id.img_profile);
-        //loadNavHeader();
 
         mDrawerList.setAdapter(new ArrayAdapter<>(getSupportActionBar()
                 .getThemedContext(), android.R.layout.simple_list_item_1,
@@ -167,8 +162,8 @@ public class Template extends AppCompatActivity {
                                 getSupportActionBar().setTitle("Recommended For You");
                                 break;
                             case R.id.action_item3:
-                                selectedFragment = BottomBarChat.newInstance();
-                                getSupportActionBar().setTitle("Chat");
+                                selectedFragment = BottomBarSearch.newInstance();
+                                getSupportActionBar().setTitle("Search");
                                 break;
                             case R.id.action_item4:
                                 selectedFragment = BottomBarNotifications.newInstance();

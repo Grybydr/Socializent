@@ -118,7 +118,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 initializePlacePicker();
             }
         });
-        Toast.makeText(getContext(), R.string.map_gps_warning, Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), R.string.map_gps_warning, Toast.LENGTH_SHORT).show();
 
         return mapView;
     }
@@ -309,8 +309,12 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         EventBackgroundTask createEventTask = new EventBackgroundTask();
 
         LatLng latLng = myPlace.getLatLng();
-        String longitude = String.valueOf(String.format("%.6f", latLng.longitude));
-        String latitude = String.valueOf(String.format("%.6f", latLng.latitude));
+
+        String longitude = String.valueOf(( latLng.longitude));
+        longitude = longitude.replace(",",".");
+        String latitude = String.valueOf((latLng.latitude));
+        latitude = latitude.replace(",",".");
+
         String pCount = String.valueOf(participantCount);
         String feeConverted = String.valueOf(fee);
 

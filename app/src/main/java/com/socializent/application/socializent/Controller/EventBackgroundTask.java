@@ -194,7 +194,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
             try{
 
                 String queryString = params[1];
-                URL url = new URL("http://54.69.152.154:3000/events?" + queryString);
+                URL url = new URL("http://54.69.152.154:3000/searchEvent?q=" + queryString);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
                 conn.setReadTimeout(30000);
@@ -203,8 +203,6 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 conn.setRequestProperty("Content-Type", "application/json");
                 conn.setDoInput(true);
                 conn.connect();
-
-                OutputStream os = conn.getOutputStream();
 
                 int responseCode = conn.getResponseCode();
                 Log.d("Response Code: ", responseCode + "");
