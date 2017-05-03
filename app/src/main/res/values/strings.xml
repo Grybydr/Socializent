@@ -52,5 +52,6 @@
     <string name="place">Place:</string>
     <string name="category">Category:</string>
     <string name="date_time_tag">Date/Time:</string>
+    <string name="loading">Loading...</string>
 
 </resources>

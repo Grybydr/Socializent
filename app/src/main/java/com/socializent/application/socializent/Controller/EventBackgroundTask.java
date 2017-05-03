@@ -1,5 +1,6 @@
 package com.socializent.application.socializent.Controller;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -29,14 +30,16 @@ import static com.socializent.application.socializent.Controller.PersonBackgroun
  * Created by Toshıba on 04/15/2017.
  */
 
-public class EventBackgroundTask extends AsyncTask<String, Object, String> {
+public class EventBackgroundTask extends AsyncTask<String, Void , String> {
 
     //private Context context;
     final static String EVENT_CREATE_OPTION = "1";
     final static String GET_ALL_EVENTS_OPTION = "2";
     final static String GET_SEARCHED_EVENTS_OPTION = "3";
+    final static String GET_BY_POSITION_EVENT_OPTION = "4";
 
-    public EventBackgroundTask(){}
+    public EventBackgroundTask(){
+    }
 
     @Override
     protected String doInBackground(String... params) {
@@ -51,10 +54,12 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 String placeCity = params[3];
                 String longitudeToConvertFloat = params[4];
                 String latitudeToConvertFloat = params[5];
-                String participantCount = params[6];
-                String category = params[7];
-                String description = params[8];
-                String feeToConvert = params[9];
+                String myAddress = params[6];
+                String placeName = params[7];
+                String participantCount = params[8];
+                String category = params[9];
+                String description = params[10];
+                String feeToConvert = params[11];
 
                 String accessToken = "";
 
@@ -112,6 +117,8 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 requestBody.put("place.city", placeCity);
                 requestBody.put("place.longitude", longitude);
                 requestBody.put("place.latitude", latitude);
+                requestBody.put("place.address", myAddress);
+                requestBody.put("place.name", placeName);
                 requestBody.put("category", category);
                 requestBody.put("description", description);
                 requestBody.put("fee", fee);
@@ -190,7 +197,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 e.printStackTrace();
             }
         }
-        if(type.equals(GET_SEARCHED_EVENTS_OPTION)){
+        else if(type.equals(GET_SEARCHED_EVENTS_OPTION)){
             try{
 
                 String queryString = params[1];
@@ -201,6 +208,7 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 conn.setConnectTimeout(30000);
                 conn.setRequestMethod("GET");
                 conn.setRequestProperty("Content-Type", "application/json");
+
                 conn.setDoInput(true);
                 conn.connect();
 
@@ -227,6 +235,47 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
                 e.printStackTrace();
             }
         }
+        else if (type.equals(GET_BY_POSITION_EVENT_OPTION)){
+            try {
+                String latitude = params[1];
+                String longitude = params[2];
+
+                URL url = new URL("http://54.69.152.154:3000/findPosition?long=" + longitude + "&lat=" + latitude);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code", responseCode + "");
+
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.v("targetEvent", result);
+                HttpCookie accessTokenCookie = new HttpCookie("targetEvent",result);
+
+                msCookieManager.getCookieStore().add(null, accessTokenCookie);
+
+                conn.disconnect();
+                return result;
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+                Log.d("targetEvent", "protocol error");
+            } catch (MalformedURLException e) {
+                Log.d("targetEvent", "malformed URL");
+                e.printStackTrace();
+            } catch (IOException e) {
+                Log.d("targetEvent", "IO exception");
+                e.printStackTrace();
+            }
+        }
         return result;
     }
 
@@ -234,14 +283,14 @@ public class EventBackgroundTask extends AsyncTask<String, Object, String> {
     protected void onPostExecute(String result) {
 
         if (result == null){
-            Log.d("Result is null: ", result);
+            Log.d("EventBackgroundTask", " Error in onPostExecute " + result);
             return;
         }
-        else if(result.equals("0")){
-            Log.d("Error creating: ", result);
+        else if(result.equals("0") || result.equals("")){
+            Log.d("EventBackgroundTask", " Error in onPostExecute " + result);
             return;
         }
-
-        Log.d("Successfully added: " ,result);
+        Log.d("EventBackgroundTask" , "Succesfully added " + result);
     }
+
 }

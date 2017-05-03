@@ -3,6 +3,8 @@ package com.socializent.application.socializent.Fragments;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,17 +26,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.places.Place;
+import com.socializent.application.socializent.Modal.EventTypes;
 import com.socializent.application.socializent.R;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 /**
- * Created by ZÃ¼lal BingÃ¶l on 9.04.2017.
+ * Created by Zulal Bingol on 9.04.2017.
  */
 
 public class EventCreateDialog extends DialogFragment implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener{
@@ -66,7 +72,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         try {
             callerActivity = (BottomBarMap) getTargetFragment();
         } catch (Exception e) {
-            Log.d("EVENT_CREATE_DIALOG", "Class cast error ");
+            Log.v("EVENT_CREATE_DIALOG", "Class cast error ");
         }
     }
 
@@ -75,16 +81,11 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     {
         View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_create_event_form, new RelativeLayout(getActivity()), false);
 
-        TextView eventsDetailTitle = (TextView)view.findViewById(R.id.eventDetailForm);
-        TextView placeTag = (TextView)view.findViewById(R.id.placeTag);
         TextView addressView = (TextView)view.findViewById(R.id.addressView);
-        addressView.setText(myPlace.getName());
+        addressView.setText(myPlace.getName().toString());
 
-        TextView titleTag = (TextView)view.findViewById(R.id.titleTag);
         titleView = (EditText)view.findViewById(R.id.titleView);
-        TextView feeTag = (TextView)view.findViewById(R.id.feeTag);
         feeView = (EditText)view.findViewById(R.id.feeView);
-        TextView pCountTag = (TextView)view.findViewById(R.id.pCountTag);
         participantCountView = (EditText)view.findViewById(R.id.participantCountView);
 
         categoryChooser = (Spinner) view.findViewById(R.id.category_spinner);
@@ -92,7 +93,6 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
 
         descriptionView = (EditText)view.findViewById(R.id.descriptionView);
 
-        TextView timeDateTag = (TextView)view.findViewById(R.id.timeDateTag);
         timeView = (EditText) view.findViewById(R.id.timeView);
         timeView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +113,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
                 }
                 else {
                     Toast.makeText(getActivity(), "Please fill in the required areas.",
-                            Toast.LENGTH_LONG)
+                            Toast.LENGTH_SHORT)
                             .show();
                 }
             }
@@ -181,7 +181,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             else
                 myFee = NO_FEE_TAG;
         } catch(NumberFormatException nfe) {
-            Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
+            Log.v("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
         }
         try {
             if (!participantCountView.getText().toString().trim().equals("")) {
@@ -190,7 +190,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             else
                 myParticipantCount = 0;
         } catch(NumberFormatException nfe) {
-            Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
+            Log.v("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
         }
         myCategory = categoryChooser.getSelectedItem().toString();
         myDescription = descriptionView.getText().toString();
@@ -221,7 +221,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
                 myParticipantCount = Integer.parseInt(participantCountView.getText().toString());
             }
         } catch(NumberFormatException nfe) {
-            Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
+            Log.v("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
             Toast.makeText(getActivity(), "Please enter participant count again.",
                     Toast.LENGTH_LONG)
                     .show();
@@ -234,10 +234,10 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             else
                 myFee = NO_FEE_TAG;
         } catch(NumberFormatException nfe) {
-            Log.d("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
+            Log.v("EVENT_CREATE_DIALOG", "Error in parsing: " + nfe);
         }
         if(!myCategory.equals("Category")){
-            myCategory = categoryChooser.getSelectedItem().toString();
+            myCategory = categoryChooser.getSelectedItem().toString().toUpperCase();
         }
         else {
             TextView errorText = (TextView)categoryChooser.getSelectedView();
@@ -259,15 +259,17 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
 
         choices = new ArrayList<String>();
         choices.add("Category");
-        choices.add("Celebration");
-        choices.add("Conference");
-        choices.add("Lecture");
-        choices.add("Movie Screening");
-        choices.add("Concert");
-        choices.add("Travel");
-        choices.add("Party");
-        choices.add("Study");
-        choices.add("Sports");
+        choices.add(String.valueOf(EventTypes.BIRTHDAY).toLowerCase());
+        choices.add(String.valueOf(EventTypes.CELEBRATION).toLowerCase());
+        choices.add(String.valueOf(EventTypes.CONCERT).toLowerCase());
+        choices.add(String.valueOf(EventTypes.CONFERENCE).toLowerCase());
+        choices.add(String.valueOf(EventTypes.LECTURE).toLowerCase());
+        choices.add(String.valueOf(EventTypes.MEETING).toLowerCase());
+        choices.add(String.valueOf(EventTypes.MOVIE).toLowerCase());
+        choices.add(String.valueOf(EventTypes.PARTY).toLowerCase());
+        choices.add(String.valueOf(EventTypes.SPORTS).toLowerCase());
+        choices.add(String.valueOf(EventTypes.STUDY).toLowerCase());
+        choices.add(String.valueOf(EventTypes.TRAVEL).toLowerCase());
 
         categoryChooser.setAdapter(
                 new ArrayAdapter<>(

@@ -147,10 +147,10 @@ public class EditProfile extends Fragment {
             @Override
             public void onClick(View v) {
                 if(conferance.isChecked()){
-                    interest.add("conferance");
+                    interest.add("conference");
                 }
                 else{
-                    interest.remove("conferance");
+                    interest.remove("conference");
                 }
             }
         });

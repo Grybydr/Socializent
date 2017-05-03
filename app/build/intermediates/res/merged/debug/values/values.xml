@@ -33,7 +33,7 @@
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#000</color>
     <color name="colorEditText">#ebca0707</color>
-    <color name="colorPrimary">#2091ec</color>
+    <color name="colorPrimary">#bcec20</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="com_facebook_blue">#3B5998</color>
     <color name="com_facebook_button_background_color">#415dae</color>
@@ -770,6 +770,7 @@
             AIzaSyCp5IbrY8ViuH0_hzwMDpWp6aLljAr_oWQ
     </string>
     <string name="lecture">Lecture</string>
+    <string name="loading">Loading...</string>
     <string name="loginButton">logın</string>
     <string name="loginText">Login</string>
     <string name="map_gps_warning">If you cannot see your location, please check your device\'s GPS settings.</string>

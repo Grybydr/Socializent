@@ -179,7 +179,7 @@ public class NavigationDrawerFirst extends Fragment {
         emailText.setText(searchedPerson.getEmail());
         bioText.setText(searchedPerson.getBio());
 
-        float number =searchedPerson.getBirthDate();
+        float number = searchedPerson.getBirthDate();
         Date date=new Date((long)number);
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         String dateStr = df.format(date);

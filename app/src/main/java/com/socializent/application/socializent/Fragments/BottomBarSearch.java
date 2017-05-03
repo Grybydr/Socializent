@@ -168,7 +168,7 @@ public class BottomBarSearch extends ListFragment  {
 
                 Event selectedEvent = (Event)adapter.getItem(position);
 
-                Fragment mFragment = EventDetailsPage.newInstance();
+                Fragment mFragment = EventDetailsPage.newInstance(null, selectedEvent);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.content_frame, mFragment);
                 transaction.commit();

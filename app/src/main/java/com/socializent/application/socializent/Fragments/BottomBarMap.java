@@ -6,6 +6,8 @@ package com.socializent.application.socializent.Fragments;
  */
 
 import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,17 +16,21 @@ import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -43,14 +49,21 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.socializent.application.socializent.Controller.EventBackgroundTask;
+import com.socializent.application.socializent.Controller.EventDetailsBackgroundTask;
 import com.socializent.application.socializent.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpCookie;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -67,17 +80,21 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private static final int DEFAULT_ZOOM = 17;
     private static final int DEFAULT_BEARING = 90;
     private static final int DEFAULT_TILT = 0;
+    private static final long WEEK_IN_MILLIS = 604800000;
+    private static final String TURKEY_TAG = "Turkey";
 
     private final LatLng defaultLocation = new LatLng(39.868010, 32.748823); //Bilkent's Coordinates
 
     //VARIABLES
     private GoogleMap myGoogleMap;
     private UiSettings myUiSettings;
-    private FloatingActionButton addEventButton;
+    private FloatingActionButton addEventButton, refreshFab;
     private LocationManager locationManager;
     private View mapView;
+    private String myAddress = "";
 
-    String city;
+    EventDetailsBackgroundTask s_task;
+    List<HttpCookie> cookieList;
 
     public static BottomBarMap newInstance() {
         BottomBarMap fragment = new BottomBarMap();
@@ -118,14 +135,26 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 initializePlacePicker();
             }
         });
+
+        refreshFab = (FloatingActionButton) mapView.findViewById(R.id.refreshFab);
+        refreshFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateMyLocation();
+            }
+        });
+
         Toast.makeText(getContext(), R.string.map_gps_warning, Toast.LENGTH_SHORT).show();
 
         return mapView;
     }
 
+    /*
+    * Gets current events from database
+    */
     private void retrieveEvents(){
 
-        List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+        //cookieList = msCookieManager.getCookieStore().getCookies();
         String events = "";
         for (int i = 0; i < cookieList.size(); i++) {
             if (cookieList.get(i).getName().equals("allEvents")){
@@ -136,7 +165,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         }
         try {
 
-            String tempLat, tempLong;
+            String tempLat, tempLong, eventType, eventTitle;
             JSONArray eventsArray = new JSONArray(events);
 
             for (int i = 0; i < eventsArray.length(); i++) {
@@ -144,8 +173,10 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 JSONObject row = eventsArray.getJSONObject(i);
 
                 //Retrieving event details
+                eventTitle = row.getString("name");
+                eventType = row.getString("category").toLowerCase();
+                String pin = "@drawable/" + eventType;
 
-                String eventTitle = row.getString("name"); //TODO: check database for this
                 if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
                     eventTitle = "Event";
 
@@ -153,20 +184,38 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 tempLat = pl.getString("latitude");
                 tempLong = pl.getString("longitude");
 
-                //Log.v("LOCATION_V", "tempLat" + tempLat);
-                //Log.v("LOCATION_V", "tempLong" + tempLong);
-
                 if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
 
-                    final double lat = Double.parseDouble(tempLat);
-                    final double longi = Double.parseDouble(tempLong);
-                    myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, longi))
+                    //TODO: filtering: if(Double.parseDouble(tempTime) + )
+
+                    double t_lat = Double.parseDouble(tempLat);
+                    double t_longi = Double.parseDouble(tempLong);
+
+                    //TODO: comment these for device usage
+                    /*DecimalFormat df = new DecimalFormat("##,######", new DecimalFormatSymbols(Locale.FRANCE));
+                    Double lat = Double.valueOf(df.format(t_lat));
+                    Double longi = Double.valueOf(df.format(t_longi));
+                    Log.v("LOCATION_V", "lat / long" + lat + " " + longi +"");*/
+
+                    //TODO: custom image for pins
+
+                    /*Drawable hold = ContextCompat.getDrawable(getActivity(), R.drawable.concert);
+                    BitmapDrawable hold2 = (BitmapDrawable) hold;
+                    Bitmap bitPhoto = hold2.getBitmap();
+
+                    Bitmap icon = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.concert);
+
+                    myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
+                            .title(eventTitle)
+                            .icon(BitmapDescriptorFactory.fromBitmap(icon)));*/
+
+                    myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
                             .title(eventTitle));
+
                 }
                 else {
-                    Log.v("LOCATION", "Latitude or Longitude is NULL");
+                    Log.v("LOCATION_V", "Latitude or Longitude is NULL");
                 }
-
             }
         } catch (JSONException e) {
             Log.v("LOCATION_V", "Events cannot be retrieved from cookie: JSON error");
@@ -195,17 +244,60 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             @Override
             public boolean onMarkerClick(Marker marker) {
                 marker.showInfoWindow();
+                loadTargetEvent(marker);
                 return true;
             }
         });
         myGoogleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-
+                String eventStr = "";
+                eventStr = getTargetEvent();
+                if(!eventStr.equals("")){
+                    //Log.v("LOCATION_V", "got the str: " + eventStr);
+                    Log.v("LOCATION_V", "Event Details formed");
+                    goToEventDetails(eventStr);
+                }
+                else
+                    Log.v("LOCATION_V", "EMPTY eventstr");
             }
         });
-
     }
+
+    /*
+    * Loads the cookie of the target Event
+    */
+    private void loadTargetEvent(Marker marker) {
+
+        s_task = new EventDetailsBackgroundTask(getContext());
+
+        double latitude = marker.getPosition().latitude;
+        double longitude = marker.getPosition().longitude;
+
+        String lat_str = String.valueOf(latitude).replace(",", ".");
+        String long_str = String.valueOf(longitude).replace(",", ".");
+
+        s_task.execute("loadTargetEvent", lat_str, long_str);
+    }
+
+    private String getTargetEvent(){
+
+        cookieList = msCookieManager.getCookieStore().getCookies();
+        String str = "";
+        if(cookieList.size() != 0){
+            for (int i = cookieList.size()-1; i >= 0; i--) {
+                if (cookieList.get(i).getName().equals("targetEvent")){
+                    str = cookieList.get(i).getValue();
+                    break;
+                }
+            }
+        }
+        else {
+            Log.v("LOCATION_V", "Error getting the target event");
+        }
+        return str;
+    }
+
 
     /*
     *   Opens PlacePicker
@@ -245,35 +337,11 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 final CharSequence phone = place.getPhoneNumber();
                 final String placeId = place.getId();
 
-                //Retriving City
-                Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-                List<Address> addresses = null;
-                try {
-                    addresses = geocoder.getFromLocation(place.getLatLng().latitude, place.getLatLng().longitude, 1);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                if (addresses.get(0).getLocality() != null)
-                    city = addresses.get(0).getLocality().toString();
-                else if (addresses.get(0).getSubAdminArea() != null)
-                    city = addresses.get(0).getSubAdminArea().toString();
-                else
-                    city = "unknown";
-
-                //Log.d("PLACEPICKER_", "CITY: " + city);
-                Address address = addresses.get(0);
-               // Log.v("PLACEPICKER_", addresses.get(0).getFeatureName() + ", " + addresses.get(0).getSubAdminArea() + ", " + addresses.get(0).getPremises() + ", " + addresses.get(0).getCountryName());
-                /*for(int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
-                    Log.d("PLACEPICKER_", address.getAddressLine(i));
-                }
-                String temp = address.getAddressLine(address.getMaxAddressLineIndex()-1).toString();
-                Log.d("PLACEPICKER_", "TEMP : " + temp);*/
-
                 //Create Event Dialog Initialization
                 showDialog(place, requestCode);
 
             } else {
-                Log.d("PLACEPICKER", "Error in PlacePicker ResultCode: " + resultCode);
+                Log.v("PLACEPICKER", "Error in PlacePicker ResultCode: " + resultCode);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
@@ -310,19 +378,67 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
 
         LatLng latLng = myPlace.getLatLng();
 
-        String longitude = String.valueOf(( latLng.longitude));
-        longitude = longitude.replace(",",".");
-        String latitude = String.valueOf((latLng.latitude));
-        latitude = latitude.replace(",",".");
+        String longitude = String.valueOf(latLng.longitude);
+        String latitude = String.valueOf(latLng.latitude);
+        //TODO: uncomment these for device usage:
+        longitude = longitude.replace(",", ".");
+        latitude = latitude.replace(",", ".");
 
         String pCount = String.valueOf(participantCount);
         String feeConverted = String.valueOf(fee);
+        String city = setCity(myPlace);
+        String placeName = myPlace.getName().toString();
 
-        createEventTask.execute("1", title, date, city, longitude, latitude, pCount, category, description, feeConverted);
+        createEventTask.execute("1", title, date, city, longitude, latitude, myAddress, placeName, pCount, category, description, feeConverted);
 
         myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
                 .title(title));
 
+    }
+
+    /*
+    *   Retrieves city
+    */
+    private String setCity(Place place){
+        Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+        List<Address> addresses = null;
+        String city = "";
+        try {
+            addresses = geocoder.getFromLocation(place.getLatLng().latitude, place.getLatLng().longitude, 1);
+            Address address = addresses.get(0);
+            for (int i = 0; i <= address.getMaxAddressLineIndex(); i++){
+                myAddress = myAddress + " " + address.getAddressLine(i);
+            }
+
+            if ((address.getAddressLine(address.getMaxAddressLineIndex()).toString()).equals(TURKEY_TAG)){
+                String str = (address.getAddressLine(address.getMaxAddressLineIndex()-1).toString());
+                int index = str.indexOf('/');
+                city = str.substring(index+1, str.length());
+            }
+            else {
+                if (addresses.get(0).getLocality() != null)
+                    city = addresses.get(0).getLocality().toString();
+                else if (addresses.get(0).getSubAdminArea() != null)
+                    city = addresses.get(0).getSubAdminArea().toString();
+                else
+                    city = "";
+            }
+
+            /*Log.d("PLACEPICKER_", "CITY: " + city);
+            //Log.d("PLACEPICKER_", addresses.get(0).getFeatureName() + ", " + addresses.get(0).getSubAdminArea() + ", " + addresses.get(0).getPremises() + ", " + addresses.get(0).getCountryName());
+            for(int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
+                //Log.d("PLACEPICKER_", address.getAddressLine(i));
+            }*/
+
+        } catch (IOException e) {
+            Log.v("PLACEPICKER_", "Cannot run Geocoder");
+            e.printStackTrace();
+        }
+
+        if(city.equals("") || city.equals("null") || city == null){
+            city = place.getName().toString();
+        }
+        return city;
     }
 
     private boolean checkMapReady() {
@@ -342,7 +458,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             return;
         }
         if (ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            Log.v("LOCATION_V", "Permissions GIVEN for My Location");
+            //Log.v("LOCATION_V", "Permissions GIVEN for My Location");
             myGoogleMap.setMyLocationEnabled(true);
             myGoogleMap.setBuildingsEnabled(true);
 
@@ -351,6 +467,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
             zoomInLocation(location);
 
+            cookieList = msCookieManager.getCookieStore().getCookies(); //for showing all events
             retrieveEvents();
 
         } else {
@@ -361,9 +478,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         }
     }
 
-    /*
-    *   Zooms in the given location
-     */
     private void zoomInLocation(Location location){
         if (location != null) {
             myGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
@@ -394,9 +508,19 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         myGoogleMap.setMyLocationEnabled(true);
     }
 
+
+    public void goToEventDetails(String eventStr) {
+
+        Fragment eventDetails = EventDetailsPage.newInstance(eventStr, null);
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_frame, eventDetails);
+        transaction.commit();
+
+    }
+
     /*
     * This method must be implemented if locationUpdates are necessary on regular basis.
-     */
+    */
     @Override
     public void onLocationChanged(Location location) {
 
@@ -411,5 +535,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     public void onDismiss(DialogInterface dialog) {
 
     }
+
+
 
 }
