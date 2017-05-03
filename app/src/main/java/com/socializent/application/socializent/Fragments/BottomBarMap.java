@@ -64,7 +64,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -154,7 +156,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     */
     private void retrieveEvents(){
 
-        //cookieList = msCookieManager.getCookieStore().getCookies();
         String events = "";
         for (int i = 0; i < cookieList.size(); i++) {
             if (cookieList.get(i).getName().equals("allEvents")){
@@ -164,8 +165,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
             }
         }
         try {
-
-            String tempLat, tempLong, eventType, eventTitle;
+            String tempLat, tempLong, eventType, eventTitle, dateStr;
             JSONArray eventsArray = new JSONArray(events);
 
             for (int i = 0; i < eventsArray.length(); i++) {
@@ -174,30 +174,42 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
 
                 //Retrieving event details
                 eventTitle = row.getString("name");
-                eventType = row.getString("category").toLowerCase();
-                String pin = "@drawable/" + eventType;
+                dateStr = row.getString("date");
+                long event_millis = Long.parseLong(dateStr);
+                Date currentDate = new Date();
+                long c_dateInMiliseconds = currentDate.getTime();
+                if (event_millis > c_dateInMiliseconds + WEEK_IN_MILLIS)
+                    continue;
+                else {
+                    DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTimeInMillis(event_millis);
+                    dateStr = df.format(calendar.getTime());
 
-                if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
-                    eventTitle = "Event";
+                    //TODO: custom image for pins
+                    eventType = row.getString("category").toLowerCase();
+                    String pin = "@drawable/" + eventType;
 
-                JSONObject pl = row.getJSONObject("place");
-                tempLat = pl.getString("latitude");
-                tempLong = pl.getString("longitude");
+                    if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
+                        eventTitle = "Event";
 
-                if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
+                    JSONObject pl = row.getJSONObject("place");
+                    tempLat = pl.getString("latitude");
+                    tempLong = pl.getString("longitude");
 
-                    //TODO: filtering: if(Double.parseDouble(tempTime) + )
+                    if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
 
-                    double t_lat = Double.parseDouble(tempLat);
-                    double t_longi = Double.parseDouble(tempLong);
+                        //TODO: filtering: if(Double.parseDouble(tempTime) + )
 
-                    //TODO: comment these for device usage
+                        double t_lat = Double.parseDouble(tempLat);
+                        double t_longi = Double.parseDouble(tempLong);
+
+                        //TODO: comment these for device usage
                     /*DecimalFormat df = new DecimalFormat("##,######", new DecimalFormatSymbols(Locale.FRANCE));
                     Double lat = Double.valueOf(df.format(t_lat));
                     Double longi = Double.valueOf(df.format(t_longi));
                     Log.v("LOCATION_V", "lat / long" + lat + " " + longi +"");*/
 
-                    //TODO: custom image for pins
 
                     /*Drawable hold = ContextCompat.getDrawable(getActivity(), R.drawable.concert);
                     BitmapDrawable hold2 = (BitmapDrawable) hold;
@@ -209,16 +221,17 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                             .title(eventTitle)
                             .icon(BitmapDescriptorFactory.fromBitmap(icon)));*/
 
-                    myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
-                            .title(eventTitle));
-
+                        myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
+                                .title(eventTitle)
+                                .snippet(dateStr));
+                    }
+                    else {
+                        Log.v("LOCATION_V", "Latitude or Longitude is NULL");
+                    }
                 }
-                else {
-                    Log.v("LOCATION_V", "Latitude or Longitude is NULL");
                 }
-            }
         } catch (JSONException e) {
-            Log.v("LOCATION_V", "Events cannot be retrieved from cookie: JSON error");
+            Log.e("LOCATION_V", "JSON Error in retrieving events");
             e.printStackTrace();
         }
 
@@ -392,7 +405,8 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         createEventTask.execute("1", title, date, city, longitude, latitude, myAddress, placeName, pCount, category, description, feeConverted);
 
         myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
-                .title(title));
+                .title(title)
+                .snippet(date));
 
     }
 
