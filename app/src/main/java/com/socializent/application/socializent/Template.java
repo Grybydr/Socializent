@@ -152,8 +152,7 @@ public class Template extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
-                            //zülal: map buttonuna e basınca frame burda oluşturuluyor
-                            //fragmentsin içindeki BottomBarMap senini için :D
+
                             case R.id.action_item1:
                                 selectedFragment = BottomBarMap.newInstance();
                                 getSupportActionBar().setTitle("Event Map");

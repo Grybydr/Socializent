@@ -14,20 +14,33 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.socializent.application.socializent.Controller.EditUserController;
+import com.socializent.application.socializent.Controller.PersonBackgroundTask;
+import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.Template;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Irem on 13.4.2017.
  */
 
 public class EditProfile extends Fragment {
+
+    static Person p;
     View profileView;
+    EditUserController task;
+    JSONObject jsonObject;
     CheckBox celebration;
     CheckBox concert;
     CheckBox conferance;
@@ -41,9 +54,7 @@ public class EditProfile extends Fragment {
     EditText name;
     EditText surname;
     EditText username;
-    EditText password;
     EditText email;
-    EditText city;
     EditText bio;
     EditText birthdate;
 
@@ -53,7 +64,8 @@ public class EditProfile extends Fragment {
         // Required empty public constructor
     }
 
-    public static EditProfile newInstance() {
+    public static EditProfile newInstance(Person person) {
+        p = person;
         return new EditProfile();
     }
 
@@ -73,12 +85,14 @@ public class EditProfile extends Fragment {
         name = (EditText) profileView.findViewById(R.id.editProfileEditName);
         surname = (EditText) profileView.findViewById(R.id.editProfileEditSurname);
         username = (EditText) profileView.findViewById(R.id.editProfileEditUsername);
-        password = (EditText)profileView.findViewById(R.id.editProfileEditPassword);
         email = (EditText)profileView.findViewById(R.id.editProfileEditEmail);
-        city = (EditText) profileView.findViewById(R.id.editProfileEditCity);
         bio = (EditText)profileView.findViewById(R.id.editProfileEditBio);
         birthdate = (EditText)profileView.findViewById(R.id.editProfileEditBirthdate);
-
+        Float bdf = p.getBirthDate();
+        long number =bdf.longValue();
+        Date date=new Date(number);
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        String dateStr = df.format(date);
 
         celebration = (CheckBox) profileView.findViewById(R.id.celebration);
         concert = (CheckBox) profileView.findViewById(R.id.concert);
@@ -89,7 +103,24 @@ public class EditProfile extends Fragment {
         study = (CheckBox) profileView.findViewById(R.id.study);
         travel = (CheckBox) profileView.findViewById(R.id.travel);
 
+        name.setText(p.getFirstName());
+        surname.setText(p.getLastName());
+        username.setText(p.getUsername());
+        email.setText(p.getEmail());
+        bio.setText(p.getBio());
+        birthdate.setText(dateStr);
         interest = new ArrayList<String>();
+        celebration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(celebration.isChecked()){
+                    interest.add("celebration");
+                }
+                else{
+                    interest.remove("celebration");
+                }
+            }
+        });
         celebration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,22 +210,6 @@ public class EditProfile extends Fragment {
             }
         });
 
-        JSONObject jsonObject= new JSONObject();
-    //***
-        try {
-            jsonObject.put("firstName", name.getText().toString());
-            jsonObject.put("lastName", surname.getText().toString());
-            jsonObject.put("username", username.getText().toString());
-            jsonObject.put("birthDate", birthdate.getText().toString());
-            jsonObject.put("password", password.getText().toString());
-            jsonObject.put("email", email.getText().toString());
-            //jsonObject.put("bio", bio.getText().toString());
-            jsonObject.put("interests", interest.toString());
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         update.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -208,6 +223,33 @@ public class EditProfile extends Fragment {
 
     public void updateProfile(View view)throws RuntimeException{
 
+        task = new EditUserController(getContext());
+        long newBDate = 0;
+        String myDate = birthdate.getText().toString();
+        SimpleDateFormat newsdf = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            Date newDate = newsdf.parse(myDate);
+            newBDate = newDate.getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        jsonObject= new JSONObject();
+
+        try {
+            jsonObject.put("firstName", name.getText().toString());
+            jsonObject.put("lastName", surname.getText().toString());
+            jsonObject.put("username", username.getText().toString());
+            jsonObject.put("birthDate",newBDate);
+            jsonObject.put("email", email.getText().toString());
+            jsonObject.put("interests", interest);
+            jsonObject.put("shortBio", bio.getText().toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        task.execute(jsonObject);
         Intent intent = new Intent(getActivity(), Template.class);
         startActivity(intent);
 

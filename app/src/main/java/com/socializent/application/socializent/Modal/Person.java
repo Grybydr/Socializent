@@ -17,6 +17,7 @@ public class Person {
     private String email;
     private String photoUrl;
     private String bio;
+    private String id;
     
     private ArrayList<Person> friends;
     private ArrayList<String> interests;
@@ -62,7 +63,30 @@ public class Person {
         this.upcomingEvents = upcomingEvents;
         this.pastEvents = pastEvents;
     }
+    public Person(String id,String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.birthDate = birthDate;
+        this.password  = password;
+        this.email     = email;
+        this.bio    = bio;
+        this.rate      = rate;
+        this.friends    = friends;
+        this.interests   = interests;
+        this.events     = events;
+        this.upcomingEvents = upcomingEvents;
+        this.pastEvents = pastEvents;
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;

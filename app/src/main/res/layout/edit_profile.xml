@@ -86,32 +86,11 @@
                 tools:layout_height="540dp" />
 
             <TextView
-                android:id="@+id/editProfilePassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/editProfileEditUsername"
-                android:text="Password:"
-                android:textSize="20sp"
-                android:theme="@style/TextTheme"
-                tools:layout_height="40dp" />
-
-            <EditText
-                android:id="@+id/editProfileEditPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/editProfilePassword"
-                android:textSize="20sp"
-                android:theme="@style/EditTheme"
-                tools:layout_height="40dp" />
-
-            <TextView
                 android:id="@+id/editProfileEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/editProfileEditPassword"
+                android:layout_below="@+id/editProfileEditUsername"
                 android:text="Email:"
                 android:textSize="20sp"
                 android:theme="@style/TextTheme"
@@ -130,37 +109,12 @@
                 tools:layout_height="40dp" />
 
 
-
-
-            <TextView
-                android:id="@+id/editProfileCity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/editProfileEditEmail"
-                android:text="City:"
-                android:textSize="20sp"
-                android:theme="@style/TextTheme"
-                tools:layout_height="40dp" />
-
-            <EditText
-                android:id="@+id/editProfileEditCity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/editProfileCity"
-                android:textSize="20sp"
-                android:theme="@style/EditTheme"
-                tools:layout_height="40dp" />
-
-
-
             <TextView
                 android:id="@+id/editProfileBio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/editProfileEditCity"
+                android:layout_below="@+id/editProfileEditEmail"
                 android:text="Short Bio:"
                 android:textSize="20sp"
                 android:theme="@style/TextTheme"

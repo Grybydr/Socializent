@@ -14,8 +14,11 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Modal.Event;
+import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
@@ -25,15 +28,31 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.HttpCookie;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
+import static com.socializent.application.socializent.Fragments.BottomBarSearch.searchedPerson;
+import static com.socializent.application.socializent.Fragments.EditProfile.p;
 
 
 public class NavigationDrawerFirst extends Fragment {
     //CircleDrawable circle;
     View profileView;
     ImageView imagePen;
+    ImageView addFriend;
+    TextView userNameText;
+    TextView bioText;
+    TextView emailText;
+    TextView birthdayText;
+    TextView interestText;
+    JSONObject userObject = null;
+    String user = "";
+    PersonBackgroundTask conn;
 
     public NavigationDrawerFirst() {
         // Required empty public constructor
@@ -54,10 +73,34 @@ public class NavigationDrawerFirst extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        JSONObject userObject = null;
-        String user = "";
+
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         imagePen = (ImageView) profileView.findViewById(R.id.edit_pen);
+        addFriend = (ImageView) profileView.findViewById(R.id.add_friend);
+        userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
+        bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
+        emailText = (TextView) profileView.findViewById(R.id.user_profile_email);
+        birthdayText = (TextView) profileView.findViewById(R.id.profile_birthday);
+        interestText = (TextView) profileView.findViewById(R.id.profile_interests);
+
+        if(searchedPerson != null) {
+            searchedUserProfile();
+        }
+        else {
+            myProfile();
+        }
+        return profileView;
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
+    public void myProfile(){
+        imagePen.setVisibility(View.VISIBLE);
+        addFriend.setVisibility(View.GONE);
         imagePen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,12 +111,11 @@ public class NavigationDrawerFirst extends Fragment {
         List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
 
         for (int i = 0; i < cookieList.size(); i++) {
-            if (cookieList.get(i).getName().equals("user")) {
+            if (cookieList.get(i).getName().equals("userProfile")) {
                 user = cookieList.get(i).getValue();
                 break;
             }
         }
-
         try {
             userObject = new JSONObject(user);
         } catch (JSONException e) {
@@ -82,33 +124,82 @@ public class NavigationDrawerFirst extends Fragment {
         Log.d("User Info: ", user);
 
 
-        TextView userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
-        TextView bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
-
-
         try {
 
-            userNameText.setText(userObject.getString("fullName"));
-            bioText.setText(userObject.getString("description"));
+            String fullname = userObject.getString("fullName");
+            userNameText.setText(fullname);
+            String firstName = userObject.getString("firstName");
+            String lastname = userObject.getString("lastName");
+            String email = userObject.getString("email");
+            emailText.setText(email);
+            String shortBio = userObject.getString("shortBio");
+            bioText.setText(shortBio);
+            String username = userObject.getString("username");
+            String password = userObject.getString("password");
+
+            String birthday = userObject.getString("birthDate");
+            long number = Long.parseLong(birthday);
+            float bd = Float.parseFloat(birthday);
+            Date date=new Date(number);
+            DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+            String dateStr = df.format(date);
+            birthdayText.setText(dateStr);
+
+            String interestJSONArray = userObject.getString("interests");
+            JSONArray interestA = new JSONArray(interestJSONArray);
+            ArrayList<String> interestArray = new ArrayList<String>();
+            for (int k = 0; k < interestA.length(); k++) {
+                //JSONObject interest = interestA.getJSONObject(k);
+                interestArray.add(interestA.getString(k));
+            }
+            interestText.setText(interestArray.toString());
+
+            p = new Person(firstName, lastname, username, bd, password, email, shortBio, null, interestArray, null, null, null, 0);
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        return profileView;
-
     }
 
     public void editPage(View view) throws RuntimeException {
-        Fragment mFragment = EditProfile.newInstance();
+        Fragment mFragment = EditProfile.newInstance(p);
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, mFragment);
         transaction.commit();
 
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void searchedUserProfile(){
+        conn = new PersonBackgroundTask(getContext());
+        imagePen.setVisibility(View.GONE);
+        addFriend.setVisibility(View.VISIBLE);
+        String fullname = searchedPerson.getFirstName() + searchedPerson.getLastName();
+        userNameText.setText(fullname);
+        emailText.setText(searchedPerson.getEmail());
+        bioText.setText(searchedPerson.getBio());
+
+        float number =searchedPerson.getBirthDate();
+        Date date=new Date((long)number);
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        String dateStr = df.format(date);
+        birthdayText.setText(dateStr);
+
+        addFriend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addFriend(v);
+            }
+        });
+
+
+    }
+    public void addFriend(View view) throws RuntimeException{
+        Toast.makeText(getContext(), "Friend Request Sent!", Toast.LENGTH_SHORT).show();
+        //TODO:: searchedPerson become null
+        //servera bağla
+        conn.execute("6", searchedPerson.getId());
+        addFriend.setImageResource(R.drawable.checked);
 
     }
 }

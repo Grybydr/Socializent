@@ -50,7 +50,7 @@ import static com.socializent.application.socializent.Template.user;
 
 public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
-    static final String GET_SEARCHED_USER_OPTION = "4";
+
     static final String FACEBOOK_SIGN_UP_OPTION = "5";
     private Context context;
     final static String COOKIES_HEADER = "Set-Cookie";
@@ -58,6 +58,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     final static String GET_PERSON_OPTION = "3";
     final static String SIGN_UP_OPTION = "1";
     final static String GET_SEARCHED_USER_OPTION = "4";
+    final static String SEND_FRIEND_REQUEST = "6";
     private static int signedInBefore = 0;
 
     public static java.net.CookieManager msCookieManager = new java.net.CookieManager();
@@ -249,7 +250,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 }
                 Log.d("Response3: ", result);
                 //}
-
+                msCookieManager.getCookieStore().add(null,new HttpCookie("userProfile",result));
                 JSONObject userObject = new JSONObject(result);
 
                 ArrayList<Person> friends = new ArrayList<Person>();
@@ -329,7 +330,8 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                     result += line;
                 }
                 Log.d("Response: ", result);
-
+                HttpCookie accessTokenCookie = new HttpCookie("searchedUsers",result);
+                msCookieManager.getCookieStore().add(null, accessTokenCookie);
 
            } catch (ProtocolException e) {
                e.printStackTrace();
@@ -404,6 +406,53 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals(SEND_FRIEND_REQUEST)){
+            String friendId = params[1];
+            String accessToken = "";
+            try
+            {
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")){
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+
+                URL url = new URL(" http://54.69.152.154:3000/addFriend?id=" + friendId);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+
+                Log.d("Added friend: ", result);
+
+                conn.disconnect();
+                return result;
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return result;
+
+        }
+
 
         return result;
     }

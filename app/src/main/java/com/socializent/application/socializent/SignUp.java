@@ -2,6 +2,7 @@ package com.socializent.application.socializent;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 
+import static java.security.AccessController.getContext;
 
 
 /**
@@ -28,10 +30,12 @@ public class SignUp extends Activity {
     EditText email;
     Button showSignUpButton;
     Activity signinPage;
+    Context mcontext;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
+        mcontext = this;
 
         name = (EditText) findViewById(R.id.signUpEditName);
         surname = (EditText) findViewById(R.id.signUpEditSurname);
@@ -60,7 +64,8 @@ public class SignUp extends Activity {
                     Toast.makeText(SignUp.this, "You are signing up. Please sign in again!", Toast.LENGTH_LONG).show();
                     //TODO: eklendikten sonra ana sayfaya dönmesi lazım
 
-
+                        Intent restart = new Intent(mcontext, main.class );
+                        startActivity(restart);
                 }
                 else{
                     Toast.makeText(SignUp.this, "Please fill empty areas!", Toast.LENGTH_SHORT).show();

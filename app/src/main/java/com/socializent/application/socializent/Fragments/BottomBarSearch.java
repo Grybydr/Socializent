@@ -4,10 +4,12 @@ package com.socializent.application.socializent.Fragments;
  * Created by Irem on 13.3.2017.
  */
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.EventAdapterToList;
 import com.socializent.application.socializent.Controller.EventBackgroundTask;
@@ -33,10 +37,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.HttpCookie;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
+import static com.socializent.application.socializent.R.color.colorEditText;
 
 
 public class BottomBarSearch extends ListFragment  {
@@ -59,6 +65,8 @@ public class BottomBarSearch extends ListFragment  {
 
     EventAdapterToList adapter;
     UserAdapterToList userAdapter;
+
+    static Person searchedPerson = null;
 
     public static BottomBarSearch newInstance() {
         BottomBarSearch fragment = new BottomBarSearch();
@@ -94,29 +102,64 @@ public class BottomBarSearch extends ListFragment  {
         spec.setContent(R.id.layoutTab1);
         spec.setIndicator("Event");
         host.addTab(spec);
+        TextView event = (TextView) host.getTabWidget().getChildAt(0).findViewById(android.R.id.title);
+        event.setTextColor(Color.parseColor("#ebca0707"));
+
+        host.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
+            @Override
+            public void onTabChanged(String tabId) {
+                if(host.getCurrentTab() == 0) {
+                    //destroy earth
+                    changeTabColor(0);
+                }
+                if(host.getCurrentTab() == 1) {
+                    //destroy mars
+                    changeTabColor(1);
+                }
+            }});
 
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    int tab = host.getCurrentTab();
-                    if(tab == 0) { // 0= event , 1 = user
-                        searchEvent(searchedString.getText().toString());
-                        adapter = new EventAdapterToList(getActivity().getApplicationContext(), searchedEvents);
+                 try {
+                     searchEvent(searchedString.getText().toString());
+                     adapter = new EventAdapterToList(getActivity().getApplicationContext(), searchedEvents);
+                     searchPerson(searchedString.getText().toString());
+                     userAdapter = new UserAdapterToList(getActivity().getApplicationContext(), searchedUsers);
+
+                    if(host.getCurrentTab() == 0) { // 0= event , 1 = user
+                        if(searchedEvents.size() == 0)
+                            Toast.makeText(getContext(), "There is nothing to show!", Toast.LENGTH_SHORT).show();
                         eventList.setAdapter(adapter);
                         searchedEvents.size();
                     }
-                    else if(tab == 1){
-                        searchPerson(searchedString.getText().toString());
-                        userAdapter = new UserAdapterToList(getActivity().getApplicationContext(), searchedUsers);
+                    else if(host.getCurrentTab() == 1){
+                        if(searchedUsers.size() == 0)
+                            Toast.makeText(getContext(), "There is nothing to show!", Toast.LENGTH_SHORT).show();
                         userList.setAdapter(userAdapter);
                         searchedUsers.size();
-
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                host.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
+                    @Override
+                    public void onTabChanged(String tabId) {
+                        if(host.getCurrentTab() == 0) {
+                            changeTabColor(0);
+                            eventList.setAdapter(adapter);
+                            searchedEvents.size();
+                        }
+                        if(host.getCurrentTab() == 1) {
+                            //destroy mars
+                            changeTabColor(1);
+                            userList.setAdapter(userAdapter);
+                            searchedUsers.size();
+
+                        }
+                    }});
+
             }
         });
         eventList.setOnItemClickListener(new OnItemClickListener() {
@@ -127,19 +170,18 @@ public class BottomBarSearch extends ListFragment  {
 
                 Fragment mFragment = EventDetailsPage.newInstance();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.tabhost, mFragment);
+                transaction.replace(R.id.content_frame, mFragment);
                 transaction.commit();
-
 
             }
         });
         userList.setOnItemClickListener(new OnItemClickListener() {
 
             public void onItemClick(AdapterView arg0, View arg, int position, long a) {
+                //TODO: bu instance düzelecek
+                searchedPerson = (Person)userAdapter.getItem(position);
 
-                Person selectedPerson = (Person)userAdapter.getItem(position);
-
-                Fragment mFragment = NavigationDrawerFirst.newInstance();
+                Fragment mFragment = new NavigationDrawerFirst();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.tabhost, mFragment);
                 transaction.commit();
@@ -157,7 +199,7 @@ public class BottomBarSearch extends ListFragment  {
     }
 
     public void searchEvent(String searchedWord) throws JSONException {
-        //Irem bunu ekle senin class a
+        searchedEvents.clear();
         task = new EventBackgroundTask();
         task.execute("3",searchedWord);
         cookieList = msCookieManager.getCookieStore().getCookies();
@@ -176,8 +218,15 @@ public class BottomBarSearch extends ListFragment  {
             if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
                 eventTitle = "Event";
             String description = row.getString("description");
-            EventTypes type= EventTypes.STUDY; //= row.getString() //TODO: serverdan gelmesi lazm
-            Event e = new Event(eventTitle, description, 0, null, "", null, null, type, 0,0, "", null, null); //TODO:
+           // EventTypes type= EventTypes.STUDY; //= row.getString() //TODO: serverdan gelmesi lazm
+            String typeS= row.getString("category").toUpperCase();
+            if (typeS == "null" || typeS.isEmpty() || typeS == "" )
+                typeS = "CONFERANCE";
+            typeS = Normalizer.normalize(typeS, Normalizer.Form.NFD);
+            EventTypes type = EventTypes.valueOf(typeS);
+            //public Event(String name, String description, int fee, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, EventTypes eventType, int eventRate, int participantCount, String category, ArrayList<String> comments, String photoUrl) {
+
+            Event e = new Event(eventTitle, description, 0, null, "", null, null, type, 0,0, "", null, null); //TODO: düzgün olarak ver
             searchedEvents.add(e);
 
         }
@@ -186,12 +235,13 @@ public class BottomBarSearch extends ListFragment  {
 
     public void searchPerson(String searchedWord) throws JSONException {
 
+        searchedUsers.clear();
         personTask = new PersonBackgroundTask(getContext());
-        personTask.execute("4",searchedWord);
+        personTask.execute("4", searchedWord);
         cookieList = msCookieManager.getCookieStore().getCookies();
         String users = "";
-        for (int i = cookieList.size()-1; i >=0; i--) {
-            if (cookieList.get(i).getName().equals("searchedUsers")){
+        for (int i = cookieList.size() - 1; i >= 0; i--) {
+            if (cookieList.get(i).getName().equals("searchedUsers")) {
                 users = cookieList.get(i).getValue();
                 break;
             }
@@ -199,38 +249,39 @@ public class BottomBarSearch extends ListFragment  {
         JSONArray usersArray = new JSONArray(users);
         for (int i = 0; i < usersArray.length(); i++) {
             JSONObject row = usersArray.getJSONObject(i);
+            String id = row.getString("_id");
             String fullname = row.getString("fullName");
             String firstName = row.getString("firstName");
             String lastname = row.getString("lastName");
             String email = row.getString("email");
-            String shortBio = row.getString("shortBio");
             String username = row.getString("username");
             String password = row.getString("password");
             String bio = row.getString("shortBio");
 
+            String birthday = row.getString("birthDate");;
+            float bd = Float.parseFloat(birthday);
 
             String interestJSONArray = row.getString("interests");
             JSONArray interestA = new JSONArray(interestJSONArray);
             ArrayList<String> interestArray = new ArrayList<String>();
             for (int k = 0; k < interestA.length(); k++) {
-                JSONObject interest = interestA.getJSONObject(k);
-                interestArray.add(interest.toString());
+
+                //JSONObject interest = interestA.getJSONObject(k);
+                interestArray.add(interestA.getString(k));
             }
-           // String orgEventJSON = row.getString("organizedEvents");
-            //friends arrayı ekllenecek
-            //events ekleencek//
-            //Person(String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
-
-
-             Person p = new Person(firstName,lastname,username, 0,password, email,bio, null, interestArray,null,null,null,0);
+            Person p = new Person(id,firstName, lastname, username, bd, password, email, bio, null, interestArray, null, null, null, 0);
             searchedUsers.add(p);
 
 
         }
 
+    }
+    public void changeTabColor(int tabNum){
+        TextView user = (TextView) host.getTabWidget().getChildAt(1-tabNum).findViewById(android.R.id.title);
+        user.setTextColor(Color.parseColor("#000000"));
+        TextView event = (TextView) host.getTabWidget().getChildAt(tabNum).findViewById(android.R.id.title);
+        event.setTextColor(Color.parseColor("#ebca0707"));
 
 
     }
-
-
 }

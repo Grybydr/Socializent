@@ -16,7 +16,7 @@
             <ImageView
                 android:id="@+id/header_cover_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/dipsi" />
 
@@ -34,7 +34,7 @@
             <RelativeLayout
                 android:id="@+id/profile_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/header_cover_image"
                 android:background="#ebca0707"
@@ -49,29 +49,24 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:src="@drawable/edit" />
+                <ImageView
+                    android:id="@+id/add_friend"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_action_user_add" />
 
                 <TextView
                     android:id="@+id/user_profile_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="76dp"
+                    android:layout_marginTop="35dp"
                     android:text="@string/user_profile_name"
                     android:textColor="#fff"
                     android:textSize="24sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/user_profile_short_bio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/user_profile_name"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/user_short_info"
-                    android:textColor="#fff"
-                    android:textSize="14sp" />
-
 
             </RelativeLayout>
 
@@ -79,6 +74,90 @@
 
 
     </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+
+        <TextView
+            android:id="@+id/user_profile_short_bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/profile_bio_image"
+            android:layout_centerHorizontal="true"
+            android:text="@string/user_short_info"
+            android:textSize="14dp" />
+
+
+        <ImageView
+            android:id="@+id/profile_bio_image"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="9dp"
+            android:layout_marginTop="25dp"
+            android:layout_toStartOf="@id/user_profile_short_bio"
+            android:src="@drawable/bio" />
+
+        <ImageView
+            android:id="@+id/profile_mail_image"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignBottom="@+id/user_profile_email"
+            android:layout_marginEnd="9dp"
+            android:layout_toStartOf="@+id/user_profile_short_bio"
+            android:src="@drawable/mail" />
+
+        <TextView
+            android:id="@+id/user_profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/user_profile_short_bio"
+            android:layout_below="@+id/profile_bio_image"
+            android:layout_marginTop="40dp"
+            android:text="Email"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id = "@+id/birthday_cake"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignTop="@+id/profile_birthday"
+            android:layout_alignStart="@+id/profile_mail_image"
+            android:src = "@drawable/birthday_cake"/>
+
+        <TextView
+            android:id="@+id/profile_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/user_profile_email"
+            android:layout_below="@+id/user_profile_email"
+            android:layout_marginTop="39dp"
+            android:text="Birthday"
+            android:textSize="14dp"/>
+
+
+        <ImageView
+            android:id="@+id/profile_activities"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignTop="@+id/profile_interests"
+            android:layout_alignStart="@+id/birthday_cake"
+            android:src = "@drawable/activities"/>
+
+        <TextView
+            android:id="@+id/profile_interests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/profile_birthday"
+            android:layout_below="@+id/birthday_cake"
+            android:layout_marginTop="44dp"
+            android:text="Interests"
+            android:textSize="14dp"/>
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>
