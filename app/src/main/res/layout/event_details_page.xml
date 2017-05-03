@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/eventDetails"
     tools:context="com.socializent.application.socializent.Fragments.EventDetailsPage">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="384dp"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="604dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
         <TextView
             android:id="@+id/eventDetailForm"
@@ -17,7 +23,7 @@
             android:layout_height="50dp"
             android:text="Event Details"
             android:textAlignment="center"
-            android:textColor="@color/colorAccent"
+            android:theme="@style/EditTheme"
             android:textSize="35sp" />
 
         <TextView
@@ -29,70 +35,68 @@
             android:layout_marginTop="20dp"
             android:text="Title: "
             android:textSize="20sp"
-            android:theme="@style/TextTheme"
+            android:textColor="@color/colorPrimary"
+
             tools:layout_height="40dp" />
 
         <TextView
             android:id="@+id/titleView_d"
-            android:layout_width="match_parent"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/titleTag"
             android:textColor="@color/colorAccent"
-            android:layout_below="@+id/eventDetailForm"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp"
+            android:textSize="20sp"
             android:theme="@style/TextTheme"
-            tools:layout_height="40dp" />
+            tools:layout_height="40dp"
+            android:layout_above="@+id/placeTag"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:id="@+id/placeTag"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/titleTag"
             android:layout_marginTop="20dp"
             android:text="@string/place"
             android:textColor="@color/colorPrimary"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:layout_height="40dp"/>
 
         <TextView
             android:id="@+id/placeView"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textColor="@color/colorAccent"
-            android:layout_toRightOf="@id/placeTag"
+            android:layout_toEndOf="@id/placeTag"
             android:layout_below="@+id/titleTag"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            tools:layout_height="40dp"/>
 
         <TextView
             android:id="@+id/addressTag_d"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/placeTag"
             android:text="Address: "
             android:layout_marginTop="20dp"
             android:textSize="20sp"
-            android:theme="@style/TextTheme"
+            android:textColor="@color/colorPrimary"
             tools:layout_height="40dp" />
 
-        <ScrollView
+
+        <TextView
+            android:id="@+id/addressView_d"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_below="@+id/placeTag"
-            android:id="@+id/scrollView_addr"
-            android:layout_toRightOf="@id/addressTag_d">
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            android:layout_toEndOf="@id/addressTag_d"
+            android:layout_below="@+id/placeView"
+            android:layout_marginTop="20dp"
+            tools:layout_height="40dp"/>
 
-            <TextView
-                android:id="@+id/addressView_d"
-                android:layout_width="match_parent"
-                android:textColor="@color/colorAccent"
-                android:layout_height="50dp"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"/>
-
-        </ScrollView>
 
         <TextView
             android:id="@+id/timeDateTag"
@@ -108,14 +112,13 @@
 
         <TextView
             android:id="@+id/timeDateView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
             android:textSize="15sp"
             android:textColor="@color/colorAccent"
-            android:layout_toRightOf="@id/timeDateTag"
-            android:layout_below="@+id/addressTag_d"
-            android:inputType="text"/>
+            tools:layout_height="40dp"
+            android:layout_alignTop="@+id/timeDateTag"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:id="@+id/feeTag"
@@ -132,12 +135,13 @@
         <TextView
             android:id="@+id/feeView_d"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:textSize="15sp"
+            android:layout_below="@+id/timeDateView"
             android:textColor="@color/colorAccent"
-            android:layout_toRightOf="@id/feeTag"
-            android:layout_below="@+id/timeDateView" />
+            android:layout_toEndOf="@id/feeTag"
+            tools:layout_height="40dp"/>
 
         <TextView
             android:id="@+id/pCountTag"
@@ -153,13 +157,14 @@
 
         <TextView
             android:id="@+id/participantCountView_d"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:textSize="15sp"
-            android:layout_below="@+id/feeTag"
+            android:layout_below="@+id/feeView_d"
             android:textColor="@color/colorAccent"
-            android:layout_toRightOf="@id/pCountTag"/>
+            android:layout_toEndOf="@id/pCountTag"
+            tools:layout_height="40dp"/>
 
         <TextView
             android:id="@+id/categoryView"
@@ -175,14 +180,14 @@
 
         <TextView
             android:id="@+id/categoryView_d"
-            android:layout_width="match_parent"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/pCountTag"
             android:textColor="@color/colorAccent"
             android:textSize="15sp"
-            android:layout_marginBottom="10dp"
             android:layout_toEndOf="@id/categoryView"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="20dp"
+            tools:layout_height="40dp" />
 
         <TextView
             android:id="@+id/descTag"
@@ -197,19 +202,24 @@
             tools:layout_height="40dp" />
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/categoryView"
             android:id="@+id/scrollView_desc"
-            android:layout_toRightOf="@id/descTag">
+            android:layout_toEndOf="@id/descTag"
+            android:layout_marginTop="20dp">
+            <RelativeLayout
+                android:layout_width="240dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/descriptionView_d"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="40dp"
+                    android:textSize="15sp"/>
 
-            <TextView
-                android:id="@+id/descriptionView_d"
-                android:layout_width="match_parent"
-                android:textColor="@color/colorAccent"
-                android:layout_height="50dp"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"/>
+            </RelativeLayout>
+
 
         </ScrollView>
 
@@ -217,20 +227,22 @@
             android:id="@+id/joinEventButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
             android:text="JOIN!"
+            android:textColor="@color/colorEditText"
             android:layout_alignBaseline="@+id/goBackButton"
             android:layout_alignBottom="@+id/goBackButton"
-            android:layout_alignEnd="@+id/placeView" />
+            android:layout_toEndOf="@+id/pCountTag" />
 
         <Button
             android:id="@+id/goBackButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Go Back"
-            android:layout_below="@+id/scrollView_desc"
-            android:layout_toEndOf="@+id/feeTag"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/descTag"
+            android:layout_toEndOf="@+id/feeTag" />
 
     </RelativeLayout>
-</RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>
