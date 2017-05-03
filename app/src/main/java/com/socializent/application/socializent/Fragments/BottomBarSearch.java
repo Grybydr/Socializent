@@ -4,7 +4,10 @@ package com.socializent.application.socializent.Fragments;
  * Created by Irem on 13.3.2017.
  */
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -25,7 +28,6 @@ import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.EventAdapterToList;
 import com.socializent.application.socializent.Controller.EventBackgroundTask;
-import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Controller.UserAdapterToList;
 import com.socializent.application.socializent.Modal.Event;
 import com.socializent.application.socializent.Modal.EventTypes;
@@ -36,13 +38,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpCookie;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
-import static com.socializent.application.socializent.R.color.colorEditText;
 
 
 public class BottomBarSearch extends ListFragment  {
@@ -53,15 +59,11 @@ public class BottomBarSearch extends ListFragment  {
     TabHost.TabSpec spec;
     TabHost host;
 
-    ListView eventList;
+    public static ListView eventList;
     ListView userList;
     ArrayList<Event> searchedEvents;
     ArrayList<Person> searchedUsers;
 
-    List<HttpCookie> cookieList;
-
-    EventBackgroundTask task;
-    PersonBackgroundTask personTask;
 
     EventAdapterToList adapter;
     UserAdapterToList userAdapter;
@@ -122,41 +124,31 @@ public class BottomBarSearch extends ListFragment  {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 try {
-                     searchEvent(searchedString.getText().toString());
-                     adapter = new EventAdapterToList(getActivity().getApplicationContext(), searchedEvents);
-                     searchPerson(searchedString.getText().toString());
-                     userAdapter = new UserAdapterToList(getActivity().getApplicationContext(), searchedUsers);
+                searchedEvents.clear();
+                searchedUsers.clear();
 
                     if(host.getCurrentTab() == 0) { // 0= event , 1 = user
+                        new SearchInnerTask(getContext()).execute(searchedString.getText().toString());
                         if(searchedEvents.size() == 0)
-                            Toast.makeText(getContext(), "There is nothing to show!", Toast.LENGTH_SHORT).show();
-                        eventList.setAdapter(adapter);
-                        searchedEvents.size();
+                            Toast.makeText(getContext(),"", Toast.LENGTH_LONG).show();
+
                     }
                     else if(host.getCurrentTab() == 1){
-                        if(searchedUsers.size() == 0)
-                            Toast.makeText(getContext(), "There is nothing to show!", Toast.LENGTH_SHORT).show();
-                        userList.setAdapter(userAdapter);
-                        searchedUsers.size();
+                        new SearchUserTask(getContext()).execute(searchedString.getText().toString());
+
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+
                 host.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
                     @Override
                     public void onTabChanged(String tabId) {
                         if(host.getCurrentTab() == 0) {
                             changeTabColor(0);
                             eventList.setAdapter(adapter);
-                            searchedEvents.size();
                         }
                         if(host.getCurrentTab() == 1) {
                             //destroy mars
                             changeTabColor(1);
                             userList.setAdapter(userAdapter);
-                            searchedUsers.size();
-
                         }
                     }});
 
@@ -198,90 +190,210 @@ public class BottomBarSearch extends ListFragment  {
 
     }
 
-    public void searchEvent(String searchedWord) throws JSONException {
-        searchedEvents.clear();
-        task = new EventBackgroundTask();
-        task.execute("3",searchedWord);
-        cookieList = msCookieManager.getCookieStore().getCookies();
-        String events = "";
-        for (int i = 0; i < cookieList.size(); i++) {
-            if (cookieList.get(i).getName().equals("allSearchedEvents")){
-                events = cookieList.get(i).getValue();
-                break;
-            }
-        }
-        JSONArray eventsArray = new JSONArray(events);
-        for (int i = 0; i < eventsArray.length(); i++) {
-            JSONObject row = eventsArray.getJSONObject(i);
 
-            String eventTitle = row.getString("name");
-            if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
-                eventTitle = "Event";
-            String description = row.getString("description");
-           // EventTypes type= EventTypes.STUDY; //= row.getString() //TODO: serverdan gelmesi lazm
-            String typeS= row.getString("category").toUpperCase();
-            if (typeS == "null" || typeS.isEmpty() || typeS == "" )
-                typeS = "CONFERANCE";
-            typeS = Normalizer.normalize(typeS, Normalizer.Form.NFD);
-            EventTypes type = EventTypes.valueOf(typeS);
-            //public Event(String name, String description, int fee, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, EventTypes eventType, int eventRate, int participantCount, String category, ArrayList<String> comments, String photoUrl) {
-
-            Event e = new Event(eventTitle, description, 0, null, "", null, null, type, 0,0, "", null, null); //TODO: düzgün olarak ver
-            searchedEvents.add(e);
-
-        }
-    }
-
-
-    public void searchPerson(String searchedWord) throws JSONException {
-
-        searchedUsers.clear();
-        personTask = new PersonBackgroundTask(getContext());
-        personTask.execute("4", searchedWord);
-        cookieList = msCookieManager.getCookieStore().getCookies();
-        String users = "";
-        for (int i = cookieList.size() - 1; i >= 0; i--) {
-            if (cookieList.get(i).getName().equals("searchedUsers")) {
-                users = cookieList.get(i).getValue();
-                break;
-            }
-        }
-        JSONArray usersArray = new JSONArray(users);
-        for (int i = 0; i < usersArray.length(); i++) {
-            JSONObject row = usersArray.getJSONObject(i);
-            String id = row.getString("_id");
-            String fullname = row.getString("fullName");
-            String firstName = row.getString("firstName");
-            String lastname = row.getString("lastName");
-            String email = row.getString("email");
-            String username = row.getString("username");
-            String password = row.getString("password");
-            String bio = row.getString("shortBio");
-
-            String birthday = row.getString("birthDate");;
-            float bd = Float.parseFloat(birthday);
-
-            String interestJSONArray = row.getString("interests");
-            JSONArray interestA = new JSONArray(interestJSONArray);
-            ArrayList<String> interestArray = new ArrayList<String>();
-            for (int k = 0; k < interestA.length(); k++) {
-
-                //JSONObject interest = interestA.getJSONObject(k);
-                interestArray.add(interestA.getString(k));
-            }
-            Person p = new Person(id,firstName, lastname, username, bd, password, email, bio, null, interestArray, null, null, null, 0);
-            searchedUsers.add(p);
-
-
-        }
-
-    }
     public void changeTabColor(int tabNum){
         TextView user = (TextView) host.getTabWidget().getChildAt(1-tabNum).findViewById(android.R.id.title);
         user.setTextColor(Color.parseColor("#000000"));
         TextView event = (TextView) host.getTabWidget().getChildAt(tabNum).findViewById(android.R.id.title);
         event.setTextColor(Color.parseColor("#ebca0707"));
 
+    }
 
+    private class SearchInnerTask extends AsyncTask<Object, Object, ArrayList<Event>> {
+
+        public ProgressDialog p_dialog;
+        public Context context;
+
+        public SearchInnerTask(Context context){
+            this.context = context;
+            this.p_dialog = new ProgressDialog(context);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            this.p_dialog.setMessage(context.getResources().getString(R.string.loading));
+            this.p_dialog.show();
+        }
+
+        @Override
+        protected ArrayList<Event> doInBackground(Object... params) {
+
+            Object queryString = params[0];
+            searchHere(queryString);
+            return  searchedEvents;
+
+        }
+        @Override
+        protected void onProgressUpdate(Object... values) {
+            this.p_dialog.show();
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<Event> result) {
+            adapter = new EventAdapterToList(context, searchedEvents);
+            eventList.setAdapter(adapter);
+
+            if (p_dialog != null && p_dialog.isShowing())
+                p_dialog.dismiss();
+
+        }
+        public ArrayList<Event> searchHere(Object queryString) {
+            String result = "";
+            URL url = null;
+            Event e = null;
+            try {
+                url = new URL("http://54.69.152.154:3000/searchEvent?q=" + queryString);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                //if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.d("allSearchedEvents: ", result);
+
+                JSONArray eventsArray = new JSONArray(result);
+                for (int i = 0; i < eventsArray.length(); i++) {
+                    JSONObject row = eventsArray.getJSONObject(i);
+
+                    String eventTitle = row.getString("name");
+                    if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "")
+                        eventTitle = "Event";
+                    String description = row.getString("description");
+                    // EventTypes type= EventTypes.STUDY; //= row.getString() //TODO: serverdan gelmesi lazm
+                    String typeS = row.getString("category").toUpperCase();
+                    if (typeS == "null" || typeS.isEmpty() || typeS == "")
+                        typeS = "CONFERENCE";
+                    typeS = Normalizer.normalize(typeS, Normalizer.Form.NFD);
+                    EventTypes type = EventTypes.valueOf(typeS);
+                    //public Event(String name, String description, int fee, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, EventTypes eventType, int eventRate, int participantCount, String category, ArrayList<String> comments, String photoUrl) {
+
+                    e = new Event(eventTitle, description, 0, null, "", null, null, type, 0, 0, "", null, null); //TODO: düzgün olarak ver
+                    conn.disconnect();
+                    searchedEvents.add(e);
+                }
+            } catch (MalformedURLException er) {
+                er.printStackTrace();
+            } catch (IOException er) {
+                er.printStackTrace();
+            } catch (JSONException er) {
+                er.printStackTrace();
+            }
+            return searchedEvents;
+        }
+    }
+
+
+
+    private class SearchUserTask extends AsyncTask<Object, Object, ArrayList<Person>> {
+
+        public ProgressDialog p_dialog;
+        public Context context;
+
+        public SearchUserTask(Context context){
+            this.context = context;
+            this.p_dialog = new ProgressDialog(context);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            this.p_dialog.setMessage(context.getResources().getString(R.string.loading));
+            this.p_dialog.show();
+        }
+
+        @Override
+        protected ArrayList<Person> doInBackground(Object... params) {
+            Object queryString = params[0];
+            searchPersonHere(queryString);
+            return  searchedUsers;
+
+        }
+        @Override
+        protected void onProgressUpdate(Object... values) {
+            this.p_dialog.show();
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<Person> result) {
+            userAdapter = new UserAdapterToList(context, searchedUsers);
+            userList.setAdapter(userAdapter);
+
+            if (p_dialog != null && p_dialog.isShowing())
+                p_dialog.dismiss();
+
+        }
+        public ArrayList<Person> searchPersonHere(Object queryString) {
+            String result = "";
+            URL url = null;
+            try {
+
+                url = new URL("http://54.69.152.154:3000/searchUser?q=" + queryString);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                //conn.connect();
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                //conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                //if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+
+                JSONArray usersArray = new JSONArray(result);
+                for (int i = 0; i < usersArray.length(); i++) {
+                    JSONObject row = usersArray.getJSONObject(i);
+                    String id = row.getString("_id");
+                    String fullname = row.getString("fullName");
+                    String firstName = row.getString("firstName");
+                    String lastname = row.getString("lastName");
+                    String email = row.getString("email");
+                    String username = row.getString("username");
+                    String password = row.getString("password");
+                    String bio = row.getString("shortBio");
+
+                    String birthday = row.getString("birthDate");;
+                    float bd = Float.parseFloat(birthday);
+
+                    String interestJSONArray = row.getString("interests");
+                    JSONArray interestA = new JSONArray(interestJSONArray);
+                    ArrayList<String> interestArray = new ArrayList<String>();
+                    for (int k = 0; k < interestA.length(); k++) {
+
+                        //JSONObject interest = interestA.getJSONObject(k);
+                        interestArray.add(interestA.getString(k));
+                    }
+                    Person p = new Person(id,firstName, lastname, username, bd, password, email, bio, null, interestArray, null, null, null, 0);
+                    searchedUsers.add(p);
+
+                }
+            } catch (MalformedURLException er) {
+                er.printStackTrace();
+            } catch (IOException er) {
+                er.printStackTrace();
+            } catch (JSONException er) {
+                er.printStackTrace();
+            }
+            return searchedUsers;
+        }
     }
 }
