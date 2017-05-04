@@ -7,6 +7,7 @@ package com.socializent.application.socializent.Fragments;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -27,7 +28,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.EventAdapterToList;
-import com.socializent.application.socializent.Controller.EventBackgroundTask;
 import com.socializent.application.socializent.Controller.UserAdapterToList;
 import com.socializent.application.socializent.Modal.Event;
 import com.socializent.application.socializent.Modal.EventTypes;
@@ -41,15 +41,11 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.Normalizer;
 import java.util.ArrayList;
-import java.util.List;
-
-
 
 public class BottomBarSearch extends ListFragment  {
 
@@ -129,13 +125,15 @@ public class BottomBarSearch extends ListFragment  {
 
                     if(host.getCurrentTab() == 0) { // 0= event , 1 = user
                         new SearchInnerTask(getContext()).execute(searchedString.getText().toString());
-                        if(searchedEvents.size() == 0)
-                            Toast.makeText(getContext(),"", Toast.LENGTH_LONG).show();
+                        /*if(searchedEvents.size() == 0)
+                            Toast.makeText(getContext(),"There is no event to show!", Toast.LENGTH_LONG).show();*/
 
                     }
                     else if(host.getCurrentTab() == 1){
                         new SearchUserTask(getContext()).execute(searchedString.getText().toString());
-
+                       /* if(searchedUsers.size() == 0)
+                            Toast.makeText(getContext(),"There is no users to show!", Toast.LENGTH_LONG).show();
+*/
                     }
 
                 host.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
@@ -159,8 +157,7 @@ public class BottomBarSearch extends ListFragment  {
             public void onItemClick(AdapterView arg0, View arg, int position, long a) {
 
                 Event selectedEvent = (Event)adapter.getItem(position);
-
-                Fragment mFragment = EventDetailsPage.newInstance(null, selectedEvent);
+                Fragment mFragment = EventDetailsPage.newInstance("", selectedEvent);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.content_frame, mFragment);
                 transaction.commit();
@@ -272,15 +269,29 @@ public class BottomBarSearch extends ListFragment  {
                     if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "")
                         eventTitle = "Event";
                     String description = row.getString("description");
-                    // EventTypes type= EventTypes.STUDY; //= row.getString() //TODO: serverdan gelmesi lazm
                     String typeS = row.getString("category").toUpperCase();
                     if (typeS == "null" || typeS.isEmpty() || typeS == "")
                         typeS = "CONFERENCE";
                     typeS = Normalizer.normalize(typeS, Normalizer.Form.NFD);
                     EventTypes type = EventTypes.valueOf(typeS);
-                    //public Event(String name, String description, int fee, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, EventTypes eventType, int eventRate, int participantCount, String category, ArrayList<String> comments, String photoUrl) {
 
-                    e = new Event(eventTitle, description, 0, null, "", null, null, type, 0, 0, "", null, null); //TODO: düzgün olarak ver
+
+                    JSONObject pl = row.getJSONObject("place");
+                    String tempLat = pl.getString("latitude");
+                    String tempLong = pl.getString("longitude");
+                    String city = pl.getString("city");
+                    String address = pl.getString("address");
+                    String placeName = pl.getString("name");
+                    Location l = new Location("");
+                    l.setLatitude(Double.parseDouble(tempLat));
+                    l.setLongitude(Double.parseDouble(tempLong));
+                    int fee = Integer.parseInt(row.getString("fee"));
+                    String tempDate = row.getString("date");
+                      //TODO:: Organizer id
+                    long millis = Long.parseLong(tempDate);
+                    int partCount = Integer.parseInt(row.getString("participantCount"));
+
+                    e = new Event(eventTitle, description, fee, millis, address, "", type,0, partCount, null, "", l, city,placeName);
                     conn.disconnect();
                     searchedEvents.add(e);
                 }

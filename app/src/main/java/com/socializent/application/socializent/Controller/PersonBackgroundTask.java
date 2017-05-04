@@ -435,10 +435,6 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 int responseCode = conn.getResponseCode();
                 Log.d("Response Code: ", responseCode + "");
                 String line;
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                while ((line = br.readLine()) != null) {
-                    result += line;
-                }
 
                 Log.d("Added friend: ", result);
 

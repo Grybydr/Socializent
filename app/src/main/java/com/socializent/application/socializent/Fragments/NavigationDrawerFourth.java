@@ -5,10 +5,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.socializent.application.socializent.R;
 
 public class NavigationDrawerFourth extends Fragment {
+    public static ListView friendList;
+    View friendView;
 
     public NavigationDrawerFourth() {
         // Required empty public constructor
@@ -27,7 +30,13 @@ public class NavigationDrawerFourth extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.navigation_drawer_fourth_frag, container, false);
+        friendView = inflater.inflate(R.layout.navigation_drawer_fourth_frag, container, false);
+        return friendView;
+    }
+    public void onViewCreated (View view, Bundle savedInstanceState) {
+
+       // friendList = getListView();
+        friendList = (ListView) friendView.findViewById(R.id.friendList);
     }
 
 }

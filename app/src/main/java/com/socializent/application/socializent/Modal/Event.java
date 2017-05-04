@@ -1,5 +1,7 @@
 package com.socializent.application.socializent.Modal;
 
+import android.location.Location;
+
 import com.google.android.gms.location.places.Place;
 
 import org.json.JSONArray;
@@ -15,56 +17,54 @@ import java.util.Date;
 
 public class Event {
     private String name;
-    private Date date;
+    private long date;
     private String address;
-    private Place p;
-   /* TODO: bu listleri ekranda göstermek için ArrayAdapter kullanılcak
-     http://stackoverflow.com/questions/5070830/populating-a-listview-using-an-arraylist
-     sitesinden alınacak*/
-    private ArrayList<String> interestArea; //buna gerek yok galiba?
+    Location l;
     private ArrayList<Attendant> attendants;
-
-
     private int participantCount;
-    private EventOrganizer eventOrganizer;
     private EventTypes eventType;
     private double eventRate;
     private String description;
-    private String category;
     private ArrayList<String> comments;
     private String photoUrl;
+    String city;
+    String placeName;
+    String organizer;
 
-    public Event(String name, String description, int fee, Date date, String address, ArrayList<String> interestArea, EventOrganizer eventOrganizer, EventTypes eventType, int eventRate, int participantCount, String category, ArrayList<String> comments, String photoUrl) {
+    public Event(String name, String description, int fee, long date, String address,  String organizerId, EventTypes category, int eventRate, int participantCount,  ArrayList<String> comments, String photoUrl, Location l, String city, String placeName) {
         this.name = name;
         this.participantCount = participantCount;
         this.date = date; //berk milisecond olarak yolluyormuş bunu dönüştürmek lazım
         this.address = address;
-        this.interestArea = interestArea;
-        this.eventOrganizer = eventOrganizer;
-
-        this.eventType = eventType;
+        this.eventType = category;
         this.eventRate = eventRate;
         this.description = description;
+        this.organizer = organizerId;
         this.fee = fee;
-        this.category = category;
         this.comments = comments;
         this.photoUrl = photoUrl;
+        this.l = l;
+        this.city = city;
+        this.placeName = placeName;
     }
 
     public Event() {
+
+        this.eventType = EventTypes.CONFERENCE;
+        this.organizer ="";
         this.photoUrl = "";
         this.comments = new ArrayList<String>();
-        this.category = "";
         this.fee = 0;
         this.participantCount =0;
         this.name = "Default Event";
-        this.date = new Date();
+        this.date = 0;
         this.address = "Default Address";
-        this.interestArea = new ArrayList<String>();
-        this.eventOrganizer = new EventOrganizer();
-        this.eventType = EventTypes.BIRTHDAY;
         this.eventRate = 0;
         this.description = "Default Description";
+        this.l = null;
+        this.city = "";
+        this.placeName = "";
+
     }
 
     public int getParticipantCount() {
@@ -75,6 +75,38 @@ public class Event {
         this.participantCount = participantCount;
     }
     private int fee;
+
+    public Location getL() {
+        return l;
+    }
+
+    public void setL(Location l) {
+        this.l = l;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
+    }
+
+    public String getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(String organizer) {
+        this.organizer = organizer;
+    }
 
     public int getFee() {
         return fee;
@@ -91,11 +123,11 @@ public class Event {
         this.name = name;
     }
 
-    public Date getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
@@ -106,23 +138,6 @@ public class Event {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public ArrayList<String> getInterestArea() {
-        return interestArea;
-    }
-
-    public void setInterestArea(ArrayList<String> interestArea) {
-        this.interestArea = interestArea;
-    }
-
-    public EventOrganizer getEventOrganizer() {
-        return eventOrganizer;
-    }
-
-    public void setEventOrganizer(EventOrganizer eventOrganizer) {
-        this.eventOrganizer = eventOrganizer;
-    }
-
 
     public EventTypes getEventType() {
         return eventType;
@@ -154,14 +169,6 @@ public class Event {
 
     public String getDescription() {
         return this.description;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public String getPhotoUrl() {

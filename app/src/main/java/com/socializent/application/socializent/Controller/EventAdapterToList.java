@@ -14,7 +14,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by Irem on 26.4.2017.
@@ -42,15 +45,16 @@ public class EventAdapterToList extends ArrayAdapter<Event> {
         // Populate the data into the template view using the data object
         eventName.setText(event.getName());
         eventDescription.setText(event.getDescription());
-        if(event.getDate() != null)
-            eventtime.setText(event.getDate().toString());
-
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(event.getDate());
+        String dateStr = df.format(calendar.getTime());
+        eventtime.setText(dateStr);
         EventTypes t = event.getEventType();
         String type = t.toString().toLowerCase();
         String uri = "@drawable/" + type;  // where myresource (without the extension) is the file
 
-        int imageResource = mContext.getResources().getIdentifier(type, "drawable", mContext.getPackageName());
-
+        int imageResource = mContext.getResources().getIdentifier(uri, "drawable", mContext.getPackageName());
         ImageView imageview= (ImageView)convertView.findViewById(R.id.eventImageView);
         Drawable res = mContext.getResources().getDrawable(imageResource, null);
         imageview.setImageDrawable(res);
