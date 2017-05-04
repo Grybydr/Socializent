@@ -49,7 +49,7 @@ public class EventDetailsPage extends Fragment {
     public static EventDetailsPage newInstance(String str, Event event) {
         EventDetailsPage fragment = new EventDetailsPage();
 
-        if (str != null && !str.equals(""))
+        if ((str != null || !str.equals("")) && event == null)
             constructByString(str);
         else if ((str.equals("") || str == null) && event != null)
             constructByObject(event);
@@ -71,6 +71,7 @@ public class EventDetailsPage extends Fragment {
             event_id = row.getString("_id");
             eventTitle = row.getString("name");
             tempDate = row.getString("date");
+            setDate(); //converts milliseconds to date string
             JSONObject pl = row.getJSONObject("place");
             tempLat = pl.getString("latitude");
             tempLong = pl.getString("longitude");
@@ -105,6 +106,18 @@ public class EventDetailsPage extends Fragment {
 
     //TODO: Irem burası senin için
     private static void constructByObject(Event event){
+        eventTitle = event.getName();
+        placeName = event.getPlaceName();
+        address = event.getAddress();
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(event.getDate());
+        dateStr = df.format(calendar.getTime());
+        tempFee = String.valueOf(event.getFee());
+        tempParticipantCount =  String.valueOf(event.getParticipantCount());
+        category = event.getEventType().toString();
+        description = event.getDescription();
+
 
     }
 
@@ -125,7 +138,7 @@ public class EventDetailsPage extends Fragment {
         addressView = (TextView) eventView.findViewById(R.id.addressView_d);
         addressView.setText(address);
         timeDateView = (TextView) eventView.findViewById(R.id.timeDateView);
-        setDate(); //converts milliseconds to date string
+
         timeDateView.setText(dateStr);
         feeView = (TextView) eventView.findViewById(R.id.feeView_d);
         feeView.setText(tempFee);
@@ -185,7 +198,7 @@ public class EventDetailsPage extends Fragment {
 
     }
 
-    private void setDate(){
+    private static void setDate(){
         long millis = Long.parseLong(tempDate);
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         Calendar calendar = Calendar.getInstance();
