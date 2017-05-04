@@ -165,6 +165,7 @@ public class EventDetailsPage extends Fragment {
             public void onClick(View view) {
                 if (participantCountCheck()) {
                     joinEvent();
+
                     cookieList = msCookieManager.getCookieStore().getCookies();
                     Toast.makeText(getActivity(), "You have joined " + eventTitle + " ! ",
                             Toast.LENGTH_SHORT)
