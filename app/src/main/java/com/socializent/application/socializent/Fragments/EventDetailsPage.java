@@ -20,11 +20,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.HttpCookie;
 import java.text.DateFormat;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+
+import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
 /**
  * Created by Zülal Bingöl on 28.04.2017.
@@ -45,6 +49,9 @@ public class EventDetailsPage extends Fragment {
     static String dateStr, address, placeName, event_id;
     static String tempOrganizer, tempParticipants;
     static JSONArray participants;
+    static JSONObject organizer;
+
+    List<HttpCookie> cookieList;
 
     public static EventDetailsPage newInstance(String str, Event event) {
         EventDetailsPage fragment = new EventDetailsPage();
@@ -91,8 +98,11 @@ public class EventDetailsPage extends Fragment {
 
             /*tempRate = row.getString("rate");
             photoURL = row.getString("photoUrl");
-            comments = row.getString("comments");
-            tempOrganizer = row.getString("organizer");*/
+            comments = row.getString("comments");*/
+            //tempOrganizer = row.getString("organizer");
+            //organizer = new JSONObject(tempOrganizer);
+            //organizer.getString("_id");
+
             tempParticipants = row.getString("participants");
             participants = new JSONArray(tempParticipants);
 
@@ -155,6 +165,7 @@ public class EventDetailsPage extends Fragment {
             public void onClick(View view) {
                 if (participantCountCheck()) {
                     joinEvent();
+                    cookieList = msCookieManager.getCookieStore().getCookies();
                     Toast.makeText(getActivity(), "You have joined " + eventTitle + " ! ",
                             Toast.LENGTH_SHORT)
                             .show();
