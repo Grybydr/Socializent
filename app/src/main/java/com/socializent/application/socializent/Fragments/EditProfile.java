@@ -20,6 +20,7 @@ import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.Template;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -242,7 +243,13 @@ public class EditProfile extends Fragment {
             jsonObject.put("username", username.getText().toString());
             jsonObject.put("birthDate",newBDate);
             jsonObject.put("email", email.getText().toString());
-            jsonObject.put("interests", interest);
+
+            //****** Array insert etmek için
+            JSONArray jsArray = new JSONArray();
+            for(int i =0; i<interest.size(); i++)
+                jsArray.put(interest.get(i));
+            jsonObject.put("interests", jsArray);
+
             jsonObject.put("shortBio", bio.getText().toString());
 
         } catch (JSONException e) {

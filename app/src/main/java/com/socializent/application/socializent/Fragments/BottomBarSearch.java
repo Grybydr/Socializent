@@ -167,7 +167,7 @@ public class BottomBarSearch extends ListFragment  {
         userList.setOnItemClickListener(new OnItemClickListener() {
 
             public void onItemClick(AdapterView arg0, View arg, int position, long a) {
-                //TODO: bu instance düzelecek
+
                 searchedPerson = (Person)userAdapter.getItem(position);
 
                 Fragment mFragment = new NavigationDrawerFirst();
@@ -389,11 +389,33 @@ public class BottomBarSearch extends ListFragment  {
                     JSONArray interestA = new JSONArray(interestJSONArray);
                     ArrayList<String> interestArray = new ArrayList<String>();
                     for (int k = 0; k < interestA.length(); k++) {
-
-                        //JSONObject interest = interestA.getJSONObject(k);
                         interestArray.add(interestA.getString(k));
                     }
-                    Person p = new Person(id,firstName, lastname, username, bd, password, email, bio, null, interestArray, null, null, null, 0);
+                    String friendReqJSONArray = row.getString("friendRequests");
+                    JSONArray frienReqA = new JSONArray(friendReqJSONArray);
+                    ArrayList<String> frienReqArray = new ArrayList<String>();
+                    for (int k = 0; k < frienReqA.length(); k++) {
+
+                        frienReqArray.add(frienReqA.getString(k));
+                    }
+
+                    String friendJSONArray = row.getString("friends");
+                    JSONArray friendA = new JSONArray(friendJSONArray);
+                    ArrayList<String> friendArray = new ArrayList<String>();
+                    for (int k = 0; k < friendA.length(); k++) {
+
+                        friendArray.add(friendA.getString(k));
+                    }
+
+                  /*  ArrayList<Person> friends = new ArrayList<Person>();
+                    Object obj = row.get("friends");
+                    JSONArray jsonArray = (JSONArray)obj;
+
+                    for (int p = 0; p < jsonArray.length(); p++) {
+                        friends.add((Person)jsonArray.get(i));
+                    }*/
+
+                    Person p = new Person(id,firstName, lastname, username, bd, password, email, bio,friendArray, interestArray, null, null, null, frienReqArray);
                     searchedUsers.add(p);
 
                 }

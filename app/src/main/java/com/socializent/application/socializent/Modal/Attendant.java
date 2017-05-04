@@ -10,7 +10,7 @@ public class Attendant extends Person {
     private ArrayList<Event> upcomingEvents;
     private ArrayList<Event> pastEvents;
 
-    public Attendant(String firstName, String lastName, String username, float birthDate, String password, String email, String bio,  ArrayList<Person> friends, ArrayList<String> interests, ArrayList<Event> events, ArrayList<Event> upcomingEvents, ArrayList<Event> pastEvents, double rate, ArrayList<Event> upcomingEvents1, ArrayList<Event> pastEvents1) {
+    public Attendant(String firstName, String lastName, String username, float birthDate, String password, String email, String bio,  ArrayList<String> friends, ArrayList<String> interests, ArrayList<Event> events, ArrayList<Event> upcomingEvents, ArrayList<Event> pastEvents, double rate, ArrayList<Event> upcomingEvents1, ArrayList<Event> pastEvents1) {
         super(firstName, lastName, username, birthDate, password, email, bio,  friends, interests, events, upcomingEvents, pastEvents, rate);
         this.upcomingEvents = upcomingEvents1;
         this.pastEvents = pastEvents1;

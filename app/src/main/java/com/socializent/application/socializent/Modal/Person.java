@@ -19,9 +19,9 @@ public class Person {
     private String bio;
     private String id;
     
-    private ArrayList<Person> friends;
+    private ArrayList<String> friends;
     private ArrayList<String> interests;
-    private ArrayList<Person> friendRequests;
+    private ArrayList<String> friendRequests;
     private ArrayList<Event> events;
     private ArrayList<Event> pastEvents;
     private ArrayList<Event> upcomingEvents;
@@ -40,7 +40,7 @@ public class Person {
         this.email = "";
         this.bio = "";
         this.rate = 0.0;
-        this.friends = new ArrayList<Person>();
+        this.friends = new ArrayList<String>();
         this.interests = new ArrayList<String>();
         this.events = new ArrayList<Event>();
         this.upcomingEvents = new ArrayList<Event>();
@@ -48,7 +48,7 @@ public class Person {
     }
 
 
-    public Person(String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
+    public Person(String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<String> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -63,7 +63,7 @@ public class Person {
         this.upcomingEvents = upcomingEvents;
         this.pastEvents = pastEvents;
     }
-    public Person(String id,String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<Person> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
+    public Person(String id,String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<String> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents, ArrayList<String> friendRequest) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -72,12 +72,12 @@ public class Person {
         this.password  = password;
         this.email     = email;
         this.bio    = bio;
-        this.rate      = rate;
         this.friends    = friends;
         this.interests   = interests;
         this.events     = events;
         this.upcomingEvents = upcomingEvents;
         this.pastEvents = pastEvents;
+        this.friendRequests = friendRequest;
     }
 
     public String getId() {
@@ -144,11 +144,11 @@ public class Person {
         this.password = password;
     }
 
-    public ArrayList<Person> getFriends() {
+    public ArrayList<String> getFriends() {
         return friends;
     }
 
-    public void setFriends(ArrayList<Person> friends) {
+    public void setFriends(ArrayList<String> friends) {
         this.friends = friends;
     }
 
@@ -184,11 +184,11 @@ public class Person {
         this.photoUrl = photoUrl;
     }
 
-    public ArrayList<Person> getFriendRequests() {
+    public ArrayList<String> getFriendRequests() {
         return friendRequests;
     }
 
-    public void setFriendRequests(ArrayList<Person> friendRequests) {
+    public void setFriendRequests(ArrayList<String> friendRequests) {
         this.friendRequests = friendRequests;
     }
 

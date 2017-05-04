@@ -41,7 +41,6 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 import static com.socializent.application.socializent.Controller.EventBackgroundTask.GET_ALL_EVENTS_OPTION;
-import static com.socializent.application.socializent.Controller.EventBackgroundTask.GET_SEARCHED_EVENTS_OPTION;
 import static com.socializent.application.socializent.Template.user;
 
 /**
@@ -57,7 +56,6 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     final static String SIGN_IN_OPTION = "2";
     final static String GET_PERSON_OPTION = "3";
     final static String SIGN_UP_OPTION = "1";
-    final static String GET_SEARCHED_USER_OPTION = "4";
     final static String SEND_FRIEND_REQUEST = "6";
     private static int signedInBefore = 0;
 
@@ -253,20 +251,29 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 msCookieManager.getCookieStore().add(null,new HttpCookie("userProfile",result));
                 JSONObject userObject = new JSONObject(result);
 
-                ArrayList<Person> friends = new ArrayList<Person>();
+                String friendJSONArray = userObject.getString("friends");
+                JSONArray friendA = new JSONArray(friendJSONArray);
+                ArrayList<String> friendArray = new ArrayList<>();
+                for (int k = 0; k < friendA.length(); k++) {
+
+                    friendArray.add(friendA.getString(k));
+                }
+
+
+           /*     ArrayList<Person> friends = new ArrayList<Person>();
                 Object obj = userObject.get("friends");
                 JSONArray jsonArray = (JSONArray)obj;
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     friends.add((Person)jsonArray.get(i));
                 }
-
+*/
                 ArrayList<String> interestAreas = new ArrayList<String>();
                 Object obj2 = userObject.get("interests");
                 JSONArray jsonArray2 = (JSONArray)obj2;
 
 
-                for (int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray2.length(); i++) {
                     interestAreas.add(jsonArray2.getString(i));
                 }
 
@@ -307,42 +314,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }else if(type.equals(GET_SEARCHED_USER_OPTION)) {
-            try {
-                String searchedUserName = params[1];
-                URL url = new URL("http://54.69.152.154:3000/searchUser?q=" + searchedUserName);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                //conn.connect();
-                conn.setReadTimeout(30000);
-                conn.setConnectTimeout(30000);
-                conn.setRequestMethod("GET");
-                conn.setRequestProperty("Content-Type", "application/json");
-                //conn.setRequestProperty("x-access-token", accessToken.toString());
-                conn.setDoInput(true);
-                conn.connect();
-
-                int responseCode = conn.getResponseCode();
-                Log.d("Response Code: ", responseCode + "");
-                //if (responseCode == HttpsURLConnection.HTTP_OK) {
-                String line;
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                while ((line = br.readLine()) != null) {
-                    result += line;
-                }
-                Log.d("Response: ", result);
-                HttpCookie accessTokenCookie = new HttpCookie("searchedUsers",result);
-                msCookieManager.getCookieStore().add(null, accessTokenCookie);
-
-           } catch (ProtocolException e) {
-               e.printStackTrace();
-           } catch (MalformedURLException e) {
-               e.printStackTrace();
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-
-        }
-        else if(type.equals(FACEBOOK_SIGN_UP_OPTION)){
+        }else if(type.equals(FACEBOOK_SIGN_UP_OPTION)){
             try
             {
                 String name = params[1];
@@ -436,20 +408,18 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 Log.d("Response Code: ", responseCode + "");
                 String line;
 
-                Log.d("Added friend: ", result);
-
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
                 conn.disconnect();
-                return result;
+
             } catch (ProtocolException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return result;
-
         }
-
-
         return result;
     }
 

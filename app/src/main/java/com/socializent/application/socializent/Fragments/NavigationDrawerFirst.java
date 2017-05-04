@@ -53,7 +53,8 @@ public class NavigationDrawerFirst extends Fragment {
     JSONObject userObject = null;
     String user = "";
     PersonBackgroundTask conn;
-
+    String activeUserId;
+    List<HttpCookie> cookieList;
     public NavigationDrawerFirst() {
         // Required empty public constructor
     }
@@ -82,6 +83,20 @@ public class NavigationDrawerFirst extends Fragment {
         emailText = (TextView) profileView.findViewById(R.id.user_profile_email);
         birthdayText = (TextView) profileView.findViewById(R.id.profile_birthday);
         interestText = (TextView) profileView.findViewById(R.id.profile_interests);
+        cookieList = msCookieManager.getCookieStore().getCookies();
+
+        for (int i = 0; i < cookieList.size(); i++) {
+            if (cookieList.get(i).getName().equals("userProfile")) {
+                user = cookieList.get(i).getValue();
+                break;
+            }
+        }
+        try {
+            userObject = new JSONObject(user);
+            activeUserId = userObject.getString("_id");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         if(searchedPerson != null) {
             searchedUserProfile();
@@ -107,21 +122,6 @@ public class NavigationDrawerFirst extends Fragment {
                 editPage(v);
             }
         });
-
-        List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
-
-        for (int i = 0; i < cookieList.size(); i++) {
-            if (cookieList.get(i).getName().equals("userProfile")) {
-                user = cookieList.get(i).getValue();
-                break;
-            }
-        }
-        try {
-            userObject = new JSONObject(user);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Log.d("User Info: ", user);
 
 
         try {
@@ -171,9 +171,10 @@ public class NavigationDrawerFirst extends Fragment {
     }
 
     public void searchedUserProfile(){
+        boolean alreadyFriend = false;
+        boolean friendReqSent = false;
         conn = new PersonBackgroundTask(getContext());
         imagePen.setVisibility(View.GONE);
-        addFriend.setVisibility(View.VISIBLE);
         String fullname = searchedPerson.getFirstName() + searchedPerson.getLastName();
         userNameText.setText(fullname);
         emailText.setText(searchedPerson.getEmail());
@@ -184,22 +185,46 @@ public class NavigationDrawerFirst extends Fragment {
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         String dateStr = df.format(date);
         birthdayText.setText(dateStr);
-
-        addFriend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addFriend(v);
+        for(int k = 0; k< searchedPerson.getFriends().size(); k++){ //req gönderenlerin idleri
+            if(activeUserId.equals(searchedPerson.getFriends().get(k))){
+                alreadyFriend = true;
+                break;
             }
-        });
+        }
+        if(!alreadyFriend){
+            for(int k = 0; k< searchedPerson.getFriendRequests().size(); k++){ //req gönderenlerin idleri
+                if(activeUserId.equals(searchedPerson.getFriendRequests().get(k))){
+                    friendReqSent = true;
+                    break;
+                }
+            }
+            if(friendReqSent){
+                addFriend.setImageResource(R.drawable.waiting);
+                searchedPerson = null;
+            }
+            else{
+                addFriend.setVisibility(View.VISIBLE);
+                addFriend.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        addFriend(v);
+                    }
+                });
 
-
+            }
+        }
+        else{
+            addFriend.setImageResource(R.drawable.checked);
+            searchedPerson = null;
+        }
     }
     public void addFriend(View view) throws RuntimeException{
         Toast.makeText(getContext(), "Friend Request Sent!", Toast.LENGTH_SHORT).show();
         //TODO:: searchedPerson become null
-        //servera bağla
+
         conn.execute("6", searchedPerson.getId());
         addFriend.setImageResource(R.drawable.checked);
+        searchedPerson = null;
 
     }
 }
