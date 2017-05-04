@@ -104,7 +104,7 @@ public class EventDetailsPage extends Fragment {
         }
     }
 
-    //TODO: Irem burası senin için
+
     private static void constructByObject(Event event){
         eventTitle = event.getName();
         placeName = event.getPlaceName();
