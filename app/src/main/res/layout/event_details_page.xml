@@ -223,15 +223,49 @@
 
         </ScrollView>
 
-        <Button
-            android:id="@+id/joinEventButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="JOIN!"
-            android:textColor="@color/colorEditText"
-            android:layout_alignBaseline="@+id/goBackButton"
-            android:layout_alignBottom="@+id/goBackButton"
-            android:layout_toEndOf="@+id/pCountTag" />
+            <Button
+                android:id="@+id/joinEventButton"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/goBackButton"
+                android:layout_alignBottom="@+id/goBackButton"
+                android:layout_toEndOf="@+id/pCountTag"
+                android:text="JOIN!"
+                android:textColor="@color/colorEditText" />
+
+            <Button
+                android:id="@+id/leaveEventButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="LEAVE"
+                android:layout_alignBaseline="@+id/goBackButton"
+                android:layout_alignBottom="@+id/goBackButton"
+                android:layout_toEndOf="@+id/pCountTag"
+                android:textColor="@color/colorEditText"
+                android:layout_marginEnd="22dp" />
+
+            <Button
+                android:id="@+id/editEventButton"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="EDIT"
+                android:textColor="@color/colorEditText"
+                android:layout_marginEnd="24dp"
+                android:layout_alignBaseline="@+id/joinEventButton"
+                android:layout_alignBottom="@+id/joinEventButton"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:id="@+id/deleteEventButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="DELETE"
+                android:textColor="@color/colorEditText"
+                android:layout_alignBaseline="@+id/joinEventButton"
+                android:layout_alignBottom="@+id/joinEventButton"
+                android:layout_toStartOf="@+id/editEventButton"
+                android:layout_marginEnd="22dp" />
+
 
         <Button
             android:id="@+id/goBackButton"

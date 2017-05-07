@@ -1,6 +1,5 @@
 package com.socializent.application.socializent.Controller;
 
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -59,6 +58,7 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
                 String category = params[9];
                 String description = params[10];
                 String feeToConvert = params[11];
+                String organizerId = params[12];
 
                 String accessToken = "";
 
@@ -102,14 +102,6 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
                 Date oldDate = sdf.parse(dateToConvertMiliseconds);
                 long dateInMiliseconds = oldDate.getTime();
 
-                /*Log.d("EventBackgroundTask", title);
-                Log.d("EventBackgroundTask", dateInMiliseconds + "");
-                Log.d("EventBackgroundTask", placeCity);
-                Log.d("EventBackgroundTask", "LONGIII:" + longitudeToConvertFloat);
-                Log.d("EventBackgroundTask", category);
-                Log.d("EventBackgroundTask", description);
-                Log.d("EventBackgroundTask", fee + "");*/
-
                 JSONObject requestBody = new JSONObject();
                 requestBody.put("name", title);
                 requestBody.put("date", dateInMiliseconds);
@@ -122,6 +114,7 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
                 requestBody.put("description", description);
                 requestBody.put("fee", fee);
                 requestBody.put("participantCount", parCount);
+                requestBody.put("organizer", organizerId);
 
                 OutputStream os = conn.getOutputStream();
 
@@ -143,6 +136,7 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
                     result += line;
                 }
                 Log.d("Response: ", result);
+
                 //}
                 conn.disconnect();
                 return result;

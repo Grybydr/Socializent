@@ -272,11 +272,9 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 Object obj2 = userObject.get("interests");
                 JSONArray jsonArray2 = (JSONArray)obj2;
 
-
                 for (int i = 0; i < jsonArray2.length(); i++) {
                     interestAreas.add(jsonArray2.getString(i));
                 }
-
 
                 Object object = userObject.get("events");
                 JSONArray eventsArray = (JSONArray) object;
@@ -295,7 +293,6 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 jsonObject.put("email", userObject.getString("email"));
                 jsonObject.put("friends", userObject.get("friends"));
                 jsonObject.put("interests", userObject.get("interests"));
-                //Hawk.put("user",user);
 
                 msCookieManager.getCookieStore().add(null,new HttpCookie("user",jsonObject.toString()));
                 msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",eventsArray.toString()));

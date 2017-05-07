@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.EventDetailsBackgroundTask;
+import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Modal.Event;
 import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.Template;
@@ -37,21 +38,25 @@ import static com.socializent.application.socializent.Controller.PersonBackgroun
 public class EventDetailsPage extends Fragment {
 
     final static String JOIN_EVENT_TAG = "joinEvent";
+    final static String GET_USER = "3";
+    final static String LEAVE_EVENT = "leaveEvent";
 
     private EventDetailsBackgroundTask task;
     private View eventView;
     private TextView titleView, placeView, timeDateView, feeView, participantCountView, organizerView, descView, categoryView;
     private TextView commentView, photoView, addressView;
-    private Button joinButton, goBackButton;
+    private Button joinButton, goBackButton, editButton, deleteButton,leaveButton;
 
     static String eventTitle, tempDate, tempLat, tempLong, city, description, tempParticipantCount, category;
     static String tempFee, tempRate, photoURL, comments;
     static String dateStr, address, placeName, event_id;
-    static String tempOrganizer, tempParticipants;
+    static String tempParticipants;
+    static String organizer = "";
     static JSONArray participants;
-    static JSONObject organizer;
-
+    JSONObject currentUser;
+    private String userEvents = "", currentUserID = "";
     List<HttpCookie> cookieList;
+    PersonBackgroundTask personTask;
 
     public static EventDetailsPage newInstance(String str, Event event) {
         EventDetailsPage fragment = new EventDetailsPage();
@@ -87,6 +92,7 @@ public class EventDetailsPage extends Fragment {
             placeName = pl.getString("name");
             description = row.getString("description");
             tempParticipantCount = row.getString("participantCount");
+            organizer = row.getString("organizer");
 
             String temp = row.getString("category").toUpperCase();
             if (temp == "null" || temp.isEmpty() || temp == "" )
@@ -99,9 +105,6 @@ public class EventDetailsPage extends Fragment {
             /*tempRate = row.getString("rate");
             photoURL = row.getString("photoUrl");
             comments = row.getString("comments");*/
-            //tempOrganizer = row.getString("organizer");
-            //organizer = new JSONObject(tempOrganizer);
-            //organizer.getString("_id");
 
             tempParticipants = row.getString("participants");
             participants = new JSONArray(tempParticipants);
@@ -127,13 +130,14 @@ public class EventDetailsPage extends Fragment {
         tempParticipantCount =  String.valueOf(event.getParticipantCount());
         category = event.getEventType().toString();
         description = event.getDescription();
-
-
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        cookieList = msCookieManager.getCookieStore().getCookies();
+        task = new EventDetailsBackgroundTask(getContext());
+        personTask = new PersonBackgroundTask(getContext());
     }
 
     @Override
@@ -159,17 +163,20 @@ public class EventDetailsPage extends Fragment {
         descView = (TextView) eventView.findViewById(R.id.descriptionView_d);
         descView.setText(description);
 
+        currentUserID = getUserId();
+
         joinButton = (Button)eventView.findViewById(R.id.joinEventButton);
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (participantCountCheck()) {
                     joinEvent();
-
-                    cookieList = msCookieManager.getCookieStore().getCookies();
                     Toast.makeText(getActivity(), "You have joined " + eventTitle + " ! ",
                             Toast.LENGTH_SHORT)
                             .show();
+                    joinButton.setVisibility(View.GONE);
+                    leaveButton.setVisibility(View.VISIBLE);
+                    personTask.execute(GET_USER);
                 }
                 else {
                     Toast.makeText(getActivity(), "Participant limit is full for this event.",
@@ -178,6 +185,53 @@ public class EventDetailsPage extends Fragment {
                 }
             }
         });
+        leaveButton = (Button)eventView.findViewById(R.id.leaveEventButton);
+        leaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                leaveEvent();
+                Toast.makeText(getActivity(), "You have left " + eventTitle + " ! ",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                joinButton.setVisibility(View.VISIBLE);
+                leaveButton.setVisibility(View.GONE);
+                personTask.execute(GET_USER);
+            }
+        });
+        editButton = (Button)eventView.findViewById(R.id.editEventButton);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goBackToMap();
+            }
+        });
+
+        deleteButton = (Button)eventView.findViewById(R.id.deleteEventButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goBackToMap();
+            }
+        });
+
+        if(isOrganizer()){
+            editButton.setVisibility(View.VISIBLE);
+            deleteButton.setVisibility(View.VISIBLE);
+            joinButton.setVisibility(View.GONE);
+            leaveButton.setVisibility(View.GONE);
+        }
+        else {
+            editButton.setVisibility(View.GONE);
+            deleteButton.setVisibility(View.GONE);
+            if(isJoined()){
+                joinButton.setVisibility(View.GONE);
+                leaveButton.setVisibility(View.VISIBLE);
+            }
+            else {
+                joinButton.setVisibility(View.VISIBLE);
+                leaveButton.setVisibility(View.GONE);
+            }
+        }
 
         goBackButton = (Button)eventView.findViewById(R.id.goBackButton);
         goBackButton.setOnClickListener(new View.OnClickListener() {
@@ -206,7 +260,7 @@ public class EventDetailsPage extends Fragment {
 
         Intent intent = new Intent(getActivity(), Template.class);
         startActivity(intent);
-        Log.v("LOCATION_V", "Going back to map...");
+        Log.v("EVENT_DETAILS", "Going back to map...");
 
     }
 
@@ -216,12 +270,78 @@ public class EventDetailsPage extends Fragment {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(millis);
         dateStr = df.format(calendar.getTime());
-
     }
 
     private void joinEvent(){
-        task = new EventDetailsBackgroundTask(getContext());
         task.execute(JOIN_EVENT_TAG, event_id);
+    }
+
+    private boolean isOrganizer(){
+        if(!organizer.trim().equals(currentUserID.trim()) || currentUserID.equals("") || organizer.equals(""))
+            return false;
+        else
+            return true;
+    }
+
+    private String getUserId(){
+        String result = "";
+        String str = "";
+        if(cookieList.size() != 0){
+            for (int i = 0; i < cookieList.size(); i++) {
+                if (cookieList.get(i).getName().equals("userProfile")){
+                    str = cookieList.get(i).getValue();
+                }
+                else if(cookieList.get(i).getName().equals("userEvents")){
+                    userEvents = cookieList.get(i).getValue();
+                    break;
+                }
+            }
+            if(!str.equals("")){
+                try {
+                    currentUser = new JSONObject(str);
+                    result = currentUser.getString("_id");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            else{
+                Log.e("EVENT_DETAILS", "JSON organizerId extraction error");
+            }
+        }
+        else {
+            Log.v("EVENT_DETAILS", "User Profile cannot be extracted");
+        }
+        return result;
+    }
+
+    private boolean isJoined(){
+        if(!userEvents.equals("")){
+            try {
+                JSONArray userEventsA = new JSONArray(userEvents);
+
+                for(int i = 0; i < userEventsA.length(); i++){
+                    JSONObject row = userEventsA.getJSONObject(i);
+
+                    //Retrieving event details
+                    String temp_id = row.getString("_id");
+
+                    if(event_id.trim().equals(temp_id.trim()))
+                        return true;
+                }
+
+            } catch (JSONException e) {
+                Log.v("EVENT_DETAILS", "User Events cannot be extracted");
+                e.printStackTrace();
+            }
+        }
+        else{
+            Log.d("EVENT_DETAILS", "UserEvents null error");
+        }
+        return false;
+    }
+
+    private void leaveEvent(){
+        task.execute(LEAVE_EVENT, event_id);
     }
 
 }

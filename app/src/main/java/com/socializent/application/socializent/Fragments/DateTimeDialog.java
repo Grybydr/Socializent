@@ -90,6 +90,7 @@ public class DateTimeDialog extends DialogFragment implements DialogInterface.On
                 myMonth = selectedMonth;
             }
         });
+
         myDatePicker.setMinDate(System.currentTimeMillis() - 1000);
 
         int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);

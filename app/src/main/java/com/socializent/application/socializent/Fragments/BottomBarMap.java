@@ -84,6 +84,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private static final int DEFAULT_TILT = 0;
     private static final long WEEK_IN_MILLIS = 604800000;
     private static final String TURKEY_TAG = "Turkey";
+    final static String GET_ALL_EVENTS_OPTION = "2";
 
     private final LatLng defaultLocation = new LatLng(39.868010, 32.748823); //Bilkent's Coordinates
 
@@ -97,6 +98,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
 
     EventDetailsBackgroundTask s_task;
     List<HttpCookie> cookieList;
+    JSONObject user;
 
     public static BottomBarMap newInstance() {
         BottomBarMap fragment = new BottomBarMap();
@@ -142,6 +144,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         refreshFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 updateMyLocation();
             }
         });
@@ -382,13 +385,12 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     /*
     /* Sends the event record to database
     */
-    public void addEvent(Place myPlace, String title, Date myDate, double fee, int participantCount, String category, String description) {
+    public void addEvent(Place myPlace, String title, Date myDate, double fee, int participantCount, String category, String description, String userId) throws JSONException {
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         String date = formatter.format(myDate);
 
         EventBackgroundTask createEventTask = new EventBackgroundTask();
-
         LatLng latLng = myPlace.getLatLng();
 
         String longitude = String.valueOf(latLng.longitude);
@@ -401,13 +403,13 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         String feeConverted = String.valueOf(fee);
         String city = setCity(myPlace);
         String placeName = myPlace.getName().toString();
+        String organizerId = userId;
 
-        createEventTask.execute("1", title, date, city, longitude, latitude, myAddress, placeName, pCount, category, description, feeConverted);
+        createEventTask.execute("1", title, date, city, longitude, latitude, myAddress, placeName, pCount, category, description, feeConverted, organizerId);
 
         myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
                 .title(title)
                 .snippet(date));
-
     }
 
     /*

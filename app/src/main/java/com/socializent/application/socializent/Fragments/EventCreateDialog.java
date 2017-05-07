@@ -29,7 +29,11 @@ import com.google.android.gms.location.places.Place;
 import com.socializent.application.socializent.Modal.EventTypes;
 import com.socializent.application.socializent.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.net.HttpCookie;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,6 +42,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+
+import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
 /**
  * Created by Zulal Bingol on 9.04.2017.
@@ -59,10 +65,14 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     private static Place myPlace;
     private Spinner categoryChooser;
     ArrayList<String> choices;
+    List<HttpCookie> cookieList;
+    JSONObject user;
+    String userId;
 
     static EventCreateDialog newInstance(Place place) {
         myPlace = place;
         return new EventCreateDialog();
+
     }
 
     @Override
@@ -71,6 +81,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
 
         try {
             callerActivity = (BottomBarMap) getTargetFragment();
+
         } catch (Exception e) {
             Log.v("EVENT_CREATE_DIALOG", "Class cast error ");
         }
@@ -79,6 +90,8 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState)
     {
+        cookieList = msCookieManager.getCookieStore().getCookies();
+
         View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_create_event_form, new RelativeLayout(getActivity()), false);
 
         TextView addressView = (TextView)view.findViewById(R.id.addressView);
@@ -102,13 +115,20 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             }
         });
         updateFields();
+        userId = getUserId();
+        Log.d("EVENT_CREATE_DIALOG", "USERID: " + userId);
 
         Button createEventButton = (Button)view.findViewById(R.id.createEventButton);
         createEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (getFieldsWithCheck()) {
-                    callerActivity.addEvent(myPlace, myTitle, myDate, myFee, myParticipantCount, myCategory, myDescription);
+                    try {
+                        callerActivity.addEvent(myPlace, myTitle, myDate, myFee, myParticipantCount, myCategory, myDescription, userId);
+                    } catch (JSONException e) {
+                        Log.e("EVENT_CREATE_DIALOG", "Error in addEvent: ");
+                        e.printStackTrace();
+                    }
                     EventCreateDialog.this.dismiss();
                 }
                 else {
@@ -290,5 +310,34 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         } else {
             categoryChooser.setSelection(choices.indexOf(myCategory));
         }
+    }
+
+    private String getUserId(){
+        String result = "";
+        String str = "";
+        if(cookieList.size() != 0){
+            for (int i = 0; i < cookieList.size(); i++) {
+                if (cookieList.get(i).getName().equals("userProfile")){
+                    str = cookieList.get(i).getValue();
+                    break;
+                }
+            }
+            if(!str.equals("")){
+                try {
+                    user = new JSONObject(str);
+                    result = user.getString("_id");
+                } catch (JSONException e) {
+                    Log.e("LOCATION_V", "cannot get _id");
+                    e.printStackTrace();
+                }
+            }
+            else{
+                Log.e("LOCATION_V", "JSON organizerId extraction error");
+            }
+        }
+        else {
+            Log.v("LOCATION_V", "User Profile cannot be extracted");
+        }
+        return result;
     }
 }
