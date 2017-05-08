@@ -20,15 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f16c4baa-7cd2-416f-8541-c66ca6c6cbdf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventDetailsBackgroundTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Controller/EventDetailsBackgroundTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/DateTimeDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/DateTimeDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventDetailsPage.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/socializent/application/socializent/Fragments/EventDetailsPage.java" />
     </list>
     <ignored path="Socializent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2696,13 +2688,6 @@
       <option name="presentableId" value="Default" />
       <updated>1488723745182</updated>
     </task>
-    <task id="LOCAL-00005" summary="loginPage_v3 : socializent_image v1">
-      <created>1488822794115</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1488822794115</updated>
-    </task>
     <task id="LOCAL-00006" summary="loginPage_v3 : socializent_image v1">
       <created>1488822982279</created>
       <option name="number" value="00006" />
@@ -3039,7 +3024,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494192882549</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="datePicker hatası çözüldü, deleteEvent altyapısı hazır">
+      <created>1494240153111</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1494240153113</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3145,7 +3137,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="geocoder added for addresses" />
     <MESSAGE value="circular image added to profile" />
     <MESSAGE value="profile page icon added" />
     <MESSAGE value="user controller eklendi" />
@@ -3170,7 +3161,8 @@
     <MESSAGE value="&#10;" />
     <MESSAGE value="&#10;lo" />
     <MESSAGE value="organizer_id, leaveEvent done" />
-    <option name="LAST_COMMIT_MESSAGE" value="organizer_id, leaveEvent done" />
+    <MESSAGE value="datePicker hatası çözüldü, deleteEvent altyapısı hazır" />
+    <option name="LAST_COMMIT_MESSAGE" value="datePicker hatası çözüldü, deleteEvent altyapısı hazır" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
