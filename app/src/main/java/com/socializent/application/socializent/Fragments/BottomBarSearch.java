@@ -102,7 +102,7 @@ public class BottomBarSearch extends ListFragment  {
         host.addTab(spec);
         TextView event = (TextView) host.getTabWidget().getChildAt(0).findViewById(android.R.id.title);
         event.setTextColor(Color.parseColor("#ebca0707"));
-
+        host.setCurrentTab(0);
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
             @Override
             public void onTabChanged(String tabId) {
@@ -130,10 +130,11 @@ public class BottomBarSearch extends ListFragment  {
 
                     }
                     else if(host.getCurrentTab() == 1){
-                        new SearchUserTask(getContext()).execute(searchedString.getText().toString());
-                       /* if(searchedUsers.size() == 0)
-                            Toast.makeText(getContext(),"There is no users to show!", Toast.LENGTH_LONG).show();
-*/
+                        if(searchedString.getText().toString() != "")
+                            new SearchUserTask(getContext()).execute(searchedString.getText().toString());
+                        else
+                            Toast.makeText(getContext(),"Please enter an event name!", Toast.LENGTH_LONG).show();
+
                     }
 
                 host.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
@@ -285,7 +286,7 @@ public class BottomBarSearch extends ListFragment  {
                     Location l = new Location("");
                     l.setLatitude(Double.parseDouble(tempLat));
                     l.setLongitude(Double.parseDouble(tempLong));
-                    int fee = Integer.parseInt(row.getString("fee"));
+                    double fee = Double.parseDouble(row.getString("fee"));
                     String tempDate = row.getString("date");
                       //TODO:: Organizer id
                     long millis = Long.parseLong(tempDate);

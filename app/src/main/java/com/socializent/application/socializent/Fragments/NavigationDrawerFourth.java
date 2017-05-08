@@ -37,14 +37,13 @@ import java.util.List;
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
 public class NavigationDrawerFourth extends Fragment {
-    public static ListView friendList;
+    ListView friendList;
     View friendView;
     List<HttpCookie> cookieList;
     String user = "";
     JSONObject userObject = null;
     String activeUserId;
     ArrayList<Person> friendObjList;
-    PersonBackgroundTask task;
     UserAdapterToList userAdapter;
     String accessToken;
 
@@ -73,7 +72,7 @@ public class NavigationDrawerFourth extends Fragment {
        // friendList = getListView();
         friendList = (ListView) friendView.findViewById(R.id.friendList);
         cookieList = msCookieManager.getCookieStore().getCookies();
-        task = new PersonBackgroundTask(getContext());
+
         friendObjList = new ArrayList<>();
         for (int i = 0; i < cookieList.size(); i++) {
             if (cookieList.get(i).getName().equals("userProfile")) {

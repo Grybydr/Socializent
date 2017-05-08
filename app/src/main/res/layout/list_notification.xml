@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <ImageView
+        android:id="@+id/add_user"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/notification_add"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/add_user_rext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Sent you friend request!"
+        android:layout_alignBottom="@+id/add_user"
+        android:layout_toEndOf="@+id/add_user"
+        android:layout_marginStart="26dp" />
+
+    <ImageButton
+        android:id="@+id/accept_user"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/accept_notf"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/reject_user"
+        android:layout_marginEnd="14dp" />
+
+    <ImageButton
+        android:id="@+id/reject_user"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/reject_notf"
+        android:layout_alignTop="@+id/accept_user"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/add_user_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Username"
+        android:layout_alignTop="@+id/add_user"
+        android:layout_alignStart="@+id/add_user_rext" />
+
+</RelativeLayout>

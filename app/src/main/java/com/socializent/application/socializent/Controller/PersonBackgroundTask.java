@@ -57,6 +57,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     final static String GET_PERSON_OPTION = "3";
     final static String SIGN_UP_OPTION = "1";
     final static String SEND_FRIEND_REQUEST = "6";
+    final static String REPLY_FRIEND_REQUEST = "4";
     private static int signedInBefore = 0;
 
     public static java.net.CookieManager msCookieManager = new java.net.CookieManager();
@@ -260,6 +261,14 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 }
 
 
+              /*  String friendReqJSONArray2 = userObject.getString("friendRequests");
+                JSONArray frienReqA2 = new JSONArray(friendReqJSONArray2);
+                ArrayList<String> frienReqArray2 = new ArrayList<String>();
+                for (int l = 0; l < frienReqA2.length();l++) {
+                    frienReqArray2.add(frienReqA2.getString(l));
+                }*/
+
+
            /*     ArrayList<Person> friends = new ArrayList<Person>();
                 Object obj = userObject.get("friends");
                 JSONArray jsonArray = (JSONArray)obj;
@@ -272,9 +281,13 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 Object obj2 = userObject.get("interests");
                 JSONArray jsonArray2 = (JSONArray)obj2;
 
+
                 for (int i = 0; i < jsonArray2.length(); i++) {
                     interestAreas.add(jsonArray2.getString(i));
                 }
+
+                Object obj = userObject.get("friendRequests");
+                JSONArray requestArray = (JSONArray) obj;
 
                 Object object = userObject.get("events");
                 JSONArray eventsArray = (JSONArray) object;
@@ -284,7 +297,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                         userObject.getString("email"),friends,interestAreas);22*/
 
                 JSONObject jsonObject= new JSONObject();
-
+                jsonObject.put("_id", userObject.getString("_id"));
                 jsonObject.put("firstName", userObject.getString("firstName"));
                 jsonObject.put("lastName", userObject.getString("lastName"));
                 jsonObject.put("fullName", userObject.getString("fullName"));
@@ -293,9 +306,12 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 jsonObject.put("email", userObject.getString("email"));
                 jsonObject.put("friends", userObject.get("friends"));
                 jsonObject.put("interests", userObject.get("interests"));
+                //jsonObject.put("friendRequests", friendReqArray);
+                //Hawk.put("user",user);
 
                 msCookieManager.getCookieStore().add(null,new HttpCookie("user",jsonObject.toString()));
                 msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",eventsArray.toString()));
+                msCookieManager.getCookieStore().add(null,new HttpCookie("friendRequest", requestArray.toString()));
 
 
                 conn.disconnect();
@@ -416,6 +432,52 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        else if(type.equals(REPLY_FRIEND_REQUEST)){
+            //accessToken,id,decision
+            String accessToken = "";
+            String id = params[1];
+            String decision = params[2];
+            List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+            for (int i = 0; i < cookieList.size(); i++) {
+                if (cookieList.get(i).getName().equals("x-access-token")){
+                    accessToken = cookieList.get(i).getValue();
+                    break;
+                }
+            }
+            String request = " http://54.69.152.154:3000/decideFriend?id=" + id +"&decide=" + decision;
+
+            URL url = null;
+            try {
+                url = new URL(request);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                String line;
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                conn.disconnect();
+            } catch (MalformedURLException e1) {
+                e1.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
         return result;
     }

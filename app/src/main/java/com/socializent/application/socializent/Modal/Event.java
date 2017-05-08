@@ -30,8 +30,9 @@ public class Event {
     String city;
     String placeName;
     String organizer;
+    private double fee;
 
-    public Event(String name, String description, int fee, long date, String address,  String organizerId, EventTypes category, int eventRate, int participantCount,  ArrayList<String> comments, String photoUrl, Location l, String city, String placeName) {
+    public Event(String name, String description, double fee, long date, String address,  String organizerId, EventTypes category, int eventRate, int participantCount,  ArrayList<String> comments, String photoUrl, Location l, String city, String placeName) {
         this.name = name;
         this.participantCount = participantCount;
         this.date = date; //berk milisecond olarak yolluyormuş bunu dönüştürmek lazım
@@ -74,7 +75,7 @@ public class Event {
     public void setParticipantCount(int participantCount) {
         this.participantCount = participantCount;
     }
-    private int fee;
+
 
     public Location getL() {
         return l;
@@ -108,7 +109,7 @@ public class Event {
         this.organizer = organizer;
     }
 
-    public int getFee() {
+    public double getFee() {
         return fee;
     }
 
