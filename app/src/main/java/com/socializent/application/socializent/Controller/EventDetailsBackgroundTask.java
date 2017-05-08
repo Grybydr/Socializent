@@ -40,6 +40,7 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
     final static String LOAD_EVENT_TAG = "loadTargetEvent";
     final static String LEAVE_EVENT = "leaveEvent";
     final static String DELETE_EVENT = "deleteEvent";
+    final static String GET_ORGANIZER_INFO = "getOrgInfo";
 
     public ProgressDialog p_dialog;
     public Context context;
@@ -213,6 +214,40 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
                 int responseCode = conn.getResponseCode();
                 Log.d("DetailsBackgroundTask", "Response code delete: " + responseCode + "");
                 result = "RESULT delete: " + responseCode;
+
+                conn.disconnect();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(function.equals(GET_ORGANIZER_INFO)){
+            try {
+                String organizer_id = params[1];
+
+                URL url = new URL("http://54.69.152.154:3000/user/" + organizer_id);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                //conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("DetailsBackgroundTask", "Response code organizerInfo: " + responseCode + "");
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
 
                 conn.disconnect();
             } catch (UnsupportedEncodingException e) {
