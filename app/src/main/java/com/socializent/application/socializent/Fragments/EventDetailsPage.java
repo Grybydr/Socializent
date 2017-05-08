@@ -43,6 +43,7 @@ public class EventDetailsPage extends Fragment {
     final static String GET_USER = "3";
     final static String LEAVE_EVENT = "leaveEvent";
     final static String DELETE_EVENT = "deleteEvent";
+    final static String GET_ALL_EVENTS_OPTION = "2";
 
     private EventDetailsBackgroundTask task;
     private View eventView;
@@ -211,7 +212,6 @@ public class EventDetailsPage extends Fragment {
 
         deleteButton = (Button)eventView.findViewById(R.id.deleteEventButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
-            boolean confirm = false;
             @Override
             public void onClick(View view) {
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
@@ -219,27 +219,21 @@ public class EventDetailsPage extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which){
                             case DialogInterface.BUTTON_POSITIVE:
-                                confirm = true;
+                                deleteEvent();
+                                Toast.makeText(getActivity(), "You have deleted \"" + eventTitle + "\" :( ",
+                                        Toast.LENGTH_SHORT)
+                                        .show();
+                                goBackToMap();
                                 break;
                             case DialogInterface.BUTTON_NEGATIVE:
-                                confirm = false;
                                 break;
                         }
                     }
                 };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage("Are you sure to delete " + eventTitle + " ?").setPositiveButton("Yes", dialogClickListener)
+                builder.setMessage("Are you sure to delete \"" + eventTitle + "\" ?").setPositiveButton("Yes", dialogClickListener)
                         .setNegativeButton("No", dialogClickListener).show();
-
-                if (confirm == true){
-                    deleteEvent();
-                    Toast.makeText(getActivity(), "You have deleted " + eventTitle + " :( ",
-                            Toast.LENGTH_SHORT)
-                            .show();
-                    //personTask.execute(GET_USER);
-                    //goBackToMap();
-                }
             }
         });
 
@@ -374,10 +368,7 @@ public class EventDetailsPage extends Fragment {
     }
 
     public void deleteEvent(){
-        //task.execute(DELETE_EVENT, event_id);
-        Toast.makeText(getActivity(), "We are in delete " + eventTitle + " :( ",
-                Toast.LENGTH_SHORT)
-                .show();
+        task.execute(DELETE_EVENT, event_id);
     }
 
 }

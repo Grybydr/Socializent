@@ -199,7 +199,7 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
 
                 Log.d("DetailsBackgroundTask" , accessToken);
 
-                URL url = new URL("http://54.69.152.154:3000/leaveEvent?id=" + event_id);
+                URL url = new URL("http://54.69.152.154:3000/deleteEvent?id=" + event_id);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
                 conn.setReadTimeout(30000);
@@ -211,8 +211,8 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
                 conn.connect();
 
                 int responseCode = conn.getResponseCode();
-                Log.d("DetailsBackgroundTask", "Response code Leave: " + responseCode + "");
-                result = "RESULT Leave: " + responseCode;
+                Log.d("DetailsBackgroundTask", "Response code delete: " + responseCode + "");
+                result = "RESULT delete: " + responseCode;
 
                 conn.disconnect();
             } catch (UnsupportedEncodingException e) {
