@@ -82,15 +82,6 @@ public class DateTimeDialog extends DialogFragment implements DialogInterface.On
         myDatePicker = (DatePicker) view.findViewById(R.id.datePicker);
         myTimePicker = (TimePicker) view.findViewById(R.id.timePicker);
 
-        myDatePicker.init(year, month, day, new DatePicker.OnDateChangedListener() {
-            @Override
-            public void onDateChanged(DatePicker view, int selectedYear, int selectedMonth,int selectedDay) {
-                myYear = selectedYear;
-                myDay = selectedDay;
-                myMonth = selectedMonth;
-            }
-        });
-
         myDatePicker.setMinDate(System.currentTimeMillis() - 1000);
 
         int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
@@ -110,6 +101,9 @@ public class DateTimeDialog extends DialogFragment implements DialogInterface.On
                         if (getTargetFragment() == null) {
                             Log.e("DATETIME_PICKER", "Target Fragment is null!");
                         } else {
+                            myYear = myDatePicker.getYear();
+                            myDay = myDatePicker.getDayOfMonth();
+                            myMonth = myDatePicker.getMonth();
                             //noinspection deprecation
                             myDate = computeDateFromComponents(
                                     myYear,

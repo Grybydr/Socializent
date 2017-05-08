@@ -1,8 +1,10 @@
 package com.socializent.application.socializent.Fragments;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +42,7 @@ public class EventDetailsPage extends Fragment {
     final static String JOIN_EVENT_TAG = "joinEvent";
     final static String GET_USER = "3";
     final static String LEAVE_EVENT = "leaveEvent";
+    final static String DELETE_EVENT = "deleteEvent";
 
     private EventDetailsBackgroundTask task;
     private View eventView;
@@ -208,9 +211,35 @@ public class EventDetailsPage extends Fragment {
 
         deleteButton = (Button)eventView.findViewById(R.id.deleteEventButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
+            boolean confirm = false;
             @Override
             public void onClick(View view) {
-                goBackToMap();
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                confirm = true;
+                                break;
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                confirm = false;
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setMessage("Are you sure to delete " + eventTitle + " ?").setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
+
+                if (confirm == true){
+                    deleteEvent();
+                    Toast.makeText(getActivity(), "You have deleted " + eventTitle + " :( ",
+                            Toast.LENGTH_SHORT)
+                            .show();
+                    //personTask.execute(GET_USER);
+                    //goBackToMap();
+                }
             }
         });
 
@@ -342,6 +371,13 @@ public class EventDetailsPage extends Fragment {
 
     private void leaveEvent(){
         task.execute(LEAVE_EVENT, event_id);
+    }
+
+    public void deleteEvent(){
+        //task.execute(DELETE_EVENT, event_id);
+        Toast.makeText(getActivity(), "We are in delete " + eventTitle + " :( ",
+                Toast.LENGTH_SHORT)
+                .show();
     }
 
 }

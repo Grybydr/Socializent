@@ -39,6 +39,7 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
     final static String JOIN_EVENT_TAG = "joinEvent";
     final static String LOAD_EVENT_TAG = "loadTargetEvent";
     final static String LEAVE_EVENT = "leaveEvent";
+    final static String DELETE_EVENT = "deleteEvent";
 
     public ProgressDialog p_dialog;
     public Context context;
@@ -141,6 +142,48 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
              }
         }
         else if(function.equals(LEAVE_EVENT)){
+            try {
+                String event_id = params[1];
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")){
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+
+                Log.d("DetailsBackgroundTask" , accessToken);
+
+                URL url = new URL("http://54.69.152.154:3000/leaveEvent?id=" + event_id);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("DetailsBackgroundTask", "Response code Leave: " + responseCode + "");
+                result = "RESULT Leave: " + responseCode;
+
+                conn.disconnect();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(function.equals(DELETE_EVENT)){
             try {
                 String event_id = params[1];
                 String accessToken = "";
