@@ -30,6 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
@@ -43,9 +44,8 @@ public class EventDetailsPage extends Fragment {
     final static String GET_USER = "3";
     final static String LEAVE_EVENT = "leaveEvent";
     final static String DELETE_EVENT = "deleteEvent";
-    final static String GET_ALL_EVENTS_OPTION = "2";
+    final static String GET_ORGANIZER_INFO = "getOrgInfo";
 
-    private EventDetailsBackgroundTask task;
     private View eventView;
     private TextView titleView, placeView, timeDateView, feeView, participantCountView, organizerView, descView, categoryView;
     private TextView commentView, photoView, addressView;
@@ -55,12 +55,13 @@ public class EventDetailsPage extends Fragment {
     static String tempFee, tempRate, photoURL, comments;
     static String dateStr, address, placeName, event_id;
     static String tempParticipants;
-    static String organizer = "";
+    static String organizer = "", organizerFullname = "";
     static JSONArray participants;
     JSONObject currentUser;
     private String userEvents = "", currentUserID = "";
     List<HttpCookie> cookieList;
     PersonBackgroundTask personTask;
+    private EventDetailsBackgroundTask task;
 
     public static EventDetailsPage newInstance(String str, Event event) {
         EventDetailsPage fragment = new EventDetailsPage();
@@ -150,6 +151,9 @@ public class EventDetailsPage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        currentUserID = getUserId();
+        getOrganizerInfo();
+
         eventView = inflater.inflate(R.layout.event_details_page, container, false);
         titleView = (TextView) eventView.findViewById(R.id.titleView_d);
         titleView.setText(eventTitle);
@@ -158,7 +162,6 @@ public class EventDetailsPage extends Fragment {
         addressView = (TextView) eventView.findViewById(R.id.addressView_d);
         addressView.setText(address);
         timeDateView = (TextView) eventView.findViewById(R.id.timeDateView);
-
         timeDateView.setText(dateStr);
         feeView = (TextView) eventView.findViewById(R.id.feeView_d);
         feeView.setText(tempFee);
@@ -166,10 +169,10 @@ public class EventDetailsPage extends Fragment {
         participantCountView.setText(tempParticipantCount);
         categoryView = (TextView) eventView.findViewById(R.id.categoryView_d);
         categoryView.setText(category);
+        organizerView = (TextView) eventView.findViewById(R.id.organizer_d);
+        organizerView.setText(organizerFullname);
         descView = (TextView) eventView.findViewById(R.id.descriptionView_d);
         descView.setText(description);
-
-        currentUserID = getUserId();
 
         joinButton = (Button)eventView.findViewById(R.id.joinEventButton);
         joinButton.setOnClickListener(new View.OnClickListener() {
@@ -371,6 +374,25 @@ public class EventDetailsPage extends Fragment {
 
     public void deleteEvent(){
         task.execute(DELETE_EVENT, event_id);
+    }
+
+    private void getOrganizerInfo (){
+        String organizerStr = "";
+        try {
+            organizerStr = task.execute(GET_ORGANIZER_INFO, organizer).get();
+            try {
+                JSONObject organizerObject = new JSONObject(organizerStr);
+                organizerFullname = organizerObject.getString("fullName");
+            } catch (JSONException e) {
+                Log.d("EVENT_DETAILS", "Organizer JSON error");
+                e.printStackTrace();
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
 }
