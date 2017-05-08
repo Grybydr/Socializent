@@ -31,8 +31,11 @@ public class Event {
     String placeName;
     String organizer;
     private double fee;
+    JSONArray participants;
+    String id;
 
-    public Event(String name, String description, double fee, long date, String address,  String organizerId, EventTypes category, int eventRate, int participantCount,  ArrayList<String> comments, String photoUrl, Location l, String city, String placeName) {
+    public Event(String id,String name, String description, double fee, long date, String address,  String organizerId, EventTypes category, int eventRate, int participantCount,  ArrayList<String> comments, String photoUrl, Location l, String city, String placeName, JSONArray participants) {
+        this.id = id;
         this.name = name;
         this.participantCount = participantCount;
         this.date = date; //berk milisecond olarak yolluyormuş bunu dönüştürmek lazım
@@ -47,6 +50,7 @@ public class Event {
         this.l = l;
         this.city = city;
         this.placeName = placeName;
+        this.participants = participants;
     }
 
     public Event() {
@@ -72,10 +76,25 @@ public class Event {
         return participantCount;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public void setParticipantCount(int participantCount) {
         this.participantCount = participantCount;
     }
 
+    public JSONArray getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(JSONArray participants) {
+        this.participants = participants;
+    }
 
     public Location getL() {
         return l;

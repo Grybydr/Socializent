@@ -170,7 +170,7 @@ public class BottomBarSearch extends ListFragment  {
 
                 Fragment mFragment = new NavigationDrawerFirst();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.tabhost, mFragment);
+                transaction.replace(R.id.content_frame, mFragment);
                 transaction.commit();
 
 
@@ -289,9 +289,12 @@ public class BottomBarSearch extends ListFragment  {
                     String organizer = row.getString("organizer");
                     long millis = Long.parseLong(tempDate);
                     int partCount = Integer.parseInt(row.getString("participantCount"));
+                    String part = row.getString("participants");
+                    JSONArray participants =  new JSONArray(part);
+                    String id = row.getString("_id");
                     //String name, String description, double fee, long date, String address,  String organizerId, EventTypes category, int eventRate, int participantCount,  ArrayList<String> comments, String photoUrl, Location l, String city, String placeName) {
 
-                    e = new Event(eventTitle, description, fee, millis, address,organizer, type,0, partCount, null, "", l, city,placeName);
+                    e = new Event(id,eventTitle, description, fee, millis, address,organizer, type,0, partCount, null, "", l, city,placeName, participants);
                     conn.disconnect();
                     searchedEvents.add(e);
                 }

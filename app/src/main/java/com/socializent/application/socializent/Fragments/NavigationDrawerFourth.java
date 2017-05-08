@@ -75,7 +75,7 @@ public class NavigationDrawerFourth extends Fragment {
 
         friendObjList = new ArrayList<>();
         for (int i = 0; i < cookieList.size(); i++) {
-            if (cookieList.get(i).getName().equals("userProfile")) {
+            if (cookieList.get(i).getName().equals("user")) {
                 user = cookieList.get(i).getValue();
             }
         }

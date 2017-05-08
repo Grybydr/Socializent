@@ -216,6 +216,8 @@ public class EditProfile extends Fragment {
             @Override
             public void onClick(View v) {
                updateProfile(v);
+                PersonBackgroundTask loginTask = new PersonBackgroundTask(getContext());
+                loginTask.execute("3");
             }
         });
         return profileView;

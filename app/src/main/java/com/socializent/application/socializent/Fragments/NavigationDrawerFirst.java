@@ -86,7 +86,7 @@ public class NavigationDrawerFirst extends Fragment {
         cookieList = msCookieManager.getCookieStore().getCookies();
 
         for (int i = 0; i < cookieList.size(); i++) {
-            if (cookieList.get(i).getName().equals("userProfile")) {
+            if (cookieList.get(i).getName().equals("user")) {
                 user = cookieList.get(i).getValue();
                 break;
             }

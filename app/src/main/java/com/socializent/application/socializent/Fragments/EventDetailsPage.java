@@ -123,6 +123,7 @@ public class EventDetailsPage extends Fragment {
 
 
     private static void constructByObject(Event event){
+        event_id = event.getId();
         eventTitle = event.getName();
         placeName = event.getPlaceName();
         address = event.getAddress();
@@ -134,6 +135,7 @@ public class EventDetailsPage extends Fragment {
         tempParticipantCount =  String.valueOf(event.getParticipantCount());
         category = event.getEventType().toString();
         description = event.getDescription();
+        participants = event.getParticipants();
     }
 
     @Override
@@ -311,7 +313,7 @@ public class EventDetailsPage extends Fragment {
         String str = "";
         if(cookieList.size() != 0){
             for (int i = 0; i < cookieList.size(); i++) {
-                if (cookieList.get(i).getName().equals("userProfile")){
+                if (cookieList.get(i).getName().equals("user")){
                     str = cookieList.get(i).getValue();
                 }
                 else if(cookieList.get(i).getName().equals("userEvents")){

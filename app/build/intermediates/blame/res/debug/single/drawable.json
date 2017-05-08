@@ -52,20 +52,20 @@
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\travel.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_text_cursor_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_login.xml",
-        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\selector_login.xml"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\checked.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\checked.png"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_password_image.xml",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\selector_password_image.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\checked.png",
-        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\checked.png"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_login.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\selector_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_signup.xml",
@@ -76,12 +76,12 @@
         "source": "C:\\Users\\Irem\\.android\\build-cache\\bb96836ccb222f46e312a172a2be388dd61995a2\\output\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\bb96836ccb222f46e312a172a2be388dd61995a2\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\studyhdpi.png",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\studyhdpi.png"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\bb96836ccb222f46e312a172a2be388dd61995a2\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\username.xml",
@@ -212,12 +212,12 @@
         "source": "C:\\Users\\Irem\\.android\\build-cache\\bb96836ccb222f46e312a172a2be388dd61995a2\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_auth_dialog_cancel_background.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\drawable\\com_facebook_auth_dialog_cancel_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\concerthdpi.png",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\concerthdpi.png"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_auth_dialog_cancel_background.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\drawable\\com_facebook_auth_dialog_cancel_background.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
@@ -380,12 +380,12 @@
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\password.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_ic_search_api_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\lecturehdpi.png",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\lecturehdpi.png"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_favicon_blue.xml",

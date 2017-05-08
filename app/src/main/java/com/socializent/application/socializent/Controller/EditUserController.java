@@ -64,7 +64,6 @@ public class EditUserController extends AsyncTask< JSONObject, Object, String> {
 
                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
                 String str = sent.toString();
-                Log.d("RequestBody: ", str);
                 writer.write(str);
                 //writer.write(postDataParams.toString());
                 writer.flush();
@@ -72,14 +71,12 @@ public class EditUserController extends AsyncTask< JSONObject, Object, String> {
                 os.close();
 
                 int responseCode = conn.getResponseCode();
-                Log.d("Response Code: ", responseCode + "");
                 //if (responseCode == HttpsURLConnection.HTTP_OK) {
                 String line;
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
-                Log.d("Response: ", result);
                 //}
                 conn.disconnect();
                 return result;

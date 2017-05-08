@@ -317,7 +317,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
         String str = "";
         if(cookieList.size() != 0){
             for (int i = 0; i < cookieList.size(); i++) {
-                if (cookieList.get(i).getName().equals("userProfile")){
+                if (cookieList.get(i).getName().equals("user")){
                     str = cookieList.get(i).getValue();
                     break;
                 }

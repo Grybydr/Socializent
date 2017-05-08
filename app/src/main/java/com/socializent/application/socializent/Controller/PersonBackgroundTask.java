@@ -249,7 +249,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 }
                 Log.d("Response3: ", result);
                 //}
-                msCookieManager.getCookieStore().add(null,new HttpCookie("userProfile",result));
+               // msCookieManager.getCookieStore().add(null,new HttpCookie("userProfile",result));
                 JSONObject userObject = new JSONObject(result);
 
                 String friendJSONArray = userObject.getString("friends");
@@ -295,7 +295,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 /*user = new Person(userObject.getString("firstName"),userObject.getString("lastName"),
                         userObject.getString("fullName"),userObject.getString("birthDate"),userObject.getString("password"),
                         userObject.getString("email"),friends,interestAreas);22*/
-
+                // Person(String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<String> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
                 JSONObject jsonObject= new JSONObject();
                 jsonObject.put("_id", userObject.getString("_id"));
                 jsonObject.put("firstName", userObject.getString("firstName"));
@@ -309,7 +309,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 //jsonObject.put("friendRequests", friendReqArray);
                 //Hawk.put("user",user);
 
-                msCookieManager.getCookieStore().add(null,new HttpCookie("user",jsonObject.toString()));
+                msCookieManager.getCookieStore().add(null,new HttpCookie("user",result));
                 msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",eventsArray.toString()));
                 msCookieManager.getCookieStore().add(null,new HttpCookie("friendRequest", requestArray.toString()));
 
