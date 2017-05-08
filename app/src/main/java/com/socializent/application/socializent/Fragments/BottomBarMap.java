@@ -11,6 +11,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -44,6 +47,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -219,14 +224,17 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                     Bitmap bitPhoto = hold2.getBitmap();
 
                     Bitmap icon = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.concert);
+*/
+                    Drawable circleDrawable = getResources().getDrawable(R.drawable.birthday);
+                        BitmapDescriptor markerIcon = getMarkerIconFromDrawable(circleDrawable);
 
                     myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
                             .title(eventTitle)
-                            .icon(BitmapDescriptorFactory.fromBitmap(icon)));*/
+                            .icon(markerIcon));
 
-                        myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
+                       /* myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
                                 .title(eventTitle)
-                                .snippet(dateStr));
+                                .snippet(dateStr));*/
                     }
                     else {
                         Log.v("LOCATION_V", "Latitude or Longitude is NULL");
@@ -241,7 +249,14 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         return;
     }
 
-
+    private BitmapDescriptor getMarkerIconFromDrawable(Drawable drawable) {
+        Canvas canvas = new Canvas();
+        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        canvas.setBitmap(bitmap);
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        drawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
     /*
     *   Adds some features on the map once the map becomes ready
     */
