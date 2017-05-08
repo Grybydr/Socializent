@@ -130,10 +130,7 @@ public class BottomBarSearch extends ListFragment  {
 
                     }
                     else if(host.getCurrentTab() == 1){
-                        if(searchedString.getText().toString() != "")
-                            new SearchUserTask(getContext()).execute(searchedString.getText().toString());
-                        else
-                            Toast.makeText(getContext(),"Please enter an event name!", Toast.LENGTH_LONG).show();
+                        new SearchUserTask(getContext()).execute(searchedString.getText().toString());
 
                     }
 
@@ -289,10 +286,12 @@ public class BottomBarSearch extends ListFragment  {
                     double fee = Double.parseDouble(row.getString("fee"));
                     String tempDate = row.getString("date");
                       //TODO:: Organizer id
+                    String organizer = row.getString("organizer");
                     long millis = Long.parseLong(tempDate);
                     int partCount = Integer.parseInt(row.getString("participantCount"));
+                    //String name, String description, double fee, long date, String address,  String organizerId, EventTypes category, int eventRate, int participantCount,  ArrayList<String> comments, String photoUrl, Location l, String city, String placeName) {
 
-                    e = new Event(eventTitle, description, fee, millis, address, "", type,0, partCount, null, "", l, city,placeName);
+                    e = new Event(eventTitle, description, fee, millis, address,organizer, type,0, partCount, null, "", l, city,placeName);
                     conn.disconnect();
                     searchedEvents.add(e);
                 }

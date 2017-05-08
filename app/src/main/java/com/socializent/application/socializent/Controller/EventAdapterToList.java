@@ -52,12 +52,18 @@ public class EventAdapterToList extends ArrayAdapter<Event> {
         eventtime.setText(dateStr);
         EventTypes t = event.getEventType();
         String type = t.toString().toLowerCase();
-        String uri = "@drawable/" + type;  // where myresource (without the extension) is the file
+        String uri = "@drawable/" + type + "hdpi";  // where myresource (without the extension) is the file
 
-        int imageResource = mContext.getResources().getIdentifier(uri, "drawable", mContext.getPackageName());
+     /*  int imageResource = mContext.getResources().getIdentifier(type,"drawable", mContext.getPackageName());
         ImageView imageview= (ImageView)convertView.findViewById(R.id.eventImageView);
-        Drawable res = mContext.getResources().getDrawable(imageResource, null);
-        imageview.setImageDrawable(res);
+        Drawable res = mContext.getResources().getDrawable(imageResource, nul l);
+        imageview.setImageDrawable(res);*/
+
+        int res = mContext.getResources().getIdentifier(type,"drawable",mContext.getPackageName());
+        ImageView imageview= (ImageView)convertView.findViewById(R.id.eventImageView);
+        imageview.setImageResource(res);
+
+
 
         // Return the completed view to render on screen
         return convertView;
