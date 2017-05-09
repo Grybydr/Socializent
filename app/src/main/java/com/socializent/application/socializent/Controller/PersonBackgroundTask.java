@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.socializent.application.socializent.FacebookFragment;
 import com.socializent.application.socializent.Modal.Person;
+import com.socializent.application.socializent.R;
 import com.socializent.application.socializent.SignUp;
 import com.socializent.application.socializent.Template;
 import com.socializent.application.socializent.main;
@@ -58,11 +59,18 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     final static String SIGN_UP_OPTION = "1";
     final static String SEND_FRIEND_REQUEST = "6";
     final static String REPLY_FRIEND_REQUEST = "4";
+    final static String REMOVE_FRIEND = "7";
     private static int signedInBefore = 0;
+    public ProgressDialog p_dialog;
 
     public static java.net.CookieManager msCookieManager = new java.net.CookieManager();
     public PersonBackgroundTask(Context context){
         this.context=context;
+        this.p_dialog = new ProgressDialog(context);
+    }
+    protected void onPreExecute() {
+        this.p_dialog.setMessage(context.getResources().getString(R.string.loading));
+        this.p_dialog.show();
     }
 
     @Override
@@ -97,14 +105,16 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 Log.d("firstname", name);
                 Log.d("lastname", surname);
                 Log.d("email", email);
+                String fullname = name + " " + surname;
 
                 JSONObject requestBody = new JSONObject();
 
                 requestBody.put("username", username);
-                requestBody.put("firstname", name);
-                requestBody.put("lastname", surname);
+                requestBody.put("firstName", name);
+                requestBody.put("lastName", surname);
                 requestBody.put("password", password);
                 requestBody.put("email", email);
+                requestBody.put("fullName", fullname);
 
                 OutputStream os = conn.getOutputStream();
 
@@ -241,15 +251,15 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
                 int responseCode = conn.getResponseCode();
                 Log.d("Response Code: ", responseCode + "");
-                //if (responseCode == HttpsURLConnection.HTTP_OK) {
+
                 String line;
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
                 Log.d("Response3: ", result);
-                //}
-               // msCookieManager.getCookieStore().add(null,new HttpCookie("userProfile",result));
+
+
                 JSONObject userObject = new JSONObject(result);
 
                 String friendJSONArray = userObject.getString("friends");
@@ -260,54 +270,23 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                     friendArray.add(friendA.getString(k));
                 }
 
-
-              /*  String friendReqJSONArray2 = userObject.getString("friendRequests");
-                JSONArray frienReqA2 = new JSONArray(friendReqJSONArray2);
-                ArrayList<String> frienReqArray2 = new ArrayList<String>();
-                for (int l = 0; l < frienReqA2.length();l++) {
-                    frienReqArray2.add(frienReqA2.getString(l));
-                }*/
-
-
-           /*     ArrayList<Person> friends = new ArrayList<Person>();
-                Object obj = userObject.get("friends");
-                JSONArray jsonArray = (JSONArray)obj;
-
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    friends.add((Person)jsonArray.get(i));
-                }
-*/
                 ArrayList<String> interestAreas = new ArrayList<String>();
                 Object obj2 = userObject.get("interests");
                 JSONArray jsonArray2 = (JSONArray)obj2;
-
-
                 for (int i = 0; i < jsonArray2.length(); i++) {
                     interestAreas.add(jsonArray2.getString(i));
                 }
 
-                Object obj = userObject.get("friendRequests");
-                JSONArray requestArray = (JSONArray) obj;
-
-                Object object = userObject.get("events");
+                ArrayList<String> friendRequest = new ArrayList<>();
+                Object obj3 = userObject.get("friendRequests");
+                JSONArray requestArray = (JSONArray) obj3;
+                for (int i = 0; i < requestArray.length(); i++) {
+                    friendRequest.add(requestArray.getString(i));
+                }
+                friendRequest.size();
+                Object object = userObject.get("upcomingEvents");
                 JSONArray eventsArray = (JSONArray) object;
-                Log.d("upcomingEVENTS: ", eventsArray.toString());
-                /*user = new Person(userObject.getString("firstName"),userObject.getString("lastName"),
-                        userObject.getString("fullName"),userObject.getString("birthDate"),userObject.getString("password"),
-                        userObject.getString("email"),friends,interestAreas);22*/
-                // Person(String firstName, String lastName, String username, float birthDate, String password, String email,String bio,  ArrayList<String> friends, ArrayList<String> interests,ArrayList<Event> events,ArrayList<Event> upcomingEvents,ArrayList<Event> pastEvents,double rate) {
-                JSONObject jsonObject= new JSONObject();
-                jsonObject.put("_id", userObject.getString("_id"));
-                jsonObject.put("firstName", userObject.getString("firstName"));
-                jsonObject.put("lastName", userObject.getString("lastName"));
-                jsonObject.put("fullName", userObject.getString("fullName"));
-                jsonObject.put("birthDate", userObject.getString("birthDate"));
-                jsonObject.put("password", userObject.getString("password"));
-                jsonObject.put("email", userObject.getString("email"));
-                jsonObject.put("friends", userObject.get("friends"));
-                jsonObject.put("interests", userObject.get("interests"));
-                //jsonObject.put("friendRequests", friendReqArray);
-                //Hawk.put("user",user);
+
 
                 msCookieManager.getCookieStore().add(null,new HttpCookie("user",result));
                 msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",eventsArray.toString()));
@@ -469,6 +448,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
+                Log.d("Reply: ", result + "");
                 conn.disconnect();
             } catch (MalformedURLException e1) {
                 e1.printStackTrace();
@@ -477,12 +457,59 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
 
+        else if(type.equals(REMOVE_FRIEND)) {
+            //accessToken,id,decision
+            String accessToken = "";
+            String id = params[1];
+
+            List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+            for (int i = 0; i < cookieList.size(); i++) {
+                if (cookieList.get(i).getName().equals("x-access-token")) {
+                    accessToken = cookieList.get(i).getValue();
+                    break;
+                }
+            }
+            String request = " http://54.69.152.154:3000/removeFriend?id=" + id;
+
+            URL url = null;
+            try {
+                url = new URL(request);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                String line;
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                conn.disconnect();
+            } catch (MalformedURLException e1) {
+                e1.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return result;
     }
 
-
+    protected void onProgressUpdate(Integer... values) {
+        this.p_dialog.show();
+    }
 
     @Override
     protected void onPostExecute(String result) {
@@ -497,16 +524,6 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             if (context.getClass() == SignUp.class){
                 Intent forMain = new Intent(context, main.class);
                 context.startActivity(forMain);
-            }
-            else{
-                PersonBackgroundTask getCurrentUserTask = new PersonBackgroundTask(context);
-                getCurrentUserTask.execute(GET_PERSON_OPTION);
-
-                EventBackgroundTask getAllAvailableEvents = new EventBackgroundTask();
-                getAllAvailableEvents.execute(GET_ALL_EVENTS_OPTION);
-
-                Intent intentNavigationBar = new Intent(context, Template.class);
-                context.startActivity(intentNavigationBar);
             }
             return;
         }
@@ -535,5 +552,9 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
         }
         else
             Log.d("Reached end and user:",result);
+
+        if (p_dialog != null && p_dialog.isShowing())
+            p_dialog.dismiss();
+
     }
 }

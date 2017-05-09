@@ -152,7 +152,7 @@ public class EventDetailsPage extends Fragment {
                              Bundle savedInstanceState) {
 
         currentUserID = getUserId();
-        getOrganizerInfo();
+        //getOrganizerInfo();
 
         eventView = inflater.inflate(R.layout.event_details_page, container, false);
         titleView = (TextView) eventView.findViewById(R.id.titleView_d);

@@ -44,7 +44,7 @@ public class NavigationDrawerFirst extends Fragment {
     //CircleDrawable circle;
     View profileView;
     ImageView imagePen;
-    ImageView addFriend;
+    ImageView addFriend,removeFriend;
     TextView userNameText;
     TextView bioText;
     TextView emailText;
@@ -78,6 +78,7 @@ public class NavigationDrawerFirst extends Fragment {
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         imagePen = (ImageView) profileView.findViewById(R.id.edit_pen);
         addFriend = (ImageView) profileView.findViewById(R.id.add_friend);
+        removeFriend = (ImageView) profileView.findViewById(R.id.remove_friend);
         userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
         bioText = (TextView) profileView.findViewById(R.id.user_profile_short_bio);
         emailText = (TextView) profileView.findViewById(R.id.user_profile_email);
@@ -116,6 +117,7 @@ public class NavigationDrawerFirst extends Fragment {
     public void myProfile(){
         imagePen.setVisibility(View.VISIBLE);
         addFriend.setVisibility(View.GONE);
+        removeFriend.setVisibility(View.GONE);
         imagePen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,6 +194,7 @@ public class NavigationDrawerFirst extends Fragment {
             }
         }
         if(!alreadyFriend){
+            removeFriend.setVisibility(View.GONE);
             for(int k = 0; k< searchedPerson.getFriendRequests().size(); k++){ //req gönderenlerin idleri
                 if(activeUserId.equals(searchedPerson.getFriendRequests().get(k))){
                     friendReqSent = true;
@@ -203,6 +206,7 @@ public class NavigationDrawerFirst extends Fragment {
                 searchedPerson = null;
             }
             else{
+
                 addFriend.setVisibility(View.VISIBLE);
                 addFriend.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -215,16 +219,34 @@ public class NavigationDrawerFirst extends Fragment {
         }
         else{
             addFriend.setImageResource(R.drawable.checked);
-            searchedPerson = null;
+            removeFriend.setVisibility(View.VISIBLE);
+            removeFriend.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    removeFriend(v);
+                }
+            });
+
         }
+
     }
+
+    private void removeFriend(View v) {
+        Toast.makeText(getContext(), "You are not friends anymore!", Toast.LENGTH_SHORT).show();
+        conn.execute("7", searchedPerson.getId());
+        removeFriend.setVisibility(View.GONE);
+        searchedPerson = null;
+        //conn.execute("3");
+
+
+    }
+
     public void addFriend(View view) throws RuntimeException{
         Toast.makeText(getContext(), "Friend Request Sent!", Toast.LENGTH_SHORT).show();
-        //TODO:: searchedPerson become null
-
         conn.execute("6", searchedPerson.getId());
-        addFriend.setImageResource(R.drawable.checked);
+        addFriend.setImageResource(R.drawable.waiting);
         searchedPerson = null;
+       // conn.execute("3");
 
     }
 }

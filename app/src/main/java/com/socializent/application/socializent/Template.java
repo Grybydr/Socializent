@@ -243,4 +243,7 @@ public class Template extends AppCompatActivity {
                 .replace(R.id.content_frame, openFragment).commit(); //eskiden mFragment vardı
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 }

@@ -224,13 +224,14 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                     Bitmap bitPhoto = hold2.getBitmap();
 
                     Bitmap icon = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.concert);
-*/
+
                     Drawable circleDrawable = getResources().getDrawable(R.drawable.birthday);
-                        BitmapDescriptor markerIcon = getMarkerIconFromDrawable(circleDrawable);
+                        BitmapDescriptor markerIcon = getMarkerIconFromDrawable(circleDrawable);*/
 
                     myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
                             .title(eventTitle)
-                            .icon(markerIcon));
+                            .snippet(dateStr)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
                        /* myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
                                 .title(eventTitle)
@@ -249,14 +250,15 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         return;
     }
 
-    private BitmapDescriptor getMarkerIconFromDrawable(Drawable drawable) {
+  /*  private BitmapDescriptor getMarkerIconFromDrawable(Drawable drawable) {
         Canvas canvas = new Canvas();
         Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap.createScaledBitmap(bitmap, 20, 20, false);
         canvas.setBitmap(bitmap);
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         drawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
-    }
+    }*/
     /*
     *   Adds some features on the map once the map becomes ready
     */

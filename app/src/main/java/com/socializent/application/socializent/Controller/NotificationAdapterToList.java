@@ -58,6 +58,7 @@ public class NotificationAdapterToList extends ArrayAdapter<Person> {
                 notification.setText("You are now friends!");
                 acceptButton.setClickable(false);
                 rejectButton.setClickable(false);
+          //      task.execute("3");
 
             }
         });
@@ -65,17 +66,16 @@ public class NotificationAdapterToList extends ArrayAdapter<Person> {
 
             @Override
             public void onClick(View arg0) {
-                task.execute("4",s.getId(),"2");
+                task.execute("4",s.getId(),"0");
                 notification.setText("You rejected the request!");
                 acceptButton.setClickable(false);
                 rejectButton.setClickable(false);
+//                task.execute("3");
             }
         });
 
 
         return convertView;
     }
-    public void sendRequest(String accessToken, String id, String decision){
 
-    }
 }

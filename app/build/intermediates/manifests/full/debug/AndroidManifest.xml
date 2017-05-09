@@ -51,7 +51,7 @@
 
         <activity android:name="com.socializent.application.socializent.main" >
             <intent-filter>
-                <action android:name="android.intent.action.main" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
