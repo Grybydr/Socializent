@@ -238,6 +238,7 @@ public class BottomBarSearch extends ListFragment  {
             Event e = null;
             try {
                 url = new URL("http://54.69.152.154:3000/searchEvent?q=" + queryString);
+                //url = new URL("http://54.69.152.154:3000/recommend");
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
