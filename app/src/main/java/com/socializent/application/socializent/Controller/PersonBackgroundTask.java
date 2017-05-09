@@ -514,6 +514,8 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
+        if (p_dialog != null && p_dialog.isShowing())
+            p_dialog.dismiss();
 
         if (result == null || result.equals("0") ){
             Toast.makeText(context,"Wrong Credentials or you are not connected to internet",Toast.LENGTH_LONG).show();
@@ -553,8 +555,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
         else
             Log.d("Reached end and user:",result);
 
-        if (p_dialog != null && p_dialog.isShowing())
-            p_dialog.dismiss();
+
 
     }
 }

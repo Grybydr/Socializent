@@ -53,6 +53,8 @@ public class NavigationDrawerFirst extends Fragment {
     JSONObject userObject = null;
     String user = "";
     PersonBackgroundTask conn;
+    PersonBackgroundTask refresh;
+
     String activeUserId;
     List<HttpCookie> cookieList;
     public NavigationDrawerFirst() {
@@ -176,9 +178,10 @@ public class NavigationDrawerFirst extends Fragment {
         boolean alreadyFriend = false;
         boolean friendReqSent = false;
         conn = new PersonBackgroundTask(getContext());
+        refresh = new PersonBackgroundTask(getContext());
         imagePen.setVisibility(View.GONE);
-        String fullname = searchedPerson.getFirstName() + searchedPerson.getLastName();
-        userNameText.setText(fullname);
+        String fullName = searchedPerson.getFirstName() + searchedPerson.getLastName();
+        userNameText.setText(fullName);
         emailText.setText(searchedPerson.getEmail());
         bioText.setText(searchedPerson.getBio());
 
@@ -187,7 +190,13 @@ public class NavigationDrawerFirst extends Fragment {
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         String dateStr = df.format(date);
         birthdayText.setText(dateStr);
-        for(int k = 0; k< searchedPerson.getFriends().size(); k++){ //req gönderenlerin idleri
+        if(activeUserId.equals(searchedPerson.getId())){
+            alreadyFriend = true;
+            myProfile();
+            return;
+
+        }
+        for(int k = 0; k< searchedPerson.getFriends().size(); k++){
             if(activeUserId.equals(searchedPerson.getFriends().get(k))){
                 alreadyFriend = true;
                 break;
@@ -224,6 +233,7 @@ public class NavigationDrawerFirst extends Fragment {
                 @Override
                 public void onClick(View v) {
                     removeFriend(v);
+                    addFriend.setVisibility(View.VISIBLE);
                 }
             });
 
@@ -236,8 +246,9 @@ public class NavigationDrawerFirst extends Fragment {
         conn.execute("7", searchedPerson.getId());
         removeFriend.setVisibility(View.GONE);
         searchedPerson = null;
-        //conn.execute("3");
-
+        refresh.execute("3");
+        addFriend.setVisibility(View.GONE);
+        //addFriend.setImageResource(R.drawable.ic_action_user_add);
 
     }
 
@@ -246,7 +257,7 @@ public class NavigationDrawerFirst extends Fragment {
         conn.execute("6", searchedPerson.getId());
         addFriend.setImageResource(R.drawable.waiting);
         searchedPerson = null;
-       // conn.execute("3");
+        refresh.execute("3");
 
     }
 }

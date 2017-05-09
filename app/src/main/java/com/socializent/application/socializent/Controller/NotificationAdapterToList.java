@@ -31,12 +31,13 @@ public class NotificationAdapterToList extends ArrayAdapter<Person> {
     Context mContext;
     String accessToken;
     PersonBackgroundTask  task;
+    PersonBackgroundTask refresh;
     public NotificationAdapterToList(Context context, ArrayList<Person> notification) {
         super(context, 0, notification);
         mContext = context;
     }
     public View getView(int position, View convertView, ViewGroup parent) {
-        task = new PersonBackgroundTask(mContext);
+
         s = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
@@ -50,15 +51,18 @@ public class NotificationAdapterToList extends ArrayAdapter<Person> {
         final ImageButton acceptButton = (ImageButton) convertView.findViewById(R.id.accept_user);
         final ImageButton rejectButton = (ImageButton) convertView.findViewById(R.id.reject_user);
         accessToken = BottomBarNotifications.activeUserId ;
+
         acceptButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
+                task = new PersonBackgroundTask(mContext);
+                refresh = new PersonBackgroundTask(mContext);
                 task.execute("4",s.getId(),"1");
                 notification.setText("You are now friends!");
-                acceptButton.setClickable(false);
-                rejectButton.setClickable(false);
-          //      task.execute("3");
+                acceptButton.setVisibility(View.GONE);
+                rejectButton.setVisibility(View.GONE);
+                refresh.execute("3");
 
             }
         });
@@ -66,11 +70,13 @@ public class NotificationAdapterToList extends ArrayAdapter<Person> {
 
             @Override
             public void onClick(View arg0) {
+                task = new PersonBackgroundTask(mContext);
+                refresh = new PersonBackgroundTask(mContext);
                 task.execute("4",s.getId(),"0");
                 notification.setText("You rejected the request!");
-                acceptButton.setClickable(false);
-                rejectButton.setClickable(false);
-//                task.execute("3");
+                acceptButton.setVisibility(View.GONE);
+                rejectButton.setVisibility(View.GONE);
+                refresh.execute("3");
             }
         });
 
