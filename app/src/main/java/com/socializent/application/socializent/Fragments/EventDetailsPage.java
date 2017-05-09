@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.socializent.application.socializent.Controller.EventBackgroundTask;
 import com.socializent.application.socializent.Controller.EventDetailsBackgroundTask;
 import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Modal.Event;
@@ -45,6 +47,7 @@ public class EventDetailsPage extends Fragment {
     final static String LEAVE_EVENT = "leaveEvent";
     final static String DELETE_EVENT = "deleteEvent";
     final static String GET_ORGANIZER_INFO = "getOrgInfo";
+    final static String GET_ALL_EVENTS_OPTION = "2";
 
     private View eventView;
     private TextView titleView, placeView, timeDateView, feeView, participantCountView, organizerView, descView, categoryView;
@@ -55,13 +58,14 @@ public class EventDetailsPage extends Fragment {
     static String tempFee, tempRate, photoURL, comments;
     static String dateStr, address, placeName, event_id;
     static String tempParticipants;
-    static String organizer = "", organizerFullname = "";
+    static String organizer = "", organizerName = "";
     static JSONArray participants;
     JSONObject currentUser;
     private String userEvents = "", currentUserID = "";
     List<HttpCookie> cookieList;
-    PersonBackgroundTask personTask;
-    private EventDetailsBackgroundTask task;
+    PersonBackgroundTask personTaskJoin, personTaskLeave;
+    private EventDetailsBackgroundTask organizer_task, joinTask, deleteTask, leaveTask;
+    private EventBackgroundTask eventBTask, eventBTask_2;
 
     public static EventDetailsPage newInstance(String str, Event event) {
         EventDetailsPage fragment = new EventDetailsPage();
@@ -143,16 +147,14 @@ public class EventDetailsPage extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         cookieList = msCookieManager.getCookieStore().getCookies();
-        task = new EventDetailsBackgroundTask(getContext());
-        personTask = new PersonBackgroundTask(getContext());
+
+        currentUserID = getUserId();
+        getOrganizerInfo();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        currentUserID = getUserId();
-        //getOrganizerInfo();
 
         eventView = inflater.inflate(R.layout.event_details_page, container, false);
         titleView = (TextView) eventView.findViewById(R.id.titleView_d);
@@ -170,7 +172,7 @@ public class EventDetailsPage extends Fragment {
         categoryView = (TextView) eventView.findViewById(R.id.categoryView_d);
         categoryView.setText(category);
         organizerView = (TextView) eventView.findViewById(R.id.organizer_d);
-        organizerView.setText(organizerFullname);
+        organizerView.setText(organizerName);
         descView = (TextView) eventView.findViewById(R.id.descriptionView_d);
         descView.setText(description);
 
@@ -185,7 +187,8 @@ public class EventDetailsPage extends Fragment {
                             .show();
                     joinButton.setVisibility(View.GONE);
                     leaveButton.setVisibility(View.VISIBLE);
-                    personTask.execute(GET_USER);
+                    personTaskJoin = new PersonBackgroundTask(getContext());
+                    personTaskJoin.execute(GET_USER);
                 }
                 else {
                     Toast.makeText(getActivity(), "Participant limit is full for this event.",
@@ -204,14 +207,15 @@ public class EventDetailsPage extends Fragment {
                         .show();
                 joinButton.setVisibility(View.VISIBLE);
                 leaveButton.setVisibility(View.GONE);
-                personTask.execute(GET_USER);
+                personTaskLeave = new PersonBackgroundTask(getContext());
+                personTaskLeave.execute(GET_USER);
             }
         });
         editButton = (Button)eventView.findViewById(R.id.editEventButton);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goBackToMap();
+                goToEdit();
             }
         });
 
@@ -225,6 +229,8 @@ public class EventDetailsPage extends Fragment {
                         switch (which){
                             case DialogInterface.BUTTON_POSITIVE:
                                 deleteEvent();
+                                eventBTask = new EventBackgroundTask();
+                                eventBTask.execute(GET_ALL_EVENTS_OPTION);
                                 Toast.makeText(getActivity(), "You have deleted \"" + eventTitle + "\" :( ",
                                         Toast.LENGTH_SHORT)
                                         .show();
@@ -265,6 +271,8 @@ public class EventDetailsPage extends Fragment {
         goBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                eventBTask_2 = new EventBackgroundTask();
+                eventBTask_2.execute(GET_ALL_EVENTS_OPTION);
                 goBackToMap();
             }
         });
@@ -301,7 +309,8 @@ public class EventDetailsPage extends Fragment {
     }
 
     private void joinEvent(){
-        task.execute(JOIN_EVENT_TAG, event_id);
+        joinTask = new EventDetailsBackgroundTask(getContext());
+        joinTask.execute(JOIN_EVENT_TAG, event_id);
     }
 
     private boolean isOrganizer(){
@@ -312,7 +321,7 @@ public class EventDetailsPage extends Fragment {
     }
 
     private String getUserId(){
-        String result = "";
+        String result_id = "";
         String str = "";
         if(cookieList.size() != 0){
             for (int i = 0; i < cookieList.size(); i++) {
@@ -327,7 +336,7 @@ public class EventDetailsPage extends Fragment {
             if(!str.equals("")){
                 try {
                     currentUser = new JSONObject(str);
-                    result = currentUser.getString("_id");
+                    result_id = currentUser.getString("_id");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -339,11 +348,11 @@ public class EventDetailsPage extends Fragment {
         else {
             Log.v("EVENT_DETAILS", "User Profile cannot be extracted");
         }
-        return result;
+        return result_id;
     }
 
     private boolean isJoined(){
-        if(!userEvents.equals("")){
+        if(!userEvents.equals("") || !userEvents.equals("[]")){
             try {
                 JSONArray userEventsA = new JSONArray(userEvents);
 
@@ -369,30 +378,33 @@ public class EventDetailsPage extends Fragment {
     }
 
     private void leaveEvent(){
-        task.execute(LEAVE_EVENT, event_id);
+        leaveTask = new EventDetailsBackgroundTask(getContext());
+        leaveTask.execute(LEAVE_EVENT, event_id);
     }
 
     public void deleteEvent(){
-        task.execute(DELETE_EVENT, event_id);
+        deleteTask = new EventDetailsBackgroundTask(getContext());
+        deleteTask.execute(DELETE_EVENT, event_id);
     }
 
     private void getOrganizerInfo (){
-        String organizerStr = "";
+        organizer_task = new EventDetailsBackgroundTask(getContext());
         try {
-            organizerStr = task.execute(GET_ORGANIZER_INFO, organizer).get();
-            try {
-                JSONObject organizerObject = new JSONObject(organizerStr);
-                organizerFullname = organizerObject.getString("fullName");
-            } catch (JSONException e) {
-                Log.d("EVENT_DETAILS", "Organizer JSON error");
-                e.printStackTrace();
-            }
-
+            organizerName = organizer_task.execute(GET_ORGANIZER_INFO, organizer).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+    }
+
+    public void goToEdit() {
+
+        Fragment editEvent = EditEvent.newInstance(event_id);
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_frame, editEvent);
+        transaction.commit();
+
     }
 
 }

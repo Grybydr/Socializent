@@ -41,9 +41,12 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
     final static String LEAVE_EVENT = "leaveEvent";
     final static String DELETE_EVENT = "deleteEvent";
     final static String GET_ORGANIZER_INFO = "getOrgInfo";
+    final static String GET_EVENT_DETAILS = "getEventDetails";
+    final static String EDIT_EVENT = "editEvent";
 
     public ProgressDialog p_dialog;
     public Context context;
+    public String type = "";
 
     public EventDetailsBackgroundTask(Context context){
         this.context = context;
@@ -59,7 +62,8 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
     @Override
     protected String doInBackground(String... params) {
         String function = params[0];
-        String result = "";
+        String result_background = "";
+        type = params[0];
 
         if(function.equals(LOAD_EVENT_TAG)) {
             try {
@@ -82,13 +86,14 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
                  String line;
                  BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                  while ((line = br.readLine()) != null) {
-                     result += line;
+                     result_background += line;
                  }
-                 Log.v("DetailsBackgroundTask", result);
-                 HttpCookie accessTokenCookie = new HttpCookie("targetEvent", result);
+                 Log.v("DetailsBackgroundTask", result_background);
+                 HttpCookie accessTokenCookie = new HttpCookie("targetEvent", result_background);
                  msCookieManager.getCookieStore().add(null, accessTokenCookie);
 
                  conn.disconnect();
+                Log.v("DetailsBackgroundTask", "TASK FINISHED = " + type);
             } catch (ProtocolException e) {
                 e.printStackTrace();
                 Log.d("DetailsBackgroundTask", "protocol error");
@@ -129,9 +134,10 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
 
                  int responseCode = conn.getResponseCode();
                  Log.d("DetailsBackgroundTask", "Response code Join: " + responseCode + "");
-                 result = "RESULT Join: " + responseCode;
+                 result_background = "RESULT Join: " + responseCode;
 
                  conn.disconnect();
+                 Log.v("DetailsBackgroundTask", "TASK FINISHED = " + type);
              } catch (UnsupportedEncodingException e) {
                  e.printStackTrace();
              } catch (ProtocolException e) {
@@ -171,9 +177,10 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
 
                 int responseCode = conn.getResponseCode();
                 Log.d("DetailsBackgroundTask", "Response code Leave: " + responseCode + "");
-                result = "RESULT Leave: " + responseCode;
+                result_background = "RESULT Leave: " + responseCode;
 
                 conn.disconnect();
+                Log.v("DetailsBackgroundTask", "TASK FINISHED = " + type);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             } catch (ProtocolException e) {
@@ -213,9 +220,10 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
 
                 int responseCode = conn.getResponseCode();
                 Log.d("DetailsBackgroundTask", "Response code delete: " + responseCode + "");
-                result = "RESULT delete: " + responseCode;
+                result_background = "RESULT delete: " + responseCode;
 
                 conn.disconnect();
+                Log.v("DetailsBackgroundTask", "TASK FINISHED = " + type);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             } catch (ProtocolException e) {
@@ -244,12 +252,23 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
                 int responseCode = conn.getResponseCode();
                 Log.d("DetailsBackgroundTask", "Response code organizerInfo: " + responseCode + "");
                 String line;
+                String result = "";
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 while ((line = br.readLine()) != null) {
                     result += line;
                 }
 
+                JSONObject organizerObject = null;
+                try {
+                    organizerObject = new JSONObject(result);
+                    result_background = organizerObject.getString("username");
+                } catch (JSONException e) {
+                    Log.e("DetailsBackgroundTask", "GET ORGANIZER INFO JSON ERROR");
+                    e.printStackTrace();
+                }
+
                 conn.disconnect();
+                Log.v("DetailsBackgroundTask", "TASK FINISHED = " + type);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             } catch (ProtocolException e) {
@@ -260,10 +279,146 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
                 e.printStackTrace();
             }
         }
-        else {
-            result = "DefaultCase";
+        else if(function.equals(GET_EVENT_DETAILS)){
+            try {
+                String event_id = params[1];
+
+                URL url = new URL("http://54.69.152.154:3000/eventDetail?id=" + event_id);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                //conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("DetailsBackgroundTask", "Response code eventDetails: " + responseCode + "");
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result_background += line;
+                }
+
+                conn.disconnect();
+                Log.v("DetailsBackgroundTask", "TASK FINISHED = " + type);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        return result;
+        else if (function.equals(EDIT_EVENT)){
+            try {
+
+                String title = params[1];
+                String dateToConvertMiliseconds = params[2];
+                String placeCity = params[3];
+                String longitudeToConvertFloat = params[4];
+                String latitudeToConvertFloat = params[5];
+                String myAddress = params[6];
+                String placeName = params[7];
+                String participantCount = params[8];
+                String category = params[9];
+                String description = params[10];
+                String feeToConvert = params[11];
+                String organizerId = params[12];
+                String event_id = params[13];
+
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")){
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+
+                Log.d("Access Token in Event: " ,accessToken);
+
+                URL url = new URL("http://54.69.152.154:3000/editEvent?id=" + event_id);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                //conn.connect();
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken.toString());
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+                conn.connect();
+
+                //Conversions
+                double latitude = Double.parseDouble(latitudeToConvertFloat);
+                double longitude = Double.parseDouble(longitudeToConvertFloat);
+                int parCount = Integer.parseInt(participantCount);
+                double fee = Double.parseDouble(feeToConvert);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+                Date oldDate = sdf.parse(dateToConvertMiliseconds);
+                long dateInMiliseconds = oldDate.getTime();
+
+                JSONObject requestBody = new JSONObject();
+                requestBody.put("name", title);
+                requestBody.put("date", dateInMiliseconds);
+                requestBody.put("city", placeCity);
+                requestBody.put("longitude", longitude);
+                requestBody.put("latitude", latitude);
+                requestBody.put("address", myAddress);
+                requestBody.put("placeName", placeName);
+                requestBody.put("category", category);
+                requestBody.put("description", description);
+                requestBody.put("fee", fee);
+                requestBody.put("participantCount", parCount);
+                requestBody.put("organizer", organizerId);
+
+                OutputStream os = conn.getOutputStream();
+
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+                String str = requestBody.toString();
+                Log.d("DetailsBackgroundTask", str);
+                writer.write(str);
+                writer.flush();
+                writer.close();
+                os.close();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("DetailsBackgroundTask", responseCode + "");
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result_background += line;
+                }
+                Log.d("DetailsBackgroundTask", result_background);
+
+                conn.disconnect();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            result_background = "DefaultCase";
+        }
+        return result_background;
     }
     @Override
     protected void onProgressUpdate(Integer... values) {
@@ -274,14 +429,16 @@ public class EventDetailsBackgroundTask extends AsyncTask<String, Integer , Stri
     protected void onPostExecute(String result) {
 
         if (result == null || result.equals("0") || result.equals("") || result.trim().equals("DefaultCase")){
-            Log.d("DetailsBackgroundTask", " Error in onPostExecute " + result);
+            Log.v("DetailsBackgroundTask", " Error in onPostExecute " + type + " = " + result);
             return;
         }
         else
-            Log.d("DetailsBackgroundTask" , "Result successful: " + result);
+            Log.v("DetailsBackgroundTask" , "Result successful: " + type  + " = " + result);
 
         if (p_dialog != null && p_dialog.isShowing())
             p_dialog.dismiss();
+
+        Log.v("DetailsBackgroundTask", "TASK FINISHED POsT = " + type);
 
     }
 }

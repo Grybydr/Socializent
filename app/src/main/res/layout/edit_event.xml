@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="900dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/editEventTag"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textAlignment="center"
+            android:text="Edit Event"
+            android:textColor="@color/colorAccent"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/placeTag"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editEventTag"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/place"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/placeView"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/placeTag"
+            android:layout_below="@+id/editEventTag"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/changePlaceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PICK"
+            android:layout_toRightOf="@id/placeView"
+            android:layout_below="@+id/editEventTag" />
+
+        <TextView
+            android:id="@+id/titleTag"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/placeTag"
+            android:layout_marginTop="20dp"
+            android:text="Title: "
+            android:textSize="20sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="40dp" />
+
+        <EditText
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/placeTag"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/titleTag"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/timeDateTag"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/titleView"
+            android:layout_marginTop="20dp"
+            android:text="@string/date_time_tag"
+            android:textSize="20sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="40dp" />
+
+        <EditText
+            android:id="@+id/timeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/timeDateTag"
+            android:focusableInTouchMode="false"
+            android:layout_below="@+id/titleView"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/feeTag"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/timeView"
+            android:layout_marginTop="20dp"
+            android:text="Fee: "
+            android:textSize="20sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="40dp" />
+
+        <EditText
+            android:id="@+id/feeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/feeTag"
+            android:layout_below="@+id/timeView" />
+
+        <TextView
+            android:id="@+id/pCountTag"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/feeView"
+            android:layout_marginTop="20dp"
+            android:text="Participant Count: "
+            android:textSize="20sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="40dp" />
+
+        <EditText
+            android:id="@+id/participantCountView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/feeView"
+            android:layout_toRightOf="@id/pCountTag"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/categoryView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/participantCountView"
+            android:layout_marginTop="20dp"
+            android:text="@string/category"
+            android:textSize="20sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="40dp" />
+
+        <Spinner
+            android:id="@+id/category_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/participantCountView"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/categoryView"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/descTag"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/categoryView"
+            android:layout_marginTop="20dp"
+            android:text="Description: "
+            android:textSize="20sp"
+            android:theme="@style/TextTheme"
+            tools:layout_height="40dp" />
+
+        <ScrollView
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/categoryView"
+            android:id="@+id/scrollView_desc"
+            android:layout_toEndOf="@id/descTag"
+            android:layout_marginTop="20dp">
+            <RelativeLayout
+                android:layout_width="240dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/descriptionView"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="40dp"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/saveChangesButton_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE"
+            android:layout_alignBaseline="@+id/calcelButton_edit"
+            android:layout_alignBottom="@+id/calcelButton_edit"
+            android:layout_toStartOf="@+id/changePlaceButton"
+            android:layout_marginEnd="20dp" />
+
+        <Button
+            android:id="@+id/calcelButton_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="55dp"
+            android:layout_below="@+id/scrollView_desc"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

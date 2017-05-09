@@ -75,6 +75,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
@@ -90,6 +91,8 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private static final long WEEK_IN_MILLIS = 604800000;
     private static final String TURKEY_TAG = "Turkey";
     final static String GET_ALL_EVENTS_OPTION = "2";
+    static final float COORDINATE_OFFSET = 0.00004f;
+    final int MAX_MARKER_COUNT = 3;
 
     private final LatLng defaultLocation = new LatLng(39.868010, 32.748823); //Bilkent's Coordinates
 
@@ -101,7 +104,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private View mapView;
     private String myAddress = "";
 
-    EventDetailsBackgroundTask s_task;
+    EventDetailsBackgroundTask s_task, marker_task;
     List<HttpCookie> cookieList;
     JSONObject user;
 
@@ -165,10 +168,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private void retrieveEvents(){
 
         String events = "";
-        for (int i = 0; i < cookieList.size(); i++) {
+        for (int i = cookieList.size() - 1; i >= 0; i++) {
             if (cookieList.get(i).getName().equals("allEvents")){
                 events = cookieList.get(i).getValue();
-                //Log.v("LOCATION_V", "ALLEVENTS: " + events);
                 break;
             }
         }
@@ -189,14 +191,11 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 if (event_millis > c_dateInMiliseconds + WEEK_IN_MILLIS)
                     continue;
                 else {
+
                     DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
                     Calendar calendar = Calendar.getInstance();
                     calendar.setTimeInMillis(event_millis);
                     dateStr = df.format(calendar.getTime());
-
-                    //TODO: custom image for pins
-                    eventType = row.getString("category").toLowerCase();
-                    String pin = "@drawable/" + eventType;
 
                     if (eventTitle == "null" || eventTitle.isEmpty() || eventTitle == "" )
                         eventTitle = "Event";
@@ -208,7 +207,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                     if ((tempLat != "null" && !tempLat.isEmpty()) && (tempLong != "null" && !tempLong.isEmpty())) {
 
                         //TODO: filtering: if(Double.parseDouble(tempTime) + )
-
                         double t_lat = Double.parseDouble(tempLat);
                         double t_longi = Double.parseDouble(tempLong);
 
@@ -218,24 +216,9 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                     Double longi = Double.valueOf(df.format(t_longi));
                     Log.v("LOCATION_V", "lat / long" + lat + " " + longi +"");*/
 
-
-                    /*Drawable hold = ContextCompat.getDrawable(getActivity(), R.drawable.concert);
-                    BitmapDrawable hold2 = (BitmapDrawable) hold;
-                    Bitmap bitPhoto = hold2.getBitmap();
-
-                    Bitmap icon = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.concert);
-
-                    Drawable circleDrawable = getResources().getDrawable(R.drawable.birthday);
-                        BitmapDescriptor markerIcon = getMarkerIconFromDrawable(circleDrawable);*/
-
                     myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
                             .title(eventTitle)
-                            .snippet(dateStr)
-                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-
-                       /* myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
-                                .title(eventTitle)
-                                .snippet(dateStr));*/
+                            .snippet(dateStr));
                     }
                     else {
                         Log.v("LOCATION_V", "Latitude or Longitude is NULL");
@@ -249,16 +232,6 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
 
         return;
     }
-
-  /*  private BitmapDescriptor getMarkerIconFromDrawable(Drawable drawable) {
-        Canvas canvas = new Canvas();
-        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-        Bitmap.createScaledBitmap(bitmap, 20, 20, false);
-        canvas.setBitmap(bitmap);
-        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        drawable.draw(canvas);
-        return BitmapDescriptorFactory.fromBitmap(bitmap);
-    }*/
     /*
     *   Adds some features on the map once the map becomes ready
     */
@@ -422,11 +395,61 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         String placeName = myPlace.getName().toString();
         String organizerId = userId;
 
-        createEventTask.execute("1", title, date, city, longitude, latitude, myAddress, placeName, pCount, category, description, feeConverted, organizerId);
+        String response = "";
+        marker_task = new EventDetailsBackgroundTask(getContext());
+        try {
+            response = marker_task.execute("loadTargetEvent" ,latitude, longitude).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
-        myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
-                .title(title)
-                .snippet(date));
+        if(response.equals("null") || response.equals("")){
+
+            createEventTask.execute("1", title, date, city, longitude, latitude, myAddress, placeName, pCount, category, description, feeConverted, organizerId);
+
+            myGoogleMap.addMarker(new MarkerOptions().position(myPlace.getLatLng())
+                    .title(title)
+                    .snippet(date));
+        }
+        else {
+            float newLat, newLong;
+            boolean added = false;
+            for(int i = 1; i <= MAX_MARKER_COUNT; i++) {
+                newLat = (float) (myPlace.getLatLng().latitude + i * COORDINATE_OFFSET);
+                newLong = (float) (myPlace.getLatLng().longitude + i * COORDINATE_OFFSET);
+
+                String newLatStr = String.valueOf(newLat);
+                String newLongStr = String.valueOf(newLong);
+                newLongStr = newLongStr.replace(",", ".");
+                newLatStr = newLatStr.replace(",", ".");
+
+                marker_task = new EventDetailsBackgroundTask(getContext());
+                try {
+                    response = marker_task.execute("loadTargetEvent", newLatStr, newLongStr).get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+
+                if (response.equals("null") || response.equals("")) {
+
+                    createEventTask.execute("1", title, date, city, newLongStr, newLatStr, myAddress, placeName, pCount, category, description, feeConverted, organizerId);
+
+                    myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(newLat, newLong))
+                            .title(title)
+                            .snippet(date)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+                    added = true;
+                    break;
+                }
+            }
+            if (added == false){
+                Toast.makeText(getContext(), "More than " + MAX_MARKER_COUNT + " events at the same venue within a week is not allowed.", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     /*

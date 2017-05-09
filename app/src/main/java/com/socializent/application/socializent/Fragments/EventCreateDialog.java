@@ -234,7 +234,7 @@ public class EventCreateDialog extends DialogFragment implements DialogInterface
             dateStr = timeView.getText().toString();
         }
         try {
-            if( participantCountView.getText().toString().trim().equals("") || participantCountView.getText().toString().trim() == "0"){
+            if( participantCountView.getText().toString().trim().equals("") || participantCountView.getText().toString().trim().equals("0")){
                 participantCountView.setError( "Participant Count is required!" );
                 return false;
             }else{
