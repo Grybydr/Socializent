@@ -153,4 +153,7 @@ public class main extends Activity {
         fragmentTransaction.commit();
 
     }
+    @Override
+    public void onBackPressed() {
+    }
 }

@@ -45,6 +45,7 @@ public class NavigationDrawerFourth extends Fragment {
     String activeUserId;
     ArrayList<Person> friendObjList;
     UserAdapterToList userAdapter;
+    public static Person myFriend;
     String accessToken;
 
     public NavigationDrawerFourth() {
@@ -92,7 +93,7 @@ public class NavigationDrawerFourth extends Fragment {
 
             public void onItemClick(AdapterView arg0, View arg, int position, long a) {
 
-                searchedPerson = (Person)userAdapter.getItem(position);
+                myFriend = (Person)userAdapter.getItem(position);
 
                 Fragment mFragment = new NavigationDrawerFirst();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();

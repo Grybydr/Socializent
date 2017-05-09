@@ -1,6 +1,10 @@
 package com.socializent.application.socializent.Fragments;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -27,6 +31,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
 import java.net.HttpCookie;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -35,14 +40,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 import static com.socializent.application.socializent.Fragments.BottomBarSearch.searchedPerson;
 import static com.socializent.application.socializent.Fragments.EditProfile.p;
+import static com.socializent.application.socializent.Fragments.NavigationDrawerFourth.myFriend;
 
 
 public class NavigationDrawerFirst extends Fragment {
     //CircleDrawable circle;
     View profileView;
+    ImageView profilePic;
     ImageView imagePen;
     ImageView addFriend,removeFriend;
     TextView userNameText;
@@ -54,7 +62,7 @@ public class NavigationDrawerFirst extends Fragment {
     String user = "";
     PersonBackgroundTask conn;
     PersonBackgroundTask refresh;
-
+    Person otherPerson;
     String activeUserId;
     List<HttpCookie> cookieList;
     public NavigationDrawerFirst() {
@@ -79,6 +87,8 @@ public class NavigationDrawerFirst extends Fragment {
 
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         imagePen = (ImageView) profileView.findViewById(R.id.edit_pen);
+        profilePic = (ImageView) profileView.findViewById(R.id.user_profile_photo);
+
         addFriend = (ImageView) profileView.findViewById(R.id.add_friend);
         removeFriend = (ImageView) profileView.findViewById(R.id.remove_friend);
         userNameText = (TextView) profileView.findViewById(R.id.user_profile_name);
@@ -101,8 +111,10 @@ public class NavigationDrawerFirst extends Fragment {
             e.printStackTrace();
         }
 
-        if(searchedPerson != null) {
+        if(searchedPerson != null || myFriend != null) {
             searchedUserProfile();
+            searchedPerson = null;
+            myFriend = null;
         }
         else {
             myProfile();
@@ -120,6 +132,26 @@ public class NavigationDrawerFirst extends Fragment {
         imagePen.setVisibility(View.VISIBLE);
         addFriend.setVisibility(View.GONE);
         removeFriend.setVisibility(View.GONE);
+
+       /* profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                getIntent.setType("image*//*");
+
+                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                pickIntent.setType("image*//*");
+
+                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+
+                startActivityForResult(chooserIntent, 1);
+
+            }
+
+        });*/
+
+
         imagePen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,6 +198,45 @@ public class NavigationDrawerFirst extends Fragment {
         }
     }
 
+ /*   public  void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+        String filePath = null;
+        String file_extn = null;
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+        switch(requestCode) {
+            case 0:
+                if(resultCode == RESULT_OK){
+                    Uri selectedImage = imageReturnedIntent.getData();
+                    profilePic.setImageURI(selectedImage);
+                    filePath = getPath(selectedImage);
+                    file_extn = filePath.substring(filePath.lastIndexOf(".") + 1);
+                   // image_name_tv.setText(filePath);
+                }
+
+                break;
+            case 1:
+                if(resultCode == RESULT_OK){
+                    Uri selectedImage = imageReturnedIntent.getData();
+                    profilePic.setImageURI(selectedImage);
+                }
+                break;
+        }
+        if (file_extn.equals("img") || file_extn.equals("jpg") || file_extn.equals("jpeg") || file_extn.equals("gif") || file_extn.equals("png")) {
+            //FINE
+        } else {
+            //NOT IN REQUIRED FORMAT
+        }
+    }*/
+    public String getPath(Uri uri) {
+        String[] projection = {MediaStore.MediaColumns.DATA};
+        Cursor cursor = getActivity().managedQuery(uri, projection, null, null, null);
+        int column_index = cursor
+                .getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+        cursor.moveToFirst();
+        //String imagePath = cursor.getString(column_index);
+
+        return cursor.getString(column_index);
+    }
+
     public void editPage(View view) throws RuntimeException {
         Fragment mFragment = EditProfile.newInstance(p);
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -180,39 +251,48 @@ public class NavigationDrawerFirst extends Fragment {
         conn = new PersonBackgroundTask(getContext());
         refresh = new PersonBackgroundTask(getContext());
         imagePen.setVisibility(View.GONE);
-        String fullName = searchedPerson.getFirstName() + searchedPerson.getLastName();
-        userNameText.setText(fullName);
-        emailText.setText(searchedPerson.getEmail());
-        bioText.setText(searchedPerson.getBio());
+        if(searchedPerson == null && myFriend != null)
+            otherPerson = myFriend;
+        else if(searchedPerson != null && myFriend == null)
+            otherPerson = searchedPerson;
+        else{
+            myProfile();
+            return;
+        }
 
-        float number = searchedPerson.getBirthDate();
+        String fullName = otherPerson.getFirstName() + otherPerson.getLastName();
+        userNameText.setText(fullName);
+        emailText.setText(otherPerson.getEmail());
+        bioText.setText(otherPerson.getBio());
+
+        float number = otherPerson.getBirthDate();
         Date date=new Date((long)number);
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         String dateStr = df.format(date);
         birthdayText.setText(dateStr);
-        if(activeUserId.equals(searchedPerson.getId())){
-            alreadyFriend = true;
+        if(activeUserId.equals(otherPerson.getId())){
+           // alreadyFriend = true;
             myProfile();
             return;
 
         }
-        for(int k = 0; k< searchedPerson.getFriends().size(); k++){
-            if(activeUserId.equals(searchedPerson.getFriends().get(k))){
+        for(int k = 0; k< otherPerson.getFriends().size(); k++){
+            if(activeUserId.equals(otherPerson.getFriends().get(k))){
                 alreadyFriend = true;
                 break;
             }
         }
         if(!alreadyFriend){
             removeFriend.setVisibility(View.GONE);
-            for(int k = 0; k< searchedPerson.getFriendRequests().size(); k++){ //req gönderenlerin idleri
-                if(activeUserId.equals(searchedPerson.getFriendRequests().get(k))){
+            for(int k = 0; k< otherPerson.getFriendRequests().size(); k++){ //req gönderenlerin idleri
+                if(activeUserId.equals(otherPerson.getFriendRequests().get(k))){
                     friendReqSent = true;
                     break;
                 }
             }
             if(friendReqSent){
                 addFriend.setImageResource(R.drawable.waiting);
-                searchedPerson = null;
+
             }
             else{
 
@@ -227,13 +307,14 @@ public class NavigationDrawerFirst extends Fragment {
             }
         }
         else{
-            addFriend.setImageResource(R.drawable.checked);
             removeFriend.setVisibility(View.VISIBLE);
+            addFriend.setImageResource(R.drawable.checked);
             removeFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //addFriend.setVisibility(View.VISIBLE);
                     removeFriend(v);
-                    addFriend.setVisibility(View.VISIBLE);
+
                 }
             });
 
@@ -243,20 +324,20 @@ public class NavigationDrawerFirst extends Fragment {
 
     private void removeFriend(View v) {
         Toast.makeText(getContext(), "You are not friends anymore!", Toast.LENGTH_SHORT).show();
-        conn.execute("7", searchedPerson.getId());
+        conn.execute("7", otherPerson.getId());
         removeFriend.setVisibility(View.GONE);
-        searchedPerson = null;
+        addFriend.setImageResource(R.drawable.ic_action_user_add);
+        addFriend.setVisibility(View.VISIBLE);
         refresh.execute("3");
-        addFriend.setVisibility(View.GONE);
+
         //addFriend.setImageResource(R.drawable.ic_action_user_add);
 
     }
 
     public void addFriend(View view) throws RuntimeException{
         Toast.makeText(getContext(), "Friend Request Sent!", Toast.LENGTH_SHORT).show();
-        conn.execute("6", searchedPerson.getId());
+        conn.execute("6", otherPerson.getId());
         addFriend.setImageResource(R.drawable.waiting);
-        searchedPerson = null;
         refresh.execute("3");
 
     }
