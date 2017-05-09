@@ -133,10 +133,10 @@ public class NavigationDrawerSecond extends Fragment {
 
                 expandButton = (TextView) itemView.findViewById(R.id.expand_button);
                 eventDescription = (TextView) itemView.findViewById(R.id.event_description);
-                eventDate = (TextView) itemView.findViewById(R.id.event_date);
+                /*eventDate = (TextView) itemView.findViewById(R.id.event_date);
                 eventParticipantNumber = (TextView) itemView.findViewById(R.id.event_participant_num);
                 eventTags = (TextView) itemView.findViewById(R.id.event_tags);
-                eventPlace = (TextView) itemView.findViewById(R.id.event_place);
+                eventPlace = (TextView) itemView.findViewById(R.id.event_place);*/
 
                 expandButton.setOnClickListener(this);
             }

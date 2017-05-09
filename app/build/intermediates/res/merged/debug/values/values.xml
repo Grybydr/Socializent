@@ -756,6 +756,7 @@
     <string name="concert">Concert</string>
     <string name="conference">Conference</string>
     <string name="create">Create</string>
+    <string name="currentRateText">0.0</string>
     <string name="dateTimeChoice">Please choose the time and date</string>
     <string name="date_time_tag">Date/Time:</string>
     <string name="drawer_close">Close</string>
@@ -804,6 +805,7 @@
     <string name="string_event_time">Time/Date</string>
     <string name="string_event_title">Title </string>
     <string name="study">Study</string>
+    <string name="submit_rate">Submit Rate</string>
     <string name="third_fragment">My Past Events</string>
     <string name="travel">Travel</string>
     <string name="user_name">\t User Name</string>

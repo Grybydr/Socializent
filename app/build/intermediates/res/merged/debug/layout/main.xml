@@ -95,7 +95,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="-20dp"
             android:layout_toEndOf="@+id/textView"
-            android:background="@drawable/forget_password" />
+            android:background="@drawable/forget_password"
+            />
 
         <TextView
             android:id="@+id/forgotPasswordText"

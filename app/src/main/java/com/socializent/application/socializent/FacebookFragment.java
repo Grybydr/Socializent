@@ -26,7 +26,12 @@ import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.HttpCookie;
+import java.text.Normalizer;
 import java.util.Arrays;
+import java.util.Locale;
+
+import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 
 
 /**
@@ -43,6 +48,7 @@ public class FacebookFragment extends Fragment {
     private String userEmail;
     private String userBirthday;
     private String userPhotoUrl;
+    private String accessToken;
 
     public static FacebookFragment newInstance() {
         return new FacebookFragment();
@@ -69,10 +75,11 @@ public class FacebookFragment extends Fragment {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
 
             @Override
-            public void onSuccess(LoginResult loginResult) {
+            public void onSuccess(final LoginResult loginResult) {
                 // App code
                 Log.d("logged in : ", loginResult.getAccessToken().getToken());
                 Log.d("logged in : ", AccessToken.getCurrentAccessToken().getToken());
+                accessToken = loginResult.getAccessToken().getToken();
                 //String accessToken = loginResult.getAccessToken().getToken();
                 GraphRequest graphRequest = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
                     @Override
@@ -83,28 +90,60 @@ public class FacebookFragment extends Fragment {
 
                                 Log.d("Object: ", object.toString());
 
-                                userEmail = object.getString("email");
-                                userBirthday = object.getString("birthday");
-                                userName = object.getString("name");
-                                userFirstName = userName.substring(0,userName.indexOf(' '));
-                                userLastName = userName.substring(userName.indexOf(' ')+1,userName.length());
-                                JSONObject userPictureObject = new JSONObject(object.getString("picture"));
-                                JSONObject userPictureObjectData = new JSONObject(userPictureObject.getString("data"));
-                                Log.d("Jsonobj: " , userPictureObject.toString());
-                                Log.d("JsonobjData: " , userPictureObjectData.toString());
-                                userPhotoUrl = userPictureObjectData.getString("url");
 
-                                Log.d("Email: ", userEmail);
-                                Log.d("Birthday: ", userBirthday);
-                                Log.d("Username: ", userName);
-                                Log.d("First name: ", userFirstName);
-                                Log.d("Last name: ", userLastName);
-                                Log.d("Photo Url: ", userPhotoUrl);
+                                if(object.has("email")){
+                                    userEmail = object.getString("email");
+                                    Log.d("Email: ", userEmail);
+                                }
 
+                                if(object.has("birthday")){
+                                   userBirthday = object.getString("birthday");
+                                   Log.d("Birthday: ", userBirthday);
+                                }
+
+                                if(object.has("name")){
+                                    userName = object.getString("name");
+                                    Log.d("Username: ", userName);
+
+                                    userFirstName = userName.substring(0,userName.indexOf(' '));
+                                    Locale trlocale = new Locale("tr-TR");
+                                    userFirstName = userFirstName .toLowerCase(trlocale);
+
+                                    userLastName = userName.substring(userName.indexOf(' ')+1,userName.length());
+                                    Log.d("First name wo Turkish: ", userFirstName);
+                                    Log.d("Last name wo Turkish: ", userLastName);
+                                }
+
+                                if (object.has("picture")){
+                                    JSONObject userPictureObject = new JSONObject(object.getString("picture"));
+                                    JSONObject userPictureObjectData = new JSONObject(userPictureObject.getString("data"));
+                                    Log.d("Jsonobj: " , userPictureObject.toString());
+                                    Log.d("JsonobjData: " , userPictureObjectData.toString());
+                                    userPhotoUrl = userPictureObjectData.getString("url");
+                                    Log.d("Photo Url: ", userPhotoUrl);
+
+                                }
+                                JSONObject userObject = new JSONObject();
+
+                                //String token = "accessToken";
+
+                               /* userObject.put("username", userName);
+                                userObject.put("firstname", userFirstName);
+                                userObject.put("lastname", userLastName);
+                                userObject.put("password", "0");
+                                userObject.put("email", userEmail);
+                                userObject.put("accessToken", accessToken );
+
+*/
+                                //HttpCookie accessTokenCookie = new HttpCookie("facebookUserInfo", userObject.toString());
+
+                                //msCookieManager.getCookieStore().add(null, accessTokenCookie);
 
                                 PersonBackgroundTask fbLoginTask = new PersonBackgroundTask(getActivity());
 
-                                fbLoginTask.execute("5",userFirstName,userLastName,userName,userEmail);
+
+                           fbLoginTask.execute("5",userFirstName,userLastName,userName,userEmail,accessToken);
+                                //fbLoginTask.execute("1",userFirstName,userLastName,userName,"0",userEmail);
 
 
                         } catch (JSONException e) {
@@ -115,7 +154,7 @@ public class FacebookFragment extends Fragment {
 
                 });
                 Bundle parameters = new Bundle();
-                parameters.putString("fields", "id,name,email,gender,birthday,about,picture");
+                parameters.putString("fields", "id,name,email,gender,about,picture");
                 graphRequest.setParameters(parameters);
                 graphRequest.executeAsync();
 
