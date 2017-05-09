@@ -52,6 +52,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
 
     static final String FACEBOOK_SIGN_UP_OPTION = "5";
+    static final String FORGOT_PASSWORD_OPTION = "15";
     private Context context;
     final static String COOKIES_HEADER = "Set-Cookie";
     final static String SIGN_IN_OPTION = "2";
@@ -102,8 +103,8 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 // postDataParams.put("password", password);
                 Log.d("username", username);
                 Log.d("password", password);
-                Log.d("firstname", name);
-                Log.d("lastname", surname);
+                Log.d("firstName", name);
+                Log.d("lastName", surname);
                 Log.d("email", email);
                 String fullname = name + " " + surname;
 
@@ -164,6 +165,9 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
                 conn.connect();
+
+
+
                 //HashMap<String, String> postDataParams = new HashMap<String, String>();
                 //postDataParams.put("username", username);
                 // postDataParams.put("password", password);
@@ -230,7 +234,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                     }
                 }
                 //String accessToken = msCookieManager.getCookieStore().getCookies().get(msCookieManager.getCookieStore().getCookies().size()-1).getValue();
-                //Log.d("Access Token in Event: " ,accessToken);
+                Log.d("Access Token: " , accessToken);
 
 
                 //accessToken = accessToken.substring(1,accessToken.length()-1);
@@ -286,12 +290,26 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 friendRequest.size();
                 Object object = userObject.get("upcomingEvents");
                 JSONArray eventsArray = (JSONArray) object;
+                Log.d("upcomingEVENTS: ", eventsArray.toString());
+
+                Object object3 = userObject.get("pastEvents");
+                JSONArray pastEventsArray = (JSONArray) object3;
+                Log.d("past events: ", pastEventsArray.toString());
+
+                Object object2 = userObject.get("friendRequests");
+                JSONArray requestsArray = (JSONArray) object2;
+                Log.d("friend requests ", requestsArray.toString());
+
+                /*user = new Person(userObject.getString("firstName"),userObject.getString("lastName"),
+                        userObject.getString("fullName"),userObject.getString("birthDate"),userObject.getString("password"),
+                        userObject.getString("email"),friends,interestAreas);22*/
 
 
                 msCookieManager.getCookieStore().add(null,new HttpCookie("user",result));
                 msCookieManager.getCookieStore().add(null,new HttpCookie("userEvents",eventsArray.toString()));
                 msCookieManager.getCookieStore().add(null,new HttpCookie("friendRequest", requestArray.toString()));
 
+                msCookieManager.getCookieStore().add(null,new HttpCookie("pastEvents",pastEventsArray.toString()));
 
                 conn.disconnect();
                 return result;
@@ -313,8 +331,9 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 String surname = params[2];
                 String username = params[3];
                 String email = params[4];
+                String accessToken = params[5];
 
-                URL url = new URL("http://54.69.152.154:3000/signup");
+                URL url = new URL("http://54.69.152.154:3000/signupFacebook");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 //conn.connect();
                 conn.setReadTimeout(15000);
@@ -334,9 +353,10 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 JSONObject requestBody = new JSONObject();
 
                 requestBody.put("username", username);
-                requestBody.put("firstname", name);
-                requestBody.put("lastname", surname);
+                requestBody.put("firstName", name);
+                requestBody.put("lastName", surname);
                 requestBody.put("email", email);
+                requestBody.put("accessToken", accessToken);
 
                 OutputStream os = conn.getOutputStream();
 
@@ -394,6 +414,39 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
                 conn.setRequestProperty("Content-Type", "application/json");
                 conn.setRequestProperty("x-access-token", accessToken.toString());
                 conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code: ", responseCode + "");
+                String line;
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                conn.disconnect();
+
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(type.equals(FORGOT_PASSWORD_OPTION)){
+                try {
+
+                String email = params[1];
+                String birthdate = params[2];
+
+                URL url = new URL(" http://54.69.152.154:3000/getPassword?" + email + "&&"+ birthdate);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
                 conn.connect();
 
                 int responseCode = conn.getResponseCode();
@@ -515,6 +568,9 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
 
+        if (p_dialog != null && p_dialog.isShowing())
+            p_dialog.dismiss();
+
         if (result == null || result.equals("0") ){
             Toast.makeText(context,"Wrong Credentials or you are not connected to internet",Toast.LENGTH_LONG).show();
             return;
@@ -536,6 +592,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
 
             msCookieManager.getCookieStore().add(null, accessTokenCookie);
 
+
             Log.d("Cookie: " ,accessTokenCookie.getValue());
             //Toast.makeText(context,result,Toast.LENGTH_LONG).show();
             signedInBefore++;
@@ -553,8 +610,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
         else
             Log.d("Reached end and user:",result);
 
-        if (p_dialog != null && p_dialog.isShowing())
-            p_dialog.dismiss();
+
 
     }
 }

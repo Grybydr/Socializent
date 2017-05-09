@@ -1,7 +1,19 @@
 [
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout-v21\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
@@ -12,11 +24,19 @@
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\43717e7b5c2ae48cdb386b5700d14ab0eed78b5c\\output\\res\\layout-v21\\place_autocomplete_fragment.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\c6eadcebf6e0f215c1416bcc8653f598df324110\\output\\res\\layout-v21\\place_autocomplete_fragment.xml"
     }
 ]

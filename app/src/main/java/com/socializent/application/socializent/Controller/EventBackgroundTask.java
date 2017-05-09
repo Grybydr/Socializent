@@ -35,6 +35,7 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
     final static String EVENT_CREATE_OPTION = "1";
     final static String GET_ALL_EVENTS_OPTION = "2";
     final static String GET_BY_POSITION_EVENT_OPTION = "4";
+    final static String RATE_EVENT_OPTION = "5";
 
     public EventBackgroundTask(){
     }
@@ -231,6 +232,57 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals(RATE_EVENT_OPTION))
+        {
+            try {
+                String eventId = params[2];
+                String rate = params[1];
+
+                URL url = new URL("http://54.69.152.154:3000/rateEvent?rate=" + rate +"&id="+ eventId);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")) {
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken);
+                conn.setDoInput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code", responseCode + "");
+
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.v("Result of Rate Event: ", result);
+
+                conn.disconnect();
+                return result;
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+                Log.d("Result of Rate Event: ", "protocol error");
+            } catch (MalformedURLException e) {
+                Log.d("Result of Rate Event: ", "malformed URL");
+                e.printStackTrace();
+            } catch (IOException e) {
+                Log.d("Result of Rate Event: ", "IO exception");
+                e.printStackTrace();
+            }
+        }
         return result;
     }
 
@@ -245,6 +297,11 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
             Log.d("EventBackgroundTask", " Error in onPostExecute " + result);
             return;
         }
+        if(result.equals("1"))
+        {
+            Log.d("Event Rated: " , result);
+        }
+
         Log.d("EventBackgroundTask" , "Succesfully added " + result);
     }
 
