@@ -88,7 +88,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private static final int DEFAULT_ZOOM = 17;
     private static final int DEFAULT_BEARING = 90;
     private static final int DEFAULT_TILT = 0;
-    private static final long WEEK_IN_MILLIS = 604800000;
+    private static final long WEEK_IN_MILLIS = 1296000000;
     private static final String TURKEY_TAG = "Turkey";
     final static String GET_ALL_EVENTS_OPTION = "2";
     static final float COORDINATE_OFFSET = 0.00004f;
@@ -103,10 +103,12 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private LocationManager locationManager;
     private View mapView;
     private String myAddress = "";
+    private String userEvents = "";
 
     EventDetailsBackgroundTask s_task, marker_task;
     List<HttpCookie> cookieList;
     JSONObject user;
+    String userStr = "";
 
     public static BottomBarMap newInstance() {
         BottomBarMap fragment = new BottomBarMap();
@@ -171,11 +173,16 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         for (int i = cookieList.size() - 1; i >= 0; i--) {
             if (cookieList.get(i).getName().equals("allEvents")){
                 events = cookieList.get(i).getValue();
-                break;
+            }
+            else if (cookieList.get(i).getName().equals("userEvents")){
+                userEvents = cookieList.get(i).getValue();
+            }
+            else if (cookieList.get(i).getName().equals("user")){
+                userStr = cookieList.get(i).getValue();
             }
         }
         try {
-            String tempLat, tempLong, eventType, eventTitle, dateStr;
+            String tempLat, tempLong, eventID, eventTitle, dateStr;
             JSONArray eventsArray = new JSONArray(events);
 
             for (int i = 0; i < eventsArray.length(); i++) {
@@ -185,6 +192,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                 //Retrieving event details
                 eventTitle = row.getString("name");
                 dateStr = row.getString("date");
+                eventID = row.getString("_id");
                 long event_millis = Long.parseLong(dateStr);
                 Date currentDate = new Date();
                 long c_dateInMiliseconds = currentDate.getTime();
@@ -216,9 +224,24 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                     Double longi = Double.valueOf(df.format(t_longi));
                     Log.v("LOCATION_V", "lat / long" + lat + " " + longi +"");*/
 
-                    myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
-                            .title(eventTitle)
-                            .snippet(dateStr));
+                        if(isJoined(eventID)) {
+                            myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
+                                    .title(eventTitle)
+                                    .snippet(dateStr)
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                        }
+                        else if (isOrganizer(eventID)){
+                            myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
+                                    .title(eventTitle)
+                                    .snippet(dateStr)
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+                        }
+                        else {
+                            myGoogleMap.addMarker(new MarkerOptions().position(new LatLng(t_lat, t_longi))
+                                    .title(eventTitle)
+                                    .snippet(dateStr)
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                        }
                     }
                     else {
                         Log.v("LOCATION_V", "Latitude or Longitude is NULL");
@@ -268,6 +291,67 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
                     Log.v("LOCATION_V", "EMPTY eventstr");
             }
         });
+    }
+
+    private boolean isJoined(String event_id){
+        if(!userEvents.equals("") || !userEvents.equals("[]")){
+            try {
+                JSONArray userEventsA = new JSONArray(userEvents);
+
+                for(int i = 0; i < userEventsA.length(); i++){
+                    JSONObject row = userEventsA.getJSONObject(i);
+
+                    //Retrieving event details
+                    String temp_id = row.getString("_id");
+
+                    if(event_id.trim().equals(temp_id.trim()))
+                        return true;
+                }
+
+            } catch (JSONException e) {
+                Log.v("LOCATION_V", "User Events cannot be extracted");
+                e.printStackTrace();
+            }
+        }
+        else{
+            Log.d("LOCATION_V", "UserEvents null error");
+        }
+        return false;
+    }
+
+    private boolean isOrganizer(String event_id){
+        String organized_events = "";
+        if(!userStr.equals("") || !userStr.equals("[]")){
+            try {
+                user = new JSONObject(userStr);
+                organized_events = user.getString("organizedEvents");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if(!organized_events.equals("") || !organized_events.equals("[]")) {
+                try {
+                    JSONArray orgEvents = new JSONArray(organized_events);
+
+                    for (int i = 0; i < orgEvents.length(); i++) {
+                       // JSONObject row = orgEvents.getString(i);
+
+                        //Retrieving event details
+                        String temp_id = orgEvents.getString(i);
+
+                        if (event_id.trim().equals(temp_id.trim()))
+                            return true;
+                    }
+
+                } catch (JSONException e) {
+                    Log.v("LOCATION_V", "Organized Events cannot be extracted");
+                    e.printStackTrace();
+                }
+            }
+        }
+        else{
+            Log.d("LOCATION_V", "Organized events null error");
+        }
+        return false;
     }
 
     /*
@@ -462,6 +546,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
         try {
             addresses = geocoder.getFromLocation(place.getLatLng().latitude, place.getLatLng().longitude, 1);
             Address address = addresses.get(0);
+            myAddress = "";
             for (int i = 0; i <= address.getMaxAddressLineIndex(); i++){
                 myAddress = myAddress + " " + address.getAddressLine(i);
             }

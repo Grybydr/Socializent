@@ -307,6 +307,7 @@ public class EditEvent extends Fragment {
         try {
             addresses = geocoder.getFromLocation(place.getLatLng().latitude, place.getLatLng().longitude, 1);
             Address address = addresses.get(0);
+            myAddress = "";
             for (int i = 0; i <= address.getMaxAddressLineIndex(); i++){
                 myAddress = myAddress + " " + address.getAddressLine(i);
             }
