@@ -153,8 +153,8 @@ public class NavigationDrawerFirst extends Fragment {
             bioText.setText(shortBio);
             String username = userObject.getString("username");
             String password = userObject.getString("password");
-
-            profilePic.setImageResource(map.get(username));
+            if(map.get(username) != null)
+                profilePic.setImageResource(map.get(username));
 
             String birthday = userObject.getString("birthDate");
             long number = Long.parseLong(birthday);

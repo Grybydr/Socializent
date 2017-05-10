@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,12 +47,13 @@ public class CommentsPage extends Activity {
     private Button sendCommentButton;
     private EditText userComment;
     private Context context;
-    private TextView eventTitle;
+    //private TextView eventTitle;
     private EventBackgroundTask listCommentsTask;
     //private JSONArray commentsArray;
     //private TextView incomingTextView;
     //private TextView outgoingTextView;
     //View commentsView;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,7 +61,7 @@ public class CommentsPage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comments_page);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view3);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view3);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -75,15 +77,16 @@ public class CommentsPage extends Activity {
         mainEvent.setId(id);
         mainEvent.setName(title);
 
-
-
-
-
         sendCommentButton = (Button) findViewById(R.id.send_comment_button);
         userComment = (EditText) findViewById(R.id.my_comment);
 
-        eventTitle = (TextView) findViewById(R.id.title_for_event);
-        eventTitle.setText(title);
+        //eventTitle = (TextView) findViewById(R.id.title_for_event);
+        //eventTitle.setText(title);
+        try {
+            recyclerView.setAdapter(new SimpleAdapter(recyclerView));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         sendCommentButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,16 +94,16 @@ public class CommentsPage extends Activity {
                 String comment = userComment.getText().toString();
                 EventBackgroundTask addCommentTask = new EventBackgroundTask(context);
                 addCommentTask.execute("6",mainEvent.getId(),comment);
+                EventBackgroundTask refresh = new EventBackgroundTask(context);
+                refresh.execute("7", mainEvent.getId());
+                try {
+                    recyclerView.setAdapter(new SimpleAdapter(recyclerView));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
-
-
-
-        try {
-            recyclerView.setAdapter(new SimpleAdapter(recyclerView));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -138,7 +141,7 @@ public class CommentsPage extends Activity {
 
             JSONObject commentObject;
             Comment comment = new Comment();
-            JSONObject user;
+            JSONObject user = null;
 
             try {
 
@@ -152,9 +155,7 @@ public class CommentsPage extends Activity {
                 e.printStackTrace();
             }
 
-
-            holder.bind(position,comment);
-
+            holder.bind(position,comment,1);
 
 
         }
@@ -193,7 +194,7 @@ public class CommentsPage extends Activity {
                 //commentText2.setOnClickListener(this);
             }
 
-            public void bind(int position, Comment comment) {
+            public void bind(int position, Comment comment,int type) {
                 this.position = position;
 
                 commentText.setText(comment.getContent());

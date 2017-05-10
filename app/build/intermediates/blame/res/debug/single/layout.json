@@ -756,6 +756,10 @@
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\layout\\dialog_create_event_form.xml"
     },
     {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\detail_info.xml",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\layout\\detail_info.xml"
+    },
+    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\recycler_view_fragment.xml",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\layout\\recycler_view_fragment.xml"
     },
@@ -906,6 +910,10 @@
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\recycler_item3.xml",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\layout\\recycler_item3.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",

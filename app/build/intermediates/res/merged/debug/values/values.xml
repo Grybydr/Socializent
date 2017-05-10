@@ -802,6 +802,7 @@
     <string name="place">Place:</string>
     <string name="place_autocomplete_clear_button">Clear search</string>
     <string name="place_autocomplete_search_hint">Search</string>
+    <string name="rateText">Event Rate: </string>
     <string name="search_menu_title">Search</string>
     <string name="second_fragment">My Upcoming Events</string>
     <string name="see_comments">See Comments</string>

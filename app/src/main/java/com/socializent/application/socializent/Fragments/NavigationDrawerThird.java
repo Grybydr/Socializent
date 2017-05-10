@@ -3,6 +3,8 @@ package com.socializent.application.socializent.Fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.EventBackgroundTask;
+import com.socializent.application.socializent.Controller.PersonBackgroundTask;
 import com.socializent.application.socializent.Modal.Event;
 import com.socializent.application.socializent.R;
 
@@ -34,6 +37,8 @@ import static com.socializent.application.socializent.Controller.PersonBackgroun
 public class NavigationDrawerThird extends Fragment {
 
     View pastEventsView;
+    NavigationDrawerThird.SimpleAdapter mAdapter;
+    RecyclerView recyclerView;
 
     public NavigationDrawerThird() {
         // Required empty public constructor
@@ -46,6 +51,7 @@ public class NavigationDrawerThird extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -55,11 +61,14 @@ public class NavigationDrawerThird extends Fragment {
 
         pastEventsView = inflater.inflate(R.layout.navigation_drawer_third_fragm, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) pastEventsView.findViewById(R.id.recycler_view2);
+        recyclerView = (RecyclerView) pastEventsView.findViewById(R.id.recycler_view2);
         recyclerView.setLayoutManager(new LinearLayoutManager(pastEventsView.getContext()));
 
+
+
         try {
-            recyclerView.setAdapter(new NavigationDrawerThird.SimpleAdapter(recyclerView));
+            mAdapter = new NavigationDrawerThird.SimpleAdapter(recyclerView);
+            recyclerView.setAdapter(mAdapter);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -68,10 +77,10 @@ public class NavigationDrawerThird extends Fragment {
 
     }
 
-    private static class SimpleAdapter extends RecyclerView.Adapter<NavigationDrawerThird.SimpleAdapter.ViewHolder> {
+    private class SimpleAdapter extends RecyclerView.Adapter<NavigationDrawerThird.SimpleAdapter.ViewHolder> {
         private static final int UNSELECTED = -1;
 
-        private RecyclerView recyclerView;
+        //private RecyclerView recyclerView;
         private int selectedItem = UNSELECTED;
 
         private List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();;
@@ -79,7 +88,7 @@ public class NavigationDrawerThird extends Fragment {
         private JSONArray userEventsArray = null;
 
         public SimpleAdapter(RecyclerView recyclerView) throws JSONException {
-            this.recyclerView = recyclerView;
+            //this.recyclerView = recyclerView;
 
             for (int i = 0; i < cookieList.size(); i++) {
                 if (cookieList.get(i).getName().equals("pastEvents")){
@@ -108,15 +117,13 @@ public class NavigationDrawerThird extends Fragment {
                 userEvent.setName(eventObject.getString("name"));
                 userEvent.setDescription(eventObject.getString("description"));
                 userEvent.setId(eventObject.getString("_id"));
+                userEvent.setEventRate(Double.parseDouble(eventObject.getString("rate")));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-
             holder.bind(position,userEvent);
-
-
 
         }
 
@@ -135,6 +142,7 @@ public class NavigationDrawerThird extends Fragment {
             private TextView eventParticipantNumber;
             private TextView eventTags;
             private TextView eventPlace;
+            private TextView eventGeneralRate;
             private String eventId = "";
             private TextView currentRate;
             private RatingBar ratingBar;
@@ -153,6 +161,7 @@ public class NavigationDrawerThird extends Fragment {
                 expandButton = (TextView) itemView.findViewById(R.id.expand_button);
                 eventDescription = (TextView) itemView.findViewById(R.id.event_description);
                 currentRate = (TextView) itemView.findViewById(R.id.current_rate);
+                eventGeneralRate = (TextView) itemView.findViewById(R.id.general_rate);
                 currentRate.setText(R.string.currentRateText);
                 ratingBar.setVisibility(View.VISIBLE);
                 currentRate.setVisibility(View.VISIBLE);
@@ -185,11 +194,14 @@ public class NavigationDrawerThird extends Fragment {
                     }
                 });
                 expandButton.setOnClickListener(this);
+
+
                 submitButton.setOnClickListener(new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         currentRate.setText(String.valueOf(ratingBar.getRating()));
                         EventBackgroundTask rateTask = new EventBackgroundTask();
+                        PersonBackgroundTask refresh = new PersonBackgroundTask(getContext());
                         Log.d("rating: ", currentRate.getText().toString());
                         Log.d("rating int : ",String.valueOf((int)(ratingBar.getRating())));
                         Log.d("eventId: ", eventId);
@@ -197,6 +209,17 @@ public class NavigationDrawerThird extends Fragment {
                         selectedItem = UNSELECTED;
                         expandableLayout.collapse(false);
                         Toast.makeText(context,"Event Rated", Toast.LENGTH_LONG).show();
+                        refresh.execute("3");
+
+                        try {
+                            mAdapter = new NavigationDrawerThird.SimpleAdapter(recyclerView);
+                            recyclerView.setAdapter(mAdapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        //mAdapter.notifyDataSetChanged();
+
                     }
                 });
             }
@@ -209,6 +232,8 @@ public class NavigationDrawerThird extends Fragment {
                 expandButton.setSelected(false);
                 eventDescription.setText(event.getDescription());
                 eventId = event.getId();
+                eventGeneralRate.setText(String.valueOf( event.getEventRate()));
+
                 Log.d("eventId: ", eventId);
                 expandableLayout.collapse(false);
             }

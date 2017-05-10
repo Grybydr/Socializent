@@ -16,6 +16,7 @@
     <string name="fourth_fragment">My Friends</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="rateText">Event Rate: </string>
 
     <string name="permission_rationale_location">Access to location services is required.</string>
     <string name="permission_required_toast">Permission Required</string>

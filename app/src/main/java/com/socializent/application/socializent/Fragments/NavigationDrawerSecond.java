@@ -82,7 +82,7 @@ public class NavigationDrawerSecond extends Fragment {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.recycler_item, parent, false);
+                    .inflate(R.layout.recycler_item3, parent, false);
             return new ViewHolder(itemView);
         }
 

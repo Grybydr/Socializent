@@ -602,7 +602,7 @@ public class PersonBackgroundTask extends AsyncTask<String, Object, String> {
             PersonBackgroundTask getCurrentUserTask = new PersonBackgroundTask(context);
             getCurrentUserTask.execute(GET_PERSON_OPTION);
 
-            EventBackgroundTask getAllAvailableEvents = new EventBackgroundTask();
+            EventBackgroundTask getAllAvailableEvents = new EventBackgroundTask(context);
             getAllAvailableEvents.execute(GET_ALL_EVENTS_OPTION);
 
             Intent intentNavigationBar = new Intent(context, Template.class);

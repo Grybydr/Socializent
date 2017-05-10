@@ -155,7 +155,7 @@ public class EventDetailsPage extends Fragment {
         currentUserID = getUserId();
         getOrganizerInfo();
 
-        listCommentsTask = new EventBackgroundTask();
+        listCommentsTask = new EventBackgroundTask(getContext());
         listCommentsTask.execute("7",event_id);
     }
 
