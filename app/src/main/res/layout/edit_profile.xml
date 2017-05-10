@@ -191,7 +191,7 @@
                 android:layout_width="180dp"
                 android:layout_height="50dp"
                 android:layout_below="@+id/celebration"
-                android:text=" Conferance"
+                android:text=" Conference"
                 android:textSize="15sp"
                 android:textColor="@color/colorEditText"/>
 
