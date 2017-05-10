@@ -8,16 +8,16 @@
         "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\drawable\\shape_bg_incoming_bubble.xml"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_password_image.xml",
-        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\selector_password_image.xml"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\drawable\\messenger_button_blue_bg_round.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\celebration.xml",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\celebration.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\drawable\\messenger_button_blue_bg_round.xml"
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_password_image.xml",
+        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\selector_password_image.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
@@ -28,12 +28,16 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\map_icon_bottom_bar.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\map_icon_bottom_bar.xml"
+    },
+    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\map_icon_bottom_bar.xml",
-        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\map_icon_bottom_bar.xml"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bg_incoming_bubble.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\shape_bg_incoming_bubble.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_bottom_bar.xml",
@@ -196,6 +200,10 @@
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\study.xml"
     },
     {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yigitkaya.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\yigitkaya.png"
+    },
+    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\863a850fdc4806ec98875ee6d970c75b08a80217\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
@@ -332,6 +340,10 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\socializent_logo.jpg",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\socializent_logo.jpg"
+    },
+    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
     },
@@ -460,6 +472,10 @@
         "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\drawable\\sports.xml"
     },
     {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\guraybaydur.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\guraybaydur.png"
+    },
+    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
     },
@@ -494,6 +510,10 @@
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\iremherguner.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\iremherguner.png"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_disabled.xml",
@@ -810,6 +830,10 @@
     {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\remove_friend.xml",
         "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\drawable\\remove_friend.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\zulalbingol.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\zulalbingol.png"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\travel.xml",
@@ -1304,8 +1328,16 @@
         "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\theworldisyours.jpg"
     },
     {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ecemh.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\ecemh.png"
+    },
+    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\lala.jpg",
         "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\drawable\\lala.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pinargoktepe.png",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\pinargoktepe.png"
     },
     {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\waiting.png",

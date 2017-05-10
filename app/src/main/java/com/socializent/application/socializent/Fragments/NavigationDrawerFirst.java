@@ -1,6 +1,5 @@
 package com.socializent.application.socializent.Fragments;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,39 +7,31 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.socializent.application.socializent.Controller.PersonBackgroundTask;
-import com.socializent.application.socializent.Modal.Event;
 import com.socializent.application.socializent.Modal.Person;
 import com.socializent.application.socializent.R;
-
-import net.cachapa.expandablelayout.ExpandableLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
 import java.net.HttpCookie;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import static android.app.Activity.RESULT_OK;
 import static com.socializent.application.socializent.Controller.PersonBackgroundTask.msCookieManager;
 import static com.socializent.application.socializent.Fragments.BottomBarSearch.searchedPerson;
 import static com.socializent.application.socializent.Fragments.EditProfile.p;
@@ -65,6 +56,7 @@ public class NavigationDrawerFirst extends Fragment {
     Person otherPerson;
     String activeUserId;
     List<HttpCookie> cookieList;
+    Map<String, Integer> map;
     public NavigationDrawerFirst() {
         // Required empty public constructor
     }
@@ -84,7 +76,13 @@ public class NavigationDrawerFirst extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
+        map = new HashMap<String, Integer>();
+        map.put("guraybaydur", R.drawable.guraybaydur);
+        map.put("pinargoktepe", R.drawable.pinargoktepe);
+        map.put("zulalbingol", R.drawable.zulalbingol);
+        map.put("iremherguner", R.drawable.iremherguner);
+        map.put("yigitkaya", R.drawable.yigitkaya);
+        map.put("ecemh", R.drawable.ecemh);
         profileView = inflater.inflate(R.layout.material_design_profile_screen_xml_ui_design, container, false);
         imagePen = (ImageView) profileView.findViewById(R.id.edit_pen);
         profilePic = (ImageView) profileView.findViewById(R.id.user_profile_photo);
@@ -133,23 +131,6 @@ public class NavigationDrawerFirst extends Fragment {
         addFriend.setVisibility(View.GONE);
         removeFriend.setVisibility(View.GONE);
 
-       /* profilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                getIntent.setType("image*//*");
-
-                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                pickIntent.setType("image*//*");
-
-                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
-                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
-
-                startActivityForResult(chooserIntent, 1);
-
-            }
-
-        });*/
 
 
         imagePen.setOnClickListener(new View.OnClickListener() {
@@ -172,6 +153,8 @@ public class NavigationDrawerFirst extends Fragment {
             bioText.setText(shortBio);
             String username = userObject.getString("username");
             String password = userObject.getString("password");
+
+            profilePic.setImageResource(map.get(username));
 
             String birthday = userObject.getString("birthDate");
             long number = Long.parseLong(birthday);
@@ -198,44 +181,6 @@ public class NavigationDrawerFirst extends Fragment {
         }
     }
 
- /*   public  void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
-        String filePath = null;
-        String file_extn = null;
-        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-        switch(requestCode) {
-            case 0:
-                if(resultCode == RESULT_OK){
-                    Uri selectedImage = imageReturnedIntent.getData();
-                    profilePic.setImageURI(selectedImage);
-                    filePath = getPath(selectedImage);
-                    file_extn = filePath.substring(filePath.lastIndexOf(".") + 1);
-                   // image_name_tv.setText(filePath);
-                }
-
-                break;
-            case 1:
-                if(resultCode == RESULT_OK){
-                    Uri selectedImage = imageReturnedIntent.getData();
-                    profilePic.setImageURI(selectedImage);
-                }
-                break;
-        }
-        if (file_extn.equals("img") || file_extn.equals("jpg") || file_extn.equals("jpeg") || file_extn.equals("gif") || file_extn.equals("png")) {
-            //FINE
-        } else {
-            //NOT IN REQUIRED FORMAT
-        }
-    }*/
-    public String getPath(Uri uri) {
-        String[] projection = {MediaStore.MediaColumns.DATA};
-        Cursor cursor = getActivity().managedQuery(uri, projection, null, null, null);
-        int column_index = cursor
-                .getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
-        cursor.moveToFirst();
-        //String imagePath = cursor.getString(column_index);
-
-        return cursor.getString(column_index);
-    }
 
     public void editPage(View view) throws RuntimeException {
         Fragment mFragment = EditProfile.newInstance(p);
@@ -261,6 +206,9 @@ public class NavigationDrawerFirst extends Fragment {
         }
 
         String fullName = otherPerson.getFirstName() + otherPerson.getLastName();
+        String usernamee = otherPerson.getUsername();
+        if(map.get(usernamee) != null)
+            profilePic.setImageResource(map.get(usernamee));
         userNameText.setText(fullName);
         emailText.setText(otherPerson.getEmail());
         bioText.setText(otherPerson.getBio());

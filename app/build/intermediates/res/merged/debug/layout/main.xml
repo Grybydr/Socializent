@@ -71,12 +71,11 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/fbLoginText"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="-180dp"
-            android:layout_marginStart="26dp"
             android:background="@drawable/facebook_logo"
             android:drawablePadding="10dp"
-            android:onClick="moveToFacebookLoginPage"/>
+            android:onClick="moveToFacebookLoginPage" />
 
         <Button
             android:id="@+id/loginButton"
@@ -87,26 +86,6 @@
             android:layout_marginTop="110dp"
             android:background="@drawable/login"
             android:onClick="goToStartScreen" />
-
-        <Button
-            android:id="@+id/forgetPasswordButton"
-            android:layout_width="50dp"
-            android:layout_height="55dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="-20dp"
-            android:layout_toEndOf="@+id/textView"
-            android:background="@drawable/forget_password"
-            />
-
-        <TextView
-            android:id="@+id/forgotPasswordText"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_below="@+id/forgetPasswordButton"
-            android:layout_toEndOf="@+id/loginButton"
-            android:text="@string/forgot_password_text"
-            android:textSize="15dp"
-            android:theme="@style/EditTheme" />
 
         <TextView
             android:id="@+id/singupText"
@@ -122,17 +101,15 @@
             android:theme="@style/EditTheme" />
 
 
-
         <TextView
             android:id="@+id/fbLoginText"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_alignEnd="@+id/loginButton"
-            android:layout_below="@+id/forgetPasswordButton"
-            android:layout_marginEnd="35dp"
             android:text="@string/facebook_login"
             android:textSize="15dp"
-            android:theme="@style/EditTheme" />
+            android:theme="@style/EditTheme"
+            android:layout_below="@+id/fbButton"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:id="@+id/textView"
@@ -147,7 +124,6 @@
             android:textStyle="bold|italic" />
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

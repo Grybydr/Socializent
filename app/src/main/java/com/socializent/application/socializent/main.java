@@ -66,19 +66,12 @@ public class main extends Activity {
         userNameText = (EditText)findViewById(R.id.userNameText);
         passwordText = (EditText)findViewById(R.id.passwordText);
         Button fbButton = (Button)findViewById(R.id.fbButton);
-        forgetPasswordButton = (Button)findViewById(R.id.forgetPasswordButton);
 
-        TextView forgotPasswordText = (TextView) findViewById(R.id.forgotPasswordText);
+
         TextView fbLoginText = (TextView) findViewById(R.id.fbLoginText);
         singupText = (TextView) findViewById(R.id.singupText);
 
-        forgotPasswordText.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent forgotPassword = new Intent(mContext, ForgotPassword.class);
-                startActivity(forgotPassword);
-            }
-        });
+
 
         singupText.setOnClickListener(new View.OnClickListener() {
 
