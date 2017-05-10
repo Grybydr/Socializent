@@ -65,7 +65,7 @@ public class EventDetailsPage extends Fragment {
     List<HttpCookie> cookieList;
     PersonBackgroundTask personTaskJoin, personTaskLeave;
     private EventDetailsBackgroundTask organizer_task, joinTask, deleteTask, leaveTask;
-    private EventBackgroundTask eventBTask, eventBTask_2;
+    private EventBackgroundTask eventBTask, eventBTask_2, eventBTask_3, eventBTask_4;
 
     public static EventDetailsPage newInstance(String str, Event event) {
         EventDetailsPage fragment = new EventDetailsPage();
@@ -187,6 +187,8 @@ public class EventDetailsPage extends Fragment {
                             .show();
                     joinButton.setVisibility(View.GONE);
                     leaveButton.setVisibility(View.VISIBLE);
+                    eventBTask_3 = new EventBackgroundTask();
+                    eventBTask_3.execute(GET_ALL_EVENTS_OPTION);
                     personTaskJoin = new PersonBackgroundTask(getContext());
                     personTaskJoin.execute(GET_USER);
                 }
@@ -207,6 +209,8 @@ public class EventDetailsPage extends Fragment {
                         .show();
                 joinButton.setVisibility(View.VISIBLE);
                 leaveButton.setVisibility(View.GONE);
+                eventBTask_4 = new EventBackgroundTask();
+                eventBTask_4.execute(GET_ALL_EVENTS_OPTION);
                 personTaskLeave = new PersonBackgroundTask(getContext());
                 personTaskLeave.execute(GET_USER);
             }
