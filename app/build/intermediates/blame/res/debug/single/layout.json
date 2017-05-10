@@ -24,20 +24,20 @@
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bf3777d11cb9bfe4a83151acbddf796c2c0c188a\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bottom_bar_search_fragment.xml",
-        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\layout\\bottom_bar_search_fragment.xml"
-    },
-    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_small.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\layout\\messenger_button_send_blue_small.xml"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bottom_bar_search_fragment.xml",
+        "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\layout\\bottom_bar_search_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_large.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\layout\\messenger_button_send_blue_large.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_small.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\layout\\messenger_button_send_blue_small.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_smart_device_dialog_fragment.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\com_facebook_smart_device_dialog_fragment.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\navigation_drawer_second_frag.xml",
@@ -144,12 +144,12 @@
         "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\layout\\navigation_drawer_second_frag.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
@@ -164,12 +164,12 @@
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_screen_toolbar.xml"
-    },
-    {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_login_fragment.xml",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\5df6a0c73e9fa0940dea5d683fa0abce5c44a2a2\\output\\res\\layout\\com_facebook_login_fragment.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
