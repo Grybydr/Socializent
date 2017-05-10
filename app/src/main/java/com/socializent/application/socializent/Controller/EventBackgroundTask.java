@@ -1,5 +1,6 @@
 package com.socializent.application.socializent.Controller;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -31,13 +32,19 @@ import static com.socializent.application.socializent.Controller.PersonBackgroun
 
 public class EventBackgroundTask extends AsyncTask<String, Void , String> {
 
-    //private Context context;
+    private Context context = null;
     final static String EVENT_CREATE_OPTION = "1";
     final static String GET_ALL_EVENTS_OPTION = "2";
     final static String GET_BY_POSITION_EVENT_OPTION = "4";
     final static String RATE_EVENT_OPTION = "5";
+    final static String SENT_COMMENT_TO_EVENT_OPTION = "6";
+    final static String LIST_COMMENTS_OPTION = "7";
 
     public EventBackgroundTask(){
+    }
+
+    public EventBackgroundTask(Context context){
+        this.context = context;
     }
 
     @Override
@@ -283,6 +290,132 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals(SENT_COMMENT_TO_EVENT_OPTION))
+        {
+            try {
+                String eventId = params[1];
+                String content = params[2];
+
+                Log.d("content :", content);
+
+                URL url = new URL("http://54.69.152.154:3000/addComment?id="+ eventId);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")) {
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken);
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                conn.connect();
+
+
+                JSONObject requestBody = new JSONObject();
+                requestBody.put("content", content);
+
+
+                OutputStream os = conn.getOutputStream();
+
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+                String str = requestBody.toString();
+                Log.d("requestbody: ", str);
+                writer.write(str);
+                //writer.write(postDataParams.toString());
+                writer.flush();
+                writer.close();
+                os.close();
+
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code", responseCode + "");
+
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.v("Result of Rate Event: ", result);
+
+                conn.disconnect();
+                return result;
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+                Log.d("Result of Rate Event: ", "protocol error");
+            } catch (MalformedURLException e) {
+                Log.d("Result of Rate Event: ", "malformed URL");
+                e.printStackTrace();
+            } catch (IOException e) {
+                Log.d("Result of Rate Event: ", "IO exception");
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(type.equals(LIST_COMMENTS_OPTION)){
+            try {
+                String eventId = params[1];
+
+                URL url = new URL("http://54.69.152.154:3000/listComments?id="+ eventId);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                String accessToken = "";
+
+                List<HttpCookie> cookieList = msCookieManager.getCookieStore().getCookies();
+
+                for (int i = 0; i < cookieList.size(); i++) {
+                    if (cookieList.get(i).getName().equals("x-access-token")) {
+                        accessToken = cookieList.get(i).getValue();
+                        break;
+                    }
+                }
+
+                conn.setReadTimeout(30000);
+                conn.setConnectTimeout(30000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("x-access-token", accessToken);
+                conn.setDoInput(true);
+                //conn.setDoOutput(true);
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Response Code", responseCode + "");
+
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    result += line;
+                }
+                Log.v("Result List Comments: ", result);
+
+                conn.disconnect();
+
+                msCookieManager.getCookieStore().add(null,new HttpCookie("eventComments",result));
+
+                return result;
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+                Log.d("Error List Comments: ", "protocol error");
+            } catch (MalformedURLException e) {
+                Log.d("Error List Comments: ", "malformed URL");
+                e.printStackTrace();
+            } catch (IOException e) {
+                Log.d("Error List Comments: ", "IO exception");
+                e.printStackTrace();
+            }
+        }
         return result;
     }
 
@@ -297,12 +430,18 @@ public class EventBackgroundTask extends AsyncTask<String, Void , String> {
             Log.d("EventBackgroundTask", " Error in onPostExecute " + result);
             return;
         }
-        if(result.equals("1"))
+        if(result.equals("1") && context == null)
         {
             Log.d("Event Rated: " , result);
+            return;
+        }
+        else if(context != null){
+            Log.d("Comment Added: " , result);
+            return;
         }
 
         Log.d("EventBackgroundTask" , "Succesfully added " + result);
+        Log.d("EventBackgroundTask" , "Succesfully listed: " + result);
     }
 
 }

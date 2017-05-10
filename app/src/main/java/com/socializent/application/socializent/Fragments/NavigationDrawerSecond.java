@@ -118,6 +118,8 @@ public class NavigationDrawerSecond extends Fragment {
             private ExpandableLayout expandableLayout;
             private TextView expandButton;
             private TextView eventDescription;
+            //private TextView eventDescription;
+
             private TextView eventDate;
             private TextView eventParticipantNumber;
             private TextView eventTags;
@@ -155,6 +157,7 @@ public class NavigationDrawerSecond extends Fragment {
             @Override
             public void onClick(View view) {
                 ViewHolder holder = (ViewHolder) recyclerView.findViewHolderForAdapterPosition(selectedItem);
+
                 if (holder != null) {
                     holder.expandButton.setSelected(false);
                     holder.expandableLayout.collapse();

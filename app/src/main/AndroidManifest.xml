@@ -47,6 +47,10 @@
             android:theme="@style/AppTheme">
         </activity>
         <activity
+            android:name=".CommentsPage"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
             android:name=".Template"
             android:theme="@style/AppTheme">
         </activity>

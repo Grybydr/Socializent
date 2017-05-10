@@ -194,6 +194,7 @@ public class NavigationDrawerThird extends Fragment {
                         Log.d("rating int : ",String.valueOf((int)(ratingBar.getRating())));
                         Log.d("eventId: ", eventId);
                         rateTask.execute("5",String.valueOf((int)(ratingBar.getRating())), eventId);
+                        selectedItem = UNSELECTED;
                         expandableLayout.collapse(false);
                         Toast.makeText(context,"Event Rated", Toast.LENGTH_LONG).show();
                     }
@@ -214,7 +215,6 @@ public class NavigationDrawerThird extends Fragment {
 
             @Override
             public void onClick(View view) {
-                selectedItem = UNSELECTED;
                 NavigationDrawerThird.SimpleAdapter.ViewHolder holder = (NavigationDrawerThird.SimpleAdapter.ViewHolder) recyclerView.findViewHolderForAdapterPosition(selectedItem);
                 if (holder != null) {
                     holder.expandButton.setSelected(false);

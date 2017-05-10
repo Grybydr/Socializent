@@ -703,6 +703,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="action_settings">Logout</string>
+    <string name="address">Address:</string>
     <string name="android_profile_ui_design">Android Profile UI Design</string>
     <string name="android_profile_xml_ui_design">Android Profile XMl UI Design</string>
     <string name="app_name">Socializent</string>
@@ -759,17 +760,25 @@
     <string name="currentRateText">0.0</string>
     <string name="dateTimeChoice">Please choose the time and date</string>
     <string name="date_time_tag">Date/Time:</string>
+    <string name="delete">DELETE</string>
+    <string name="description">Description:</string>
     <string name="drawer_close">Close</string>
     <string name="drawer_open">Open</string>
+    <string name="edit">EDIT</string>
+    <string name="event_details">Event Details</string>
     <string name="facebook_app_id">780443785454824</string>
     <string name="facebook_login">Facebook Login</string>
     <string name="fb_login_protocol_scheme">fb780443785454824</string>
+    <string name="fee">Fee:</string>
     <string name="first_fragment">My Profile</string>
     <string name="forgot_password_text">ohh...forgot password?</string>
     <string name="fourth_fragment">My Friends</string>
+    <string name="go_back">Go Back</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
             AIzaSyCp5IbrY8ViuH0_hzwMDpWp6aLljAr_oWQ
     </string>
+    <string name="join">JOIN!</string>
+    <string name="leave">LEAVE</string>
     <string name="lecture">Lecture</string>
     <string name="loading">Loading...</string>
     <string name="loginButton">logın</string>
@@ -779,6 +788,8 @@
     <string name="map_not_ready">Map is not ready yet</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="movie_screen">Movie Screening</string>
+    <string name="organizer">Organizer:</string>
+    <string name="participant_count">Participant Count:</string>
     <string name="party">Party</string>
     <string name="password">\t Password</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
@@ -793,6 +804,8 @@
     <string name="place_autocomplete_search_hint">Search</string>
     <string name="search_menu_title">Search</string>
     <string name="second_fragment">My Upcoming Events</string>
+    <string name="see_comments">See Comments</string>
+    <string name="send_comment">send comment</string>
     <string name="sign_up">Sign Up</string>
     <string name="sports">Sports</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -807,7 +820,9 @@
     <string name="study">Study</string>
     <string name="submit_rate">Submit Rate</string>
     <string name="third_fragment">My Past Events</string>
+    <string name="title">Title:</string>
     <string name="travel">Travel</string>
+    <string name="type_your_comment_here">Type your comment here!!!</string>
     <string name="user_name">\t User Name</string>
     <string name="user_profile_name">User Name</string>
     <string name="user_short_info">User Short Info</string>

@@ -61,6 +61,10 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity
+            android:name="com.socializent.application.socializent.CommentsPage"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
             android:name="com.socializent.application.socializent.Template"
             android:theme="@style/AppTheme" >
         </activity>

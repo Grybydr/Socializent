@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.socializent.application.socializent.CommentsPage;
 import com.socializent.application.socializent.Controller.EventBackgroundTask;
 import com.socializent.application.socializent.Controller.EventDetailsBackgroundTask;
 import com.socializent.application.socializent.Controller.PersonBackgroundTask;
@@ -52,7 +53,7 @@ public class EventDetailsPage extends Fragment {
     private View eventView;
     private TextView titleView, placeView, timeDateView, feeView, participantCountView, organizerView, descView, categoryView;
     private TextView commentView, photoView, addressView;
-    private Button joinButton, goBackButton, editButton, deleteButton,leaveButton;
+    private Button joinButton, goBackButton, editButton, deleteButton,leaveButton, commentsButton;
 
     static String eventTitle, tempDate, tempLat, tempLong, city, description, tempParticipantCount, category;
     static String tempFee, tempRate, photoURL, comments;
@@ -64,6 +65,7 @@ public class EventDetailsPage extends Fragment {
     private String userEvents = "", currentUserID = "";
     List<HttpCookie> cookieList;
     PersonBackgroundTask personTaskJoin, personTaskLeave;
+    EventBackgroundTask listCommentsTask;
     private EventDetailsBackgroundTask organizer_task, joinTask, deleteTask, leaveTask;
     private EventBackgroundTask eventBTask, eventBTask_2, eventBTask_3, eventBTask_4;
 
@@ -146,10 +148,14 @@ public class EventDetailsPage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
         cookieList = msCookieManager.getCookieStore().getCookies();
 
         currentUserID = getUserId();
         getOrganizerInfo();
+
+        listCommentsTask = new EventBackgroundTask();
+        listCommentsTask.execute("7",event_id);
     }
 
     @Override
@@ -280,7 +286,13 @@ public class EventDetailsPage extends Fragment {
                 goBackToMap();
             }
         });
-
+        commentsButton = (Button) eventView.findViewById(R.id.see_comments_button);
+        commentsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToComments();
+            }
+        });
         return eventView;
     }
 
@@ -303,6 +315,19 @@ public class EventDetailsPage extends Fragment {
         Log.v("EVENT_DETAILS", "Going back to map...");
 
     }
+
+    private void goToComments(){
+
+
+        Intent intent = new Intent(getActivity(), CommentsPage.class);
+        intent.putExtra("eventId", event_id);
+        intent.putExtra("eventTitle", eventTitle);
+
+
+        //intent.putExtra("eventTitle", eve);
+        startActivity(intent);
+
+}
 
     private static void setDate(){
         long millis = Long.parseLong(tempDate);

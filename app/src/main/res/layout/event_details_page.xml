@@ -8,7 +8,7 @@
 
     <ScrollView
         android:layout_width="384dp"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="360dp"
@@ -17,234 +17,244 @@
             android:layout_marginTop="20dp"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/eventDetailForm"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Event Details"
-            android:textAlignment="center"
-            android:theme="@style/EditTheme"
-            android:textSize="35sp" />
+            <TextView
+                android:id="@+id/eventDetailForm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/event_details"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:theme="@style/EditTheme" />
 
-        <TextView
-            android:id="@+id/titleTag"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/eventDetailForm"
-            android:layout_marginTop="20dp"
-            android:text="Title: "
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimary"
+            <TextView
+                android:id="@+id/titleTag"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/eventDetailForm"
+                android:layout_marginTop="20dp"
+                android:text="@string/title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
 
-            tools:layout_height="40dp" />
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/titleView_d"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:textSize="20sp"
-            android:theme="@style/TextTheme"
-            tools:layout_height="40dp"
-            android:layout_above="@+id/placeTag"
-            android:layout_alignParentEnd="true" />
+            <TextView
+                android:id="@+id/titleView_d"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/placeTag"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/placeTag"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/titleTag"
-            android:layout_marginTop="20dp"
-            android:text="@string/place"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
-            tools:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/placeTag"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/titleTag"
+                android:layout_marginTop="20dp"
+                android:text="@string/place"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/placeView"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorAccent"
-            android:layout_toEndOf="@id/placeTag"
-            android:layout_below="@+id/titleTag"
-            android:textSize="15sp"
-            tools:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/placeView"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleTag"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/placeTag"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/addressTag_d"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/placeTag"
-            android:text="Address: "
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimary"
-            tools:layout_height="40dp" />
-
-
-        <TextView
-            android:id="@+id/addressView_d"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:textSize="15sp"
-            android:layout_toEndOf="@id/addressTag_d"
-            android:layout_below="@+id/placeView"
-            android:layout_marginTop="20dp"
-            tools:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/addressTag_d"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/placeTag"
+                android:layout_marginTop="20dp"
+                android:text="@string/address"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:layout_height="40dp" />
 
 
-        <TextView
-            android:id="@+id/timeDateTag"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/addressTag_d"
-            android:layout_marginTop="20dp"
-            android:text="@string/date_time_tag"
-            android:textSize="20sp"
-            android:theme="@style/TextTheme"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/addressView_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/placeView"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/addressTag_d"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/timeDateView"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="@color/colorAccent"
-            tools:layout_height="40dp"
-            android:layout_alignTop="@+id/timeDateTag"
-            android:layout_alignParentEnd="true" />
 
-        <TextView
-            android:id="@+id/feeTag"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/timeDateTag"
-            android:layout_marginTop="20dp"
-            android:text="Fee: "
-            android:textSize="20sp"
-            android:theme="@style/TextTheme"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/timeDateTag"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/addressTag_d"
+                android:layout_marginTop="20dp"
+                android:text="@string/date_time_tag"
+                android:textSize="20sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/feeView_d"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:layout_below="@+id/timeDateView"
-            android:textColor="@color/colorAccent"
-            android:layout_toEndOf="@id/feeTag"
-            tools:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/timeDateView"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/timeDateTag"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/pCountTag"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/feeTag"
-            android:layout_marginTop="20dp"
-            android:text="Participant Count: "
-            android:textSize="20sp"
-            android:theme="@style/TextTheme"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/feeTag"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/timeDateTag"
+                android:layout_marginTop="20dp"
+                android:text="@string/fee"
+                android:textSize="20sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/participantCountView_d"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:layout_below="@+id/feeView_d"
-            android:textColor="@color/colorAccent"
-            android:layout_toEndOf="@id/pCountTag"
-            tools:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/feeView_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeDateView"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/feeTag"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/categoryView"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/pCountTag"
-            android:layout_marginTop="20dp"
-            android:text="@string/category"
-            android:textSize="20sp"
-            android:theme="@style/TextTheme"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/pCountTag"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/feeTag"
+                android:layout_marginTop="20dp"
+                android:text="@string/participant_count"
+                android:textSize="20sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/categoryView_d"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/pCountTag"
-            android:textColor="@color/colorAccent"
-            android:textSize="15sp"
-            android:layout_toEndOf="@id/categoryView"
-            android:layout_marginTop="20dp"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/participantCountView_d"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feeView_d"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/pCountTag"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/organizerTag"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/categoryView"
-            android:layout_marginTop="20dp"
-            android:text="Organizer: "
-            android:textSize="20sp"
-            android:theme="@style/TextTheme"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/categoryView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/pCountTag"
+                android:layout_marginTop="20dp"
+                android:text="@string/category"
+                android:textSize="20sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/organizer_d"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/categoryView"
-            android:textColor="@color/colorAccent"
-            android:textSize="15sp"
-            android:layout_toEndOf="@id/organizerTag"
-            android:layout_marginTop="20dp"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/categoryView_d"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pCountTag"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/categoryView"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                tools:layout_height="40dp" />
 
-        <TextView
-            android:id="@+id/descTag"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/organizerTag"
-            android:layout_marginTop="20dp"
-            android:text="Description: "
-            android:textSize="20sp"
-            android:theme="@style/TextTheme"
-            tools:layout_height="40dp" />
+            <TextView
+                android:id="@+id/organizerTag"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/categoryView"
+                android:layout_marginTop="20dp"
+                android:text="@string/organizer"
+                android:textSize="20sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="40dp" />
 
-        <ScrollView
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/organizer_d"
-            android:id="@+id/scrollView_desc"
-            android:layout_toEndOf="@id/descTag"
-            android:layout_marginTop="20dp">
-            <RelativeLayout
+            <TextView
+                android:id="@+id/organizer_d"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categoryView"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/organizerTag"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                tools:layout_height="40dp" />
+
+            <TextView
+                android:id="@+id/descTag"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/organizerTag"
+                android:layout_marginTop="20dp"
+                android:text="@string/description"
+                android:textSize="20sp"
+                android:theme="@style/TextTheme"
+                tools:layout_height="40dp" />
+
+            <ScrollView
+                android:id="@+id/scrollView_desc"
                 android:layout_width="240dp"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/descriptionView_d"
-                    android:layout_width="match_parent"
-                    android:textColor="@color/colorAccent"
-                    android:layout_height="40dp"
-                    android:textSize="15sp"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/organizer_d"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/descTag">
 
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/descriptionView_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
 
 
-        </ScrollView>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/see_comments_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_below="@id/scrollView_desc"
+                android:text="@string/see_comments" />
 
             <Button
                 android:id="@+id/joinEventButton"
@@ -253,53 +263,55 @@
                 android:layout_alignBaseline="@+id/goBackButton"
                 android:layout_alignBottom="@+id/goBackButton"
                 android:layout_toEndOf="@+id/pCountTag"
-                android:text="JOIN!"
+                android:text="@string/join"
                 android:textColor="@color/colorEditText" />
 
             <Button
                 android:id="@+id/leaveEventButton"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="LEAVE"
                 android:layout_alignBaseline="@+id/goBackButton"
                 android:layout_alignBottom="@+id/goBackButton"
+                android:layout_marginEnd="22dp"
                 android:layout_toEndOf="@+id/pCountTag"
-                android:textColor="@color/colorEditText"
-                android:layout_marginEnd="22dp" />
+                android:text="@string/leave"
+                android:textColor="@color/colorEditText" />
 
             <Button
                 android:id="@+id/editEventButton"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:text="EDIT"
-                android:textColor="@color/colorEditText"
-                android:layout_marginEnd="24dp"
                 android:layout_alignBaseline="@+id/joinEventButton"
                 android:layout_alignBottom="@+id/joinEventButton"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="24dp"
+                android:text="@string/edit"
+                android:textColor="@color/colorEditText" />
 
             <Button
                 android:id="@+id/deleteEventButton"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="DELETE"
-                android:textColor="@color/colorEditText"
                 android:layout_alignBaseline="@+id/joinEventButton"
                 android:layout_alignBottom="@+id/joinEventButton"
+                android:layout_marginEnd="22dp"
                 android:layout_toStartOf="@+id/editEventButton"
-                android:layout_marginEnd="22dp" />
+                android:text="@string/delete"
+                android:textColor="@color/colorEditText" />
 
 
-        <Button
-            android:id="@+id/goBackButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go Back"
-            android:layout_marginTop="24dp"
-            android:layout_below="@+id/descTag"
-            android:layout_toEndOf="@+id/feeTag" />
+            <Button
+                android:id="@+id/goBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/descTag"
+                android:layout_marginTop="24dp"
+                android:layout_toEndOf="@+id/feeTag"
+                android:text="@string/go_back" />
 
-    </RelativeLayout>
+
+
+        </RelativeLayout>
 
     </ScrollView>
 </LinearLayout>

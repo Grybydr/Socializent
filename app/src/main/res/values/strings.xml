@@ -55,5 +55,20 @@
     <string name="date_time_tag">Date/Time:</string>
     <string name="loading">Loading...</string>
     <string name="submit_rate">Submit Rate</string>
+    <string name="see_comments">See Comments</string>
+    <string name="go_back">Go Back</string>
+    <string name="delete">DELETE</string>
+    <string name="edit">EDIT</string>
+    <string name="leave">LEAVE</string>
+    <string name="join">JOIN!</string>
+    <string name="description">Description:</string>
+    <string name="organizer">Organizer:</string>
+    <string name="participant_count">Participant Count:</string>
+    <string name="fee">Fee:</string>
+    <string name="address">Address:</string>
+    <string name="title">Title:</string>
+    <string name="event_details">Event Details</string>
+    <string name="type_your_comment_here">Type your comment here!!!</string>
+    <string name="send_comment">send comment</string>
 
 </resources>
