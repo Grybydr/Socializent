@@ -168,7 +168,7 @@ public class BottomBarMap extends Fragment implements OnMapReadyCallback, Locati
     private void retrieveEvents(){
 
         String events = "";
-        for (int i = cookieList.size() - 1; i >= 0; i++) {
+        for (int i = cookieList.size() - 1; i >= 0; i--) {
             if (cookieList.get(i).getName().equals("allEvents")){
                 events = cookieList.get(i).getValue();
                 break;

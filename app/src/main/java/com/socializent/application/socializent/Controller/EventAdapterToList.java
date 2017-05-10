@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -51,13 +52,17 @@ public class EventAdapterToList extends ArrayAdapter<Event> {
         String dateStr = df.format(calendar.getTime());
         eventtime.setText(dateStr);
         EventTypes t = event.getEventType();
-        String type = t.toString().toLowerCase();
-        String uri = "@drawable/" + type + "hdpi";  // where myresource (without the extension) is the file
-
-     /*  int imageResource = mContext.getResources().getIdentifier(type,"drawable", mContext.getPackageName());
-        ImageView imageview= (ImageView)convertView.findViewById(R.id.eventImageView);
-        Drawable res = mContext.getResources().getDrawable(imageResource, nul l);
-        imageview.setImageDrawable(res);*/
+        String type = t.toString();
+        if(type.equals("BIRTHDAY"))
+            type = "birthday";
+        else if(type.equals("CELEBRATION"))
+            type = "celebration";
+        else if(type.equals("MEETING"))
+            type = "meeting";
+        else if(type.equals("MOVIE"))
+            type = "movie";
+        else
+            type = type.toLowerCase();
 
         int res = mContext.getResources().getIdentifier(type,"drawable",mContext.getPackageName());
         ImageView imageview= (ImageView)convertView.findViewById(R.id.eventImageView);

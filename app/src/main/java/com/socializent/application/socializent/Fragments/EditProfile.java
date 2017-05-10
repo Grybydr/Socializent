@@ -49,7 +49,7 @@ public class EditProfile extends Fragment {
     CheckBox movieScreen;
     CheckBox party;
     CheckBox study;
-    CheckBox travel;
+    CheckBox travel,meeting,birthday,sport;
 
     Button update;
     EditText name;
@@ -89,6 +89,10 @@ public class EditProfile extends Fragment {
         email = (EditText)profileView.findViewById(R.id.editProfileEditEmail);
         bio = (EditText)profileView.findViewById(R.id.editProfileEditBio);
         birthdate = (EditText)profileView.findViewById(R.id.editProfileEditBirthdate);
+        if(p == null)
+        {
+            Log.d("null", "geliyor");
+        }
         Float bdf = p.getBirthDate();
         long number =bdf.longValue();
         Date date=new Date(number);
@@ -99,10 +103,13 @@ public class EditProfile extends Fragment {
         concert = (CheckBox) profileView.findViewById(R.id.concert);
         conferance = (CheckBox) profileView.findViewById(R.id.conferance);
         lecture = (CheckBox) profileView.findViewById(R.id.lecture);
-        movieScreen = (CheckBox) profileView.findViewById(R.id.movieScreen);
+        movieScreen = (CheckBox) profileView.findViewById(R.id.movie);
         party = (CheckBox) profileView.findViewById(R.id.party);
         study = (CheckBox) profileView.findViewById(R.id.study);
         travel = (CheckBox) profileView.findViewById(R.id.travel);
+        meeting = (CheckBox) profileView.findViewById(R.id.meeting);
+        birthday = (CheckBox) profileView.findViewById(R.id.birthday);
+        sport = (CheckBox) profileView.findViewById(R.id.sport);
 
         name.setText(p.getFirstName());
         surname.setText(p.getLastName());
@@ -170,10 +177,10 @@ public class EditProfile extends Fragment {
             @Override
             public void onClick(View v) {
                 if(movieScreen.isChecked()){
-                    interest.add("movieScreen");
+                    interest.add("movie");
                 }
                 else{
-                    interest.remove("movieScreen");
+                    interest.remove("movie");
                 }
             }
         });
@@ -206,7 +213,40 @@ public class EditProfile extends Fragment {
                     interest.add("travel");
                 }
                 else{
-                    interest.add("travel");
+                    interest.remove("travel");
+                }
+            }
+        });
+        meeting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(travel.isChecked()){
+                    interest.add("meeting");
+                }
+                else{
+                    interest.remove("meeting");
+                }
+            }
+        });
+        birthday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(travel.isChecked()){
+                    interest.add("birthday");
+                }
+                else{
+                    interest.remove("birthday");
+                }
+            }
+        });
+        sport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(travel.isChecked()){
+                    interest.add("sports");
+                }
+                else{
+                    interest.add("sports");
                 }
             }
         });

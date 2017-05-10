@@ -4,16 +4,16 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_password_image.xml",
-        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\selector_password_image.xml"
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\drawable\\messenger_button_blue_bg_round.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\celebration.xml",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\celebration.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\drawable\\messenger_button_blue_bg_round.xml"
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_password_image.xml",
+        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\selector_password_image.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
@@ -24,24 +24,24 @@
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\43b4b760d7b66b9b18987a2c279800dca6dedff7\\output\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
-        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
-    },
-    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\map_icon_bottom_bar.xml",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\map_icon_bottom_bar.xml"
     },
     {
-        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_bottom_bar.xml",
-        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\notification_icon_bottom_bar.xml"
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\02d0e6ef31d269a85ba770430a6fdb132bc36b6a\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\birthday.xml",
         "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\birthday.xml"
     },
     {
-        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
-        "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_btn_radio_material.xml"
+        "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_bottom_bar.xml",
+        "source": "D:\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\notification_icon_bottom_bar.xml"
     },
     {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
@@ -1084,6 +1084,10 @@
         "source": "C:\\Guray\\Socializent\\app\\src\\main\\res\\drawable\\selector_facebook_logo.xml"
     },
     {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\meeting.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\meeting.xml"
+    },
+    {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_white_bg_round.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\d895ae1c3e25c4eb35705379c1cffc7fb67e56d6\\output\\res\\drawable\\messenger_button_white_bg_round.xml"
     },
@@ -1158,6 +1162,10 @@
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sports.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\drawable\\sports.xml"
     },
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_signup.xml",

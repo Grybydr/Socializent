@@ -206,11 +206,11 @@
                 android:textSize="15sp" />
 
             <CheckBox
-                android:id="@+id/movieScreen"
+                android:id="@+id/movie"
                 android:layout_width="180dp"
                 android:layout_height="50dp"
                 android:layout_below="@+id/conferance"
-                android:text=" Movie Screen"
+                android:text=" Movie"
                 android:textSize="15sp"
                 android:textColor="@color/colorEditText"
               />
@@ -220,8 +220,17 @@
                 android:layout_width="180dp"
                 android:layout_height="50dp"
                 android:layout_below="@+id/lecture"
-                android:layout_toEndOf="@+id/movieScreen"
+                android:layout_toEndOf="@+id/movie"
                 android:text=" Party"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                />
+            <CheckBox
+                android:id="@+id/sport"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/movie"
+                android:text=" Sport"
                 android:textSize="15sp"
                 android:textColor="@color/colorEditText"
                 />
@@ -230,7 +239,8 @@
                 android:id="@+id/study"
                 android:layout_width="180dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/movieScreen"
+                android:layout_below="@+id/party"
+                android:layout_toEndOf="@+id/sport"
                 android:text=" Study"
                 android:textSize="15sp"
                 android:textColor="@color/colorEditText"
@@ -240,9 +250,27 @@
                 android:id="@+id/travel"
                 android:layout_width="180dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/party"
-                android:layout_toEndOf="@+id/study"
+                android:layout_below="@+id/sport"
                 android:text=" Travel"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                />
+            <CheckBox
+                android:id="@+id/meeting"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/study"
+                android:layout_toEndOf="@+id/travel"
+                android:text=" Meeting"
+                android:textSize="15sp"
+                android:textColor="@color/colorEditText"
+                />
+            <CheckBox
+                android:id="@+id/birthday"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/travel"
+                android:text=" Birthdate"
                 android:textSize="15sp"
                 android:textColor="@color/colorEditText"
                 />
@@ -254,7 +282,7 @@
                 android:background="@android:color/holo_blue_light"
                 android:text="Update!"
                 android:textColor = "@android:color/white"
-                android:layout_below="@+id/travel"
+                android:layout_below="@+id/meeting"
                 android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
