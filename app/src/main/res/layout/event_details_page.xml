@@ -12,7 +12,7 @@
 
         <RelativeLayout
             android:layout_width="360dp"
-            android:layout_height="604dp"
+            android:layout_height="700dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:orientation="vertical">
@@ -224,36 +224,12 @@
                 android:theme="@style/TextTheme"
                 tools:layout_height="40dp" />
 
-            <ScrollView
-                android:id="@+id/scrollView_desc"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/organizer_d"
-                android:layout_marginTop="20dp"
-                android:layout_toEndOf="@id/descTag">
-
-                <RelativeLayout
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/descriptionView_d"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-
-
-            </ScrollView>
 
             <Button
                 android:id="@+id/see_comments_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_below="@id/scrollView_desc"
+                android:layout_below="@+id/goBackButton"
                 android:text="@string/see_comments" />
 
             <Button

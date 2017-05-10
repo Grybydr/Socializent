@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/detailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Do you want to accept or reject? "
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/detailOk"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorEditText"
+        android:text="OK!"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/detailText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="80dp" />
+
+
+
+
+</RelativeLayout>

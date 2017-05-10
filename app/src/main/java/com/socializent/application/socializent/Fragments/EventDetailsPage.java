@@ -68,6 +68,7 @@ public class EventDetailsPage extends Fragment {
     EventBackgroundTask listCommentsTask;
     private EventDetailsBackgroundTask organizer_task, joinTask, deleteTask, leaveTask;
     private EventBackgroundTask eventBTask, eventBTask_2, eventBTask_3, eventBTask_4;
+    TextView add ,add_name, desc_name;
 
     public static EventDetailsPage newInstance(String str, Event event) {
         EventDetailsPage fragment = new EventDetailsPage();
@@ -168,7 +169,39 @@ public class EventDetailsPage extends Fragment {
         placeView = (TextView) eventView.findViewById(R.id.placeView);
         placeView.setText(placeName);
         addressView = (TextView) eventView.findViewById(R.id.addressView_d);
-        addressView.setText(address);
+        add_name = (TextView) eventView.findViewById(R.id.addressTag_d);
+        desc_name = (TextView) eventView.findViewById(R.id.descTag);
+
+        android.app.AlertDialog.Builder mBuilder = new android.app.AlertDialog.Builder(getActivity());
+        View mView = getActivity().getLayoutInflater().inflate(R.layout.detail_info, null);
+        Button dialogOK = (Button) mView.findViewById(R.id.detailOk);
+        add = (TextView) mView.findViewById(R.id.detailText);
+
+
+        mBuilder.setView(mView);
+        final android.app.AlertDialog dialog = mBuilder.create();
+
+        add_name.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                add.setText(address);
+                dialog.show();
+
+            }
+
+        });
+        dialogOK.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View view) {
+
+                dialog.dismiss();
+            }
+        });
+
+
+
+       // addressView.setText(address);
         timeDateView = (TextView) eventView.findViewById(R.id.timeDateView);
         timeDateView.setText(dateStr);
         feeView = (TextView) eventView.findViewById(R.id.feeView_d);
@@ -179,8 +212,18 @@ public class EventDetailsPage extends Fragment {
         categoryView.setText(category);
         organizerView = (TextView) eventView.findViewById(R.id.organizer_d);
         organizerView.setText(organizerName);
-        descView = (TextView) eventView.findViewById(R.id.descriptionView_d);
-        descView.setText(description);
+
+        desc_name.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                add.setText(description);
+                dialog.show();
+
+            }
+
+        });
+        //descView.setText(description);
 
         joinButton = (Button)eventView.findViewById(R.id.joinEventButton);
         joinButton.setOnClickListener(new View.OnClickListener() {
@@ -317,7 +360,6 @@ public class EventDetailsPage extends Fragment {
     }
 
     private void goToComments(){
-
 
         Intent intent = new Intent(getActivity(), CommentsPage.class);
         intent.putExtra("eventId", event_id);

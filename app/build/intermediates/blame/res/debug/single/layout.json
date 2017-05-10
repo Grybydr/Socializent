@@ -60,12 +60,12 @@
         "source": "C:\\Users\\Irem\\.android\\build-cache\\0b24696a40d4114c3c4e2c7b7d6130abc48c0748\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_smart_device_dialog_fragment.xml",
         "source": "C:\\Users\\Toshıba\\.android\\build-cache\\4ec0595e0a5059790339cec64fe1fdf2029accbd\\output\\res\\layout\\com_facebook_smart_device_dialog_fragment.xml"
+    },
+    {
+        "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\Toshıba\\.android\\build-cache\\bada527c2c7b13c147451d73894051028ca73d01\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\navigation_drawer_second_frag.xml",
@@ -198,6 +198,10 @@
     {
         "merged": "D:\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
         "source": "C:\\Users\\Zülal Bingöl\\.android\\build-cache\\89262e6c043987577c063ba8870cc5b25286c0c3\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\detail_info.xml",
+        "source": "C:\\Users\\Irem\\Desktop\\SENIOR_PROJECT\\Socializent\\app\\src\\main\\res\\layout\\detail_info.xml"
     },
     {
         "merged": "C:\\Guray\\Socializent\\app\\build\\intermediates\\res\\merged\\debug\\layout\\friend_req_dialog.xml",
