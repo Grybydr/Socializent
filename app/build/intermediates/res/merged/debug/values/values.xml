@@ -703,7 +703,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="action_settings">Logout</string>
-    <string name="address">Address:</string>
+    <string name="address">Address</string>
     <string name="android_profile_ui_design">Android Profile UI Design</string>
     <string name="android_profile_xml_ui_design">Android Profile XMl UI Design</string>
     <string name="app_name">Socializent</string>
@@ -761,7 +761,7 @@
     <string name="dateTimeChoice">Please choose the time and date</string>
     <string name="date_time_tag">Date/Time:</string>
     <string name="delete">DELETE</string>
-    <string name="description">Description:</string>
+    <string name="description">Description</string>
     <string name="drawer_close">Close</string>
     <string name="drawer_open">Open</string>
     <string name="edit">EDIT</string>
